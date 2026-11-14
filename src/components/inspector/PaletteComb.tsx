@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useId, useMemo } from 'react';
 import { useElementSize } from '../../hooks/useElementSize';
 import { paletteRows } from '../../lib/palette';
 
@@ -22,6 +22,7 @@ export function PaletteComb({
   label = 'Active palette',
 }: PaletteCombProps) {
   const { ref, size } = useElementSize<HTMLDivElement>();
+  const idBase = useId();
   const perRow = size.width > 0 ? Math.max(4, Math.min(8, Math.floor((size.width + 5) / 36))) : 8;
   const rows = useMemo(() => paletteRows(colors, perRow), [colors, perRow]);
 
@@ -35,11 +36,19 @@ export function PaletteComb({
     <div
       ref={ref}
       className={`comb${editable ? ' is-editable' : ''}`}
-      role={editable ? 'listbox' : 'group'}
-      aria-label={editable ? `${label}. Use arrow keys to choose a color.` : label}
+      role={editable ? 'listbox' : 'list'}
+      aria-label={editable ? `${label}. Use arrow keys to choose a color.` : `${label}, ${colors.length} colors`}
+      aria-activedescendant={editable && selected !== null ? `${idBase}-${selected}` : undefined}
       tabIndex={editable ? 0 : undefined}
       onKeyDown={(event) => {
-        if (!editable || selected === null) return;
+        if (!editable) return;
+        if (selected === null) {
+          if (event.key.startsWith('Arrow') || event.key === 'Home' || event.key === 'End') {
+            event.preventDefault();
+            onSelect?.(0);
+          }
+          return;
+        }
         if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
           event.preventDefault();
           move(selected, 1);
@@ -61,7 +70,7 @@ export function PaletteComb({
       }}
     >
       {rows.map((row, rowIndex) => (
-        <div className="comb-row" key={`row-${rowIndex}`}>
+        <div className="comb-row" key={`row-${rowIndex}`} role="presentation">
           {row.map((color, columnIndex) => {
             const index = rowIndex * perRow + columnIndex;
             const isSelected = selected === index;
@@ -73,7 +82,7 @@ export function PaletteComb({
 
             if (!editable) {
               return (
-                <span className="comb-cell" key={`${color}-${index}`} title={color} aria-hidden="true">
+                <span className="comb-cell" key={`${color}-${index}`} title={color} role="listitem" aria-label={`Color ${index + 1}, ${color}`}>
                   {cell}
                 </span>
               );
@@ -83,7 +92,9 @@ export function PaletteComb({
               <button
                 key={`${color}-${index}`}
                 type="button"
+                id={`${idBase}-${index}`}
                 role="option"
+                tabIndex={-1}
                 aria-selected={isSelected}
                 aria-label={`Color ${index + 1}, ${color}`}
                 className={`comb-cell${isSelected ? ' is-selected' : ''}`}

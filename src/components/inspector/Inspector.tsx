@@ -77,7 +77,7 @@ export function Inspector({
   onLoadLook,
 }: InspectorProps) {
   return (
-    <aside className="inspector" aria-label={`${STAGE_LABELS[active]} controls`}>
+    <aside className="inspector" id="stage-inspector" tabIndex={-1} aria-label={`${STAGE_LABELS[active]} controls`}>
       <div className="inspector-head">
         <h2>
           <span className="inspector-num pixel" aria-hidden="true">{STAGE_ORDER.indexOf(active) + 1}</span>
