@@ -3,6 +3,7 @@
 ## Repo state (verified 2026-11-14)
 - Scaffolded and implemented: source, manifests, lockfile, docs, tests, and production build all present.
 - Verified commands: `npm install`, `npm run dev`, `npm run build`, `npm run preview`, `npm run typecheck`, `npm test`, `npm run check:contrast`.
+- Deploy: `.github/workflows/pages.yml` builds with `--base=/beexie/` and publishes main to GitHub Pages. Public assets referenced from code must use `import.meta.env.BASE_URL`, never a root-absolute path.
 - Real commands now exist: not greenfield. Source of truth is code; if docs and code disagree, trust code and fix the docs.
 - Build size: 9.39 kB gzip CSS, 107.92 kB gzip JS plus an 11.6 kB pipeline worker (2026-11-14, issues #1 to #8).
 - Design tokens: The Instruction Booklet (docs/09-redesign-spec.md). Light booklet stock `#ffffff` / dark cartridge shell `#1d1e22`, ink `#16161a`, flat spot plates red `#d81e28`, yellow `#ffc81e`, blue `#2449e0`. Square corners, no shadows or gradients. 27/27 WCAG AA pairs via `npm run check:contrast`.

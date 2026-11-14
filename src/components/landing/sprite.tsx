@@ -4,7 +4,7 @@ import { rasterizeToGrid, renderProcessedPreview } from '../../lib/pixelate';
 import type { ColorOptions, ProcessedImage } from '../../types';
 import { useElementSize } from '../../hooks/useElementSize';
 
-export const SPECIMEN_SRC = '/specimen.jpg';
+export const SPECIMEN_SRC = `${import.meta.env.BASE_URL}specimen.jpg`;
 
 let specimenPromise: Promise<HTMLImageElement> | null = null;
 
