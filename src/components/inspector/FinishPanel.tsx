@@ -12,6 +12,8 @@ interface FinishPanelProps {
   onOutputAuto: () => void;
   chartDisabled: boolean;
   onChart: () => void;
+  onSaveLook: () => void;
+  onLoadLook: (file: File) => void;
 }
 
 export function FinishPanel({
@@ -22,6 +24,8 @@ export function FinishPanel({
   onOutputAuto,
   chartDisabled,
   onChart,
+  onSaveLook,
+  onLoadLook,
 }: FinishPanelProps) {
   return (
     <div className="panel-body">
@@ -112,6 +116,31 @@ export function FinishPanel({
           Download maker chart
         </button>
         <p className="panel-note">A printable PNG for beads and cross-stitch: one symbol per color, rulers every 10 cells, and a legend with each color's count.</p>
+      </div>
+
+      <div className="panel-group">
+        <div className="field-head">
+          <span className="field-label">Looks</span>
+        </div>
+        <div className="palette-io-row">
+          <button type="button" className="btn-secondary" onClick={onSaveLook}>
+            Save look
+          </button>
+          <label className="btn-secondary palette-file">
+            Load look
+            <input
+              className="visually-hidden"
+              type="file"
+              accept=".json,application/json"
+              onChange={(event) => {
+                const file = event.target.files?.[0];
+                if (file) onLoadLook(file);
+                event.target.value = '';
+              }}
+            />
+          </label>
+        </div>
+        <p className="panel-note">A look is every setting as a small JSON file, to reuse on other images or share. beexie also remembers your last look on this device.</p>
       </div>
     </div>
   );

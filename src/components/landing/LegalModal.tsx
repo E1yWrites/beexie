@@ -66,6 +66,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
       window.localStorage.removeItem('beexie-theme');
       window.localStorage.removeItem('lanzos-pixel-theme');
       window.localStorage.removeItem('beexie-shortcuts');
+      window.localStorage.removeItem('beexie-settings');
     } catch {
       // Ignore storage access errors in restricted modes
     }
@@ -159,7 +160,10 @@ export const LegalModal: React.FC<LegalModalProps> = ({
                   <strong>In-Memory Image Retention (Session-Only):</strong> Uploaded images and generated bitmaps exist solely in volatile browser memory (<code>ImageBitmap</code> and object URLs). Whenever you replace an image, click Reset, or close the browser tab, object URLs are immediately revoked via <code>URL.revokeObjectURL()</code>.
                 </li>
                 <li>
-                  <strong>Local Storage Retention (User-Controlled):</strong> Only your UI theme preference key (<code>beexie-theme</code>: <code>light</code> or <code>dark</code>) is stored in <code>window.localStorage</code>. No cookies or third-party trackers are ever set.
+                  <strong>Local Storage Retention (User-Controlled):</strong> <code>window.localStorage</code> holds your theme (<code>beexie-theme</code>), your last conversion settings such as grid, colors and export format (<code>beexie-settings</code>, never the image), and whether single-key shortcuts are on (<code>beexie-shortcuts</code>). No cookies or third-party trackers are ever set.
+                </li>
+                <li>
+                  <strong>Lospec Palettes (Opt-In):</strong> Pressing Fetch in the Color stage requests that palette from lospec.com. Only the palette name you typed is sent; no image data ever is.
                 </li>
               </ul>
 

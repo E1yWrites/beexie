@@ -17,6 +17,7 @@ import { canvasToBlob } from './lib/pixelate';
 import { STAGE_LABELS } from './lib/stages';
 import { ticketDisabledReason } from './lib/ticket';
 import { readShortcutsEnabled, writeShortcutsEnabled } from './lib/shortcuts';
+import { LookError, parseLook, toLook } from './lib/settingsSchema';
 import { ShortcutsDialog } from './components/shell/ShortcutsDialog';
 import { UploadIcon } from './components/icons';
 import { ExportTicket } from './components/inspector/ExportTicket';
@@ -244,6 +245,23 @@ export default function App() {
     }
   }, [processed, source, notify]);
 
+  const handleSaveLook = () => {
+    saveBlob(new Blob([toLook(settings)], { type: 'application/json' }), 'beexie-look.json');
+  };
+
+  const handleLoadLook = async (file: File) => {
+    try {
+      const { settings: next, rejected } = parseLook(await file.text());
+      converter.updateSettings(next);
+      notify(
+        rejected.length ? `Look loaded. Reset to default: ${rejected.join(', ')}.` : `Loaded look from ${file.name}`,
+        rejected.length ? 'info' : 'success',
+      );
+    } catch (error) {
+      notify(error instanceof LookError ? error.message : 'That look file could not be read.', 'error');
+    }
+  };
+
   const handleResetStage = () => {
     converter.resetStage(active);
     if (active === 'image') {
@@ -361,6 +379,8 @@ export default function App() {
           onDismissError={converter.dismissError}
           onResetStage={handleResetStage}
           onChart={() => void handleChart()}
+          onSaveLook={handleSaveLook}
+          onLoadLook={(file) => void handleLoadLook(file)}
         />
       </div>
 

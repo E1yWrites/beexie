@@ -42,6 +42,8 @@ interface InspectorProps {
   onResetTransform: () => void;
   onResetStage: () => void;
   onChart: () => void;
+  onSaveLook: () => void;
+  onLoadLook: (file: File) => void;
 }
 
 export function Inspector({
@@ -71,6 +73,8 @@ export function Inspector({
   onResetTransform,
   onResetStage,
   onChart,
+  onSaveLook,
+  onLoadLook,
 }: InspectorProps) {
   return (
     <aside className="inspector" aria-label={`${STAGE_LABELS[active]} controls`}>
@@ -137,6 +141,8 @@ export function Inspector({
               onOutputAuto={onOutputAuto}
               chartDisabled={!processed}
               onChart={onChart}
+              onSaveLook={onSaveLook}
+              onLoadLook={onLoadLook}
             />
           ) : null}
         </div>

@@ -4,6 +4,7 @@ import { paintPixel, pixelAt } from '../lib/edits';
 import { clampInteger, computeAutoOutput, computeGrid, derivedPixelSize, gridFromPixelSize } from '../lib/dimensions';
 import { loadSourceImage, releaseSource } from '../lib/image';
 import { processImage } from '../lib/pipelineClient';
+import { loadStoredSettings, storeSettings } from '../lib/settingsSchema';
 import { applyTransform, IDENTITY_TRANSFORM, isIdentity, rotate, type CropRect } from '../lib/transform';
 import { validateFile } from '../lib/validation';
 import type {
@@ -59,7 +60,7 @@ export function useConverter(): ConverterController {
   const [transformed, setTransformed] = useState<SourceImage | null>(null);
   // While a new transform encodes, the last one (or the original) stays on the bench instead of a blank frame.
   const source = original && !isIdentity(transform) ? (transformed ?? original) : original;
-  const [settings, setSettings] = useState<ConverterSettings>(DEFAULT_SETTINGS);
+  const [settings, setSettings] = useState<ConverterSettings>(loadStoredSettings);
   const [processed, setProcessed] = useState<ProcessedImage | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -377,6 +378,12 @@ export function useConverter(): ConverterController {
   useEffect(() => {
     sourceRef.current = original;
   }, [original]);
+
+  // Remember the last look, never the image.
+  useEffect(() => {
+    const timer = window.setTimeout(() => storeSettings(settings), 300);
+    return () => window.clearTimeout(timer);
+  }, [settings]);
 
   // Rotation and crop build a derived source once; every later step (grid, previews, pipeline) reads it unchanged.
   useEffect(() => {
