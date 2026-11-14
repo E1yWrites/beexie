@@ -163,3 +163,61 @@
   background: var(--plate);
   color: var(--on-plate);
 }
+
+/* ---- keyboard shortcuts dialog ---- */
+
+.keys-dialog {
+  width: min(420px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  padding: var(--s-5);
+  border: var(--stroke) solid var(--ink);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.keys-dialog::backdrop {
+  background: rgb(22 22 26 / 0.6);
+}
+
+.keys-dialog[open] {
+  display: grid;
+  gap: var(--s-4);
+}
+
+.keys-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+}
+
+.keys-head h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+}
+
+.keys-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+}
+
+.keys-table td {
+  padding: var(--s-1) 0;
+  border-bottom: var(--hair) solid var(--rule);
+}
+
+.keys-table td:first-child {
+  width: 40%;
+}
+
+.keys-table kbd {
+  display: inline-block;
+  min-width: 24px;
+  padding: 0 var(--s-1);
+  border: var(--hair) solid var(--ink);
+  font-family: var(--font-pixel);
+  text-align: center;
+}

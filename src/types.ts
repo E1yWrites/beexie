@@ -1,8 +1,10 @@
 export type ColorMode = 'original' | 'reduced' | 'grayscale' | 'monochrome' | 'custom';
 export type DitherMode = 'floyd' | 'bayer';
+export type SamplingMode = 'average' | 'mode' | 'median';
 export type RetroPresetId = '16bit-jrpg' | 'arcade-action' | '8bit-classic' | 'gameboy-dmg' | 'cyberpunk-1993';
-export type ExportFormat = 'png' | 'jpeg' | 'webp';
+export type ExportFormat = 'png' | 'jpeg' | 'webp' | 'svg';
 export type ScaleFactor = 1 | 2 | 4 | 8;
+export type Rotation = 0 | 90 | 180 | 270;
 export type GridPreset = 8 | 16 | 32 | 64 | 128 | 256;
 export type ResolutionMode = 'preset' | 'custom';
 export type PreviewMode = 'original' | 'pixel' | 'compare';
@@ -43,6 +45,8 @@ export interface ConverterSettings {
   preset: GridPreset;
   customGrid: GridSize;
   gridAspectLocked: boolean;
+  /** How each grid cell picks its color from the source. */
+  sampling: SamplingMode;
   colorMode: ColorMode;
   reducedColors: number;
   customPalette: string[];
@@ -83,4 +87,11 @@ export interface ColorOptions {
 
 export interface ProcessedImage extends RgbaImage {
   palette: string[];
+}
+
+/** Input transform applied to the whole source before pixelation: turn, then crop. Never paints pixels. */
+export interface SourceTransform {
+  rotation: Rotation;
+  /** Fractions (0 to 1) of the rotated image, or null for the full frame. */
+  crop: { x: number; y: number; width: number; height: number } | null;
 }

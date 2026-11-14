@@ -11,9 +11,14 @@ import { useConverter } from './hooks/useConverter';
 import { useTheme } from './hooks/useTheme';
 import { useTool } from './hooks/useTool';
 import { computeExportSize, isExportSizeValid } from './lib/dimensions';
-import { downloadPixelArt } from './lib/export';
+import { drawChart } from './lib/chart';
+import { buildExportFilename, downloadPixelArt, saveBlob } from './lib/export';
+import { canvasToBlob } from './lib/pixelate';
 import { STAGE_LABELS } from './lib/stages';
 import { ticketDisabledReason } from './lib/ticket';
+import { readShortcutsEnabled, writeShortcutsEnabled } from './lib/shortcuts';
+import { LookError, parseLook, toLook } from './lib/settingsSchema';
+import { ShortcutsDialog } from './components/shell/ShortcutsDialog';
 import { UploadIcon } from './components/icons';
 import { ExportTicket } from './components/inspector/ExportTicket';
 
@@ -26,6 +31,8 @@ export default function App() {
   const [downloading, setDownloading] = useState(false);
   const [savedAt, setSavedAt] = useState(0);
   const [dragging, setDragging] = useState(false);
+  const [keysOpen, setKeysOpen] = useState(false);
+  const [shortcutsEnabled, setShortcutsEnabled] = useState(readShortcutsEnabled);
   const dragDepth = useRef(0);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -224,6 +231,37 @@ export default function App() {
     }
   }, [processed, source, finalSize, settings, notify]);
 
+  const handleChart = useCallback(async () => {
+    if (!processed || !source) return;
+    try {
+      const canvas = drawChart(processed);
+      const blob = await canvasToBlob(canvas, 'image/png');
+      const filename = buildExportFilename(source.name, processed.width, processed.height, 'png').replace('-pixel-', '-chart-');
+      canvas.width = 0;
+      saveBlob(blob, filename);
+      notify(`Downloaded ${filename}`, 'success');
+    } catch {
+      notify('The chart could not be drawn. Try a smaller grid.', 'error');
+    }
+  }, [processed, source, notify]);
+
+  const handleSaveLook = () => {
+    saveBlob(new Blob([toLook(settings)], { type: 'application/json' }), 'beexie-look.json');
+  };
+
+  const handleLoadLook = async (file: File) => {
+    try {
+      const { settings: next, rejected } = parseLook(await file.text());
+      converter.updateSettings(next);
+      notify(
+        rejected.length ? `Look loaded. Reset to default: ${rejected.join(', ')}.` : `Loaded look from ${file.name}`,
+        rejected.length ? 'info' : 'success',
+      );
+    } catch (error) {
+      notify(error instanceof LookError ? error.message : 'That look file could not be read.', 'error');
+    }
+  };
+
   const handleResetStage = () => {
     converter.resetStage(active);
     if (active === 'image') {
@@ -278,6 +316,7 @@ export default function App() {
         onToggleTheme={toggleTheme}
         onNewProject={handleNewProject}
         onGoToLanding={() => setView('landing')}
+        onShowKeys={() => setKeysOpen(true)}
       />
 
       <div className="bench">
@@ -308,6 +347,9 @@ export default function App() {
           onOpen={open}
           onPick={pickFile}
           onLoadSample={() => void handleLoadSample()}
+          shortcutsEnabled={shortcutsEnabled}
+          onDownload={() => void handleDownload()}
+          onShortcutsHelp={() => setKeysOpen(true)}
         />
 
         <Inspector
@@ -329,10 +371,28 @@ export default function App() {
           onOutputAuto={converter.setOutputAuto}
           onPick={pickFile}
           onRemove={converter.clearImage}
+          original={converter.original}
+          transform={converter.transform}
+          onRotate={converter.rotateSource}
+          onCrop={converter.setCrop}
+          onResetTransform={converter.resetTransform}
           onDismissError={converter.dismissError}
           onResetStage={handleResetStage}
+          onChart={() => void handleChart()}
+          onSaveLook={handleSaveLook}
+          onLoadLook={(file) => void handleLoadLook(file)}
         />
       </div>
+
+      <ShortcutsDialog
+        open={keysOpen}
+        enabled={shortcutsEnabled}
+        onEnabled={(enabled) => {
+          setShortcutsEnabled(enabled);
+          writeShortcutsEnabled(enabled);
+        }}
+        onClose={() => setKeysOpen(false)}
+      />
 
       <ExportTicket
         settings={settings}
