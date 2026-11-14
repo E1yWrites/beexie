@@ -24,6 +24,10 @@ describe('compare rule', () => {
     expect(compareStep(5, 'ArrowLeft', true)).toBe(0);
     expect(compareStep(50, 'Home')).toBe(0);
     expect(compareStep(50, 'End')).toBe(100);
+    expect(compareStep(50, 'ArrowUp')).toBe(52);
+    expect(compareStep(50, 'ArrowDown')).toBe(48);
+    expect(compareStep(50, 'PageUp')).toBe(60);
+    expect(compareStep(5, 'PageDown')).toBe(0);
   });
 
   it('describes the value for assistive tech', () => {

@@ -26,7 +26,12 @@ export function ToolRail({ active, source, settings, grid, paletteSize, onOpen }
             aria-current={isActive ? 'step' : undefined}
             aria-label={stageAriaLabel(stage, state, meta)}
             title={`${STAGE_LABELS[stage]}: ${meta}`}
-            onClick={() => onOpen(stage)}
+            aria-controls="stage-inspector"
+            onClick={(event) => {
+              onOpen(stage);
+              // Keyboard activation (detail 0) jumps past the preview toolbar straight to the stage controls.
+              if (event.detail === 0) requestAnimationFrame(() => document.getElementById('stage-inspector')?.focus());
+            }}
           >
             <span className="tab-num pixel" aria-hidden="true">
               {index + 1}

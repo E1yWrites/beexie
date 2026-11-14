@@ -178,6 +178,17 @@
   width: 44px;
 }
 
+/* The thin rule sits on arbitrary photo pixels, so the focus ring wraps the handle,
+   where its paper border guarantees contrast against the ring. */
+.rule:focus-visible {
+  outline: none;
+}
+
+.rule:focus-visible .rule-handle {
+  outline: var(--stroke) solid var(--focus);
+  outline-offset: 0;
+}
+
 .rule-handle {
   position: absolute;
   top: 50%;

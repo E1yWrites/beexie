@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
-import { compareFromPointer, compareStep, compareValueText, type CompareKey } from '../../lib/compare';
+import { compareFromPointer, COMPARE_KEYS, compareStep, compareValueText, type CompareKey } from '../../lib/compare';
 import { renderProcessedPreview } from '../../lib/pixelate';
 import type { ConverterSettings, GridSize, PreviewMode, ProcessedImage, SourceImage } from '../../types';
 import { SpinnerIcon } from '../icons';
@@ -199,9 +199,7 @@ export function ProofFrame({
           aria-valuenow={Math.round(compare)}
           aria-valuetext={compareValueText(compare)}
           onKeyDown={(event) => {
-            if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight' && event.key !== 'Home' && event.key !== 'End') {
-              return;
-            }
+            if (!COMPARE_KEYS.includes(event.key)) return;
             event.preventDefault();
             onCompare(compareStep(compare, event.key as CompareKey, event.shiftKey));
           }}
