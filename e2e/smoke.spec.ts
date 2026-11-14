@@ -1,5 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
 import { readFileSync } from 'node:fs';
+import { chartLayout } from '../src/lib/chart';
 
 type Mime = 'image/png' | 'image/jpeg' | 'image/webp';
 
@@ -70,4 +71,45 @@ test('upload every format, change settings, download a real PNG', async ({ page 
   expect(size).toEqual({ width: Number(w), height: Number(h) });
   // 120 x 60 source at the 32 preset is a 32 x 16 grid; auto output 512 x 256; 4x scale.
   expect(size).toEqual({ width: 2048, height: 1024 });
+
+  await page.getByRole('group', { name: 'Export format' }).getByRole('button', { name: 'SVG' }).click();
+  const [svgDownload] = await Promise.all([
+    page.waitForEvent('download'),
+    page.getByRole('button', { name: 'Download SVG' }).click(),
+  ]);
+  const svg = readFileSync((await svgDownload.path())!, 'utf8');
+  expect(svgDownload.suggestedFilename()).toMatch(/\.svg$/);
+  expect(svg).toContain('width="2048" height="1024" viewBox="0 0 32 16" shape-rendering="crispEdges"');
+
+  await page.getByRole('button', { name: /^Finish,/ }).click();
+  const [chartDownload] = await Promise.all([
+    page.waitForEvent('download'),
+    page.getByRole('button', { name: 'Download maker chart' }).click(),
+  ]);
+  expect(chartDownload.suggestedFilename()).toMatch(/-chart-32x16\.png$/);
+  const chart = readFileSync((await chartDownload.path())!);
+  // Width is fixed by the grid; height grows by one legend row per few colors, so check it lands on a row.
+  const empty = chartLayout(32, 16, 0);
+  const chartSize = pngSize(chart);
+  expect(chartSize.width).toBe(empty.width);
+  const legendRows = (chartSize.height - empty.height) / 28;
+  expect(Number.isInteger(legendRows) && legendRows >= 1).toBe(true);
+
+  // Turning the 2:1 source a quarter turn flips the 32 x 16 grid to 16 x 32.
+  await page.getByRole('button', { name: /^Image,/ }).click();
+  await page.getByRole('button', { name: 'Rotate right' }).click();
+  await expect(page.getByRole('button', { name: /^Grid,/ })).toHaveAccessibleName(/16 × 32/);
+
+  // Keyboard shortcuts: 2 opens Grid, keys typed into a field are left alone, ? opens the reference.
+  await page.locator('body').click({ position: { x: 1, y: 1 } });
+  await page.keyboard.press('2');
+  await expect(page.getByRole('button', { name: /^Grid,/ })).toHaveAttribute('aria-current', 'step');
+  await page.getByRole('spinbutton', { name: 'Width' }).first().focus();
+  await page.keyboard.press('3');
+  await expect(page.getByRole('button', { name: /^Grid,/ })).toHaveAttribute('aria-current', 'step');
+  await page.locator('body').click({ position: { x: 1, y: 1 } });
+  await page.keyboard.press('Shift+?');
+  await expect(page.getByRole('dialog', { name: 'Keyboard shortcuts' })).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(page.getByRole('dialog', { name: 'Keyboard shortcuts' })).toBeHidden();
 });

@@ -56,7 +56,7 @@ export function ExportTicket({
       {/* Phones pin only Output and Download; the options fold away so the bar stays one row. */}
       <details className="exportbar-more" open={wide} onToggle={(event) => setOpen(event.currentTarget.open)}>
         <summary className="exportbar-summary">
-          {settings.format === 'jpeg' ? 'JPG' : settings.format.toUpperCase()} {settings.scale}x options
+          {FORMAT_META[settings.format].label} {settings.scale}x options
         </summary>
       <div className="exportbar-controls">
         <div className="exportbar-group">
@@ -69,6 +69,7 @@ export function ExportTicket({
               { value: 'png', label: FORMAT_META.png.label },
               { value: 'jpeg', label: FORMAT_META.jpeg.label },
               { value: 'webp', label: FORMAT_META.webp.label },
+              { value: 'svg', label: FORMAT_META.svg.label },
             ]}
           />
         </div>

@@ -7,6 +7,7 @@ interface AppHeaderProps {
   onToggleTheme: () => void;
   onNewProject: () => void;
   onGoToLanding?: () => void;
+  onShowKeys?: () => void;
 }
 
 export function ThemeToggle({ theme, onToggleTheme }: { theme?: Theme; onToggleTheme?: () => void }) {
@@ -44,6 +45,7 @@ export function AppHeader({
   onToggleTheme,
   onNewProject,
   onGoToLanding,
+  onShowKeys,
 }: AppHeaderProps) {
   return (
     <header className="app-header">
@@ -84,6 +86,11 @@ export function AppHeader({
       ) : null}
 
       <div className="header-actions">
+        {onShowKeys ? (
+          <button type="button" className="ghost-btn" onClick={onShowKeys} aria-haspopup="dialog" title="Keyboard shortcuts (?)">
+            Keys
+          </button>
+        ) : null}
         <button type="button" className="ghost-btn" onClick={onNewProject}>
           New project
         </button>

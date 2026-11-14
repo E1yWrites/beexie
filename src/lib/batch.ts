@@ -1,9 +1,9 @@
 import { FORMAT_META } from '../constants';
-import { processColors } from './colors';
 import { computeAutoOutput, computeExportSize, computeGrid } from './dimensions';
-import { buildExportFilename } from './export';
+import { buildExportFilename, encodeExport } from './export';
 import { loadSourceImage, releaseSource } from './image';
-import { canvasToBlob, rasterizeToGrid, renderProcessedToCanvas } from './pixelate';
+import { canvasToBlob, renderProcessedToCanvas } from './pixelate';
+import { processImage } from './pipelineClient';
 import type { ConverterSettings } from '../types';
 
 const CRC_TABLE = Array.from({ length: 256 }, (_, n) => {
@@ -93,22 +93,12 @@ export async function convertBatch(
       const source = await loadSourceImage(file);
       try {
         const grid = computeGrid(source, settings);
-        const raster = rasterizeToGrid(source.bitmap, source.width, source.height, grid.width, grid.height, settings.transparentBackground ? null : settings.backgroundColor);
-        const processed = processColors(raster, {
-          mode: settings.colorMode,
-          reducedColors: settings.reducedColors,
-          customPalette: settings.customPalette,
-          quantization: settings.quantization,
-          dithering: settings.dithering,
-          ditherMode: settings.ditherMode,
-          transparentBackground: settings.transparentBackground,
-          backgroundColor: settings.backgroundColor,
-          retroPreset: settings.retroPreset,
-        });
+        const processed = await processImage(source, grid, settings);
         const size = computeExportSize(computeAutoOutput(grid), settings.scale);
+        const blob = await encodeExport(processed, size, settings.format, settings.quality, settings.backgroundColor, settings.transparentBackground);
+        // The sheet stays a PNG raster whatever the per-image format.
         const needsBg = !settings.transparentBackground || settings.format === 'jpeg';
         const canvas = renderProcessedToCanvas(processed, size.width, size.height, needsBg ? settings.backgroundColor : null);
-        const blob = await canvasToBlob(canvas, meta.mime, settings.format === 'png' ? undefined : settings.quality);
         let name = buildExportFilename(source.name, grid.width, grid.height, meta.extension);
         for (let n = 2; used.has(name); n += 1) name = name.replace(/(\.\w+)$/, `-${n}$1`);
         used.add(name);
