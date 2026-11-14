@@ -3,8 +3,9 @@ import React from 'react';
 const RULES = [
   'Your image is decoded inside this browser tab. No server ever receives it.',
   'Every step, from the grid to the colors to the export, runs on your device.',
+  'Fetching a Lospec palette sends only its name to lospec.com.',
   'The image is released from memory when you replace it, start over, or close the tab.',
-  'The only thing beexie remembers is your light or dark theme choice.',
+  'beexie remembers your theme and your last settings, never your image.',
 ];
 
 /** The booklet's safety page: short, numbered, and true. */

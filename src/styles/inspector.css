@@ -334,3 +334,112 @@
 .retro-preset-btn.active .retro-preset-desc {
   color: inherit;
 }
+
+/* ---- palette import, export, Lospec ---- */
+
+.palette-io {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.palette-io-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--s-3);
+}
+
+.palette-io-row:first-child {
+  align-items: center;
+}
+
+.palette-file {
+  cursor: pointer;
+}
+
+.palette-file:focus-within {
+  outline: var(--stroke) solid var(--focus);
+  outline-offset: 2px;
+}
+
+.palette-slug {
+  flex: 1 1 140px;
+}
+
+.palette-slug .select {
+  padding-right: var(--s-2);
+  background: var(--paper);
+}
+
+.palette-error {
+  margin: 0;
+  color: var(--ink);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  border-left: var(--stroke) solid var(--red);
+  padding-left: var(--s-2);
+}
+
+/* ---- crop editor ---- */
+
+.crop {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.crop-box {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  justify-self: center;
+  border: var(--hair) solid var(--rule);
+  background: var(--paper);
+  cursor: crosshair;
+  touch-action: none;
+  user-select: none;
+}
+
+.crop-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: none;
+  pointer-events: none;
+}
+
+.crop-rect {
+  position: absolute;
+  outline: 9999px solid rgb(22 22 26 / 0.55);
+  border: var(--stroke) solid var(--paper);
+  cursor: move;
+}
+
+.crop-rect:focus-visible {
+  border-color: var(--focus);
+  outline: 9999px solid rgb(22 22 26 / 0.55);
+}
+
+.crop-handle {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: var(--stroke) solid var(--ink);
+  background: var(--paper);
+}
+
+.crop-handle.is-nw { top: -8px; left: -8px; cursor: nwse-resize; }
+.crop-handle.is-ne { top: -8px; right: -8px; cursor: nesw-resize; }
+.crop-handle.is-sw { bottom: -8px; left: -8px; cursor: nesw-resize; }
+.crop-handle.is-se { right: -8px; bottom: -8px; cursor: nwse-resize; }
+
+.crop-bar,
+.crop-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3);
+}
+
+.crop-size {
+  margin-left: auto;
+}

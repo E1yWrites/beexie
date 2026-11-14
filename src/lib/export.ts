@@ -1,6 +1,7 @@
 import { FORMAT_META, MAX_EXPORT_DIMENSION } from '../constants';
 import { isExportSizeValid } from './dimensions';
 import { canvasToBlob, renderProcessedToCanvas } from './pixelate';
+import { processedToSvg } from './svg';
 import type { ExportFormat, ExportSize, ProcessedImage } from '../types';
 
 function safeBaseName(name: string): string {
@@ -20,6 +21,42 @@ export function buildExportFilename(
   extension: string,
 ): string {
   return `${safeBaseName(sourceName)}-pixel-${gridWidth}x${gridHeight}.${extension}`;
+}
+
+/** Hand a blob to the browser as a file download. */
+export function saveBlob(blob: Blob, filename: string): void {
+  const objectUrl = URL.createObjectURL(blob);
+  const anchor = document.createElement('a');
+  anchor.href = objectUrl;
+  anchor.download = filename;
+  anchor.rel = 'noopener';
+  document.body.appendChild(anchor);
+  anchor.click();
+  anchor.remove();
+  window.setTimeout(() => URL.revokeObjectURL(objectUrl), 2_000);
+}
+
+/** Encode the processed grid at the final size. Raster formats render nearest-neighbor; SVG stays vector. */
+export async function encodeExport(
+  processed: ProcessedImage,
+  size: ExportSize,
+  format: ExportFormat,
+  quality: number,
+  backgroundColor: string,
+  transparent: boolean,
+): Promise<Blob> {
+  const needsBackground = !transparent || format === 'jpeg';
+  const background = needsBackground ? backgroundColor : null;
+  if (format === 'svg') {
+    return new Blob([processedToSvg(processed, size.width, size.height, background)], { type: FORMAT_META.svg.mime });
+  }
+  const canvas = renderProcessedToCanvas(processed, size.width, size.height, background);
+  try {
+    return await canvasToBlob(canvas, FORMAT_META[format].mime, format === 'png' ? undefined : quality);
+  } finally {
+    canvas.width = 0;
+    canvas.height = 0;
+  }
 }
 
 export interface DownloadOptions {
@@ -45,30 +82,9 @@ export async function downloadPixelArt(options: DownloadOptions): Promise<Downlo
     throw new Error(`Export dimensions must be between 1 and ${MAX_EXPORT_DIMENSION} pixels.`);
   }
 
-  const meta = FORMAT_META[format];
-  const needsBackground = !transparent || format === 'jpeg';
-  const canvas = renderProcessedToCanvas(
-    processed,
-    size.width,
-    size.height,
-    needsBackground ? backgroundColor : null,
-  );
-
-  const blob = await canvasToBlob(canvas, meta.mime, format === 'png' ? undefined : quality);
-  const filename = buildExportFilename(sourceName, processed.width, processed.height, meta.extension);
-  const objectUrl = URL.createObjectURL(blob);
-
-  const anchor = document.createElement('a');
-  anchor.href = objectUrl;
-  anchor.download = filename;
-  anchor.rel = 'noopener';
-  document.body.appendChild(anchor);
-  anchor.click();
-  anchor.remove();
-  window.setTimeout(() => URL.revokeObjectURL(objectUrl), 2_000);
-
-  canvas.width = 0;
-  canvas.height = 0;
+  const blob = await encodeExport(processed, size, format, quality, backgroundColor, transparent);
+  const filename = buildExportFilename(sourceName, processed.width, processed.height, FORMAT_META[format].extension);
+  saveBlob(blob, filename);
 
   return { filename, width: size.width, height: size.height, bytes: blob.size };
 }

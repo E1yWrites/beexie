@@ -1,6 +1,7 @@
 import { useEffect, useState, type CSSProperties } from 'react';
 import { useElementSize } from '../../hooks/useElementSize';
 import { clamp } from '../../lib/dimensions';
+import { matchShortcut } from '../../lib/shortcuts';
 import type { EditTool } from '../../lib/edits';
 import { parseHexColor, rgbToHex } from '../../lib/colors';
 import type {
@@ -36,6 +37,9 @@ interface WorkspaceProps {
   onPaint: (x: number, y: number, color: Rgb | null) => void;
   onPickPixel: (x: number, y: number) => Rgb | null;
   onUndo: () => void;
+  shortcutsEnabled: boolean;
+  onDownload: () => void;
+  onShortcutsHelp: () => void;
 }
 
 export function Workspace({
@@ -46,6 +50,7 @@ export function Workspace({
   finalSize,
   busy,
   paletteSize,
+  onOpen,
   onPick,
   onLoadSample,
   canUndo,
@@ -53,6 +58,9 @@ export function Workspace({
   onPaint,
   onPickPixel,
   onUndo,
+  shortcutsEnabled,
+  onDownload,
+  onShortcutsHelp,
 }: WorkspaceProps) {
   const [tool, setTool] = useState<EditTool>('off');
   const [color, setColor] = useState('#d81e28');
@@ -105,6 +113,26 @@ export function Workspace({
     const base = autoFit ? fitScale * 100 : zoom;
     applyZoom(base + delta);
   };
+
+  // Re-subscribed every render so the handler always sees current zoom and fit; the listener is cheap.
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      const target = event.target instanceof HTMLElement ? event.target : null;
+      if (event.defaultPrevented || target?.closest('dialog[open]')) return;
+      const action = matchShortcut(event, target);
+      if (!action || (action.kind !== 'help' && !shortcutsEnabled)) return;
+      if (action.kind !== 'help' && action.kind !== 'stage' && !source) return;
+      event.preventDefault();
+      if (action.kind === 'stage') onOpen(action.stage);
+      else if (action.kind === 'view') setMode(action.mode);
+      else if (action.kind === 'zoom') zoomStep(action.step * 25);
+      else if (action.kind === 'fit') setAutoFit(true);
+      else if (action.kind === 'download') onDownload();
+      else onShortcutsHelp();
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  });
 
   return (
     <main className="workspace" aria-label="Preview workspace">
