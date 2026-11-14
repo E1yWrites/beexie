@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
-import { PALETTE_PRESETS, QUANTIZATION_LEVELS, RETRO_PRESETS } from '../../constants';
+import { MAX_CUSTOM_COLORS, PALETTE_PRESETS, QUANTIZATION_LEVELS, RETRO_PRESETS } from '../../constants';
+import { saveBlob } from '../../lib/export';
+import { normalizeSlug, PaletteError, parseLospec, parsePaletteFile, toGpl, toHex } from '../../lib/paletteFiles';
 import type { ColorMode, ConverterSettings, DitherMode, RetroPresetId } from '../../types';
 import { Segmented } from '../ui/Segmented';
 import { Slider } from '../ui/Slider';
@@ -44,13 +46,57 @@ export function ColorPanel({ settings, palette, disabled, onUpdate }: ColorPanel
   }, [mode, combColors.length]);
 
   const editable = mode === 'custom';
+  const [paletteError, setPaletteError] = useState<string | null>(null);
+  const [slug, setSlug] = useState('');
+  const [fetching, setFetching] = useState(false);
+
+  const loadPalette = (colors: string[]) => {
+    onUpdate({ colorMode: 'custom', customPalette: colors });
+    setSelected(0);
+    setPaletteError(null);
+  };
+
+  const importFile = async (file: File) => {
+    try {
+      loadPalette(parsePaletteFile(file.name, await file.text()));
+    } catch (error) {
+      setPaletteError(error instanceof PaletteError ? error.message : 'That palette file could not be read.');
+    }
+  };
+
+  // The only network call in beexie: it sends the palette slug to lospec.com, never image data.
+  const fetchLospec = async () => {
+    const clean = normalizeSlug(slug);
+    if (!clean) {
+      setPaletteError('Use a Lospec palette slug like pico-8.');
+      return;
+    }
+    setFetching(true);
+    try {
+      const response = await fetch(`https://lospec.com/palette-list/${clean}.json`, { signal: AbortSignal.timeout(10_000) });
+      if (!response.ok) throw new PaletteError(`Lospec has no palette called ${clean}.`);
+      loadPalette(parseLospec(await response.json()));
+    } catch (error) {
+      // Lospec answers unknown slugs without CORS headers, so a missing palette looks like a network error.
+      setPaletteError(
+        error instanceof PaletteError ? error.message : `Could not load ${clean} from Lospec. Check the name and your connection.`,
+      );
+    } finally {
+      setFetching(false);
+    }
+  };
+
+  const savePalette = (kind: 'hex' | 'gpl') => {
+    const text = kind === 'hex' ? toHex(customColors) : toGpl(customColors);
+    saveBlob(new Blob([text], { type: 'text/plain' }), `beexie-palette.${kind}`);
+  };
 
   const setColor = (index: number, color: string) => {
     onUpdate({ customPalette: customColors.map((current, currentIndex) => (currentIndex === index ? color : current)) });
   };
 
   const addColor = () => {
-    if (customColors.length >= 64) return;
+    if (customColors.length >= MAX_CUSTOM_COLORS) return;
     const color = ADD_COLORS[customColors.length % ADD_COLORS.length];
     onUpdate({ colorMode: 'custom', customPalette: [...customColors, color] });
     setSelected(customColors.length);
@@ -207,10 +253,7 @@ export function ColorPanel({ settings, palette, disabled, onUpdate }: ColorPanel
               defaultValue=""
               onChange={(event) => {
                 const preset = PALETTE_PRESETS.find((item) => item.id === event.target.value);
-                if (preset) {
-                  onUpdate({ colorMode: 'custom', customPalette: [...preset.colors] });
-                  setSelected(0);
-                }
+                if (preset) loadPalette([...preset.colors]);
                 event.target.value = '';
               }}
             >
@@ -222,6 +265,61 @@ export function ColorPanel({ settings, palette, disabled, onUpdate }: ColorPanel
               ))}
             </select>
           </label>
+        ) : null}
+
+        {editable ? (
+          <div className="palette-io">
+            <div className="palette-io-row">
+              <label className="btn-secondary palette-file">
+                Import .hex or .gpl
+                <input
+                  className="visually-hidden"
+                  type="file"
+                  accept=".hex,.gpl,text/plain"
+                  onChange={(event) => {
+                    const file = event.target.files?.[0];
+                    if (file) void importFile(file);
+                    event.target.value = '';
+                  }}
+                />
+              </label>
+              <button type="button" className="text-btn" onClick={() => savePalette('hex')}>
+                Save .hex
+              </button>
+              <button type="button" className="text-btn" onClick={() => savePalette('gpl')}>
+                Save .gpl
+              </button>
+            </div>
+            <form
+              className="palette-io-row"
+              onSubmit={(event) => {
+                event.preventDefault();
+                void fetchLospec();
+              }}
+            >
+              <label className="select-field palette-slug">
+                <span>Lospec slug</span>
+                <input
+                  className="select"
+                  type="text"
+                  value={slug}
+                  placeholder="pico-8"
+                  spellCheck={false}
+                  autoCapitalize="off"
+                  onChange={(event) => setSlug(event.target.value)}
+                />
+              </label>
+              <button type="submit" className="btn-secondary" disabled={fetching || slug.trim() === ''}>
+                {fetching ? 'Fetching...' : 'Fetch'}
+              </button>
+            </form>
+            <p className="panel-note">Fetch sends only the palette name to lospec.com. Up to {MAX_CUSTOM_COLORS} colors.</p>
+            {paletteError ? (
+              <p className="palette-error" role="alert">
+                {paletteError}
+              </p>
+            ) : null}
+          </div>
         ) : null}
       </div>
 

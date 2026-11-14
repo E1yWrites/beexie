@@ -22,6 +22,19 @@ export function buildExportFilename(
   return `${safeBaseName(sourceName)}-pixel-${gridWidth}x${gridHeight}.${extension}`;
 }
 
+/** Hand a blob to the browser as a file download. */
+export function saveBlob(blob: Blob, filename: string): void {
+  const objectUrl = URL.createObjectURL(blob);
+  const anchor = document.createElement('a');
+  anchor.href = objectUrl;
+  anchor.download = filename;
+  anchor.rel = 'noopener';
+  document.body.appendChild(anchor);
+  anchor.click();
+  anchor.remove();
+  window.setTimeout(() => URL.revokeObjectURL(objectUrl), 2_000);
+}
+
 export interface DownloadOptions {
   processed: ProcessedImage;
   size: ExportSize;
@@ -56,16 +69,7 @@ export async function downloadPixelArt(options: DownloadOptions): Promise<Downlo
 
   const blob = await canvasToBlob(canvas, meta.mime, format === 'png' ? undefined : quality);
   const filename = buildExportFilename(sourceName, processed.width, processed.height, meta.extension);
-  const objectUrl = URL.createObjectURL(blob);
-
-  const anchor = document.createElement('a');
-  anchor.href = objectUrl;
-  anchor.download = filename;
-  anchor.rel = 'noopener';
-  document.body.appendChild(anchor);
-  anchor.click();
-  anchor.remove();
-  window.setTimeout(() => URL.revokeObjectURL(objectUrl), 2_000);
+  saveBlob(blob, filename);
 
   canvas.width = 0;
   canvas.height = 0;
