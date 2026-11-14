@@ -1,7 +1,8 @@
 import { GRID_PRESETS, MAX_GRID } from '../../constants';
-import type { ConverterSettings, GridPreset, GridSize } from '../../types';
+import type { ConverterSettings, GridPreset, GridSize, SamplingMode } from '../../types';
 import { LinkIcon, UnlinkIcon } from '../icons';
 import { NumberField } from '../ui/NumberField';
+import { Segmented } from '../ui/Segmented';
 import { Slider } from '../ui/Slider';
 
 interface GridPanelProps {
@@ -13,6 +14,7 @@ interface GridPanelProps {
   onPixelSize: (size: number) => void;
   onGridDimension: (side: 'width' | 'height', value: number) => void;
   onGridAspectLocked: (locked: boolean) => void;
+  onSampling: (sampling: SamplingMode) => void;
 }
 
 const PRESET_HINTS: Record<GridPreset, string> = {
@@ -33,6 +35,7 @@ export function GridPanel({
   onPixelSize,
   onGridDimension,
   onGridAspectLocked,
+  onSampling,
 }: GridPanelProps) {
   return (
     <div className="panel-body">
@@ -58,6 +61,23 @@ export function GridPanel({
             );
           })}
         </div>
+      </div>
+
+      <div className="panel-group">
+        <div className="field-head">
+          <span className="field-label">Sampling</span>
+        </div>
+        <Segmented<SamplingMode>
+          label="Sampling"
+          value={settings.sampling}
+          onChange={onSampling}
+          options={[
+            { value: 'average', label: 'Average', title: 'Blend every source pixel in the cell', disabled },
+            { value: 'mode', label: 'Mode', title: 'Most common color in the cell', disabled },
+            { value: 'median', label: 'Median', title: 'Middle value per channel', disabled },
+          ]}
+        />
+        <p className="panel-note">Average blends, Mode keeps outlines, Median resists noise.</p>
       </div>
 
       <div className="panel-group">

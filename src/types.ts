@@ -1,5 +1,6 @@
 export type ColorMode = 'original' | 'reduced' | 'grayscale' | 'monochrome' | 'custom';
 export type DitherMode = 'floyd' | 'bayer';
+export type SamplingMode = 'average' | 'mode' | 'median';
 export type RetroPresetId = '16bit-jrpg' | 'arcade-action' | '8bit-classic' | 'gameboy-dmg' | 'cyberpunk-1993';
 export type ExportFormat = 'png' | 'jpeg' | 'webp';
 export type ScaleFactor = 1 | 2 | 4 | 8;
@@ -43,6 +44,8 @@ export interface ConverterSettings {
   preset: GridPreset;
   customGrid: GridSize;
   gridAspectLocked: boolean;
+  /** How each grid cell picks its color from the source. */
+  sampling: SamplingMode;
   colorMode: ColorMode;
   reducedColors: number;
   customPalette: string[];

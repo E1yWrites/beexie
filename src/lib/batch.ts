@@ -1,9 +1,9 @@
 import { FORMAT_META } from '../constants';
-import { processColors } from './colors';
 import { computeAutoOutput, computeExportSize, computeGrid } from './dimensions';
 import { buildExportFilename } from './export';
 import { loadSourceImage, releaseSource } from './image';
-import { canvasToBlob, rasterizeToGrid, renderProcessedToCanvas } from './pixelate';
+import { canvasToBlob, renderProcessedToCanvas } from './pixelate';
+import { runPipeline } from './pipeline';
 import type { ConverterSettings } from '../types';
 
 const CRC_TABLE = Array.from({ length: 256 }, (_, n) => {
@@ -93,18 +93,7 @@ export async function convertBatch(
       const source = await loadSourceImage(file);
       try {
         const grid = computeGrid(source, settings);
-        const raster = rasterizeToGrid(source.bitmap, source.width, source.height, grid.width, grid.height, settings.transparentBackground ? null : settings.backgroundColor);
-        const processed = processColors(raster, {
-          mode: settings.colorMode,
-          reducedColors: settings.reducedColors,
-          customPalette: settings.customPalette,
-          quantization: settings.quantization,
-          dithering: settings.dithering,
-          ditherMode: settings.ditherMode,
-          transparentBackground: settings.transparentBackground,
-          backgroundColor: settings.backgroundColor,
-          retroPreset: settings.retroPreset,
-        });
+        const processed = runPipeline(source, grid, settings);
         const size = computeExportSize(computeAutoOutput(grid), settings.scale);
         const needsBg = !settings.transparentBackground || settings.format === 'jpeg';
         const canvas = renderProcessedToCanvas(processed, size.width, size.height, needsBg ? settings.backgroundColor : null);

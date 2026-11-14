@@ -187,6 +187,7 @@ export const DEFAULT_SETTINGS: ConverterSettings = {
   preset: 64,
   customGrid: { width: 64, height: 36 },
   gridAspectLocked: true,
+  sampling: 'average',
   colorMode: 'original',
   reducedColors: 16,
   customPalette: [...DEFAULT_PALETTE],

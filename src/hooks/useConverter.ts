@@ -1,10 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { DEFAULT_SETTINGS, MAX_GRID, MAX_OUTPUT_DIMENSION } from '../constants';
-import { processColors } from '../lib/colors';
 import { paintPixel, pixelAt } from '../lib/edits';
 import { clampInteger, computeAutoOutput, computeGrid, derivedPixelSize, gridFromPixelSize } from '../lib/dimensions';
 import { loadSourceImage, releaseSource } from '../lib/image';
-import { rasterizeToGrid } from '../lib/pixelate';
+import { runPipeline } from '../lib/pipeline';
 import { validateFile } from '../lib/validation';
 import type {
   ConverterSettings,
@@ -95,25 +94,7 @@ export function useConverter(): ConverterController {
 
     const timer = window.setTimeout(() => {
       try {
-        const raster = rasterizeToGrid(
-          source.bitmap,
-          source.width,
-          source.height,
-          grid.width,
-          grid.height,
-          settings.transparentBackground ? null : settings.backgroundColor,
-        );
-        const result = processColors(raster, {
-          mode: settings.colorMode,
-          reducedColors: settings.reducedColors,
-          customPalette: settings.customPalette,
-          quantization: settings.quantization,
-          dithering: settings.dithering,
-          ditherMode: settings.ditherMode,
-          transparentBackground: settings.transparentBackground,
-          backgroundColor: settings.backgroundColor,
-          retroPreset: settings.retroPreset,
-        });
+        const result = runPipeline(source, grid, settings);
         if (!cancelled) {
           historyRef.current = [];
           setUndoDepth(0);
@@ -146,6 +127,7 @@ export function useConverter(): ConverterController {
     settings.transparentBackground,
     settings.backgroundColor,
     settings.retroPreset,
+    settings.sampling,
   ]);
 
   const loadFile = useCallback(async (file: File) => {
@@ -225,6 +207,7 @@ export function useConverter(): ConverterController {
             preset: DEFAULT_SETTINGS.preset,
             customGrid: { ...DEFAULT_SETTINGS.customGrid },
             gridAspectLocked: DEFAULT_SETTINGS.gridAspectLocked,
+            sampling: DEFAULT_SETTINGS.sampling,
           };
         }
 

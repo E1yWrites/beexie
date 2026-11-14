@@ -1,4 +1,8 @@
-import type { ProcessedImage, RgbaImage } from '../types';
+import type { ProcessedImage, RgbaImage, SamplingMode } from '../types';
+import { sampleCells } from './sampling';
+
+/** Mode and median read about this many source pixels per cell side, at most 2x more. */
+const SAMPLES_PER_CELL = 8;
 
 export function createCanvas(width: number, height: number): HTMLCanvasElement {
   const canvas = document.createElement('canvas');
@@ -23,7 +27,7 @@ function downsampleSource(
   sourceHeight: number,
   targetWidth: number,
   targetHeight: number,
-): CanvasImageSource {
+): { image: CanvasImageSource; width: number; height: number } {
   let current: CanvasImageSource = source;
   let width = sourceWidth;
   let height = sourceHeight;
@@ -43,7 +47,7 @@ function downsampleSource(
     height = nextHeight;
   }
 
-  return current;
+  return { image: current, width, height };
 }
 
 export function rasterizeToGrid(
@@ -53,9 +57,26 @@ export function rasterizeToGrid(
   gridWidth: number,
   gridHeight: number,
   backgroundColor: string | null,
+  sampling: SamplingMode = 'average',
 ): RgbaImage {
   const width = Math.max(1, Math.round(gridWidth));
   const height = Math.max(1, Math.round(gridHeight));
+
+  if (sampling !== 'average' && sourceWidth > 0 && sourceHeight > 0) {
+    const reduced = downsampleSource(source, sourceWidth, sourceHeight, width * SAMPLES_PER_CELL, height * SAMPLES_PER_CELL);
+    const readWidth = reduced.width;
+    const readHeight = reduced.height;
+    const sample = createCanvas(readWidth, readHeight);
+    const sampleContext = getContext2d(sample);
+    if (backgroundColor) {
+      sampleContext.fillStyle = backgroundColor;
+      sampleContext.fillRect(0, 0, readWidth, readHeight);
+    }
+    sampleContext.drawImage(reduced.image, 0, 0, readWidth, readHeight);
+    const pixels = sampleContext.getImageData(0, 0, readWidth, readHeight);
+    return sampleCells({ width: pixels.width, height: pixels.height, data: pixels.data }, width, height, sampling);
+  }
+
   const canvas = createCanvas(width, height);
   const context = getContext2d(canvas);
 
@@ -69,7 +90,7 @@ export function rasterizeToGrid(
     const reduced = downsampleSource(source, sourceWidth, sourceHeight, width, height);
     context.imageSmoothingEnabled = true;
     context.imageSmoothingQuality = 'high';
-    context.drawImage(reduced, 0, 0, width, height);
+    context.drawImage(reduced.image, 0, 0, width, height);
   }
 
   const data = context.getImageData(0, 0, width, height);

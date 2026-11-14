@@ -95,6 +95,7 @@ export function Inspector({
               onPixelSize={onPixelSize}
               onGridDimension={onGridDimension}
               onGridAspectLocked={onGridAspectLocked}
+              onSampling={(sampling) => onUpdate({ sampling })}
             />
           ) : null}
 
