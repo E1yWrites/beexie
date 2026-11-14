@@ -1,6 +1,6 @@
 import { FORMAT_META } from '../constants';
 import { computeAutoOutput, computeExportSize, computeGrid } from './dimensions';
-import { buildExportFilename } from './export';
+import { buildExportFilename, encodeExport } from './export';
 import { loadSourceImage, releaseSource } from './image';
 import { canvasToBlob, renderProcessedToCanvas } from './pixelate';
 import { runPipeline } from './pipeline';
@@ -95,9 +95,10 @@ export async function convertBatch(
         const grid = computeGrid(source, settings);
         const processed = runPipeline(source, grid, settings);
         const size = computeExportSize(computeAutoOutput(grid), settings.scale);
+        const blob = await encodeExport(processed, size, settings.format, settings.quality, settings.backgroundColor, settings.transparentBackground);
+        // The sheet stays a PNG raster whatever the per-image format.
         const needsBg = !settings.transparentBackground || settings.format === 'jpeg';
         const canvas = renderProcessedToCanvas(processed, size.width, size.height, needsBg ? settings.backgroundColor : null);
-        const blob = await canvasToBlob(canvas, meta.mime, settings.format === 'png' ? undefined : settings.quality);
         let name = buildExportFilename(source.name, grid.width, grid.height, meta.extension);
         for (let n = 2; used.has(name); n += 1) name = name.replace(/(\.\w+)$/, `-${n}$1`);
         used.add(name);

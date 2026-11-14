@@ -70,4 +70,13 @@ test('upload every format, change settings, download a real PNG', async ({ page 
   expect(size).toEqual({ width: Number(w), height: Number(h) });
   // 120 x 60 source at the 32 preset is a 32 x 16 grid; auto output 512 x 256; 4x scale.
   expect(size).toEqual({ width: 2048, height: 1024 });
+
+  await page.getByRole('group', { name: 'Export format' }).getByRole('button', { name: 'SVG' }).click();
+  const [svgDownload] = await Promise.all([
+    page.waitForEvent('download'),
+    page.getByRole('button', { name: 'Download SVG' }).click(),
+  ]);
+  const svg = readFileSync((await svgDownload.path())!, 'utf8');
+  expect(svgDownload.suggestedFilename()).toMatch(/\.svg$/);
+  expect(svg).toContain('width="2048" height="1024" viewBox="0 0 32 16" shape-rendering="crispEdges"');
 });

@@ -65,7 +65,7 @@ export function FinishPanel({ settings, finalSize, onUpdate, onOutputDimension, 
         </p>
       </div>
 
-      {settings.format !== 'png' ? (
+      {settings.format === 'jpeg' || settings.format === 'webp' ? (
         <div className="panel-group">
           <Slider
             label="Quality"

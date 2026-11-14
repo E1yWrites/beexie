@@ -30,6 +30,7 @@ export const FORMAT_META: Record<ExportFormat, { label: string; mime: string; ex
   png: { label: 'PNG', mime: 'image/png', extension: 'png' },
   jpeg: { label: 'JPG', mime: 'image/jpeg', extension: 'jpg' },
   webp: { label: 'WEBP', mime: 'image/webp', extension: 'webp' },
+  svg: { label: 'SVG', mime: 'image/svg+xml', extension: 'svg' },
 };
 
 export const DEFAULT_PALETTE = ['#0f380f', '#306230', '#8bac0f', '#9bbc0f'];
