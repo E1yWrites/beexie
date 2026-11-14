@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type CSSProperties } from 'react';
 import { useElementSize } from '../../hooks/useElementSize';
 import { clamp } from '../../lib/dimensions';
 import type { EditTool } from '../../lib/edits';
@@ -55,7 +55,7 @@ export function Workspace({
   onUndo,
 }: WorkspaceProps) {
   const [tool, setTool] = useState<EditTool>('off');
-  const [color, setColor] = useState('#eb4a2d');
+  const [color, setColor] = useState('#d81e28');
   const [mode, setMode] = useState<PreviewMode>('pixel');
   const [zoom, setZoom] = useState(100);
   const [autoFit, setAutoFit] = useState(true);
@@ -128,10 +128,14 @@ export function Workspace({
         onUndo={onUndo}
       />
 
-      <div className="stage" ref={ref}>
+      <div
+        className={`stage${source ? '' : ' ghost-grid'}`}
+        ref={ref}
+        style={{ '--cell': `${Math.max(8, Math.min(32, Math.round(Math.min(size.width, size.height) / Math.max(grid.width, grid.height))))}px` } as CSSProperties}
+      >
         {source ? (
           <div className="stage-inner">
-            <div className="proof-sheet" data-spotlight="">
+            <div className="proof-sheet">
               <ProofFrame
                 source={source}
                 processed={processed}

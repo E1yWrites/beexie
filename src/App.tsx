@@ -8,7 +8,6 @@ import { Workspace } from './components/workspace/Workspace';
 import { LandingPage } from './components/landing/LandingPage';
 import { ACCEPT_ATTRIBUTE, MAX_EXPORT_DIMENSION } from './constants';
 import { useConverter } from './hooks/useConverter';
-import { useSpotlightCards } from './hooks/useSpotlightCards';
 import { useTheme } from './hooks/useTheme';
 import { useTool } from './hooks/useTool';
 import { computeExportSize, isExportSizeValid } from './lib/dimensions';
@@ -16,16 +15,16 @@ import { downloadPixelArt } from './lib/export';
 import { STAGE_LABELS } from './lib/stages';
 import { ticketDisabledReason } from './lib/ticket';
 import { UploadIcon } from './components/icons';
-import { BackgroundPaths } from './components/ui/background-paths';
+import { ExportTicket } from './components/inspector/ExportTicket';
 
 export default function App() {
   const converter = useConverter();
   const { theme, toggleTheme } = useTheme();
   const { active, visited, open, reset: resetStages } = useTool();
   const [view, setView] = useState<'landing' | 'studio'>('landing');
-  useSpotlightCards(view);
   const [toast, setToast] = useState<ToastData | null>(null);
   const [downloading, setDownloading] = useState(false);
+  const [savedAt, setSavedAt] = useState(0);
   const [dragging, setDragging] = useState(false);
   const dragDepth = useRef(0);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -171,11 +170,18 @@ export default function App() {
     window.addEventListener('dragenter', onDragEnter);
     window.addEventListener('dragover', onDragOver);
     window.addEventListener('dragleave', onDragLeave);
+    // Capture-phase reset: a drop target that stops propagation (the landing cover) must still clear the overlay.
+    const onDropCapture = () => {
+      dragDepth.current = 0;
+      setDragging(false);
+    };
+    window.addEventListener('drop', onDropCapture, true);
     window.addEventListener('drop', onDrop);
     return () => {
       window.removeEventListener('dragenter', onDragEnter);
       window.removeEventListener('dragover', onDragOver);
       window.removeEventListener('dragleave', onDragLeave);
+      window.removeEventListener('drop', onDropCapture, true);
       window.removeEventListener('drop', onDrop);
     };
   }, [handleFiles]);
@@ -210,6 +216,7 @@ export default function App() {
         sourceName: source.name,
       });
       notify(`Downloaded ${result.filename}`, 'success');
+      setSavedAt(Date.now());
     } catch (error) {
       notify(error instanceof Error ? error.message : 'The download failed. Please try again.', 'error');
     } finally {
@@ -253,7 +260,7 @@ export default function App() {
           <div className="drop-overlay" aria-hidden="true">
             <div className="drop-card">
               <UploadIcon size={28} />
-              <strong>Let it land on the bench</strong>
+              <strong>Drop it on the page</strong>
               <span>PNG, JPG or WEBP · up to 30 MB</span>
             </div>
           </div>
@@ -264,8 +271,7 @@ export default function App() {
   }
 
   return (
-    <div className="app">
-      <BackgroundPaths paused theme={theme} />
+    <div className="app" data-stage={active}>
       <AppHeader
         theme={theme}
         source={source}
@@ -314,8 +320,6 @@ export default function App() {
           finalSize={finalSize}
           error={converter.error}
           busy={converter.busy}
-          downloading={downloading}
-          disabledReason={disabledReason}
           onUpdate={converter.updateSettings}
           onPreset={converter.setPreset}
           onPixelSize={converter.setPixelSize}
@@ -327,9 +331,19 @@ export default function App() {
           onRemove={converter.clearImage}
           onDismissError={converter.dismissError}
           onResetStage={handleResetStage}
-          onDownload={handleDownload}
         />
       </div>
+
+      <ExportTicket
+        settings={settings}
+        finalSize={finalSize}
+        processed={processed}
+        downloading={downloading}
+        savedAt={savedAt}
+        disabledReason={disabledReason}
+        onUpdate={converter.updateSettings}
+        onDownload={handleDownload}
+      />
 
       <input
         ref={fileInputRef}
@@ -350,7 +364,7 @@ export default function App() {
         <div className="drop-overlay" aria-hidden="true">
           <div className="drop-card">
             <UploadIcon size={28} />
-            <strong>Let it land on the bench</strong>
+            <strong>Drop it on the page</strong>
             <span>PNG, JPG or WEBP · up to 30 MB</span>
           </div>
         </div>

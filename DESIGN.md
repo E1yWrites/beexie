@@ -1,101 +1,86 @@
 ---
-name: "beexie: Spot-Ink Proof Studio"
-description: "Dual-theme client-side image-to-pixel-art proof studio built on Cotton-Press Ivory and Pressroom Charcoal sheets with Electric Cobalt and Vermilion spot inks."
+name: "beexie: The Instruction Booklet"
+description: "Client-side image-to-pixel-art studio printed like the booklet from a game box: white booklet stock or charcoal cartridge shell, black ink, flat red, yellow, and blue spot plates, square corners, and sprites at true integer scale."
 colors:
-  electric-cobalt: "#1e46e8"
-  electric-cobalt-hover: "#1737bf"
-  cobalt-press-dark: "#2d55eb"
-  cobalt-press-dark-hover: "#3b63f6"
-  cobalt-ink-dark-text: "#85aaff"
-  vermilion-proof: "#eb4a2d"
-  vermilion-proof-text: "#c23117"
-  vermilion-proof-dark: "#ff5a3c"
-  vermilion-proof-dark-text: "#ff8770"
-  proof-green: "#147a43"
-  proof-green-dark: "#34d399"
-  press-cyan: "#0369a1"
-  press-cyan-dark: "#38bdf8"
-  press-amber: "#a15206"
-  press-amber-dark: "#fbbf24"
-  press-danger: "#c23117"
-  press-danger-dark: "#ff8770"
-  cotton-ivory-paper: "#f8f6f1"
-  press-sheet-white: "#ffffff"
-  cotton-well: "#f1eee7"
-  cotton-well-deep: "#e5e0d5"
-  lampblack-ink: "#111317"
-  press-frame-ink: "#15171c"
-  graphite-ink: "#3d414a"
-  slate-muted-ink: "#575b64"
-  stone-rule: "#6b6860"
-  parchment-hairline: "#dcd7cc"
-  checker-light-a: "#eae6dc"
-  checker-light-b: "#f7f4ec"
-  pressroom-charcoal: "#12141a"
-  pressroom-sheet: "#191c23"
-  pressroom-well: "#222630"
-  pressroom-well-deep: "#2b303d"
-  pressroom-toast-deep: "#0b0d11"
-  chalk-ink: "#f5f6f8"
-  silver-ink: "#c6cbd6"
-  pewter-muted-ink: "#9ea5b5"
-  charcoal-rule: "#8c92a0"
-  charcoal-hairline: "#2d323e"
-  checker-dark-a: "#20242d"
-  checker-dark-b: "#181b22"
-  specimen-cerulean: "#2aa3c7"
-  specimen-lily-green: "#457842"
-  specimen-koi-amber: "#f29e38"
-  specimen-lotus-rose: "#df649c"
-  specimen-cream: "#f8f5ee"
-  mono-sepia-ink: "#221a0b"
-  mono-sepia-cream: "#f6edd8"
-  preset-gameboy-deep: "#0f380f"
-  preset-gameboy-mid: "#306230"
-  preset-gameboy-olive: "#8bac0f"
-  preset-gameboy-lime: "#9bbc0f"
+  booklet-stock: "#ffffff"
+  booklet-sheet: "#f3f3f5"
+  booklet-trough: "#e6e6ea"
+  print-ink: "#16161a"
+  pencil-grey: "#5a5a63"
+  soft-rule: "#cfcfd6"
+  keyline: "#16161a"
+  red-plate: "#d81e28"
+  red-plate-text: "#c4121c"
+  marigold-plate: "#ffc81e"
+  primary-blue-plate: "#2449e0"
+  maroon-art-plate: "#7a1424"
+  cover-silk-sheen: "#b3263a"
+  back-cover-silk-sheen: "#2a4fe0"
+  print-green: "#13703c"
+  checker-light-a: "#ececef"
+  checker-light-b: "#f7f7f9"
+  ghost-cell: "#e3e3e8"
+  scrim: "rgba(22, 22, 26, 0.56)"
+  cartridge-shell: "#1d1e22"
+  cartridge-sheet: "#26272c"
+  cartridge-trough: "#2f3036"
+  chalk-ink: "#f2f2f4"
+  shell-muted-ink: "#a3a3ad"
+  shell-rule: "#8d8e97"
+  shell-soft-rule: "#3a3b42"
+  red-text-on-shell: "#ff6b6b"
+  marigold-plate-on-shell: "#ffd23f"
+  blue-text-on-shell: "#7f9cff"
+  green-on-shell: "#4ade80"
+  checker-dark-a: "#2a2b30"
+  checker-dark-b: "#222327"
+  ghost-cell-on-shell: "#33343b"
+  scrim-on-shell: "rgba(8, 8, 10, 0.72)"
 typography:
   display:
-    fontFamily: "'Bricolage Grotesque', 'Archivo', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(34px, 4.1vw, 52px)"
-    fontWeight: 800
-    lineHeight: 1.05
-    letterSpacing: "-0.032em"
-  headline:
-    fontFamily: "'Bricolage Grotesque', 'Archivo', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "24px"
-    fontWeight: 800
-    lineHeight: 1.15
-    letterSpacing: "-0.025em"
-  title:
-    fontFamily: "'Bricolage Grotesque', 'Archivo', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "17px"
-    fontWeight: 800
-    lineHeight: 1.2
-    letterSpacing: "-0.015em"
-  body:
-    fontFamily: "'Archivo', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-    fontSize: "13px"
+    fontFamily: "'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif"
+    fontSize: "clamp(44px, 5vw, 84px)"
     fontWeight: 400
-    lineHeight: 1.45
+    lineHeight: 1.1
+    letterSpacing: "-0.02em"
+  headline:
+    fontFamily: "'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif"
+    fontSize: "clamp(32px, 4vw, 56px)"
+    fontWeight: 400
+    lineHeight: 1.05
+    letterSpacing: "-0.015em"
+  title:
+    fontFamily: "'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif"
+    fontSize: "20px"
+    fontWeight: 400
+    lineHeight: 1.15
+    letterSpacing: "normal"
+  body:
+    fontFamily: "'Zen Kaku Gothic New', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: 1.55
     letterSpacing: "normal"
   label:
-    fontFamily: "'Martian Mono', ui-monospace, 'SFMono-Regular', 'Cascadia Code', Consolas, monospace"
-    fontSize: "11px"
-    fontWeight: 600
-    lineHeight: 1.4
+    fontFamily: "'Zen Kaku Gothic New', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "13px"
+    fontWeight: 700
+    lineHeight: 1.2
     letterSpacing: "normal"
-    fontFeature: "tabular-nums"
+  pixel:
+    fontFamily: "'DotGothic16', ui-monospace, monospace"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: 1.2
+    letterSpacing: "0.02em"
+  numeral:
+    fontFamily: "'DotGothic16', ui-monospace, monospace"
+    fontSize: "30px"
+    fontWeight: 400
+    lineHeight: 1
+    letterSpacing: "0.02em"
 rounded:
-  tag: "4px"
-  sheet-inner: "4px"
-  sm: "6px"
-  seg-inner: "6px"
-  md: "8px"
-  seg: "9px"
-  lg: "12px"
-  sheet: "14px"
-  pill: "999px"
+  none: "0px"
 spacing:
   s-1: "4px"
   s-2: "8px"
@@ -104,258 +89,275 @@ spacing:
   s-5: "20px"
   s-6: "24px"
   s-7: "32px"
-  s-8: "40px"
+  s-8: "48px"
+  s-9: "72px"
 components:
   button-primary:
-    backgroundColor: "{colors.electric-cobalt}"
-    textColor: "{colors.press-sheet-white}"
-    rounded: "{rounded.md}"
-    padding: "10px 16px"
-  button-primary-hover:
-    backgroundColor: "{colors.electric-cobalt-hover}"
-  button-secondary:
-    backgroundColor: "{colors.press-sheet-white}"
-    textColor: "{colors.lampblack-ink}"
-    rounded: "{rounded.sm}"
-    padding: "8px 12px"
-  button-ghost:
-    backgroundColor: "{colors.press-sheet-white}"
-    textColor: "{colors.graphite-ink}"
-    rounded: "{rounded.sm}"
-    padding: "7px 12px"
-  button-icon:
-    backgroundColor: "{colors.press-sheet-white}"
-    textColor: "{colors.graphite-ink}"
-    rounded: "{rounded.sm}"
-    width: "32px"
-    height: "32px"
-  rail-tool:
-    textColor: "{colors.graphite-ink}"
-    rounded: "{rounded.md}"
-    padding: "9px 4px"
-    width: "48px"
-  rail-tool-active:
-    backgroundColor: "{colors.electric-cobalt}"
-    textColor: "{colors.press-sheet-white}"
-  chip-pill:
-    backgroundColor: "{colors.cotton-ivory-paper}"
-    textColor: "{colors.graphite-ink}"
-    typography: "{typography.label}"
-    rounded: "{rounded.pill}"
-    padding: "6px 12px"
-  chip-pill-active:
-    backgroundColor: "{colors.electric-cobalt}"
-    textColor: "{colors.press-sheet-white}"
-  segmented-track:
-    backgroundColor: "{colors.cotton-ivory-paper}"
-    textColor: "{colors.graphite-ink}"
-    rounded: "{rounded.seg}"
-    padding: "3px"
-  segmented-option:
-    textColor: "{colors.graphite-ink}"
-    rounded: "{rounded.seg-inner}"
-    padding: "5px 10px"
-  card-proof-sheet:
-    backgroundColor: "{colors.press-sheet-white}"
-    rounded: "{rounded.sheet}"
-    padding: "10px"
-  card-dropzone:
-    backgroundColor: "{colors.cotton-ivory-paper}"
-    rounded: "{rounded.lg}"
-    padding: "20px 12px"
-  input-number:
-    backgroundColor: "{colors.cotton-ivory-paper}"
-    textColor: "{colors.lampblack-ink}"
-    typography: "{typography.label}"
-    rounded: "{rounded.sm}"
-    padding: "0 8px"
-    height: "32px"
-  export-ticket:
-    backgroundColor: "{colors.press-sheet-white}"
-    rounded: "0px"
-    padding: "12px 20px 16px"
-  nav-header:
-    backgroundColor: "{colors.press-sheet-white}"
-    textColor: "{colors.lampblack-ink}"
-    height: "54px"
+    backgroundColor: "{colors.primary-blue-plate}"
+    textColor: "{colors.booklet-stock}"
+    rounded: "{rounded.none}"
     padding: "0 20px"
+    height: "44px"
+  button-primary-hover:
+    backgroundColor: "{colors.print-ink}"
+    textColor: "{colors.booklet-stock}"
+  button-cover:
+    backgroundColor: "{colors.print-ink}"
+    textColor: "{colors.booklet-stock}"
+    rounded: "{rounded.none}"
+    padding: "0 24px"
+    height: "60px"
+  button-cover-hover:
+    backgroundColor: "{colors.primary-blue-plate}"
+    textColor: "{colors.booklet-stock}"
+  button-secondary:
+    backgroundColor: "{colors.booklet-stock}"
+    textColor: "{colors.print-ink}"
+    typography: "{typography.label}"
+    rounded: "{rounded.none}"
+    padding: "0 12px"
+    height: "36px"
+  button-secondary-hover:
+    backgroundColor: "{colors.print-ink}"
+    textColor: "{colors.booklet-stock}"
+  segmented-option:
+    backgroundColor: "{colors.booklet-stock}"
+    textColor: "{colors.print-ink}"
+    typography: "{typography.label}"
+    rounded: "{rounded.none}"
+    padding: "0 12px"
+    height: "34px"
+  segmented-option-pressed:
+    backgroundColor: "{colors.print-ink}"
+    textColor: "{colors.booklet-stock}"
+  thumb-tab:
+    backgroundColor: "{colors.booklet-sheet}"
+    textColor: "{colors.print-ink}"
+    typography: "{typography.numeral}"
+    rounded: "{rounded.none}"
+    padding: "8px 4px"
+    width: "72px"
+    height: "84px"
+  thumb-tab-image:
+    backgroundColor: "{colors.red-plate}"
+    textColor: "{colors.booklet-stock}"
+  thumb-tab-grid:
+    backgroundColor: "{colors.marigold-plate}"
+    textColor: "{colors.print-ink}"
+  thumb-tab-color:
+    backgroundColor: "{colors.primary-blue-plate}"
+    textColor: "{colors.booklet-stock}"
+  thumb-tab-finish:
+    backgroundColor: "{colors.print-ink}"
+    textColor: "{colors.booklet-stock}"
+  input-number:
+    backgroundColor: "{colors.booklet-stock}"
+    textColor: "{colors.print-ink}"
+    typography: "{typography.pixel}"
+    rounded: "{rounded.none}"
+    padding: "0 8px"
+    height: "40px"
+  export-bar:
+    backgroundColor: "{colors.booklet-sheet}"
+    textColor: "{colors.print-ink}"
+    rounded: "{rounded.none}"
+    padding: "8px 16px"
+    height: "64px"
+  export-download:
+    backgroundColor: "{colors.primary-blue-plate}"
+    textColor: "{colors.booklet-stock}"
+    rounded: "{rounded.none}"
+    padding: "0 20px"
+    height: "44px"
+  export-download-disabled:
+    backgroundColor: "{colors.booklet-trough}"
+    textColor: "{colors.pencil-grey}"
+  proof-tag:
+    backgroundColor: "{colors.print-ink}"
+    textColor: "{colors.booklet-stock}"
+    rounded: "{rounded.none}"
+    padding: "2px 8px"
+  cartridge-card:
+    backgroundColor: "{colors.red-plate}"
+    textColor: "{colors.booklet-stock}"
+    rounded: "{rounded.none}"
+    padding: "12px"
+  toast:
+    backgroundColor: "{colors.booklet-stock}"
+    textColor: "{colors.print-ink}"
+    rounded: "{rounded.none}"
+    padding: "8px 8px 8px 12px"
+  label-band:
+    backgroundColor: "{colors.booklet-stock}"
+    textColor: "{colors.print-ink}"
+    rounded: "{rounded.none}"
+    height: "64px"
 ---
 
 # Design System: beexie
 
 ## Overview
 
-**Creative North Star: "The Spot-Ink Proof Studio"**
+**Creative North Star: "The Instruction Booklet"**
 
-beexie treats browser-side pixel art conversion like inspecting a calibrated Risograph proof on a press bench. Warm Cotton-Press Ivory (`#f8f6f1`) and crisp white press sheets (`#ffffff`) form the daylight drafting ground, while the paired Pressroom Charcoal (`#12141a`) and dark sheet (`#191c23`) theme supports low-glare color inspection. Electric Cobalt (`#1e46e8` light / `#2d55eb` dark) marks every active commitment and export action, while Proof Vermilion (`#eb4a2d` light / `#ff5a3c` dark) stays scoped to comparison and live indicators: the split comparison rule, the Landing dither switch track, the active-session pulse dot, and the tail stripe of the geometric `<BeeMark />` emblem.
+beexie is the booklet from the game box. The landing is its cover and spreads: a cover plate with a live sprite, numbered "how to play" panels with leader-line callouts on diagrams of real controls, cartridge-label preset cards, a safety page, a Q and A, and a back cover. The Studio is the same booklet opened flat on the desk: the image is the page, the controls are its labeled diagram, and an export bar runs along the bottom edge. Light theme is glossy booklet stock (white paper, black ink); dark theme is the cartridge shell (charcoal plastic) carrying the same plates as label art.
 
-Across both the Landing showcase and the Studio workbench, structural separation relies on crisp `1px` hairlines (`#dcd7cc` light / `#2d323e` dark), spacing-grouped sections (`.panel-group`) instead of nested boxes, concentric radii governed by `inner = outer - padding`, pure Electric Cobalt pointer-tracking Spotlight cards (`[data-spotlight]`), and mirrored flowing cubic-Bezier `BackgroundPaths` ribbons (`Path2D` Canvas 2D). On Landing, 72 symmetric curves sweep gently behind an interactive split proof of the 1024x1024 koi pond specimen (`public/specimen.jpg`) and framed `.pipeline-sheet-frame` / `.faq-sheet-frame` proof sheets. Inside the Studio workbench, `BackgroundPaths` pauses to a calm static frame while a `64px` numbered `01-04` rail frees the center bench for nearest-neighbor previews (`image-rendering: pixelated`) and a pinned dashed-rule Export ticket.
+Everything is printed, not lit. Color arrives as flat spot plates (red, marigold, blue, ink) that own whole regions: a tab, a panel head, a card, a page. Edges are square, rules are black, and the sprite is the specimen: rendered by the real pipeline at a true integer scale inside a 3px black key line. Empty space is never blank; it is a ghost cell grid waiting to be filled. Readouts sit in fixed slots in a fixed-width pixel face, so numbers change without anything reflowing.
+
+Motion has two registers and nothing between them. The two large art plates (the maroon cover and the blue back cover) carry a slow WebGL silk that glides continuously. Every UI change snaps in `steps()` like a sprite: tabs flood in, swatches flip, readouts tick, the ghost grid fills row by row. Under `prefers-reduced-motion` the silk holds one still frame and every stepped change is instant.
 
 **Key Characteristics:**
-- Dual-theme press calibration: Cotton-Press Ivory (`#f8f6f1`) for daylight drafting and Pressroom Charcoal (`#12141a`) for low-glare proofing, passing all 18 WCAG AA contrast checks.
-- Spot-ink role discipline: Electric Cobalt owns action, selection, and pure-accent Spotlight Card radial glow; Proof Vermilion marks compare sliders, the dither switch, the session dot, and the bee tail accent.
-- Strict mono-only-on-data typography: `Archivo` owns UI labels and headings in sentence case while `Martian Mono` with `tabular-nums` renders only numeric coordinates, grid counts, zoom percentages, hex codes, and `01-04` stage indices.
-- Mathematical nested geometry: concentric sheets and segmented controls compute inner corners directly from outer radius minus padding (`14px - 10px = 4px`, `9px - 3px = 6px`).
-- Motion restraint and loading clarity: flowing `BackgroundPaths` curves and Cobalt pointer Spotlight border/surface tracking on Landing (disabled on coarse touch pointers), static framing in Studio, unified `strokeWidth={1.75}` SVG spinners (`SpinnerIcon`) across specimen decode and pixel processing, and global `0s` transitions / static backdrop under `prefers-reduced-motion: reduce`.
+- Booklet stock (`#ffffff`) and cartridge shell (`#1d1e22`) themes sharing identical red, blue, and near-identical marigold plates; all 27 contrast pairs in `npm run check:contrast` pass WCAG AA.
+- Flat spot plates and hard-stop fills only; no blended gradients, no shadows, no blur, no rounded corners.
+- Heavy Japanese-style gothic display (Dela Gothic One) over a clean gothic UI face (Zen Kaku Gothic New), with DotGothic16 reserved for numerals, readouts, and sprite captions.
+- Sprites printed by the real pipeline at `floor(available / cells) * cells`, so every art pixel is the same size, always `image-rendering: pixelated`.
+- Two motion registers: art plates glide, UI steps.
 
 ## Colors
 
-A high-contrast neutral paper-and-ink palette calibrated across Light and Dark press themes, paired with Electric Cobalt for interactive commitment, Proof Vermilion for inspection gauges, semantic press indicators, and specimen/preset palette swatches.
+Two neutral grounds (booklet stock and cartridge shell), black ink, and four spot plates whose meaning is fixed per role, plus two silk art plates that exist only on the landing covers.
 
 ### Primary
-- **Electric Cobalt** (`#1e46e8`) / **Electric Cobalt Hover** (`#1737bf`): Light-theme interactive fill for primary launch and export CTAs, active `01-04` rail tools, active grid preset tiles, active slider tracks, active Studio toggles, active segmented tabs, selection highlights, and focus rings.
-- **Cobalt Press Dark** (`#2d55eb`) / **Cobalt Press Dark Hover** (`#3b63f6`): Dark-theme button and active-tile fill calibrated so `#ffffff` labels achieve `5.82:1` contrast.
-- **Cobalt Ink Dark Text** (`#85aaff`): Dark-theme text-safe cobalt used for `--accent-text` readouts, active aspect-chain icons, active grid-line chips, and `--focus-ring` outlines (`8.06:1` on `#12141a`, `7.46:1` on `#191c23`).
+- **Primary Blue Plate** (`primary-blue-plate`): the action plate. Fills every primary button and the Studio Download button, the Color stage plate, the cover CTA hover, the success toast badge, focus rings and caret in light theme, and the cover plate while a file is dragged over it. Same value in both themes with white text (6.76:1).
 
 ### Secondary
-- **Vermilion Proof** (`#eb4a2d`) / **Vermilion Proof Dark** (`#ff5a3c`): High-visibility spot ink reserved for the `2.5px` split comparison rule and `24x40px` `||` handle, Landing's active Floyd-Steinberg dither switch track, the `Resume` indicator dot, the fifth swatch of the Landing ink ribbon, and the bottom stripe of `<BeeMark />`.
-- **Vermilion Proof Text** (`#c23117` light / `#ff8770` dark): WCAG AA text-safe vermilion tokens (`--vermilion-text` and `--danger`, achieving `5.61:1` light and `7.27:1` dark contrast on `--panel`).
+- **Signal Red Plate** (`red-plate`): the Image stage plate, the compare rule and its handle, error alerts, the empty-bench CTA, the error toast badge, and the bee mark's tail stripe. White text on it measures 5.08:1. Text-grade red is **Red Plate Text** (`red-plate-text`, light) and **Red Text on Shell** (`red-text-on-shell`, dark), which also serve as the danger color.
+- **Marigold Plate** (`marigold-plate`, light; `marigold-plate-on-shell`, dark): the Grid stage plate and the "attention" fill: toggle-on thumb, the processing tag, the drop overlay card, the Saved stamp, text selection, slider thumb hover, the neutral toast badge, and the whole safety page. Always carries ink text (11.63:1 light, 12.50:1 dark).
 
 ### Tertiary
-- **Proof Green** (`#147a43`) / **Proof Green Dark** (`#34d399`): Ready indicator dot (`.ready-dot`) in the Studio bottom status board when pixel processing is idle.
-- **Press Cyan** (`#0369a1`) / **Press Cyan Dark** (`#38bdf8`): Semantic cool telemetry token (`--cyan`) verified at `5.49:1` light and `8.59:1` dark contrast on `--paper`.
-- **Press Amber** (`#a15206`) / **Press Amber Dark** (`#fbbf24`): Semantic warm warning token (`--amber`) verified at `5.22:1` light and `11.03:1` dark contrast on `--paper`.
-- **Press Danger** (`#c23117`) / **Press Danger Dark** (`#ff8770`): Inline upload validation alert banners (`.alert`), toast error indicators, and oversized-dimension warnings in the Export ticket and Finish panel.
-- **Specimen & Default Preset Swatches**: Landing's 8-swatch ink ribbon (`LandingFeatures.tsx`) combines `Lampblack Ink` (`#111317`), `Electric Cobalt` (`#1e46e8`), `Specimen Cerulean` (`#2aa3c7`), `Specimen Lily Green` (`#457842`), `Vermilion Proof` (`#eb4a2d`), `Specimen Koi Amber` (`#f29e38`), `Specimen Lotus Rose` (`#df649c`), and `Specimen Cream` (`#f8f5ee`), mirroring the koi pond palette in `LandingHero.tsx`. Studio's Color panel ships default monochrome swatches (`#221a0b` / `#f6edd8`), the Game Boy default custom palette (`#0f380f`, `#306230`, `#8bac0f`, `#9bbc0f`), plus PICO-8, CGA, Sepia, and Gray 8 conversion presets in `src/constants.ts`.
+- **Maroon Art Plate** (`maroon-art-plate`): flat fallback fill under the cover silk, identical in both themes. White on it: 10.75:1.
+- **Cover Silk Sheen** (`cover-silk-sheen`) and **Back Cover Silk Sheen** (`back-cover-silk-sheen`): the peak colors fed to the silk shader on the cover and back cover. The shader darkens folds toward roughly a third of the peak; the brightest sheen it can draw still holds white text above 5.1:1. The back cover falls back to the flat Primary Blue Plate.
+- **Print Green** (`print-green`, light; `green-on-shell`, dark): the ready lamp on the canvas rim. Nothing else.
 
 ### Neutral
-- **Cotton-Press Ivory** (`#f8f6f1`): Light ground (`--paper`), inset field/segmented/dropzone fill, and toast inverse text (`--wax`).
-- **Press Sheet White** (`#ffffff`): Elevated Light sheet, header, rail, inspector, modal, and export ticket surface (`--panel`, `--ticket`).
-- **Cotton Well** (`#f1eee7`) / **Cotton Well Deep** (`#e5e0d5`): Light hover wells, hero loading veil (`--panel-2`), and unfilled slider track troughs (`--panel-3`).
-- **Lampblack Ink** (`#111317`) / **Press Frame Ink** (`#15171c`): Light primary text, active zoom/mode dark pills, toast backdrop (`--ink`, `--deep`), and strong proof viewport frame border (`--line-strong`).
-- **Graphite Ink** (`#3d414a`) / **Slate Muted Ink** (`#575b64`): Light secondary labels (`--ink-2`) and WCAG AA muted descriptions and hints (`--ink-3`, `5.87:1` on `--panel-2`).
-- **Stone Rule** (`#6b6860`) / **Parchment Hairline** (`#dcd7cc`): Light interactive input/dropzone borders (`--line`, `5.56:1` on `--panel`) and subtle horizontal dividers (`--line-subtle`).
-- **Checker Light A / B** (`#eae6dc` / `#f7f4ec`): `16x16px` transparency checkerboard rendered behind processed alpha pixels in Light mode.
-- **Pressroom Charcoal** (`#12141a`): Dark ground (`--paper`) beneath flowing `#d4d9e6` `BackgroundPaths` linework in Dark mode.
-- **Pressroom Sheet** (`#191c23`): Dark elevated surface for panels, header, inspector, and export ticket (`--panel`, `--ticket`).
-- **Pressroom Well** (`#222630`) / **Pressroom Well Deep** (`#2b303d`): Dark hover wells, hero loading veil (`--panel-2`), and slider track troughs (`--panel-3`).
-- **Pressroom Toast Deep** (`#0b0d11`): Dark toast pill background (`--deep`).
-- **Chalk Ink** (`#f5f6f8`) / **Silver Ink** (`#c6cbd6`) / **Pewter Muted Ink** (`#9ea5b5`): Dark primary (`--ink`), secondary/frame (`--ink-2`, `--line-strong`), and muted (`--ink-3`, `6.13:1` on `--panel-2`) typography ramp.
-- **Charcoal Rule** (`#8c92a0`) / **Charcoal Hairline** (`#2d323e`): Dark interactive borders (`--line`, `5.47:1` on `--panel`) and structural hairlines (`--line-subtle`).
-- **Checker Dark A / B** (`#20242d` / `#181b22`): Dark `16x16px` transparency checkerboard tiles behind alpha artwork.
+- **Booklet Stock** (`booklet-stock`): page ground, label band, inspector, inputs, cards on the page, toasts, the cover's right column.
+- **Sheet Grey** (`booklet-sheet`): thumb-tab strip, export bar, canvas surround, hover wells, dropzone fill, scrollbar track.
+- **Trough Grey** (`booklet-trough`): slider trough and the disabled Download fill.
+- **Print Ink** (`print-ink`): text, rules, pressed segments, proof tags, the Finish stage plate, and the cover CTA. **Keyline** (`keyline`) is the same black but stays black in both themes: it frames sprites, callouts, and swatch strips sitting on plates.
+- **Pencil Grey** (`pencil-grey`): hints, descriptions, labels on the export bar (6.82:1 on stock).
+- **Soft Rule** (`soft-rule`): dividers between inspector groups and readout rows; the only rule lighter than ink.
+- **Checker Light A / B** and **Ghost Cell**: 16px transparency checker behind processed alpha, and the 1px lines of the ghost grid.
+- **Cartridge Shell** (`cartridge-shell`), **Cartridge Sheet**, **Cartridge Trough**: the dark-theme counterparts of stock, sheet, and trough.
+- **Chalk Ink** (`chalk-ink`) and **Shell Muted Ink** (`shell-muted-ink`): dark-theme text (14.89:1 and 6.66:1 on the shell). In dark theme the Finish plate inverts to chalk with ink text.
+- **Shell Rule** (`shell-rule`, 5.11:1 on the shell) and **Shell Soft Rule** (`shell-soft-rule`): dark-theme rules. The shipped dark rule is a solid grey, not a translucent chalk.
+- **Blue Text on Shell** (`blue-text-on-shell`): dark-theme link-grade blue and focus ring.
+- **Scrim** / **Scrim on Shell**: the overlay behind the drop overlay and legal dialog.
 
 ### Named Rules
-**The Dual-Ink Economy Rule.** Electric Cobalt (`#1e46e8` light / `#2d55eb` dark) owns interactive commitment (primary CTAs, active stage rail tile, active presets, active segmented views, toggles, focus rings) and pure-accent `[data-spotlight]` card perimeter/surface glows; Proof Vermilion (`#eb4a2d` light / `#ff5a3c` dark) stays scoped to inspection markers (compare split rule and handle, Landing dither switch track, `Resume` pulse indicator, and `<BeeMark />` tail stripe) while text-grade `--vermilion-text` (`#c23117` light / `#ff8770` dark) handles readable danger/alert copy.
+**The Stage Plate Rule.** In the Studio, the stage in use owns one plate (Image red, Grid marigold, Color blue, Finish ink) and only the stage furniture takes it: the open thumb tab, the inspector numeral, the active grid preset, and the Pixel proof tag. Every other color on screen is ink, paper, or a fixed-role plate.
 
-**The Dual-Theme Contrast Parity Rule.** Light Cotton-Press Ivory and Dark Pressroom Charcoal pair distinct fill, text, and rule tokens (`--accent` `#1e46e8` / `#2d55eb` vs. `--accent-text` `#1e46e8` / `#85aaff`, `--ink-2` `#3d414a` / `#c6cbd6`, `--ink-3` `#575b64` / `#9ea5b5`, `--vermilion-text` `#c23117` / `#ff8770`) so all 18 WCAG AA checks (`>= 4.5:1` text, `>= 3.0:1` UI borders) pass simultaneously.
+**The Fixed Roles Rule.** In UI, outside the stage plate, each plate means one thing: blue is the action, red is the compare rule and errors, marigold is attention (on, busy, selected, saved). Only label art may use plates freely: the landing cover, How to play heads, cartridge cards, the safety page, and the back cover.
 
-**The Calm Pressroom Backdrop Rule.** The `BackgroundPaths` canvas renders smooth sweeping `#1e2330` (light) / `#d4d9e6` (dark) cubic-Bezier paths on Landing and pauses into faint static guide geometry inside the Studio workbench (and under `prefers-reduced-motion: reduce`) while `[data-spotlight]` cards restrict glow purely to Electric Cobalt on fine-pointer hover so ambient motion never distorts pixel color evaluation.
+**The Text-Grade Rule.** Plates are fields; text on paper uses the text-grade variant (`red-plate-text`, `red-text-on-shell`, `blue-text-on-shell`). Never set red or blue plate values as small text on the dark shell.
 
 ## Typography
 
-**Display Font:** Bricolage Grotesque (fallback: Archivo, ui-sans-serif, system-ui, sans-serif)
-**Body Font:** Archivo (fallback: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif)
-**Label/Mono Font:** Martian Mono (fallback: ui-monospace, 'SFMono-Regular', 'Cascadia Code', Consolas, monospace)
+**Display Font:** Dela Gothic One (fallback: Zen Kaku Gothic New, sans-serif)
+**Body Font:** Zen Kaku Gothic New 400 and 700 (fallback: ui-sans-serif, system-ui, sans-serif)
+**Label/Mono Font:** DotGothic16 (fallback: ui-monospace, monospace)
 
-**Character:** Self-hosted WOFF2 geometric display type paired with a crisp grotesque UI sans for human-readable labels and strictly tabular monospace exclusively for quantitative telemetry so live slider scrubbing and viewport scaling never trigger layout jitter.
+**Character:** The heavy gothic of a booklet cover over a plain gothic for reading and controls, with a dot-matrix face that only ever prints numbers and captions. All three are self-hosted woff2 subsets in `src/assets/fonts/`.
 
 ### Hierarchy
-- **Display** (weight `800`, `clamp(34px, 4.1vw, 52px)`, up to `3.25rem`, line-height `1.05`, tracking `-0.032em`, `max-width: 13ch`, `text-wrap: balance`): Landing hero statement (`Turn photos into exact pixel art, locally.`).
-- **Headline** (weight `800`, `--fs-headline: 24px` in Studio; `clamp(24px, 2.8vw, 32px)` on Landing sections; `clamp(22px, 2.6vw, 28px)` on Footer CTA; line-height `1.15`, tracking `-0.025em` / `-0.02em`): Studio empty-bench prompt, Landing section headings (`Four deterministic press stages`, `Frequently asked questions`), and `22px` (`--fs-wordmark` / `--fs-xl`) lowercase `beexie` brand wordmark (`-0.03em` tracking).
-- **Title** (weight `800`, `--fs-title` / `--fs-lg: 17px`, line-height `1.2`-`1.25`, tracking `-0.015em`): Studio inspector stage headings (`Image`, `Grid`, `Color`, `Finish`) and sequential pipeline step headings.
-- **Body** (`--fs-base: 13px` default / `--fs-sm: 12px` compact UI / `--fs-md: 14px` section subcopy / `15.5px` Landing hero subcopy, weight `400` prose and `600`-`700` UI labels, line-height `1.45`-`1.6`, max measure `44ch`-`62ch`): Control field labels, toggle descriptions, FAQ answers, modal copy, and status text in `Archivo` sentence case.
-- **Label / Telemetry** (`--fs-xs: 11px` default, `10px` rail index, `10.5px` unit suffix, weight `600`-`700`, `Martian Mono` with `font-variant-numeric: tabular-nums`): Numeric inputs, slider readouts, zoom controls, proof viewport tags, hex swatches, `01`-`04` stage indices, status telemetry (`Grid`, `Output`, color count), and Landing grid pills.
+- **Display** (Dela Gothic One 400, `clamp(44px, 5vw, 84px)`, 1.1, `-0.02em`, max 11ch): the cover headline only. The back cover title ("Your turn.") runs larger at `clamp(44px, 7vw, 96px)`, line-height 1.
+- **Headline** (Dela Gothic One 400, `clamp(32px, 4vw, 56px)`, 1.05, `-0.015em`): spread titles (How to play, presets, Q and A). The safety page title runs `clamp(36px, 4.4vw, 64px)`.
+- **Title** (Dela Gothic One 400, 20px): inspector stage heading, cartridge card names, empty-bench title, legal dialog title, and the wordmark (20px in the Studio, 24px on the landing band). The export bar title and Saved stamp use it at 16px.
+- **Body** (Zen Kaku Gothic New 400, 14px, 1.55): running copy. The cover pitch and spread leads set at 16px; the cover pitch and Q and A answers run at line-height 1.65, capped at 44ch and 62ch.
+- **Label** (Zen Kaku Gothic New 700, 13px; 12px for hints, tab labels, and rim labels): secondary buttons, field heads, segmented options, proof tags, and toasts. Primary and Download buttons carry the same weight at the 14px body size. Sentence case, normal tracking, never uppercase.
+- **Pixel** (DotGothic16 400, 16px, `+0.02em`): readouts, number inputs, field values, zoom percent, hex codes, grid preset counts (20px), callout letters, and sprite captions.
+- **Numeral** (DotGothic16 400, 30px, line-height 1): thumb-tab numbers (22px when the tabs become a strip), the inspector numeral (22px), How to play panel numbers (44px), and safety page numbers (32px).
 
 ### Named Rules
-**The Strict Mono-Only-On-Data Rule.** UI chrome labels, field heads, preset sub-captions, stage names, and ticket headings remain in `Archivo` (`--font-ui`, sentence case), reserving `Martian Mono` (`--font-mono`) strictly for numeric coordinates, grid dimensions, zoom percentages, hex codes, byte sizes, and `01`-`04` stage indices.
+**The Pixel Face Rule.** DotGothic16 prints numbers, readouts, codes, lettered callout marks, and short captions, including numeric controls (grid size chips, preset counts, zoom percent). It never sets body copy, headings, or worded labels.
 
-**The Tabular Telemetry Rule.** Every `Martian Mono` readout and numeric input enforces `font-variant-numeric: tabular-nums` (`.mono`, `.tnum`) so live slider scrubbing and viewport resizing never cause horizontal jitter.
+**The Fixed Slot Rule.** Every changing number sits in a slot of fixed width (`min-width: 8ch` on rim readouts, `13ch` on the export Output, 64px on zoom percent) in the fixed-width pixel face, so values tick without moving their neighbors.
 
-**The Tight Display Tracking Rule.** `Bricolage Grotesque` headings (`800` weight) use tight negative letter-spacing (`-0.015em` to `-0.032em`) with `text-wrap: balance`, while `Archivo` body text and `Martian Mono` data values stay at normal tracking with zero forced uppercase transforms.
+**The Plain Weight Rule.** Display type is used at weight 400 only (Dela Gothic One has one weight); emphasis in UI copy is Zen Kaku Gothic New 700. No uppercase transforms, no wide tracking.
 
 ## Layout
 
-Two purpose-built layouts share the same surface tokens and flowing `BackgroundPaths` canvas:
+**Landing (the booklet).** A sticky 64px label band (bee mark, wordmark, How to play / Presets / FAQ, theme toggle, Open Studio) sits on a 2px ink rule. The cover is an `11fr / 9fr` split: the maroon silk plate on the left with the sprite, callouts, and swatch strip pinned to its right edge, and the white column on the right with headline, pitch, cover button, and drop target. The cover's height is `clamp(600px, calc(100svh - 284px), 860px)` so How to play panel 1 peeks above the fold. The sprite box (486px max, 480 art px plus key line, divisible by every cover grid) breaks the plate edge into the white column by up to 112px. Spreads follow with 72px vertical padding and `clamp(16px, 4vw, 48px)` gutters, each closed by a 2px rule: How to play (four panels in a ruled 4-column grid), five cartridge cards, the marigold safety page (`2fr / 3fr`), a two-column Q and A, the blue silk back cover, and a colophon.
 
-1. **Landing Showcase (`max-width: 1260px`, `24px` horizontal gutters):**
-   - Sticky `60px` top navigation bar (`border-bottom: 1px solid var(--line-subtle)`) holding `<BeeMark size={26} />` + `beexie` wordmark, three anchor links (`Workbench`, `Pipeline`, `FAQ`), conditional `Resume` button with `7px` vermilion pulse dot, `ThemeToggle`, and `Open Studio` button (`36px` height).
-   - Asymmetric two-column hero grid (`minmax(0, 0.84fr) minmax(0, 1.36fr)`, `40px` `--s-8` gap) pairing left display copy, `50px` primary cobalt CTA, and `48px` dashed drop tray (`max-width: 390px`) against a `4:3` interactive split proof sheet (`padding: 10px`, `14px` outer radius).
-   - Framed four-column Pipeline Proof Sheet (`.pipeline-sheet-frame` on `--panel` with `14px` radius, `20px 24px` header band, and `repeat(4, minmax(0, 1fr))` hairline columns anchored by aligned footer spec/matrix/ribbon strips), framed Split FAQ Proof Sheet (`.faq-sheet-frame` mirroring the `0.84fr / 1.36fr` asymmetry with hairline accordion rows and rotating `<ChevronDownIcon />`), elevated footer CTA card, and colophon with Privacy / Terms / Licenses modal triggers.
-   - Responsive collapse: below `1020px`, hero and `.faq-sheet-frame` stack to `1fr`, and pipeline shifts to `2x2` with hairline row dividers; below `680px`, nav anchor links hide, horizontal gutters narrow to `16px` (`--s-4`), pipeline collapses to `1fr` vertical rows, and palette swatches stack beneath the caption.
+**Studio (the booklet opened flat).** A full-viewport grid: 52px label band, the bench, and a 64px export bar. The bench is three columns: 72px thumb-index tabs, the workspace, and a 400px full-height inspector (360px below 1380px). The workspace stacks a 52px view strip (view mode, touch-up, zoom), the page (ghost grid when empty, the proof framed in a 2px rule when loaded, 24px padding), and a 40px rim of fixed readout slots. The export bar spans the full width under the bench and is always visible, so settings never compete with export for height.
 
-2. **Studio Workbench (`100dvh` full-bleed three-band shell):**
-   - Slim `54px` header (`--header-h`) on `--panel` with clickable brand lockup, `<- Overview` ghost button, active specimen thumbnail chip (`22x22px` pixelated preview + filename), `New project` ghost button, and `ThemeToggle`.
-   - Three-column `.bench` grid: `--rail-w: 64px` left numbered stage rail (`01 Intake`, `02 Grid`, `03 Color`, `04 Finish`), `minmax(0, 1fr)` center workspace (`--stagebar-h: 48px` `StageBar`, centered auto-fit `ProofFrame` inside `.proof-sheet`, bottom `StatusBoard`), and `--inspector-w: 360px` right inspector (`332px` below `1280px`) with spacing-grouped `.panel-group` sections (`20px` vertical rhythm, `1px` top dividers) and a pinned dashed-rule `ExportTicket` footer.
-   - Responsive collapse: below `1180px`, `.bench` stacks vertically (`Workspace` order 1, horizontal `ToolRail` order 2, full-width `Inspector` order 3) and toasts dock to bottom; below `760px`, header wraps, zoom aligns right, and `.status-facts` becomes a 2-column grid; below `480px`, `.wordmark` shrinks to `19px`, `.empty-title` to `21px`, `.proof-sheet` tightens to `8px` padding and `12px` radius, and `.proof-tag-extra` hides. Coarse pointers (`pointer: coarse`) enforce `44px` minimum height on buttons, pills, toggles, and range sliders (`36px` on `.segmented-option`, `46px` on `.ticket-download`).
+**Responsive.** Below 1180px the Studio stacks: header sticky, tabs become a horizontal strip (sticky under the header), the workspace holds a fixed `min(72vh, 680px)` height, the view strip wraps onto two rows, the inspector follows, and the export bar sticks to the bottom with Output and Download on its first row and the controls wrapping below. Below 760px the tabs stop sticking, the workspace drops to `min(60vh, 520px)`, Output hides (the rim already shows it), and the export controls fold behind a disclosure. On the landing, below 1180px How to play goes 2 by 2 and cards go three across; below 960px the cover stacks with the copy first; below 760px the band links hide, panels stack, and cards go two across. At 1280px and wider the cover callouts stand off the sprite in open plate space, joined by leader lines. Coarse pointers lift segmented options, zoom buttons, Download, toast close, and the slider to a 44px minimum, and palette chips to 36px.
 
-3. **Spacing Rhythm:** Built on a strict 4px base scale (`--s-1: 4px`, `--s-2: 8px`, `--s-3: 12px`, `--s-4: 16px`, `--s-5: 20px`, `--s-6: 24px`, `--s-7: 32px`, `--s-8: 40px`).
+**Spacing.** A 4px scale from 4px to 32px, then 48px and 72px for spread rhythm. Inspector groups pad 20px; stage padding is 24px.
 
 ## Elevation & Depth
 
-beexie pairs flat hairline-separated Studio inspector panes with elevated matte proof sheets (`.hero-proof-sheet`, `.pipeline-sheet-frame`, `.faq-sheet-frame`, `.footer-cta-card`, `.proof-sheet`) that illuminate cleanly with pure Cobalt pointer-tracking Spotlight glows (`[data-spotlight]`) above the flowing `BackgroundPaths` canvas. Inside panels and sheets, sections separate via `1px` `--line-subtle` hairlines and spacing rather than nested card boxes.
-
-### Shadow Vocabulary
-- **Proof Sheet & Card Frame (`--shadow-frame`):** Light `box-shadow: 0 12px 28px -16px rgba(17, 19, 23, 0.18)`; Dark `box-shadow: 0 14px 32px -12px rgba(0, 0, 0, 0.72)`. Applied to `.hero-proof-sheet`, `.pipeline-sheet-frame`, `.faq-sheet-frame`, `.footer-cta-card`, `.proof-sheet`, and `.empty-bench`.
-- **Primary Action Lift (`--shadow-cta`):** Light `box-shadow: 0 8px 20px -8px rgba(30, 70, 232, 0.45)`; Dark `box-shadow: 0 8px 20px -8px rgba(45, 85, 235, 0.55)`. Applied to `.btn-hero-primary`, `.btn-footer-launch`, `.empty-cta`, and `.ticket-download`.
-- **Overlay & Modal Lift (`--shadow-toast`):** Light `box-shadow: 0 10px 24px -10px rgba(17, 19, 23, 0.25)`; Dark `box-shadow: 0 12px 26px -8px rgba(0, 0, 0, 0.85)`. Applied to `.toast`, `.drop-card`, and `.legal-modal-panel` over `--scrim` (`rgba(17, 19, 23, 0.48)` light / `rgba(7, 9, 13, 0.72)` dark).
-- **Compare Divider Handle:** Light `0 4px 12px rgba(17, 19, 23, 0.25)` on Landing / `0 4px 12px rgba(17, 19, 23, 0.28)` in Studio, separating the `24x40px` vermilion pill handle cleanly over mixed imagery.
+None. The system is flat: no `box-shadow` anywhere, no blur, no translucency on UI. Depth is printed: a 2px ink rule separates the major regions (band, tabs, inspector, export bar, spreads), a 1px rule subdivides inside them, a plate flood marks what is in front, and the open thumb tab overlaps the tab-strip rule by 2px so it reads as a tab cut into the page. Overlays (drop overlay, legal dialog) sit on a flat scrim with a 2px ink border. The silk on the two art plates is the only rendered tone, and it stays behind the art.
 
 ### Named Rules
-**The Hairline-First Layering Rule.** Structural panes and interior sheet subdivisions (`AppHeader`, `64px` `ToolRail`, `Inspector` `.panel-group` sections, `.pipeline-step` columns, and `.faq-row` accordion items) separate cleanly with `1px` `--line-subtle` hairlines and spacing; ambient `--shadow-frame` lift and pure-Cobalt `[data-spotlight]` glows are reserved exclusively for top-level matte proof sheets (`.hero-proof-sheet`, `.pipeline-sheet-frame`, `.faq-sheet-frame`, `.footer-cta-card`, `.proof-sheet`, and `.empty-bench`) so Landing copy never floats bare over the background paths.
+**The Printed Depth Rule.** If something needs to read as on top, give it a plate, a heavier rule, or an overlap. Never a shadow.
 
 ## Shapes
 
-Press-proof corners follow strict concentric geometry and crisp pixelated boundaries:
-- **Nested Sheet Geometry (`--r-sheet: 14px`, `--p-sheet: 10px`, `--r-sheet-inner: 4px`):** Outer sheets (`.hero-proof-sheet`, `.pipeline-sheet-frame`, `.faq-sheet-frame`, `.proof-sheet`, `.empty-bench`, `.footer-cta-card`, `.legal-modal-panel`) wrap inner pixel viewports (`.proof`, `.hero-split-viewport`) whose radius equals `14px - 10px = 4px` (or `12px - 8px = 4px` below `480px`).
-- **Nested Segmented Geometry (`--r-seg: 9px`, `--p-seg: 3px`, `--r-seg-inner: 6px`):** `.segmented`, `.ticket-seg`, and `.zoom` tracks wrap options and zoom cells with `9px - 3px = 6px` inner corners.
-- **Tag & Swatch Radii (`--r-tag: 4px`, `3px` inner swatch):** Applied to `.proof-tag`, `.step-scale-bar .is-hot`, `.comb-cell` (`4px`), `.comb-hex` (`3px`), `.hero-swatch-chip` (`3px`), and `.project-thumb` (`3px`).
-- **Compact Controls (`--r-sm: 6px`):** Applied to `.ghost-btn`, `.icon-btn`, `.btn-secondary`, `.number-input-wrap`, `.chain`, `.select`, `.readout`, `.project`, `.hero-grid-toggle`, and `.swatch-editor`.
-- **Primary Actions & Rail Tiles (`--r-md: 8px`):** Applied to `.btn-primary`, `.btn-hero-primary`, `.btn-launch-atelier`, `.btn-footer-launch`, `.ticket-download`, `.tool` rail tiles, `.preset` tiles, `.dropzone-icon`, and `.source-image`.
-- **Dropzones & Modals (`--r-lg: 12px`):** Applied to `.dropzone`, `.drop-card`, and mobile `.proof-sheet`.
-- **Continuous Pills (`--r-pill: 999px`):** Applied to `.hero-grid-pill`, `.toggle-track`, `.range` track, `.divider-handle` / `.rule-handle`, `.processing`, and `.toast`.
-- **Pixel & Vector Invariants:** Every pixel preview and `22x22px` project thumbnail enforces `image-rendering: pixelated` and `imageSmoothingEnabled = false`. All custom inline SVGs in `src/components/icons.tsx` (including `<CheckIcon />` at `12px`) share a unified `24x24` `strokeWidth={1.75}` round-cap frame, except `<BeeMark />` (`viewBox="0 0 32 28"`, `strokeWidth="1.9"` body/wings, `1.75` antennae, vermilion tail stripe).
-
-### Named Rules
-**The Nested Radii Parity Rule.** Nested containers obey `inner radius = outer radius - padding` (`--r-sheet` `14px` minus `--p-sheet` `10px` equals `--r-sheet-inner` `4px`; `--r-seg` `9px` minus `--p-seg` `3px` equals `--r-seg-inner` `6px`), keeping concentric frames optically parallel across every viewport and breakpoint.
+Every UI corner is square (`0px`), including inputs, color wells, toggles, slider thumbs (a 16 by 20px block), swatches, toasts, and dialogs. Borders are either the 1px hairline or the 2px stroke, always solid ink, except drop targets, which use a 2px dashed rule that turns solid on hover. Sprites wear a 3px black key line; callouts and swatch strips on plates wear a 2px key line. The comparison handle is a 20 by 36px red block with a 2px paper border. The ready lamp is an 8px square. The only curves in the system belong to the bee mark (rounded body, round wing caps) and the 24px line icons, which use square caps and miter joins at stroke width 2.
 
 ## Components
 
 ### Buttons
-Flat-pressed controls with crisp `140ms ease` color transitions and subtle scale (`0.98` / `0.985` / `0.96`) or `-1px` hover lift on landing CTAs.
-- **Shape:** Primary buttons use `8px` (`--r-md`); secondary, ghost, and icon buttons use `6px` (`--r-sm`).
-- **Primary (`.btn-primary`, `.btn-hero-primary`, `.btn-footer-launch`, `.ticket-download`):** `--accent` (`#1e46e8` light / `#2d55eb` dark) fill, `#ffffff` text, `10px 16px` padding (`50px` min-height in Hero, `40px` height on Export ticket) with `--shadow-cta`.
-- **Hover / Focus:** Shifts to `--accent-hover` (`#1737bf` light / `#3b63f6` dark) with `scale(0.98)` on `:active`; global `:focus-visible` draws `2px solid var(--focus-ring)` with `2px` offset.
-- **Secondary / Ghost / Icon / Quiet:** `.btn-secondary` (`1px solid var(--line)`, `--panel`, `8px 12px`), `.ghost-btn` (`1px solid var(--line-subtle)`, `--panel`, `7px 12px`), `.icon-btn` (`32x32px`), and `.text-btn` / `.btn-quiet` (underlined inline action with `3px` underline offset).
+Flat, square, decisive. Every button changes color in two steps on hover (`120ms steps(2)`).
+- **Shape:** square (`0px`).
+- **Primary:** blue plate with white text, 44px tall, 20px side padding, Zen 700. Hover inverts to ink with paper text.
+- **Cover button:** ink with paper text, 60px tall, 18px label with a trailing arrow; hover floods blue. On the back cover it inverts to white on the silk, hovering to ink.
+- **Secondary / ghost / icon:** 1px ink rule on paper, 36px tall (icon buttons 36px square); hover inverts to ink.
+- **Quiet / text:** underlined text at a 1px weight, thickening to 2px on hover.
+- **Focus:** 2px blue outline (light) or blue-on-shell outline (dark) at 2px offset, on every interactive element.
+- **Disabled:** 45% opacity; the Download button instead drops to the trough fill with pencil-grey text and shows its reason in an ink slip above it.
 
-### Chips
-Monospace resolution pills, 3-column grid presets, and compact color swatches.
-- **Style:** `.hero-grid-pill` renders `--paper` background, `--ink-2` Martian Mono text, `1px solid var(--line-subtle)`, `6px 12px` padding, and `999px` radius. `.preset` tiles pair bold `tabular-nums` counts above `Archivo` hints (`8px 6px` padding, `8px` radius). `.comb-hex` swatches render `31x19px` rectangles with subtle alpha hairlines (`3px` radius).
-- **State:** Active `.hero-grid-pill`, `.preset`, and `.tool` shift to `--accent` fill with `#ffffff` text; selected `.comb-hex` swatches show a `2px` `--accent` ring and `1.04` scale.
+### Chips and segmented controls
+- **Segmented:** a 1px ruled strip of 34px options divided by hairlines; the pressed option inks solid (ink fill, paper text). Hover on unpressed options takes the sheet fill.
+- **Grid presets:** a 3-column ruled grid of blocks, each a pixel-face count over a small hint. The active block takes the stage plate.
+- **Palette chips:** 28px square swatches in a 1px rule; hover outlines 1px, selected outlines 2px at 2px offset.
+- **Callout chips (cover):** lettered label strips clipped to the sprite rim: an ink letter cell, then 40px chips; pressed chips ink solid, hovered chips go marigold.
 
 ### Cards / Containers
-Spacing-grouped inspector sections (`panel-group`) and elevated matte proof sheets without nested card clutter.
-- **Corner Style:** `14px` (`--r-sheet`) for outer sheets (`.hero-proof-sheet`, `.pipeline-sheet-frame`, `.faq-sheet-frame`, `.proof-sheet`, `.empty-bench`, `.footer-cta-card`, `.legal-modal-panel`), `4px` (`--r-sheet-inner`) for nested pixel viewports, `12px` (`--r-lg`) for `.dropzone` and `.drop-card`.
-- **Background:** `--panel` (`#ffffff` light / `#191c23` dark) for elevated sheets and inspector panes; `--paper` (`#f8f6f1` light / `#12141a` dark) for inset `.dropzone`, `.readout`, `.number-input-wrap`, `.faq-trigger:hover`, and `.segmented` wells.
-- **Shadow Strategy:** Outer proof sheets and `.empty-bench` / `.footer-cta-card` use `--shadow-frame`; inspector `.panel-group` sections, `.pipeline-step` columns, and `.faq-row` blocks stay flat (`box-shadow: none`).
-- **Border & Padding:** `1px solid var(--line-subtle)` (`1.5px dashed var(--line)` on dropzones); internal padding runs `10px` on `.proof-sheet` and `.hero-proof-sheet`, `16px 20px` on `.inspector-body` with `20px` `--s-5` gaps between `.panel-group` sections.
+- **Corner Style:** square.
+- **Cartridge cards:** the five retro presets, each a whole plate (red, marigold, blue, ink, red) in a 2px rule, with the preset name in the display face, the live color count in the pixel face, and the koi rendered by that preset at 64 cells. Hovering a card rotates its palette (stepped, about 8 frames a second).
+- **How to play panels:** a plate head with a 44px pixel numeral and title, a bold lead, a ghost-gridded diagram of the real control with lettered marks joined by 1px leader lines ending in a square dot, and a lettered legend.
+- **Inspector groups:** no boxes; groups pad 20px and divide with a soft rule.
+- **Shadow Strategy:** none (see Elevation & Depth).
 
 ### Inputs / Fields
-Sentence-case `Archivo` labels paired with `Martian Mono` numeric inputs and controls.
-- **Style:** `.number-input-wrap` (`32px` height, `0 8px` padding, `1px solid var(--line-subtle)`, `6px` radius, `--paper` fill), `.select` (`32px` height, `6px` radius), `.color-input-wrap` (`24x24px` swatch + `code` hex), `.segmented` (`3px` padded `--paper` track, `9px` radius; `.mode-seg` and `.ticket-seg` invert active options to `--ink` / `--paper` while standard `.segmented` uses `--accent` / `#ffffff`), `.range` (`5px` gradient track with `15px` `--panel` thumb), and `.toggle` (`36x20px` pill track with `14px` white thumb).
-- **Focus:** `.number-input-wrap:focus-within` shifts border to `--accent` with a `0 0 0 2px var(--accent-soft)` halo; keyboard focus-visible applies `2px solid var(--focus-ring)` with `2px` offset.
-- **Error / Disabled:** `.alert` banners use `1px solid var(--danger)` over `--danger-soft`; disabled controls drop to `0.4` or `0.45` opacity and `cursor: not-allowed`.
-- **Loading States:** `SpinnerIcon` (`0.85s linear infinite` `.icon-spin`) appears inside `.hero-loading-veil` while decoding the Landing specimen, inside `.processing` (`rgba(17, 19, 23, 0.88)` pill with `blur(6px)`) on the Studio proof frame, in `StatusBoard`, in `EmptyBench` / `ImagePanel` during image decode, and on the Export ticket button while encoding.
+- **Style:** 40px number and color fields in a 1px ink rule on paper, values in the pixel face, unit suffix in pencil grey; selects are 38px with a drawn chevron; the toggle is a 40 by 22px square lamp whose 16px thumb jumps 18px and turns marigold on an ink track; the slider is a 4px ruler filled with ink up to the value.
+- **Focus:** 2px focus outline around the whole field (`focus-within`).
+- **Error / Disabled:** errors are a red plate alert with white bold text and an underlined dismiss; danger notes and oversized outputs switch to the text-grade red. Disabled fields drop to 45% opacity.
 
 ### Navigation
-- **Landing Nav (`.landing-nav`):** Sticky `60px` bar on `--paper` (`max-width: 1260px` inner container) with `1px` bottom rule, `<BeeMark size={26} />` + `beexie` (`22px` Bricolage Grotesque 800), three anchor links (`Workbench`, `Pipeline`, `FAQ` hidden below `680px`), conditional `Resume` pill, `ThemeToggle`, and `Open Studio` cobalt button.
-- **Studio Header (`.app-header`):** `54px` bar on `--panel` with `1px` bottom rule, clickable `<BeeMark size={26} />` + `beexie` (`22px` `--fs-wordmark`), `<- Overview` ghost button, active specimen chip (`22x22px` pixelated thumb + filename), `New project` ghost button, and `ThemeToggle`.
-- **64px Stage Rail (`.rail`):** Vertical `64px` track on `--panel` (`border-right: 1px solid var(--line-subtle)`) housing four `48px`-wide `.tool` buttons (`01 Intake`, `02 Grid`, `03 Color`, `04 Finish`); turns into a horizontal row above the inspector below `1180px`.
+- **Landing label band:** 64px, sticky, 2px rule beneath, bold 13px links that underline at 2px on hover, the Open Studio primary button at 40px.
+- **Studio label band:** 52px, bee mark and wordmark (underlines on hover), an Overview ghost button, the file chip (24px thumbnail plus name), New project, and the theme toggle.
+- **Thumb-index tabs:** four 84px tabs on the sheet strip, each a 30px pixel numeral over its label. The open tab floods its stage plate and overlaps the strip's rule. Below 1180px they become a horizontal strip with the numeral beside the label.
 
-### Signature Component: Export Ticket & Compare Rule
-- **Export Ticket (`.ticket`):** Pinned at the foot of the right inspector beneath a `2px dashed var(--line)` tear-off border (`12px 20px 16px` padding, `--ticket` surface). Displays the `Archivo` `Export` header, three compact segmented rows (`Format`, `Scale`, `Alpha`), optional `Color` picker, a dashed `Output` readout (`1px dashed var(--line-subtle)`), and a `40px`-tall cobalt download CTA with `--shadow-cta`.
-- **Compare Split Rule (`.rule` / `.demo-divider-rule`):** Full-height `2.5px` vertical Vermilion bar (`--vermilion`) centered on a `44px` hit strip and bisected by a `24x40px` pill handle (`||`, `2px solid #ffffff` border, `--vermilion` fill), operable via pointer drag or keyboard arrow keys (`0-100%`).
+### Sprite and ghost grid (signature)
+The landing sprite runs the real pipeline on the koi specimen (or a dropped image) at a square grid, sized to an exact integer multiple of its cells, inside a 3px key line. Before pixels arrive, the cell is a ghost grid: 1px ghost-cell lines at the current cell size. When a result lands, a ghost-grid overlay retracts row by row (`420ms`, one step per row, 4 to 32 rows), revealing the art in scanline order. The Studio proof uses the same fill on every reprocess. The cover shows the extracted palette under the sprite as a 16-column swatch strip in a key line.
+
+### Rim readouts and export bar
+Readouts (grid, output, colors, status) sit on the canvas bottom rim in fixed slots and roll to new values in six 30ms steps, like a sprite counter. Proof captions sit on the top rim: an ink tag on the left, a stage-plate tag on the right; a marigold tag marks processing. The export bar holds Format, Scale, and Background (Clear or Fill, with a fill color) as labeled segmented groups, then the Output readout and the Download button. While encoding, Download shows a stepped blue and ink stripe; on success a marigold "Saved" stamp prints over it at a slight tilt, then clears.
+
+### Motion
+**Art register (glide).** The silk shader (`SilkPlate.tsx`) draws slow fabric folds and fine grain from one peak color, continuously, on the cover (`cover-silk-sheen`) and back cover (`back-cover-silk-sheen`) only. Device pixel ratio caps at 1.5; it pauses off screen and in hidden tabs; under reduced motion it renders one still frame; without WebGL the flat plate shows. The canvas fades in over 900ms once its first frame is ready. During a drag over the cover the silk drops to 35% and the plate turns blue.
+
+**UI register (steps).** Color swaps and toggle thumbs: `120ms steps(2)`. Toast rise: 8px in `120ms steps(2)`. Tab and stage panel flood: a clip-path wipe in `160ms steps(4)`. Palette cascade: each swatch flips in over `120ms steps(3)`, 22ms apart. Ghost grid fill: `420ms`, one step per row. Readout tick: 6 frames at 30ms. Encode stripe and marching drop-target dashes: `480ms steps(4)`, looping. Saved stamp: `1400ms steps(3)`. Theme switch: a View Transitions wipe down the page in `360ms steps(6)`. Bee wings: two-frame flap at 180ms on wordmark hover. Spinner: `0.8s steps(8)`. Reduced motion collapses all of it to instant.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** group inspector and landing sections by `--s-5` / `--s-6` spacing and `1px` `--line-subtle` hairlines rather than wrapping nested cards inside cards.
-- **Do** preserve `inner radius = outer radius - padding` (`14px - 10px = 4px` on proof sheets; `9px - 3px = 6px` on segmented tracks and zoom bars).
-- **Do** keep UI field labels in `Archivo` sentence case and restrict `Martian Mono` (`tabular-nums`) strictly to pixel coordinates, dimensions, hex codes, zoom percentages, and `01`-`04` indices.
-- **Do** enforce `image-rendering: pixelated` and `imageSmoothingEnabled = false` on every pixel-art preview and thumbnail.
-- **Do** pause `BackgroundPaths` inside the Studio workbench, respect `prefers-reduced-motion: reduce` and `(pointer: coarse)` disables on hover spotlights, and pass all 18 checks in `npm run check:contrast`.
+- **Do** give the stage in use its plate (Image red, Grid marigold, Color blue, Finish ink) on its tab, numeral, active preset, and Pixel tag, and keep everything else ink and paper.
+- **Do** keep blue for actions, red for the compare rule and errors, and marigold for on, busy, selected, and saved states.
+- **Do** draw with hard-stop fills: ghost grids, the checker, slider fill, and stripes are hard-edged `linear-gradient` stops, never blends.
+- **Do** separate regions with a 2px ink rule and subdivide with a 1px rule; mark what is in front with a plate or an overlap.
+- **Do** render every sprite and preview at a true integer scale with `image-rendering: pixelated`, inside a black key line.
+- **Do** put changing numbers in the pixel face inside fixed-width slots, and roll them in steps.
+- **Do** animate UI in discrete steps (`steps()` in CSS, fixed-interval frames in script), and route every animation through the reduced-motion reset.
+- **Do** keep silk on the two landing art plates, with a flat fallback color and white text above 4.5:1 against the brightest sheen; add any new plate pair to `scripts/check-contrast.cjs`.
 
 ### Don't:
-- **Don't** use Vermilion (`#eb4a2d` / `#ff5a3c`) for primary CTAs, stage rail buttons, or small text; reserve `--vermilion` for inspection markers and use `--vermilion-text` (`#c23117` / `#ff8770`) for alert and error text.
-- **Don't** use `#85aaff` (`--accent-text`) as a dark-theme button fill behind `#ffffff` text; keep `#2d55eb` (`--accent`) as the dark button background and `#85aaff` for text and focus rings.
-- **Don't** reintroduce `+` corner registration ticks, boxed `.ins-card` subcards, uppercase monospace labels, or `04 EXPORT DISPATCH` headers over the streamlined proof sheet and Export ticket.
-- **Don't** link external CDN font stylesheets or icon-font kits; keep `Archivo`, `Bricolage Grotesque`, and `Martian Mono` self-hosted in `src/assets/fonts/` and UI icons as `strokeWidth={1.75}` inline SVGs in `src/components/icons.tsx`.
+- **Don't** use `box-shadow`, blur, glows, or blended gradients on any UI element.
+- **Don't** round a corner; the bee mark and line icons are the only curves.
+- **Don't** flood more than one stage plate at a time in the Studio, or put plate color on a control that is neither active stage furniture nor a fixed-role element.
+- **Don't** put silk, or any eased glide, on controls, tabs, panels, readouts, or the Studio.
+- **Don't** set body copy, headings, or worded labels in DotGothic16, and don't uppercase or letter-space labels.
+- **Don't** fake pixel art with CSS filters or smoothing; every sprite on the page is real pipeline output.
+- **Don't** print real console names, logos, seals, or trade dress on cards, labels, or copy.

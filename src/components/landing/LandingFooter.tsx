@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRightIcon, BeeMark } from '../icons';
+import { SilkPlate } from '../ui/SilkPlate';
 import type { LegalTab } from './LegalModal';
 
 interface LandingFooterProps {
@@ -7,63 +8,35 @@ interface LandingFooterProps {
   onOpenLegal: (tab: LegalTab) => void;
 }
 
-export const LandingFooter: React.FC<LandingFooterProps> = ({
-  onLaunchStudio,
-  onOpenLegal,
-}) => {
-  return (
-    <footer className="landing-footer" role="contentinfo">
-      <div className="footer-cta-card" data-spotlight="">
-        <div className="footer-cta-copy">
-          <h2 className="footer-cta-title">
-            Ready to draft <span className="hero-title-accent">exact pixel grids?</span>
-          </h2>
-          <p className="footer-cta-desc">
-            Open the Studio workbench to adjust custom dimensions, edit palettes swatch by swatch, and export{' '}
-            <strong className="text-em">crisp scaled files</strong>.
-          </p>
-        </div>
-        <button
-          type="button"
-          className="btn-footer-launch"
-          onClick={onLaunchStudio}
-        >
-          <span>Open Pixel Studio</span>
-          <ArrowRightIcon size={16} />
+/** Back cover: one closing action and the colophon. */
+export const LandingFooter: React.FC<LandingFooterProps> = ({ onLaunchStudio, onOpenLegal }) => (
+  <footer className="backcover">
+    <div className="backcover-plate">
+      <SilkPlate color="#2a4fe0" />
+      <h2 className="backcover-title">Your turn.</h2>
+      <button type="button" className="cover-cta cover-cta-inverse" onClick={onLaunchStudio}>
+        Open Studio
+        <ArrowRightIcon size={18} />
+      </button>
+    </div>
+
+    <div className="colophon">
+      <span className="colophon-brand">
+        <BeeMark size={22} />
+        beexie
+      </span>
+      <span className="colophon-note">Runs entirely in your browser.</span>
+      <nav className="colophon-links" aria-label="Privacy, terms, and licenses">
+        <button type="button" className="text-btn" onClick={() => onOpenLegal('privacy')}>
+          Privacy
         </button>
-      </div>
-
-      <div className="footer-colophon">
-        <div className="colophon-left">
-          <BeeMark size={20} />
-          <span className="colophon-brand">beexie</span>
-          <span className="colophon-note">Client-side Canvas 2D · Zero server uploads</span>
-        </div>
-
-        <nav className="colophon-legal-links" aria-label="Privacy, terms, and license policies">
-          <button
-            type="button"
-            className="colophon-link-btn"
-            onClick={() => onOpenLegal('privacy')}
-          >
-            Privacy &amp; Retention
-          </button>
-          <button
-            type="button"
-            className="colophon-link-btn"
-            onClick={() => onOpenLegal('terms')}
-          >
-            Terms of Service
-          </button>
-          <button
-            type="button"
-            className="colophon-link-btn"
-            onClick={() => onOpenLegal('licenses')}
-          >
-            Licenses (MIT &amp; OFL-1.1)
-          </button>
-        </nav>
-      </div>
-    </footer>
-  );
-};
+        <button type="button" className="text-btn" onClick={() => onOpenLegal('terms')}>
+          Terms
+        </button>
+        <button type="button" className="text-btn" onClick={() => onOpenLegal('licenses')}>
+          Licenses
+        </button>
+      </nav>
+    </div>
+  </footer>
+);

@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="6" fill="#f8f6f1" stroke="#15171c" stroke-width="2" />
-  <path d="M9 11C5 7 3 10 5 14c2 3 5 1 7-1" stroke="#15171c" stroke-width="2" stroke-linecap="square" />
-  <path d="M23 11c4-4 6-1 4 3-2 3-5 1-7-1" stroke="#15171c" stroke-width="2" stroke-linecap="square" />
-  <rect x="12" y="9" width="8" height="16" rx="4" fill="#ffffff" stroke="#15171c" stroke-width="2" />
-  <line x1="12" y1="14" x2="20" y2="14" stroke="#15171c" stroke-width="2" />
-  <line x1="12" y1="18" x2="20" y2="18" stroke="#15171c" stroke-width="2" />
-  <line x1="13" y1="22" x2="19" y2="22" stroke="#eb4a2d" stroke-width="2" />
-  <line x1="14" y1="9" x2="11" y2="5" stroke="#15171c" stroke-width="1.8" />
-  <line x1="18" y1="9" x2="21" y2="5" stroke="#15171c" stroke-width="1.8" />
+  <rect width="32" height="32" fill="#ffc81e" stroke="#16161a" stroke-width="2" />
+  <path d="M9 11C5 7 3 10 5 14c2 3 5 1 7-1" stroke="#16161a" stroke-width="2" stroke-linecap="square" />
+  <path d="M23 11c4-4 6-1 4 3-2 3-5 1-7-1" stroke="#16161a" stroke-width="2" stroke-linecap="square" />
+  <rect x="12" y="9" width="8" height="16" rx="4" fill="#ffffff" stroke="#16161a" stroke-width="2" />
+  <line x1="12" y1="14" x2="20" y2="14" stroke="#16161a" stroke-width="2" />
+  <line x1="12" y1="18" x2="20" y2="18" stroke="#16161a" stroke-width="2" />
+  <line x1="13" y1="22" x2="19" y2="22" stroke="#d81e28" stroke-width="2" />
+  <line x1="14" y1="9" x2="11" y2="5" stroke="#16161a" stroke-width="2" />
+  <line x1="18" y1="9" x2="21" y2="5" stroke="#16161a" stroke-width="2" />
 </svg>
