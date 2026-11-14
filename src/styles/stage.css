@@ -164,7 +164,7 @@
   bottom: 0;
   z-index: 4;
   width: 2px;
-  background: var(--red);
+  background: var(--sun);
   transform: translateX(-1px);
   cursor: ew-resize;
 }
@@ -198,8 +198,8 @@
   width: 20px;
   height: 36px;
   border: var(--stroke) solid var(--paper);
-  background: var(--red);
-  color: var(--on-red);
+  background: var(--sun);
+  color: var(--on-sun);
   font-family: var(--font-pixel);
   font-size: 10px;
   transform: translate(-50%, -50%);
@@ -214,8 +214,8 @@
   align-items: center;
   gap: var(--s-2);
   padding: 2px var(--s-2);
-  background: var(--yellow);
-  color: var(--on-yellow);
+  background: var(--gold);
+  color: var(--on-gold);
   font-size: var(--fs-xs);
   font-weight: 700;
 }
@@ -270,8 +270,8 @@
 .empty-cta {
   margin-top: var(--s-2);
   padding: var(--s-2) var(--s-4);
-  background: var(--red);
-  color: var(--on-red);
+  background: var(--sun);
+  color: var(--on-sun);
   font-weight: 700;
 }
 
@@ -342,8 +342,8 @@
   gap: var(--s-2);
   padding: var(--s-7) var(--s-8);
   border: var(--stroke) solid var(--ink);
-  background: var(--yellow);
-  color: var(--on-yellow);
+  background: var(--gold);
+  color: var(--on-gold);
 }
 
 .drop-card strong {

@@ -373,11 +373,9 @@
 
 .palette-error {
   margin: 0;
-  color: var(--ink);
+  color: var(--danger);
   font-size: var(--fs-sm);
   font-weight: 700;
-  border-left: var(--stroke) solid var(--red);
-  padding-left: var(--s-2);
 }
 
 /* ---- crop editor ---- */
@@ -409,14 +407,14 @@
 
 .crop-rect {
   position: absolute;
-  outline: 9999px solid rgb(22 22 26 / 0.55);
+  outline: 9999px solid var(--scrim);
   border: var(--stroke) solid var(--paper);
   cursor: move;
 }
 
 .crop-rect:focus-visible {
   border-color: var(--focus);
-  outline: 9999px solid rgb(22 22 26 / 0.55);
+  outline: 9999px solid var(--scrim);
 }
 
 .crop-handle {

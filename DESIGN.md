@@ -1,41 +1,43 @@
 ---
-name: "beexie: The Instruction Booklet"
-description: "Client-side image-to-pixel-art studio printed like the booklet from a game box: white booklet stock or charcoal cartridge shell, black ink, flat red, yellow, and blue spot plates, square corners, and sprites at true integer scale."
+name: "beexie: The Instruction Booklet, Golden Hour Meadow"
+description: "Client-side image-to-pixel-art studio printed like the booklet from a game box, inked in the colors of a blocky sunset: meadow paper or moss shell, moss ink, flat sun, gold, grass, and tide plates, square corners, voxel art plates, and sprites at true integer scale."
 colors:
-  booklet-stock: "#ffffff"
-  booklet-sheet: "#f3f3f5"
-  booklet-trough: "#e6e6ea"
-  print-ink: "#16161a"
-  pencil-grey: "#5a5a63"
-  soft-rule: "#cfcfd6"
-  keyline: "#16161a"
-  red-plate: "#d81e28"
-  red-plate-text: "#c4121c"
-  marigold-plate: "#ffc81e"
-  primary-blue-plate: "#2449e0"
-  maroon-art-plate: "#7a1424"
-  cover-silk-sheen: "#b3263a"
-  back-cover-silk-sheen: "#2a4fe0"
-  print-green: "#13703c"
-  checker-light-a: "#ececef"
-  checker-light-b: "#f7f7f9"
-  ghost-cell: "#e3e3e8"
-  scrim: "rgba(22, 22, 26, 0.56)"
-  cartridge-shell: "#1d1e22"
-  cartridge-sheet: "#26272c"
-  cartridge-trough: "#2f3036"
-  chalk-ink: "#f2f2f4"
-  shell-muted-ink: "#a3a3ad"
-  shell-rule: "#8d8e97"
-  shell-soft-rule: "#3a3b42"
-  red-text-on-shell: "#ff6b6b"
-  marigold-plate-on-shell: "#ffd23f"
-  blue-text-on-shell: "#7f9cff"
-  green-on-shell: "#4ade80"
-  checker-dark-a: "#2a2b30"
-  checker-dark-b: "#222327"
-  ghost-cell-on-shell: "#33343b"
-  scrim-on-shell: "rgba(8, 8, 10, 0.72)"
+  meadow-paper: "#f8fbf4"
+  meadow-sheet: "#eef3e6"
+  meadow-trough: "#e2eadb"
+  moss-ink: "#1d2a1f"
+  moss-muted: "#4c5c4c"
+  soft-rule: "#cfdac6"
+  keyline: "#1d2a1f"
+  sun-plate: "#ec6a20"
+  sun-text: "#b4470c"
+  gold-plate: "#ffd23f"
+  grass-plate: "#2f7a2a"
+  tide-plate: "#2f7f8f"
+  danger: "#b42318"
+  checker-light-a: "#e6ecdd"
+  checker-light-b: "#f2f6ec"
+  ghost-cell: "#dfe7d6"
+  scrim: "rgba(29, 42, 31, 0.56)"
+  moss-shell: "#141c16"
+  moss-shell-sheet: "#1d2a1f"
+  moss-shell-trough: "#26342a"
+  shell-ink: "#f1f7ea"
+  shell-muted-ink: "#adbda9"
+  shell-rule: "#8a9c88"
+  shell-soft-rule: "#2f3f31"
+  sun-on-shell: "#ff8a3d"
+  sun-text-on-shell: "#ff9d5c"
+  grass-on-shell: "#7ccf4f"
+  tide-on-shell: "#4fb3c4"
+  danger-on-shell: "#ff8a75"
+  checker-dark-a: "#1f2a21"
+  checker-dark-b: "#18211a"
+  ghost-cell-on-shell: "#26342a"
+  scrim-on-shell: "rgba(6, 10, 7, 0.72)"
+  sunset-sky-top: "#2b5f8a"
+  sunset-glow: "#ff9f43"
+  dusk-sky-top: "#0d1626"
 typography:
   display:
     fontFamily: "'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif"
@@ -93,103 +95,103 @@ spacing:
   s-9: "72px"
 components:
   button-primary:
-    backgroundColor: "{colors.primary-blue-plate}"
-    textColor: "{colors.booklet-stock}"
+    backgroundColor: "{colors.grass-plate}"
+    textColor: "{colors.meadow-paper}"
     rounded: "{rounded.none}"
     padding: "0 20px"
     height: "44px"
   button-primary-hover:
-    backgroundColor: "{colors.print-ink}"
-    textColor: "{colors.booklet-stock}"
+    backgroundColor: "{colors.moss-ink}"
+    textColor: "{colors.meadow-paper}"
   button-cover:
-    backgroundColor: "{colors.print-ink}"
-    textColor: "{colors.booklet-stock}"
+    backgroundColor: "{colors.moss-ink}"
+    textColor: "{colors.meadow-paper}"
     rounded: "{rounded.none}"
     padding: "0 24px"
     height: "60px"
   button-cover-hover:
-    backgroundColor: "{colors.primary-blue-plate}"
-    textColor: "{colors.booklet-stock}"
+    backgroundColor: "{colors.grass-plate}"
+    textColor: "{colors.meadow-paper}"
   button-secondary:
-    backgroundColor: "{colors.booklet-stock}"
-    textColor: "{colors.print-ink}"
+    backgroundColor: "{colors.meadow-paper}"
+    textColor: "{colors.moss-ink}"
     typography: "{typography.label}"
     rounded: "{rounded.none}"
     padding: "0 12px"
     height: "36px"
   button-secondary-hover:
-    backgroundColor: "{colors.print-ink}"
-    textColor: "{colors.booklet-stock}"
+    backgroundColor: "{colors.moss-ink}"
+    textColor: "{colors.meadow-paper}"
   segmented-option:
-    backgroundColor: "{colors.booklet-stock}"
-    textColor: "{colors.print-ink}"
+    backgroundColor: "{colors.meadow-paper}"
+    textColor: "{colors.moss-ink}"
     typography: "{typography.label}"
     rounded: "{rounded.none}"
     padding: "0 12px"
     height: "34px"
   segmented-option-pressed:
-    backgroundColor: "{colors.print-ink}"
-    textColor: "{colors.booklet-stock}"
+    backgroundColor: "{colors.moss-ink}"
+    textColor: "{colors.meadow-paper}"
   thumb-tab:
-    backgroundColor: "{colors.booklet-sheet}"
-    textColor: "{colors.print-ink}"
+    backgroundColor: "{colors.meadow-sheet}"
+    textColor: "{colors.moss-ink}"
     typography: "{typography.numeral}"
     rounded: "{rounded.none}"
     padding: "8px 4px"
     width: "72px"
     height: "84px"
   thumb-tab-image:
-    backgroundColor: "{colors.red-plate}"
-    textColor: "{colors.booklet-stock}"
+    backgroundColor: "{colors.sun-plate}"
+    textColor: "{colors.meadow-paper}"
   thumb-tab-grid:
-    backgroundColor: "{colors.marigold-plate}"
-    textColor: "{colors.print-ink}"
+    backgroundColor: "{colors.gold-plate}"
+    textColor: "{colors.moss-ink}"
   thumb-tab-color:
-    backgroundColor: "{colors.primary-blue-plate}"
-    textColor: "{colors.booklet-stock}"
+    backgroundColor: "{colors.grass-plate}"
+    textColor: "{colors.meadow-paper}"
   thumb-tab-finish:
-    backgroundColor: "{colors.print-ink}"
-    textColor: "{colors.booklet-stock}"
+    backgroundColor: "{colors.moss-ink}"
+    textColor: "{colors.meadow-paper}"
   input-number:
-    backgroundColor: "{colors.booklet-stock}"
-    textColor: "{colors.print-ink}"
+    backgroundColor: "{colors.meadow-paper}"
+    textColor: "{colors.moss-ink}"
     typography: "{typography.pixel}"
     rounded: "{rounded.none}"
     padding: "0 8px"
     height: "40px"
   export-bar:
-    backgroundColor: "{colors.booklet-sheet}"
-    textColor: "{colors.print-ink}"
+    backgroundColor: "{colors.meadow-sheet}"
+    textColor: "{colors.moss-ink}"
     rounded: "{rounded.none}"
     padding: "8px 16px"
     height: "64px"
   export-download:
-    backgroundColor: "{colors.primary-blue-plate}"
-    textColor: "{colors.booklet-stock}"
+    backgroundColor: "{colors.grass-plate}"
+    textColor: "{colors.meadow-paper}"
     rounded: "{rounded.none}"
     padding: "0 20px"
     height: "44px"
   export-download-disabled:
-    backgroundColor: "{colors.booklet-trough}"
-    textColor: "{colors.pencil-grey}"
+    backgroundColor: "{colors.meadow-trough}"
+    textColor: "{colors.moss-muted}"
   proof-tag:
-    backgroundColor: "{colors.print-ink}"
-    textColor: "{colors.booklet-stock}"
+    backgroundColor: "{colors.moss-ink}"
+    textColor: "{colors.meadow-paper}"
     rounded: "{rounded.none}"
     padding: "2px 8px"
   cartridge-card:
-    backgroundColor: "{colors.red-plate}"
-    textColor: "{colors.booklet-stock}"
+    backgroundColor: "{colors.sun-plate}"
+    textColor: "{colors.meadow-paper}"
     rounded: "{rounded.none}"
     padding: "12px"
   toast:
-    backgroundColor: "{colors.booklet-stock}"
-    textColor: "{colors.print-ink}"
+    backgroundColor: "{colors.meadow-paper}"
+    textColor: "{colors.moss-ink}"
     rounded: "{rounded.none}"
     padding: "8px 8px 8px 12px"
   label-band:
-    backgroundColor: "{colors.booklet-stock}"
-    textColor: "{colors.print-ink}"
+    backgroundColor: "{colors.meadow-paper}"
+    textColor: "{colors.moss-ink}"
     rounded: "{rounded.none}"
     height: "64px"
 ---
@@ -200,55 +202,56 @@ components:
 
 **Creative North Star: "The Instruction Booklet"**
 
-beexie is the booklet from the game box. The landing is its cover and spreads: a cover plate with a live sprite, numbered "how to play" panels with leader-line callouts on diagrams of real controls, cartridge-label preset cards, a safety page, a Q and A, and a back cover. The Studio is the same booklet opened flat on the desk: the image is the page, the controls are its labeled diagram, and an export bar runs along the bottom edge. Light theme is glossy booklet stock (white paper, black ink); dark theme is the cartridge shell (charcoal plastic) carrying the same plates as label art.
+beexie is the booklet from the game box. The landing is its cover and spreads: a cover plate with a live sprite, numbered "how to play" panels with leader-line callouts on diagrams of real controls, cartridge-label preset cards, a safety page, a Q and A, and a back cover. The Studio is the same booklet opened flat on the desk: the image is the page, the controls are its labeled diagram, and an export bar runs along the bottom edge. Light theme is meadow paper (a faint green-white stock, moss ink); dark theme is the moss shell carrying the same plates as label art. The palette is lifted from one blocky sunset: sun orange, gold, grass green, and tide teal over moss.
 
-Everything is printed, not lit. Color arrives as flat spot plates (red, marigold, blue, ink) that own whole regions: a tab, a panel head, a card, a page. Edges are square, rules are black, and the sprite is the specimen: rendered by the real pipeline at a true integer scale inside a 3px black key line. Empty space is never blank; it is a ghost cell grid waiting to be filled. Readouts sit in fixed slots in a fixed-width pixel face, so numbers change without anything reflowing.
+Everything is printed, not lit. Color arrives as flat plates (sun, gold, grass, tide) that own whole regions: a tab, a panel head, a card, a page. Edges are square, rules are moss ink, and the sprite is the specimen: rendered by the real pipeline at a true integer scale inside a 3px moss key line. Empty space is never blank; it is a ghost cell grid waiting to be filled. Readouts sit in fixed slots in a fixed-width pixel face, so numbers change without anything reflowing.
 
-Motion has two registers and nothing between them. The two large art plates (the maroon cover and the blue back cover) carry a slow WebGL silk that glides continuously. Every UI change snaps in `steps()` like a sprite: tabs flood in, swatches flip, readouts tick, the ghost grid fills row by row. Under `prefers-reduced-motion` the silk holds one still frame and every stepped change is instant.
+Motion has one register. The two large art plates are voxel scenes drawn on a 120 px tall canvas at true pixel scale: a blocky sunset on the cover and the same world after dusk on the back cover. Their clouds drift a pixel at a time, the water glint swaps frames, and stars blink one by one. Every UI change snaps in `steps()` like a sprite too: tabs flood in, swatches flip, readouts tick, the ghost grid fills row by row. Under `prefers-reduced-motion` the scenes hold one still frame and every stepped change is instant.
 
 **Key Characteristics:**
-- Booklet stock (`#ffffff`) and cartridge shell (`#1d1e22`) themes sharing identical red, blue, and near-identical marigold plates; all 27 contrast pairs in `npm run check:contrast` pass WCAG AA.
+- Meadow paper (`#f8fbf4`) and moss shell (`#141c16`) themes; plates keep their hue across themes and lift in the shell; all 45 contrast pairs in `npm run check:contrast` pass WCAG AA.
 - Flat spot plates and hard-stop fills only; no blended gradients, no shadows, no blur, no rounded corners.
 - Heavy Japanese-style gothic display (Dela Gothic One) over a clean gothic UI face (Zen Kaku Gothic New), with DotGothic16 reserved for numerals, readouts, and sprite captions.
 - Sprites printed by the real pipeline at `floor(available / cells) * cells`, so every art pixel is the same size, always `image-rendering: pixelated`.
-- Two motion registers: art plates glide, UI steps.
+- One motion register: art plates and UI both move in steps.
 
 ## Colors
 
-Two neutral grounds (booklet stock and cartridge shell), black ink, and four spot plates whose meaning is fixed per role, plus two silk art plates that exist only on the landing covers.
+Two grounds (meadow paper and moss shell), moss ink, four plates taken from the voxel sunset whose meaning is fixed per role, a danger red kept apart from them, and the scene colors of the two art plates.
 
 ### Primary
-- **Primary Blue Plate** (`primary-blue-plate`): the action plate. Fills every primary button and the Studio Download button, the Color stage plate, the cover CTA hover, the success toast badge, focus rings and caret in light theme, and the cover plate while a file is dragged over it. Same value in both themes with white text (6.76:1).
+- **Grass Plate** (`grass-plate`, light; `grass-on-shell`, dark): the action plate. Fills every primary button and the Studio Download button, the Color stage plate, the cover CTA hover, the success toast badge, focus rings and caret, and the cover plate while a file is dragged over it. White text on it in light (5.33:1), shell text on it in dark (9.02:1). Success shares it; success messages always carry text.
 
 ### Secondary
-- **Signal Red Plate** (`red-plate`): the Image stage plate, the compare rule and its handle, error alerts, the empty-bench CTA, the error toast badge, and the bee mark's tail stripe. White text on it measures 5.08:1. Text-grade red is **Red Plate Text** (`red-plate-text`, light) and **Red Text on Shell** (`red-text-on-shell`, dark), which also serve as the danger color.
-- **Marigold Plate** (`marigold-plate`, light; `marigold-plate-on-shell`, dark): the Grid stage plate and the "attention" fill: toggle-on thumb, the processing tag, the drop overlay card, the Saved stamp, text selection, slider thumb hover, the neutral toast badge, and the whole safety page. Always carries ink text (11.63:1 light, 12.50:1 dark).
+- **Sun Plate** (`sun-plate`, light; `sun-on-shell`, dark): the Image stage plate, the compare rule and its handle, the empty-bench CTA, and the bee mark's tail stripe. Always carries moss ink text (4.74:1 light, 7.42:1 dark). Text-grade orange is **Sun Text** (`sun-text`, light) and **Sun Text on Shell** (`sun-text-on-shell`, dark), used for headline emphasis.
+- **Gold Plate** (`gold-plate`): the Grid stage plate and the "attention" fill: toggle-on thumb, the processing tag, the drop overlay card, the Saved stamp, text selection, slider thumb hover, the neutral toast badge, and the whole safety page. Always carries ink text (10.36:1 light, 12.04:1 dark).
+- **Tide Plate** (`tide-plate`, light; `tide-on-shell`, dark): the Finish stage plate and How to play panel 4. White text in light (4.61:1), shell text in dark (7.10:1).
 
 ### Tertiary
-- **Maroon Art Plate** (`maroon-art-plate`): flat fallback fill under the cover silk, identical in both themes. White on it: 10.75:1.
-- **Cover Silk Sheen** (`cover-silk-sheen`) and **Back Cover Silk Sheen** (`back-cover-silk-sheen`): the peak colors fed to the silk shader on the cover and back cover. The shader darkens folds toward roughly a third of the peak; the brightest sheen it can draw still holds white text above 5.1:1. The back cover falls back to the flat Primary Blue Plate.
-- **Print Green** (`print-green`, light; `green-on-shell`, dark): the ready lamp on the canvas rim. Nothing else.
+- **Danger** (`danger`, light; `danger-on-shell`, dark): error alerts, the error toast badge, palette errors, danger notes, oversized outputs. A red kept clear of the sun orange so an error never reads as the Image plate. Alerts carry white text in light and shell text in dark.
+- **Voxel scene colors** (`sunset-sky-top`, `sunset-glow`, `dusk-sky-top`, and the full tables in `VOXEL_SCENES`): the cover and back cover art, the same in both themes. Chips on the plates are fixed paper and moss ink (`--chip`, `--chip-ink`); the back cover title in chip paper holds at least 4.8:1 against every dusk sky band.
 
 ### Neutral
-- **Booklet Stock** (`booklet-stock`): page ground, label band, inspector, inputs, cards on the page, toasts, the cover's right column.
-- **Sheet Grey** (`booklet-sheet`): thumb-tab strip, export bar, canvas surround, hover wells, dropzone fill, scrollbar track.
-- **Trough Grey** (`booklet-trough`): slider trough and the disabled Download fill.
-- **Print Ink** (`print-ink`): text, rules, pressed segments, proof tags, the Finish stage plate, and the cover CTA. **Keyline** (`keyline`) is the same black but stays black in both themes: it frames sprites, callouts, and swatch strips sitting on plates.
-- **Pencil Grey** (`pencil-grey`): hints, descriptions, labels on the export bar (6.82:1 on stock).
+- **Meadow Paper** (`meadow-paper`): page ground, label band, inspector, inputs, cards on the page, toasts, the cover's right column.
+- **Meadow Sheet** (`meadow-sheet`): thumb-tab strip, export bar, canvas surround, hover wells, dropzone fill, scrollbar track.
+- **Meadow Trough** (`meadow-trough`): slider trough and the disabled Download fill.
+- **Moss Ink** (`moss-ink`): text, rules, pressed segments, proof tags, and the cover CTA. **Keyline** (`keyline`) frames sprites, callouts, and swatch strips sitting on plates.
+- **Moss Muted** (`moss-muted`): hints, descriptions, labels on the export bar (6.83:1 on paper).
 - **Soft Rule** (`soft-rule`): dividers between inspector groups and readout rows; the only rule lighter than ink.
 - **Checker Light A / B** and **Ghost Cell**: 16px transparency checker behind processed alpha, and the 1px lines of the ghost grid.
-- **Cartridge Shell** (`cartridge-shell`), **Cartridge Sheet**, **Cartridge Trough**: the dark-theme counterparts of stock, sheet, and trough.
-- **Chalk Ink** (`chalk-ink`) and **Shell Muted Ink** (`shell-muted-ink`): dark-theme text (14.89:1 and 6.66:1 on the shell). In dark theme the Finish plate inverts to chalk with ink text.
-- **Shell Rule** (`shell-rule`, 5.11:1 on the shell) and **Shell Soft Rule** (`shell-soft-rule`): dark-theme rules. The shipped dark rule is a solid grey, not a translucent chalk.
-- **Blue Text on Shell** (`blue-text-on-shell`): dark-theme link-grade blue and focus ring.
-- **Scrim** / **Scrim on Shell**: the overlay behind the drop overlay and legal dialog.
+- **Moss Shell** (`moss-shell`), **Moss Shell Sheet**, **Moss Shell Trough**: the dark-theme counterparts of paper, sheet, and trough.
+- **Shell Ink** (`shell-ink`) and **Shell Muted Ink** (`shell-muted-ink`): dark-theme text (15.93:1 and 8.80:1 on the shell).
+- **Shell Rule** (`shell-rule`, 5.96:1 on the shell) and **Shell Soft Rule** (`shell-soft-rule`): dark-theme rules.
+- **Scrim** / **Scrim on Shell**: the overlay behind the drop overlay, dialogs, and the crop editor's outside area.
 
 ### Named Rules
-**The Stage Plate Rule.** In the Studio, the stage in use owns one plate (Image red, Grid marigold, Color blue, Finish ink) and only the stage furniture takes it: the open thumb tab, the inspector numeral, the active grid preset, and the Pixel proof tag. Every other color on screen is ink, paper, or a fixed-role plate.
+**The Stage Plate Rule.** In the Studio, the stage in use owns one plate (Image sun, Grid gold, Color grass, Finish tide) and only the stage furniture takes it: the open thumb tab, the inspector numeral, the active grid preset, and the Pixel proof tag. Every other color on screen is ink, paper, or a fixed-role plate.
 
-**The Fixed Roles Rule.** In UI, outside the stage plate, each plate means one thing: blue is the action, red is the compare rule and errors, marigold is attention (on, busy, selected, saved). Only label art may use plates freely: the landing cover, How to play heads, cartridge cards, the safety page, and the back cover.
+**The Fixed Roles Rule.** In UI, outside the stage plate, each plate means one thing: grass is the action, sun is the compare rule, gold is attention (on, busy, selected, saved), danger is errors. Only label art may use plates freely: the landing cover, How to play heads, cartridge cards, the safety page, and the back cover.
 
-**The Text-Grade Rule.** Plates are fields; text on paper uses the text-grade variant (`red-plate-text`, `red-text-on-shell`, `blue-text-on-shell`). Never set red or blue plate values as small text on the dark shell.
+**The Text-Grade Rule.** Plates are fields; text on paper uses the text-grade variant (`sun-text`, `sun-text-on-shell`). Sun orange and gold never set small text on paper.
+
+**The One Sunset Rule.** Every plate color appears in the voxel scene. A new color earns its place by existing in that sunset first.
 
 ## Typography
 
@@ -276,7 +279,7 @@ Two neutral grounds (booklet stock and cartridge shell), black ink, and four spo
 
 ## Layout
 
-**Landing (the booklet).** A sticky 64px label band (bee mark, wordmark, How to play / Presets / FAQ, theme toggle, Open Studio) sits on a 2px ink rule. The cover is an `11fr / 9fr` split: the maroon silk plate on the left with the sprite, callouts, and swatch strip pinned to its right edge, and the white column on the right with headline, pitch, cover button, and drop target. The cover's height is `clamp(600px, calc(100svh - 284px), 860px)` so How to play panel 1 peeks above the fold. The sprite box (486px max, 480 art px plus key line, divisible by every cover grid) breaks the plate edge into the white column by up to 112px. Spreads follow with 72px vertical padding and `clamp(16px, 4vw, 48px)` gutters, each closed by a 2px rule: How to play (four panels in a ruled 4-column grid), five cartridge cards, the marigold safety page (`2fr / 3fr`), a two-column Q and A, the blue silk back cover, and a colophon.
+**Landing (the booklet).** A sticky 64px label band (bee mark, wordmark, How to play / Presets / FAQ, theme toggle, Open Studio) sits on a 2px ink rule. The cover is an `11fr / 9fr` split: the voxel sunset plate on the left with the sprite, callouts, and swatch strip pinned to its right edge, and the paper column on the right with headline, pitch, cover button, and drop target. The cover's height is `clamp(600px, calc(100svh - 284px), 860px)` so How to play panel 1 peeks above the fold. The sprite box (486px max, 480 art px plus key line, divisible by every cover grid) breaks the plate edge into the paper column by up to 112px. Spreads follow with 72px vertical padding and `clamp(16px, 4vw, 48px)` gutters, each closed by a 2px rule: How to play (four panels in a ruled 4-column grid), five cartridge cards, the gold safety page (`2fr / 3fr`), a two-column Q and A, the voxel dusk back cover (at least `clamp(300px, 34vw, 480px)` tall so sky, moon, water, and island all show), and a colophon.
 
 **Studio (the booklet opened flat).** A full-viewport grid: 52px label band, the bench, and a 64px export bar. The bench is three columns: 72px thumb-index tabs, the workspace, and a 400px full-height inspector (360px below 1380px). The workspace stacks a 52px view strip (view mode, touch-up, zoom), the page (ghost grid when empty, the proof framed in a 2px rule when loaded, 24px padding), and a 40px rim of fixed readout slots. The export bar spans the full width under the bench and is always visible, so settings never compete with export for height.
 
@@ -286,44 +289,44 @@ Two neutral grounds (booklet stock and cartridge shell), black ink, and four spo
 
 ## Elevation & Depth
 
-None. The system is flat: no `box-shadow` anywhere, no blur, no translucency on UI. Depth is printed: a 2px ink rule separates the major regions (band, tabs, inspector, export bar, spreads), a 1px rule subdivides inside them, a plate flood marks what is in front, and the open thumb tab overlaps the tab-strip rule by 2px so it reads as a tab cut into the page. Overlays (drop overlay, legal dialog) sit on a flat scrim with a 2px ink border. The silk on the two art plates is the only rendered tone, and it stays behind the art.
+None. The system is flat: no `box-shadow` anywhere, no blur, no translucency on UI. Depth is printed: a 2px ink rule separates the major regions (band, tabs, inspector, export bar, spreads), a 1px rule subdivides inside them, a plate flood marks what is in front, and the open thumb tab overlaps the tab-strip rule by 2px so it reads as a tab cut into the page. Overlays (drop overlay, legal dialog) sit on a flat scrim with a 2px ink border. The voxel scenes on the two art plates are the only pictures that are not pipeline output, and they stay behind the art.
 
 ### Named Rules
 **The Printed Depth Rule.** If something needs to read as on top, give it a plate, a heavier rule, or an overlap. Never a shadow.
 
 ## Shapes
 
-Every UI corner is square (`0px`), including inputs, color wells, toggles, slider thumbs (a 16 by 20px block), swatches, toasts, and dialogs. Borders are either the 1px hairline or the 2px stroke, always solid ink, except drop targets, which use a 2px dashed rule that turns solid on hover. Sprites wear a 3px black key line; callouts and swatch strips on plates wear a 2px key line. The comparison handle is a 20 by 36px red block with a 2px paper border. The ready lamp is an 8px square. The only curves in the system belong to the bee mark (rounded body, round wing caps) and the 24px line icons, which use square caps and miter joins at stroke width 2.
+Every UI corner is square (`0px`), including inputs, color wells, toggles, slider thumbs (a 16 by 20px block), swatches, toasts, and dialogs. Borders are either the 1px hairline or the 2px stroke, always solid ink, except drop targets, which use a 2px dashed rule that turns solid on hover. Sprites wear a 3px moss key line; callouts and swatch strips on plates wear a 2px key line. The comparison handle is a 20 by 36px sun block with a 2px paper border; its focus ring wraps the handle. The ready lamp is an 8px square. The only curves in the system belong to the bee mark (rounded body, round wing caps) and the 24px line icons, which use square caps and miter joins at stroke width 2.
 
 ## Components
 
 ### Buttons
 Flat, square, decisive. Every button changes color in two steps on hover (`120ms steps(2)`).
 - **Shape:** square (`0px`).
-- **Primary:** blue plate with white text, 44px tall, 20px side padding, Zen 700. Hover inverts to ink with paper text.
-- **Cover button:** ink with paper text, 60px tall, 18px label with a trailing arrow; hover floods blue. On the back cover it inverts to white on the silk, hovering to ink.
+- **Primary:** grass plate with white text (shell text in dark), 44px tall, 20px side padding, Zen 700. Hover inverts to ink with paper text.
+- **Cover button:** ink with paper text, 60px tall, 18px label with a trailing arrow; hover floods grass. On the back cover it inverts to chip paper over the dusk scene, hovering to ink.
 - **Secondary / ghost / icon:** 1px ink rule on paper, 36px tall (icon buttons 36px square); hover inverts to ink.
 - **Quiet / text:** underlined text at a 1px weight, thickening to 2px on hover.
-- **Focus:** 2px blue outline (light) or blue-on-shell outline (dark) at 2px offset, on every interactive element.
+- **Focus:** 2px grass outline (light) or grass-on-shell outline (dark) at 2px offset, on every interactive element.
 - **Disabled:** 45% opacity; the Download button instead drops to the trough fill with pencil-grey text and shows its reason in an ink slip above it.
 
 ### Chips and segmented controls
 - **Segmented:** a 1px ruled strip of 34px options divided by hairlines; the pressed option inks solid (ink fill, paper text). Hover on unpressed options takes the sheet fill.
 - **Grid presets:** a 3-column ruled grid of blocks, each a pixel-face count over a small hint. The active block takes the stage plate.
 - **Palette chips:** 28px square swatches in a 1px rule; hover outlines 1px, selected outlines 2px at 2px offset.
-- **Callout chips (cover):** lettered label strips clipped to the sprite rim: an ink letter cell, then 40px chips; pressed chips ink solid, hovered chips go marigold.
+- **Callout chips (cover):** lettered label strips clipped to the sprite rim: an ink letter cell, then 40px chips; pressed chips ink solid, hovered chips go gold. The grid and color caption below the sprite sits on an ink chip, since the scene behind it changes.
 
 ### Cards / Containers
 - **Corner Style:** square.
-- **Cartridge cards:** the five retro presets, each a whole plate (red, marigold, blue, ink, red) in a 2px rule, with the preset name in the display face, the live color count in the pixel face, and the koi rendered by that preset at 64 cells. Hovering a card rotates its palette (stepped, about 8 frames a second).
+- **Cartridge cards:** the five retro presets, each a whole plate (sun, gold, grass, ink, sun) in a 2px rule, with the preset name in the display face, the live color count in the pixel face, and the koi rendered by that preset at 64 cells. Hovering a card rotates its palette (stepped, about 8 frames a second).
 - **How to play panels:** a plate head with a 44px pixel numeral and title, a bold lead, a ghost-gridded diagram of the real control with lettered marks joined by 1px leader lines ending in a square dot, and a lettered legend.
 - **Inspector groups:** no boxes; groups pad 20px and divide with a soft rule.
 - **Shadow Strategy:** none (see Elevation & Depth).
 
 ### Inputs / Fields
-- **Style:** 40px number and color fields in a 1px ink rule on paper, values in the pixel face, unit suffix in pencil grey; selects are 38px with a drawn chevron; the toggle is a 40 by 22px square lamp whose 16px thumb jumps 18px and turns marigold on an ink track; the slider is a 4px ruler filled with ink up to the value.
+- **Style:** 40px number and color fields in a 1px ink rule on paper, values in the pixel face, unit suffix in pencil grey; selects are 38px with a drawn chevron; the toggle is a 40 by 22px square lamp whose 16px thumb jumps 18px and turns gold on an ink track; the slider is a 4px ruler filled with ink up to the value.
 - **Focus:** 2px focus outline around the whole field (`focus-within`).
-- **Error / Disabled:** errors are a red plate alert with white bold text and an underlined dismiss; danger notes and oversized outputs switch to the text-grade red. Disabled fields drop to 45% opacity.
+- **Error / Disabled:** errors are a danger alert with white bold text (shell text in dark) and an underlined dismiss; danger notes and oversized outputs switch to the danger text color. Disabled fields drop to 45% opacity.
 
 ### Navigation
 - **Landing label band:** 64px, sticky, 2px rule beneath, bold 13px links that underline at 2px on hover, the Open Studio primary button at 40px.
@@ -334,30 +337,30 @@ Flat, square, decisive. Every button changes color in two steps on hover (`120ms
 The landing sprite runs the real pipeline on the koi specimen (or a dropped image) at a square grid, sized to an exact integer multiple of its cells, inside a 3px key line. Before pixels arrive, the cell is a ghost grid: 1px ghost-cell lines at the current cell size. When a result lands, a ghost-grid overlay retracts row by row (`420ms`, one step per row, 4 to 32 rows), revealing the art in scanline order. The Studio proof uses the same fill on every reprocess. The cover shows the extracted palette under the sprite as a 16-column swatch strip in a key line.
 
 ### Rim readouts and export bar
-Readouts (grid, output, colors, status) sit on the canvas bottom rim in fixed slots and roll to new values in six 30ms steps, like a sprite counter. Proof captions sit on the top rim: an ink tag on the left, a stage-plate tag on the right; a marigold tag marks processing. The export bar holds Format, Scale, and Background (Clear or Fill, with a fill color) as labeled segmented groups, then the Output readout and the Download button. While encoding, Download shows a stepped blue and ink stripe; on success a marigold "Saved" stamp prints over it at a slight tilt, then clears.
+Readouts (grid, output, colors, status) sit on the canvas bottom rim in fixed slots and roll to new values in six 30ms steps, like a sprite counter. Proof captions sit on the top rim: an ink tag on the left, a stage-plate tag on the right; a gold tag marks processing. The export bar holds Format, Scale, and Background (Clear or Fill, with a fill color) as labeled segmented groups, then the Output readout and the Download button. While encoding, Download shows a stepped grass and ink stripe; on success a gold "Saved" stamp prints over it at a slight tilt, then clears.
 
 ### Motion
-**Art register (glide).** The silk shader (`SilkPlate.tsx`) draws slow fabric folds and fine grain from one peak color, continuously, on the cover (`cover-silk-sheen`) and back cover (`back-cover-silk-sheen`) only. Device pixel ratio caps at 1.5; it pauses off screen and in hidden tabs; under reduced motion it renders one still frame; without WebGL the flat plate shows. The canvas fades in over 900ms once its first frame is ready. During a drag over the cover the silk drops to 35% and the plate turns blue.
+**Art plates (steps).** `VoxelPlate.tsx` draws an original blocky landscape on a canvas 120 px tall and 192 to 520 px wide (the plate's aspect decides; the 192 px tile repeats), shown with `object-fit: cover` and `image-rendering: pixelated`. Layers: stepped sky bands with a one-row checker dither at each seam, a block sun with a glow ring (dusk: a block moon and stars), cloud slabs with lit undersides, far and near ranges in 4 and 6 px columns, water with the orb's reflection in stepped rows, and an island of 8 px grass and dirt blocks with block trees. One 600ms interval drives it: clouds move a pixel each tick, the glint swaps every 900ms, a star blinks every 1.2s. It pauses off screen and in hidden tabs; under reduced motion it draws one still frame. During a drag over the cover the scene drops to 35% and the plate turns grass.
 
 **UI register (steps).** Color swaps and toggle thumbs: `120ms steps(2)`. Toast rise: 8px in `120ms steps(2)`. Tab and stage panel flood: a clip-path wipe in `160ms steps(4)`. Palette cascade: each swatch flips in over `120ms steps(3)`, 22ms apart. Ghost grid fill: `420ms`, one step per row. Readout tick: 6 frames at 30ms. Encode stripe and marching drop-target dashes: `480ms steps(4)`, looping. Saved stamp: `1400ms steps(3)`. Theme switch: a View Transitions wipe down the page in `360ms steps(6)`. Bee wings: two-frame flap at 180ms on wordmark hover. Spinner: `0.8s steps(8)`. Reduced motion collapses all of it to instant.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** give the stage in use its plate (Image red, Grid marigold, Color blue, Finish ink) on its tab, numeral, active preset, and Pixel tag, and keep everything else ink and paper.
-- **Do** keep blue for actions, red for the compare rule and errors, and marigold for on, busy, selected, and saved states.
+- **Do** give the stage in use its plate (Image sun, Grid gold, Color grass, Finish tide) on its tab, numeral, active preset, and Pixel tag, and keep everything else ink and paper.
+- **Do** keep grass for actions, sun for the compare rule, gold for on, busy, selected, and saved states, and danger for errors.
 - **Do** draw with hard-stop fills: ghost grids, the checker, slider fill, and stripes are hard-edged `linear-gradient` stops, never blends.
 - **Do** separate regions with a 2px ink rule and subdivide with a 1px rule; mark what is in front with a plate or an overlap.
-- **Do** render every sprite and preview at a true integer scale with `image-rendering: pixelated`, inside a black key line.
+- **Do** render every sprite and preview at a true integer scale with `image-rendering: pixelated`, inside a moss key line.
 - **Do** put changing numbers in the pixel face inside fixed-width slots, and roll them in steps.
 - **Do** animate UI in discrete steps (`steps()` in CSS, fixed-interval frames in script), and route every animation through the reduced-motion reset.
-- **Do** keep silk on the two landing art plates, with a flat fallback color and white text above 4.5:1 against the brightest sheen; add any new plate pair to `scripts/check-contrast.cjs`.
+- **Do** keep the voxel scenes on the two landing art plates, set text on them as chips or as large display type checked against every sky band, and add any new plate pair to `scripts/check-contrast.cjs`.
 
 ### Don't:
 - **Don't** use `box-shadow`, blur, glows, or blended gradients on any UI element.
 - **Don't** round a corner; the bee mark and line icons are the only curves.
 - **Don't** flood more than one stage plate at a time in the Studio, or put plate color on a control that is neither active stage furniture nor a fixed-role element.
-- **Don't** put silk, or any eased glide, on controls, tabs, panels, readouts, or the Studio.
+- **Don't** use eased glides anywhere, art plates included; and don't draw scene art from another game's textures, blocks, names, or logos.
 - **Don't** set body copy, headings, or worded labels in DotGothic16, and don't uppercase or letter-space labels.
 - **Don't** fake pixel art with CSS filters or smoothing; every sprite on the page is real pipeline output.
 - **Don't** print real console names, logos, seals, or trade dress on cards, labels, or copy.
