@@ -1,0 +1,1072 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-10T15:35:00.000Z",
+  "title": "Design System: beexie",
+  "extensions": {
+    "colorMeta": {
+      "electric-cobalt": {
+        "role": "primary",
+        "displayName": "Electric Cobalt",
+        "canonical": "oklch(49% 0.245 265.7)",
+        "tonalRamp": [
+          "oklch(15% 0.1347 265.7)",
+          "oklch(26% 0.1911 265.7)",
+          "oklch(38% 0.245 265.7)",
+          "oklch(50% 0.245 265.7)",
+          "oklch(62% 0.245 265.7)",
+          "oklch(74% 0.245 265.7)",
+          "oklch(85% 0.1592 265.7)",
+          "oklch(95% 0.0857 265.7)"
+        ]
+      },
+      "electric-cobalt-hover": {
+        "role": "primary",
+        "displayName": "Electric Cobalt Hover",
+        "canonical": "oklch(42.2% 0.2127 265.8)",
+        "tonalRamp": [
+          "oklch(15% 0.117 265.8)",
+          "oklch(26% 0.1659 265.8)",
+          "oklch(38% 0.2127 265.8)",
+          "oklch(50% 0.2127 265.8)",
+          "oklch(62% 0.2127 265.8)",
+          "oklch(74% 0.2127 265.8)",
+          "oklch(85% 0.1383 265.8)",
+          "oklch(95% 0.0745 265.8)"
+        ]
+      },
+      "cobalt-press-dark": {
+        "role": "primary",
+        "displayName": "Cobalt Press Dark",
+        "canonical": "oklch(52.3% 0.2295 266.4)",
+        "tonalRamp": [
+          "oklch(15% 0.1262 266.4)",
+          "oklch(26% 0.179 266.4)",
+          "oklch(38% 0.2295 266.4)",
+          "oklch(50% 0.2295 266.4)",
+          "oklch(62% 0.2295 266.4)",
+          "oklch(74% 0.2295 266.4)",
+          "oklch(85% 0.1492 266.4)",
+          "oklch(95% 0.0803 266.4)"
+        ]
+      },
+      "cobalt-press-dark-hover": {
+        "role": "primary",
+        "displayName": "Cobalt Press Dark Hover",
+        "canonical": "oklch(56.3% 0.224 267)",
+        "tonalRamp": [
+          "oklch(15% 0.1232 267)",
+          "oklch(26% 0.1747 267)",
+          "oklch(38% 0.224 267)",
+          "oklch(50% 0.224 267)",
+          "oklch(62% 0.224 267)",
+          "oklch(74% 0.224 267)",
+          "oklch(85% 0.1456 267)",
+          "oklch(95% 0.0784 267)"
+        ]
+      },
+      "cobalt-ink-dark-text": {
+        "role": "primary",
+        "displayName": "Cobalt Ink Dark Text",
+        "canonical": "oklch(74.6% 0.13 265.5)",
+        "tonalRamp": [
+          "oklch(15% 0.0715 265.5)",
+          "oklch(26% 0.1014 265.5)",
+          "oklch(38% 0.13 265.5)",
+          "oklch(50% 0.13 265.5)",
+          "oklch(62% 0.13 265.5)",
+          "oklch(74% 0.13 265.5)",
+          "oklch(85% 0.0845 265.5)",
+          "oklch(95% 0.0455 265.5)"
+        ]
+      },
+      "vermilion-proof": {
+        "role": "secondary",
+        "displayName": "Vermilion Proof",
+        "canonical": "oklch(63.4% 0.2023 32.5)",
+        "tonalRamp": [
+          "oklch(15% 0.1112 32.5)",
+          "oklch(26% 0.1578 32.5)",
+          "oklch(38% 0.2023 32.5)",
+          "oklch(50% 0.2023 32.5)",
+          "oklch(62% 0.2023 32.5)",
+          "oklch(74% 0.2023 32.5)",
+          "oklch(85% 0.1315 32.5)",
+          "oklch(95% 0.0708 32.5)"
+        ]
+      },
+      "vermilion-proof-text": {
+        "role": "secondary",
+        "displayName": "Vermilion Proof Text",
+        "canonical": "oklch(53.7% 0.1855 32.3)",
+        "tonalRamp": [
+          "oklch(15% 0.102 32.3)",
+          "oklch(26% 0.1447 32.3)",
+          "oklch(38% 0.1855 32.3)",
+          "oklch(50% 0.1855 32.3)",
+          "oklch(62% 0.1855 32.3)",
+          "oklch(74% 0.1855 32.3)",
+          "oklch(85% 0.1206 32.3)",
+          "oklch(95% 0.0649 32.3)"
+        ]
+      },
+      "vermilion-proof-dark": {
+        "role": "secondary",
+        "displayName": "Vermilion Proof Dark",
+        "canonical": "oklch(68.5% 0.2058 32.5)",
+        "tonalRamp": [
+          "oklch(15% 0.1132 32.5)",
+          "oklch(26% 0.1605 32.5)",
+          "oklch(38% 0.2058 32.5)",
+          "oklch(50% 0.2058 32.5)",
+          "oklch(62% 0.2058 32.5)",
+          "oklch(74% 0.2058 32.5)",
+          "oklch(85% 0.1338 32.5)",
+          "oklch(95% 0.072 32.5)"
+        ]
+      },
+      "vermilion-proof-dark-text": {
+        "role": "secondary",
+        "displayName": "Vermilion Proof Dark Text",
+        "canonical": "oklch(75.2% 0.1505 32.1)",
+        "tonalRamp": [
+          "oklch(15% 0.0827 32.1)",
+          "oklch(26% 0.1174 32.1)",
+          "oklch(38% 0.1505 32.1)",
+          "oklch(50% 0.1505 32.1)",
+          "oklch(62% 0.1505 32.1)",
+          "oklch(74% 0.1505 32.1)",
+          "oklch(85% 0.0978 32.1)",
+          "oklch(95% 0.0527 32.1)"
+        ]
+      },
+      "proof-green": {
+        "role": "tertiary",
+        "displayName": "Proof Green",
+        "canonical": "oklch(51.1% 0.1234 153.3)",
+        "tonalRamp": [
+          "oklch(15% 0.0679 153.3)",
+          "oklch(26% 0.0963 153.3)",
+          "oklch(38% 0.1234 153.3)",
+          "oklch(50% 0.1234 153.3)",
+          "oklch(62% 0.1234 153.3)",
+          "oklch(74% 0.1234 153.3)",
+          "oklch(85% 0.0802 153.3)",
+          "oklch(95% 0.0432 153.3)"
+        ]
+      },
+      "proof-green-dark": {
+        "role": "tertiary",
+        "displayName": "Proof Green Dark",
+        "canonical": "oklch(77.3% 0.1535 163.2)",
+        "tonalRamp": [
+          "oklch(15% 0.0844 163.2)",
+          "oklch(26% 0.1197 163.2)",
+          "oklch(38% 0.1535 163.2)",
+          "oklch(50% 0.1535 163.2)",
+          "oklch(62% 0.1535 163.2)",
+          "oklch(74% 0.1535 163.2)",
+          "oklch(85% 0.0998 163.2)",
+          "oklch(95% 0.0537 163.2)"
+        ]
+      },
+      "press-cyan": {
+        "role": "tertiary",
+        "displayName": "Press Cyan",
+        "canonical": "oklch(50% 0.1193 242.7)",
+        "tonalRamp": [
+          "oklch(15% 0.0656 242.7)",
+          "oklch(26% 0.093 242.7)",
+          "oklch(38% 0.1193 242.7)",
+          "oklch(50% 0.1193 242.7)",
+          "oklch(62% 0.1193 242.7)",
+          "oklch(74% 0.1193 242.7)",
+          "oklch(85% 0.0775 242.7)",
+          "oklch(95% 0.0418 242.7)"
+        ]
+      },
+      "press-cyan-dark": {
+        "role": "tertiary",
+        "displayName": "Press Cyan Dark",
+        "canonical": "oklch(75.4% 0.139 232.7)",
+        "tonalRamp": [
+          "oklch(15% 0.0764 232.7)",
+          "oklch(26% 0.1084 232.7)",
+          "oklch(38% 0.139 232.7)",
+          "oklch(50% 0.139 232.7)",
+          "oklch(62% 0.139 232.7)",
+          "oklch(74% 0.139 232.7)",
+          "oklch(85% 0.0903 232.7)",
+          "oklch(95% 0.0486 232.7)"
+        ]
+      },
+      "press-amber": {
+        "role": "tertiary",
+        "displayName": "Press Amber",
+        "canonical": "oklch(52.5% 0.1283 54.6)",
+        "tonalRamp": [
+          "oklch(15% 0.0705 54.6)",
+          "oklch(26% 0.1 54.6)",
+          "oklch(38% 0.1283 54.6)",
+          "oklch(50% 0.1283 54.6)",
+          "oklch(62% 0.1283 54.6)",
+          "oklch(74% 0.1283 54.6)",
+          "oklch(85% 0.0834 54.6)",
+          "oklch(95% 0.0449 54.6)"
+        ]
+      },
+      "press-amber-dark": {
+        "role": "tertiary",
+        "displayName": "Press Amber Dark",
+        "canonical": "oklch(83.7% 0.1644 84.4)",
+        "tonalRamp": [
+          "oklch(15% 0.0904 84.4)",
+          "oklch(26% 0.1282 84.4)",
+          "oklch(38% 0.1644 84.4)",
+          "oklch(50% 0.1644 84.4)",
+          "oklch(62% 0.1644 84.4)",
+          "oklch(74% 0.1644 84.4)",
+          "oklch(85% 0.1069 84.4)",
+          "oklch(95% 0.0575 84.4)"
+        ]
+      },
+      "press-danger": {
+        "role": "tertiary",
+        "displayName": "Press Danger",
+        "canonical": "oklch(53.7% 0.1855 32.3)",
+        "tonalRamp": [
+          "oklch(15% 0.102 32.3)",
+          "oklch(26% 0.1447 32.3)",
+          "oklch(38% 0.1855 32.3)",
+          "oklch(50% 0.1855 32.3)",
+          "oklch(62% 0.1855 32.3)",
+          "oklch(74% 0.1855 32.3)",
+          "oklch(85% 0.1206 32.3)",
+          "oklch(95% 0.0649 32.3)"
+        ]
+      },
+      "press-danger-dark": {
+        "role": "tertiary",
+        "displayName": "Press Danger Dark",
+        "canonical": "oklch(75.2% 0.1505 32.1)",
+        "tonalRamp": [
+          "oklch(15% 0.0827 32.1)",
+          "oklch(26% 0.1174 32.1)",
+          "oklch(38% 0.1505 32.1)",
+          "oklch(50% 0.1505 32.1)",
+          "oklch(62% 0.1505 32.1)",
+          "oklch(74% 0.1505 32.1)",
+          "oklch(85% 0.0978 32.1)",
+          "oklch(95% 0.0527 32.1)"
+        ]
+      },
+      "cotton-ivory-paper": {
+        "role": "neutral",
+        "displayName": "Cotton-Press Ivory",
+        "canonical": "oklch(97.3% 0.007 88.6)",
+        "tonalRamp": [
+          "oklch(15% 0.0038 88.6)",
+          "oklch(26% 0.0054 88.6)",
+          "oklch(38% 0.007 88.6)",
+          "oklch(50% 0.007 88.6)",
+          "oklch(62% 0.007 88.6)",
+          "oklch(74% 0.007 88.6)",
+          "oklch(85% 0.0045 88.6)",
+          "oklch(95% 0.0024 88.6)"
+        ]
+      },
+      "press-sheet-white": {
+        "role": "neutral",
+        "displayName": "Press Sheet White",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(38% 0 0)",
+          "oklch(50% 0 0)",
+          "oklch(62% 0 0)",
+          "oklch(74% 0 0)",
+          "oklch(85% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "cotton-well": {
+        "role": "neutral",
+        "displayName": "Cotton Well",
+        "canonical": "oklch(95% 0.0099 87.5)",
+        "tonalRamp": [
+          "oklch(15% 0.0054 87.5)",
+          "oklch(26% 0.0077 87.5)",
+          "oklch(38% 0.0099 87.5)",
+          "oklch(50% 0.0099 87.5)",
+          "oklch(62% 0.0099 87.5)",
+          "oklch(74% 0.0099 87.5)",
+          "oklch(85% 0.0064 87.5)",
+          "oklch(95% 0.0035 87.5)"
+        ]
+      },
+      "cotton-well-deep": {
+        "role": "neutral",
+        "displayName": "Cotton Well Deep",
+        "canonical": "oklch(90.8% 0.0157 86.4)",
+        "tonalRamp": [
+          "oklch(15% 0.0087 86.4)",
+          "oklch(26% 0.0123 86.4)",
+          "oklch(38% 0.0157 86.4)",
+          "oklch(50% 0.0157 86.4)",
+          "oklch(62% 0.0157 86.4)",
+          "oklch(74% 0.0157 86.4)",
+          "oklch(85% 0.0102 86.4)",
+          "oklch(95% 0.0055 86.4)"
+        ]
+      },
+      "lampblack-ink": {
+        "role": "neutral",
+        "displayName": "Lampblack Ink",
+        "canonical": "oklch(18.6% 0.0088 264.3)",
+        "tonalRamp": [
+          "oklch(15% 0.0048 264.3)",
+          "oklch(26% 0.0068 264.3)",
+          "oklch(38% 0.0088 264.3)",
+          "oklch(50% 0.0088 264.3)",
+          "oklch(62% 0.0088 264.3)",
+          "oklch(74% 0.0088 264.3)",
+          "oklch(85% 0.0057 264.3)",
+          "oklch(95% 0.0031 264.3)"
+        ]
+      },
+      "press-frame-ink": {
+        "role": "neutral",
+        "displayName": "Press Frame Ink",
+        "canonical": "oklch(20.5% 0.0104 268.2)",
+        "tonalRamp": [
+          "oklch(15% 0.0057 268.2)",
+          "oklch(26% 0.0081 268.2)",
+          "oklch(38% 0.0104 268.2)",
+          "oklch(50% 0.0104 268.2)",
+          "oklch(62% 0.0104 268.2)",
+          "oklch(74% 0.0104 268.2)",
+          "oklch(85% 0.0068 268.2)",
+          "oklch(95% 0.0037 268.2)"
+        ]
+      },
+      "graphite-ink": {
+        "role": "neutral",
+        "displayName": "Graphite Ink",
+        "canonical": "oklch(37.5% 0.0163 266.5)",
+        "tonalRamp": [
+          "oklch(15% 0.009 266.5)",
+          "oklch(26% 0.0127 266.5)",
+          "oklch(38% 0.0163 266.5)",
+          "oklch(50% 0.0163 266.5)",
+          "oklch(62% 0.0163 266.5)",
+          "oklch(74% 0.0163 266.5)",
+          "oklch(85% 0.0106 266.5)",
+          "oklch(95% 0.0057 266.5)"
+        ]
+      },
+      "slate-muted-ink": {
+        "role": "neutral",
+        "displayName": "Slate Muted Ink",
+        "canonical": "oklch(47.1% 0.0154 266.6)",
+        "tonalRamp": [
+          "oklch(15% 0.0085 266.6)",
+          "oklch(26% 0.012 266.6)",
+          "oklch(38% 0.0154 266.6)",
+          "oklch(50% 0.0154 266.6)",
+          "oklch(62% 0.0154 266.6)",
+          "oklch(74% 0.0154 266.6)",
+          "oklch(85% 0.01 266.6)",
+          "oklch(95% 0.0054 266.6)"
+        ]
+      },
+      "stone-rule": {
+        "role": "neutral",
+        "displayName": "Stone Rule",
+        "canonical": "oklch(51.8% 0.0129 89.8)",
+        "tonalRamp": [
+          "oklch(15% 0.0071 89.8)",
+          "oklch(26% 0.01 89.8)",
+          "oklch(38% 0.0129 89.8)",
+          "oklch(50% 0.0129 89.8)",
+          "oklch(62% 0.0129 89.8)",
+          "oklch(74% 0.0129 89.8)",
+          "oklch(85% 0.0084 89.8)",
+          "oklch(95% 0.0045 89.8)"
+        ]
+      },
+      "parchment-hairline": {
+        "role": "neutral",
+        "displayName": "Parchment Hairline",
+        "canonical": "oklch(88% 0.0159 86.4)",
+        "tonalRamp": [
+          "oklch(15% 0.0087 86.4)",
+          "oklch(26% 0.0124 86.4)",
+          "oklch(38% 0.0159 86.4)",
+          "oklch(50% 0.0159 86.4)",
+          "oklch(62% 0.0159 86.4)",
+          "oklch(74% 0.0159 86.4)",
+          "oklch(85% 0.0103 86.4)",
+          "oklch(95% 0.0056 86.4)"
+        ]
+      },
+      "checker-light-a": {
+        "role": "neutral",
+        "displayName": "Checker Light A",
+        "canonical": "oklch(92.5% 0.0141 88.7)",
+        "tonalRamp": [
+          "oklch(15% 0.0077 88.7)",
+          "oklch(26% 0.011 88.7)",
+          "oklch(38% 0.0141 88.7)",
+          "oklch(50% 0.0141 88.7)",
+          "oklch(62% 0.0141 88.7)",
+          "oklch(74% 0.0141 88.7)",
+          "oklch(85% 0.0091 88.7)",
+          "oklch(95% 0.0049 88.7)"
+        ]
+      },
+      "checker-light-b": {
+        "role": "neutral",
+        "displayName": "Checker Light B",
+        "canonical": "oklch(96.7% 0.0111 89.7)",
+        "tonalRamp": [
+          "oklch(15% 0.0061 89.7)",
+          "oklch(26% 0.0086 89.7)",
+          "oklch(38% 0.0111 89.7)",
+          "oklch(50% 0.0111 89.7)",
+          "oklch(62% 0.0111 89.7)",
+          "oklch(74% 0.0111 89.7)",
+          "oklch(85% 0.0072 89.7)",
+          "oklch(95% 0.0039 89.7)"
+        ]
+      },
+      "pressroom-charcoal": {
+        "role": "neutral",
+        "displayName": "Pressroom Charcoal",
+        "canonical": "oklch(19.2% 0.0126 270.7)",
+        "tonalRamp": [
+          "oklch(15% 0.0069 270.7)",
+          "oklch(26% 0.0098 270.7)",
+          "oklch(38% 0.0126 270.7)",
+          "oklch(50% 0.0126 270.7)",
+          "oklch(62% 0.0126 270.7)",
+          "oklch(74% 0.0126 270.7)",
+          "oklch(85% 0.0082 270.7)",
+          "oklch(95% 0.0044 270.7)"
+        ]
+      },
+      "pressroom-sheet": {
+        "role": "neutral",
+        "displayName": "Pressroom Sheet",
+        "canonical": "oklch(22.6% 0.0144 266.9)",
+        "tonalRamp": [
+          "oklch(15% 0.0079 266.9)",
+          "oklch(26% 0.0112 266.9)",
+          "oklch(38% 0.0144 266.9)",
+          "oklch(50% 0.0144 266.9)",
+          "oklch(62% 0.0144 266.9)",
+          "oklch(74% 0.0144 266.9)",
+          "oklch(85% 0.0093 266.9)",
+          "oklch(95% 0.005 266.9)"
+        ]
+      },
+      "pressroom-well": {
+        "role": "neutral",
+        "displayName": "Pressroom Well",
+        "canonical": "oklch(26.9% 0.0195 267.9)",
+        "tonalRamp": [
+          "oklch(15% 0.0108 267.9)",
+          "oklch(26% 0.0152 267.9)",
+          "oklch(38% 0.0195 267.9)",
+          "oklch(50% 0.0195 267.9)",
+          "oklch(62% 0.0195 267.9)",
+          "oklch(74% 0.0195 267.9)",
+          "oklch(85% 0.0127 267.9)",
+          "oklch(95% 0.0068 267.9)"
+        ]
+      },
+      "pressroom-well-deep": {
+        "role": "neutral",
+        "displayName": "Pressroom Well Deep",
+        "canonical": "oklch(31% 0.0245 268.5)",
+        "tonalRamp": [
+          "oklch(15% 0.0135 268.5)",
+          "oklch(26% 0.0191 268.5)",
+          "oklch(38% 0.0245 268.5)",
+          "oklch(50% 0.0245 268.5)",
+          "oklch(62% 0.0245 268.5)",
+          "oklch(74% 0.0245 268.5)",
+          "oklch(85% 0.0159 268.5)",
+          "oklch(95% 0.0086 268.5)"
+        ]
+      },
+      "pressroom-toast-deep": {
+        "role": "neutral",
+        "displayName": "Pressroom Toast Deep",
+        "canonical": "oklch(15.9% 0.0091 264.3)",
+        "tonalRamp": [
+          "oklch(15% 0.005 264.3)",
+          "oklch(26% 0.0071 264.3)",
+          "oklch(38% 0.0091 264.3)",
+          "oklch(50% 0.0091 264.3)",
+          "oklch(62% 0.0091 264.3)",
+          "oklch(74% 0.0091 264.3)",
+          "oklch(85% 0.0059 264.3)",
+          "oklch(95% 0.0032 264.3)"
+        ]
+      },
+      "chalk-ink": {
+        "role": "neutral",
+        "displayName": "Chalk Ink",
+        "canonical": "oklch(97.3% 0.0029 264.5)",
+        "tonalRamp": [
+          "oklch(15% 0.0016 264.5)",
+          "oklch(26% 0.0022 264.5)",
+          "oklch(38% 0.0029 264.5)",
+          "oklch(50% 0.0029 264.5)",
+          "oklch(62% 0.0029 264.5)",
+          "oklch(74% 0.0029 264.5)",
+          "oklch(85% 0.0019 264.5)",
+          "oklch(95% 0.001 264.5)"
+        ]
+      },
+      "silver-ink": {
+        "role": "neutral",
+        "displayName": "Silver Ink",
+        "canonical": "oklch(84.2% 0.0162 266.3)",
+        "tonalRamp": [
+          "oklch(15% 0.0089 266.3)",
+          "oklch(26% 0.0127 266.3)",
+          "oklch(38% 0.0162 266.3)",
+          "oklch(50% 0.0162 266.3)",
+          "oklch(62% 0.0162 266.3)",
+          "oklch(74% 0.0162 266.3)",
+          "oklch(85% 0.0106 266.3)",
+          "oklch(95% 0.0057 266.3)"
+        ]
+      },
+      "pewter-muted-ink": {
+        "role": "neutral",
+        "displayName": "Pewter Muted Ink",
+        "canonical": "oklch(72.1% 0.0245 266.8)",
+        "tonalRamp": [
+          "oklch(15% 0.0135 266.8)",
+          "oklch(26% 0.0191 266.8)",
+          "oklch(38% 0.0245 266.8)",
+          "oklch(50% 0.0245 266.8)",
+          "oklch(62% 0.0245 266.8)",
+          "oklch(74% 0.0245 266.8)",
+          "oklch(85% 0.0159 266.8)",
+          "oklch(95% 0.0086 266.8)"
+        ]
+      },
+      "charcoal-rule": {
+        "role": "neutral",
+        "displayName": "Charcoal Rule",
+        "canonical": "oklch(66% 0.0219 267.2)",
+        "tonalRamp": [
+          "oklch(15% 0.012 267.2)",
+          "oklch(26% 0.0171 267.2)",
+          "oklch(38% 0.0219 267.2)",
+          "oklch(50% 0.0219 267.2)",
+          "oklch(62% 0.0219 267.2)",
+          "oklch(74% 0.0219 267.2)",
+          "oklch(85% 0.0142 267.2)",
+          "oklch(95% 0.0077 267.2)"
+        ]
+      },
+      "charcoal-hairline": {
+        "role": "neutral",
+        "displayName": "Charcoal Hairline",
+        "canonical": "oklch(31.7% 0.0226 267.3)",
+        "tonalRamp": [
+          "oklch(15% 0.0124 267.3)",
+          "oklch(26% 0.0176 267.3)",
+          "oklch(38% 0.0226 267.3)",
+          "oklch(50% 0.0226 267.3)",
+          "oklch(62% 0.0226 267.3)",
+          "oklch(74% 0.0226 267.3)",
+          "oklch(85% 0.0147 267.3)",
+          "oklch(95% 0.0079 267.3)"
+        ]
+      },
+      "checker-dark-a": {
+        "role": "neutral",
+        "displayName": "Checker Dark A",
+        "canonical": "oklch(26% 0.0179 266.3)",
+        "tonalRamp": [
+          "oklch(15% 0.0099 266.3)",
+          "oklch(26% 0.014 266.3)",
+          "oklch(38% 0.0179 266.3)",
+          "oklch(50% 0.0179 266.3)",
+          "oklch(62% 0.0179 266.3)",
+          "oklch(74% 0.0179 266.3)",
+          "oklch(85% 0.0116 266.3)",
+          "oklch(95% 0.0063 266.3)"
+        ]
+      },
+      "checker-dark-b": {
+        "role": "neutral",
+        "displayName": "Checker Dark B",
+        "canonical": "oklch(22.2% 0.0144 266.9)",
+        "tonalRamp": [
+          "oklch(15% 0.0079 266.9)",
+          "oklch(26% 0.0113 266.9)",
+          "oklch(38% 0.0144 266.9)",
+          "oklch(50% 0.0144 266.9)",
+          "oklch(62% 0.0144 266.9)",
+          "oklch(74% 0.0144 266.9)",
+          "oklch(85% 0.0094 266.9)",
+          "oklch(95% 0.0051 266.9)"
+        ]
+      },
+      "specimen-cerulean": {
+        "role": "tertiary",
+        "displayName": "Specimen Cerulean",
+        "canonical": "oklch(66.7% 0.1137 223.1)",
+        "tonalRamp": [
+          "oklch(15% 0.0625 223.1)",
+          "oklch(26% 0.0887 223.1)",
+          "oklch(38% 0.1137 223.1)",
+          "oklch(50% 0.1137 223.1)",
+          "oklch(62% 0.1137 223.1)",
+          "oklch(74% 0.1137 223.1)",
+          "oklch(85% 0.0739 223.1)",
+          "oklch(95% 0.0398 223.1)"
+        ]
+      },
+      "specimen-lily-green": {
+        "role": "tertiary",
+        "displayName": "Specimen Lily Green",
+        "canonical": "oklch(52.2% 0.099 142.8)",
+        "tonalRamp": [
+          "oklch(15% 0.0545 142.8)",
+          "oklch(26% 0.0772 142.8)",
+          "oklch(38% 0.099 142.8)",
+          "oklch(50% 0.099 142.8)",
+          "oklch(62% 0.099 142.8)",
+          "oklch(74% 0.099 142.8)",
+          "oklch(85% 0.0644 142.8)",
+          "oklch(95% 0.0347 142.8)"
+        ]
+      },
+      "specimen-koi-amber": {
+        "role": "tertiary",
+        "displayName": "Specimen Koi Amber",
+        "canonical": "oklch(76.7% 0.1494 66.6)",
+        "tonalRamp": [
+          "oklch(15% 0.0822 66.6)",
+          "oklch(26% 0.1166 66.6)",
+          "oklch(38% 0.1494 66.6)",
+          "oklch(50% 0.1494 66.6)",
+          "oklch(62% 0.1494 66.6)",
+          "oklch(74% 0.1494 66.6)",
+          "oklch(85% 0.0971 66.6)",
+          "oklch(95% 0.0523 66.6)"
+        ]
+      },
+      "specimen-lotus-rose": {
+        "role": "tertiary",
+        "displayName": "Specimen Lotus Rose",
+        "canonical": "oklch(66.9% 0.1642 354)",
+        "tonalRamp": [
+          "oklch(15% 0.0903 354)",
+          "oklch(26% 0.128 354)",
+          "oklch(38% 0.1642 354)",
+          "oklch(50% 0.1642 354)",
+          "oklch(62% 0.1642 354)",
+          "oklch(74% 0.1642 354)",
+          "oklch(85% 0.1067 354)",
+          "oklch(95% 0.0575 354)"
+        ]
+      },
+      "specimen-cream": {
+        "role": "neutral",
+        "displayName": "Specimen Cream",
+        "canonical": "oklch(97.1% 0.0098 87.5)",
+        "tonalRamp": [
+          "oklch(15% 0.0054 87.5)",
+          "oklch(26% 0.0077 87.5)",
+          "oklch(38% 0.0098 87.5)",
+          "oklch(50% 0.0098 87.5)",
+          "oklch(62% 0.0098 87.5)",
+          "oklch(74% 0.0098 87.5)",
+          "oklch(85% 0.0064 87.5)",
+          "oklch(95% 0.0034 87.5)"
+        ]
+      },
+      "mono-sepia-ink": {
+        "role": "neutral",
+        "displayName": "Mono Sepia Ink",
+        "canonical": "oklch(22.3% 0.0288 82.1)",
+        "tonalRamp": [
+          "oklch(15% 0.0158 82.1)",
+          "oklch(26% 0.0225 82.1)",
+          "oklch(38% 0.0288 82.1)",
+          "oklch(50% 0.0288 82.1)",
+          "oklch(62% 0.0288 82.1)",
+          "oklch(74% 0.0288 82.1)",
+          "oklch(85% 0.0187 82.1)",
+          "oklch(95% 0.0101 82.1)"
+        ]
+      },
+      "mono-sepia-cream": {
+        "role": "neutral",
+        "displayName": "Mono Sepia Cream",
+        "canonical": "oklch(94.8% 0.0294 87.5)",
+        "tonalRamp": [
+          "oklch(15% 0.0162 87.5)",
+          "oklch(26% 0.0229 87.5)",
+          "oklch(38% 0.0294 87.5)",
+          "oklch(50% 0.0294 87.5)",
+          "oklch(62% 0.0294 87.5)",
+          "oklch(74% 0.0294 87.5)",
+          "oklch(85% 0.0191 87.5)",
+          "oklch(95% 0.0103 87.5)"
+        ]
+      },
+      "preset-gameboy-deep": {
+        "role": "tertiary",
+        "displayName": "Game Boy Deep",
+        "canonical": "oklch(30.1% 0.0816 143.2)",
+        "tonalRamp": [
+          "oklch(15% 0.0449 143.2)",
+          "oklch(26% 0.0636 143.2)",
+          "oklch(38% 0.0816 143.2)",
+          "oklch(50% 0.0816 143.2)",
+          "oklch(62% 0.0816 143.2)",
+          "oklch(74% 0.0816 143.2)",
+          "oklch(85% 0.053 143.2)",
+          "oklch(95% 0.0285 143.2)"
+        ]
+      },
+      "preset-gameboy-mid": {
+        "role": "tertiary",
+        "displayName": "Game Boy Mid",
+        "canonical": "oklch(44.8% 0.0956 143.8)",
+        "tonalRamp": [
+          "oklch(15% 0.0526 143.8)",
+          "oklch(26% 0.0746 143.8)",
+          "oklch(38% 0.0956 143.8)",
+          "oklch(50% 0.0956 143.8)",
+          "oklch(62% 0.0956 143.8)",
+          "oklch(74% 0.0956 143.8)",
+          "oklch(85% 0.0622 143.8)",
+          "oklch(95% 0.0335 143.8)"
+        ]
+      },
+      "preset-gameboy-olive": {
+        "role": "tertiary",
+        "displayName": "Game Boy Olive",
+        "canonical": "oklch(69.5% 0.1662 122.5)",
+        "tonalRamp": [
+          "oklch(15% 0.0914 122.5)",
+          "oklch(26% 0.1296 122.5)",
+          "oklch(38% 0.1662 122.5)",
+          "oklch(50% 0.1662 122.5)",
+          "oklch(62% 0.1662 122.5)",
+          "oklch(74% 0.1662 122.5)",
+          "oklch(85% 0.108 122.5)",
+          "oklch(95% 0.0582 122.5)"
+        ]
+      },
+      "preset-gameboy-lime": {
+        "role": "tertiary",
+        "displayName": "Game Boy Lime",
+        "canonical": "oklch(74.4% 0.1768 121.6)",
+        "tonalRamp": [
+          "oklch(15% 0.0973 121.6)",
+          "oklch(26% 0.1379 121.6)",
+          "oklch(38% 0.1768 121.6)",
+          "oklch(50% 0.1768 121.6)",
+          "oklch(62% 0.1768 121.6)",
+          "oklch(74% 0.1768 121.6)",
+          "oklch(85% 0.1149 121.6)",
+          "oklch(95% 0.0619 121.6)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Landing hero H1 statement only (clamp(34px, 4.1vw, 52px), up to 3.25rem)."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Studio empty-bench headline (--fs-headline: 24px), Landing section headings, footer CTA, and 22px brand wordmark (--fs-wordmark)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Studio inspector stage titles (--fs-title: 17px) and sequential pipeline step headings (--fs-lg: 17px)."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Archivo UI controls, sentence-case field labels, descriptions, FAQ prose, and modal copy (--fs-sm: 12px, --fs-base: 13px, --fs-md: 14px)."
+      },
+      "label": {
+        "displayName": "Label / Telemetry",
+        "purpose": "Martian Mono tabular-nums strictly on data: numeric dimensions, slider readouts, zoom percentages, hex swatches, stage indices, and status facts (--fs-xs: 11px)."
+      }
+    },
+    "shadows": [
+      {
+        "name": "shadow-frame-light",
+        "value": "0 12px 28px -16px rgba(17, 19, 23, 0.18)",
+        "purpose": "Soft ambient lift under Cotton-Press Ivory proof sheets, empty drop bench, and footer CTA card."
+      },
+      {
+        "name": "shadow-frame-dark",
+        "value": "0 14px 32px -12px rgba(0, 0, 0, 0.72)",
+        "purpose": "Deep ambient separation under Pressroom Charcoal proof sheets, empty drop bench, and footer CTA card."
+      },
+      {
+        "name": "shadow-cta-light",
+        "value": "0 8px 20px -8px rgba(30, 70, 232, 0.45)",
+        "purpose": "Cobalt drop glow under primary Landing CTAs, empty-bench button, and Studio export download button."
+      },
+      {
+        "name": "shadow-cta-dark",
+        "value": "0 8px 20px -8px rgba(45, 85, 235, 0.55)",
+        "purpose": "Dark-theme cobalt glow under primary Landing CTAs, empty-bench button, and Studio export download button."
+      },
+      {
+        "name": "shadow-toast-light",
+        "value": "0 10px 24px -10px rgba(17, 19, 23, 0.25)",
+        "purpose": "Floating elevation for light-theme toasts, drag-drop overlays, and legal modals."
+      },
+      {
+        "name": "shadow-toast-dark",
+        "value": "0 12px 26px -8px rgba(0, 0, 0, 0.85)",
+        "purpose": "Floating elevation for dark-theme toasts, drag-drop overlays, and legal modals."
+      },
+      {
+        "name": "compare-handle-lift",
+        "value": "0 4px 12px rgba(17, 19, 23, 0.28)",
+        "purpose": "Crisp separation under the 24x40px vermilion compare divider pill over pixel artwork (0.25 alpha on Landing, 0.28 in Studio)."
+      }
+    ],
+    "motion": [
+      {
+        "name": "transition-ui",
+        "value": "140ms ease",
+        "purpose": "Background, border, and ink color transitions on interactive controls and nav links."
+      },
+      {
+        "name": "transition-press",
+        "value": "90ms ease",
+        "purpose": "Tactile scale (0.98 / 0.985 / 0.96) press feedback on buttons, pills, and rail tiles."
+      },
+      {
+        "name": "toggle-thumb-spring",
+        "value": "140ms cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "purpose": "Slide transition for 14px white switch thumbs in Studio toggles and the Landing dither switch."
+      },
+      {
+        "name": "toast-enter",
+        "value": "180ms cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Toast slide-in entrance (top centered on desktop, bottom docked below 1180px)."
+      },
+      {
+        "name": "spinner-spin",
+        "value": "0.85s linear infinite",
+        "purpose": "Continuous rotation for SpinnerIcon during specimen decode, pixel processing, and export encoding."
+      },
+      {
+        "name": "spot-sweep",
+        "value": "6.4s ease-in-out infinite",
+        "purpose": "Idle split-preview cue (42% to 62%) on Landing proof viewport until user drags or focuses the slider."
+      },
+      {
+        "name": "background-paths-flow",
+        "value": "requestAnimationFrame (paused in Studio)",
+        "purpose": "Mirrored 72 cubic-Bezier Path2D curves sweeping smoothly on Landing; static low-opacity architectural guide lines inside Studio."
+      },
+      {
+        "name": "spotlight-card-glow",
+        "value": "rAF pointermove (fine pointers only)",
+        "purpose": "Updates --spot-x, --spot-y, and --spot-active on [data-spotlight] cards for pure Cobalt border-box and padding-box accent glow."
+      },
+      {
+        "name": "reduced-motion-override",
+        "value": "0s",
+        "purpose": "Global animation and transition duration collapse, static BackgroundPaths frame, and disabled hover spotlight glow under prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "xl-narrow",
+        "value": "max-width: 1279px",
+        "purpose": "Narrows Studio inspector column from 360px to 332px."
+      },
+      {
+        "name": "tablet-studio",
+        "value": "max-width: 1179px",
+        "purpose": "Stacks Studio bench vertically: canvas workspace first, horizontal stage rail second, inspector third."
+      },
+      {
+        "name": "landing-stack",
+        "value": "max-width: 1020px",
+        "purpose": "Collapses landing hero to single column and shifts 4-stage pipeline into a 2x2 grid."
+      },
+      {
+        "name": "mobile-studio",
+        "value": "max-width: 759px",
+        "purpose": "Wraps Studio header, aligns zoom right, stacks status bar, and converts status facts to a 2-column grid."
+      },
+      {
+        "name": "mobile-landing",
+        "value": "max-width: 680px",
+        "purpose": "Hides landing nav anchor links, narrows horizontal gutters to 16px, stacks pipeline and FAQ to 1-column, and stacks hero palette strip."
+      },
+      {
+        "name": "compact",
+        "value": "max-width: 479px",
+        "purpose": "Shrinks wordmark to 19px, empty title to 21px, proof-sheet padding to 8px (12px outer / 4px inner radius), and hides proof-tag-extra."
+      },
+      {
+        "name": "coarse-pointer",
+        "value": "pointer: coarse",
+        "purpose": "Enforces 44px minimum target height across buttons, pills, toggles, and range tracks (36px on segmented options, 46px on export download)."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Electric cobalt commitment button used for primary studio launches and export downloads.",
+      "html": "<button type=\"button\" class=\"ds-btn-primary\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 15V3\"/><path d=\"m8 11 4 4 4-4\"/><path d=\"M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2\"/></svg><span>Download PNG</span></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2, 8px); padding: 10px var(--s-4, 16px); border: 0; border-radius: var(--r-md, 8px); background: var(--accent, #1e46e8); color: #ffffff; font-family: var(--font-ui, 'Archivo', sans-serif); font-size: var(--fs-base, 13px); font-weight: 700; line-height: 1; cursor: pointer; box-shadow: var(--shadow-cta, 0 8px 20px -8px rgba(30, 70, 232, 0.45)); transition: background-color 140ms ease, transform 90ms ease; } .ds-btn-primary:hover { background: var(--accent-hover, #1737bf); } .ds-btn-primary:active { transform: scale(0.98); } .ds-btn-primary:focus-visible { outline: 2px solid var(--focus-ring, #1e46e8); outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Crisp hairline secondary action used for replacing specimens inside the inspector.",
+      "html": "<button type=\"button\" class=\"ds-btn-secondary\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 16V4M7 9l5-5 5 5\"/><path d=\"M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3\"/></svg><span>Replace</span></button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: var(--s-2, 8px) var(--s-3, 12px); border: 1px solid var(--line, #6b6860); border-radius: var(--r-sm, 6px); background: var(--panel, #ffffff); color: var(--ink, #111317); font-family: var(--font-ui, 'Archivo', sans-serif); font-size: var(--fs-sm, 12px); font-weight: 600; line-height: 1; cursor: pointer; transition: background-color 140ms ease, border-color 140ms ease, transform 90ms ease; } .ds-btn-secondary:hover { background: var(--panel-2, #f1eee7); border-color: var(--line-strong, #15171c); } .ds-btn-secondary:active { transform: scale(0.98); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--focus-ring, #1e46e8); outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Subtle-ruled utility button used in the Studio header for overview return and new project reset.",
+      "html": "<button type=\"button\" class=\"ds-ghost-btn\">New project</button>",
+      "css": ".ds-ghost-btn { padding: 7px var(--s-3, 12px); border: 1px solid var(--line-subtle, #dcd7cc); border-radius: var(--r-sm, 6px); background: var(--panel, #ffffff); color: var(--ink-2, #3d414a); font-family: var(--font-ui, 'Archivo', sans-serif); font-size: var(--fs-sm, 12px); font-weight: 600; line-height: 1; cursor: pointer; transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease, transform 90ms ease; } .ds-ghost-btn:hover { background: var(--panel-2, #f1eee7); border-color: var(--line, #6b6860); color: var(--ink, #111317); } .ds-ghost-btn:active { transform: scale(0.98); } .ds-ghost-btn:focus-visible { outline: 2px solid var(--focus-ring, #1e46e8); outline-offset: 2px; }"
+    },
+    {
+      "name": "Grid Resolution Pill",
+      "kind": "chip",
+      "refersTo": "chip-pill",
+      "description": "Monospace resolution pills driving live integer downsampling in the Landing proof sheet.",
+      "html": "<div class=\"ds-pill-row\"><button type=\"button\" class=\"ds-grid-pill\">32&times;32</button><button type=\"button\" class=\"ds-grid-pill is-active\" aria-pressed=\"true\">48&times;48</button><button type=\"button\" class=\"ds-grid-pill\">96&times;96</button></div>",
+      "css": ".ds-pill-row { display: inline-flex; gap: 6px; } .ds-grid-pill { padding: 6px var(--s-3, 12px); border: 1px solid var(--line-subtle, #dcd7cc); border-radius: var(--r-pill, 999px); background: var(--paper, #f8f6f1); color: var(--ink-2, #3d414a); font-family: var(--font-mono, 'Martian Mono', monospace); font-size: var(--fs-xs, 11px); font-weight: 600; font-variant-numeric: tabular-nums; cursor: pointer; transition: background-color 140ms ease, color 140ms ease, border-color 140ms ease, transform 90ms ease; } .ds-grid-pill:hover:not(.is-active) { border-color: var(--line, #6b6860); color: var(--ink, #111317); } .ds-grid-pill:active { transform: scale(0.97); } .ds-grid-pill.is-active { background: var(--accent, #1e46e8); border-color: var(--accent, #1e46e8); color: #ffffff; } .ds-grid-pill:focus-visible { outline: 2px solid var(--focus-ring, #1e46e8); outline-offset: 2px; }"
+    },
+    {
+      "name": "Segmented Mode Control",
+      "kind": "nav",
+      "refersTo": "segmented-track",
+      "description": "Concentric segmented toggle pairing 9px outer track with 3px padding and 6px inner option radii.",
+      "html": "<div class=\"ds-segmented\" role=\"group\" aria-label=\"Preview mode\"><button type=\"button\" class=\"ds-segmented-option\">Original</button><button type=\"button\" class=\"ds-segmented-option\" aria-pressed=\"true\">Pixel art</button><button type=\"button\" class=\"ds-segmented-option\">Compare</button></div>",
+      "css": ".ds-segmented { display: flex; gap: 2px; padding: var(--p-seg, 3px); border: 1px solid var(--line-subtle, #dcd7cc); border-radius: var(--r-seg, 9px); background: var(--paper, #f8f6f1); font-family: var(--font-ui, 'Archivo', sans-serif); } .ds-segmented-option { flex: 1 1 0; padding: 5px 10px; border: 0; border-radius: var(--r-seg-inner, 6px); background: transparent; color: var(--ink-2, #3d414a); font-size: var(--fs-sm, 12px); font-weight: 600; line-height: 1.25; cursor: pointer; transition: background-color 140ms ease, color 140ms ease, transform 90ms ease; } .ds-segmented-option:hover:not([aria-pressed='true']) { color: var(--ink, #111317); background: var(--panel-2, #f1eee7); } .ds-segmented-option[aria-pressed='true'] { background: var(--accent, #1e46e8); color: #ffffff; } .ds-segmented-option:active { transform: scale(0.98); } .ds-segmented-option:focus-visible { outline: 2px solid var(--focus-ring, #1e46e8); outline-offset: 2px; }"
+    },
+    {
+      "name": "Studio Stage Rail Item",
+      "kind": "nav",
+      "refersTo": "rail-tool",
+      "description": "Compact 48px stage selector inside the 64px left Studio rail mixing Martian Mono index with Archivo label.",
+      "html": "<nav class=\"ds-rail\"><button type=\"button\" class=\"ds-tool is-active\" aria-current=\"step\"><span class=\"ds-tool-num\">01</span><span class=\"ds-tool-label\">Intake</span></button><button type=\"button\" class=\"ds-tool\"><span class=\"ds-tool-num\">02</span><span class=\"ds-tool-label\">Grid</span></button></nav>",
+      "css": ".ds-rail { display: flex; flex-direction: column; align-items: center; gap: var(--s-2, 8px); width: 64px; padding: var(--s-3, 12px) var(--s-2, 8px); background: var(--panel, #ffffff); border-right: 1px solid var(--line-subtle, #dcd7cc); } .ds-tool { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; width: 48px; padding: 9px var(--s-1, 4px); border: 1px solid transparent; border-radius: var(--r-md, 8px); background: transparent; color: var(--ink-2, #3d414a); cursor: pointer; transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease, transform 90ms ease; } .ds-tool:hover:not(.is-active) { background: var(--panel-2, #f1eee7); border-color: var(--line-subtle, #dcd7cc); color: var(--ink, #111317); } .ds-tool:active { transform: scale(0.97); } .ds-tool.is-active { background: var(--accent, #1e46e8); border-color: var(--accent, #1e46e8); color: #ffffff; } .ds-tool-num { font-family: var(--font-mono, 'Martian Mono', monospace); font-size: 10px; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1; opacity: 0.85; } .ds-tool-label { font-family: var(--font-ui, 'Archivo', sans-serif); font-size: var(--fs-xs, 11px); font-weight: 700; line-height: 1.15; } .ds-tool:focus-visible { outline: 2px solid var(--focus-ring, #1e46e8); outline-offset: 2px; }"
+    },
+    {
+      "name": "Number Input Field",
+      "kind": "input",
+      "refersTo": "input-number",
+      "description": "Sentence-case Archivo label paired with a tabular Martian Mono pixel dimension input and cobalt focus halo.",
+      "html": "<label class=\"ds-number-field\"><span class=\"ds-number-label\">Width</span><span class=\"ds-number-wrap\"><input type=\"number\" value=\"48\" min=\"1\" max=\"1024\" /><span class=\"ds-number-suffix\">px</span></span></label>",
+      "css": ".ds-number-field { display: flex; flex-direction: column; gap: var(--s-1, 4px); width: 112px; } .ds-number-label { color: var(--ink-3, #575b64); font-family: var(--font-ui, 'Archivo', sans-serif); font-size: var(--fs-xs, 11px); font-weight: 600; } .ds-number-wrap { display: flex; align-items: center; gap: 2px; height: 32px; padding: 0 var(--s-2, 8px); border: 1px solid var(--line-subtle, #dcd7cc); border-radius: var(--r-sm, 6px); background: var(--paper, #f8f6f1); transition: border-color 140ms ease, box-shadow 140ms ease; } .ds-number-wrap:focus-within { border-color: var(--accent, #1e46e8); box-shadow: 0 0 0 2px var(--accent-soft, rgba(30, 70, 232, 0.1)); } .ds-number-wrap input { width: 100%; border: 0; background: none; outline: none; color: var(--ink, #111317); font-family: var(--font-mono, 'Martian Mono', monospace); font-size: var(--fs-xs, 11px); font-variant-numeric: tabular-nums; } .ds-number-suffix { color: var(--ink-3, #575b64); font-family: var(--font-mono, 'Martian Mono', monospace); font-size: 10.5px; }"
+    },
+    {
+      "name": "Proof Sheet & Compare Rule",
+      "kind": "card",
+      "refersTo": "card-proof-sheet",
+      "description": "Concentric 14px matte proof frame wrapping a 4px inner alpha checkerboard and vermilion split compare bar.",
+      "html": "<div class=\"ds-proof-sheet\"><div class=\"ds-proof-viewport\"><div class=\"ds-rule\"><span class=\"ds-rule-handle\">||</span></div></div></div>",
+      "css": ".ds-proof-sheet { padding: var(--p-sheet, 10px); border: 1px solid var(--line-subtle, #dcd7cc); border-radius: var(--r-sheet, 14px); background: var(--panel, #ffffff); box-shadow: var(--shadow-frame, 0 12px 28px -16px rgba(17, 19, 23, 0.18)); } .ds-proof-viewport { position: relative; width: 220px; height: 140px; border: 1px solid var(--line-strong, #15171c); border-radius: var(--r-sheet-inner, 4px); background-color: var(--checker-b, #f7f4ec); background-image: linear-gradient(45deg, var(--checker-a, #eae6dc) 25%, transparent 25%), linear-gradient(-45deg, var(--checker-a, #eae6dc) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, var(--checker-a, #eae6dc) 75%), linear-gradient(-45deg, transparent 75%, var(--checker-a, #eae6dc) 75%); background-size: 16px 16px; background-position: 0 0, 0 8px, 8px -8px, -8px 0; overflow: hidden; } .ds-rule { position: absolute; top: 0; bottom: 0; left: 50%; width: 2.5px; background: var(--vermilion, #eb4a2d); transform: translateX(-1px); } .ds-rule-handle { position: absolute; top: 50%; left: 50%; display: grid; place-items: center; width: 24px; height: 40px; border: 2px solid #ffffff; border-radius: var(--r-pill, 999px); background: var(--vermilion, #eb4a2d); color: #ffffff; font-family: var(--font-mono, 'Martian Mono', monospace); font-size: 10px; font-weight: 700; box-shadow: 0 4px 12px rgba(17, 19, 23, 0.28); transform: translate(-50%, -50%); }"
+    },
+    {
+      "name": "Export Ticket",
+      "kind": "custom",
+      "refersTo": "export-ticket",
+      "description": "Dashed-rule footer ticket pinned to the inspector for format, scale, alpha, output readout, and download.",
+      "html": "<section class=\"ds-ticket\"><div class=\"ds-ticket-head\"><span>Export</span></div><div class=\"ds-ticket-output\"><span>Output</span><b>192 &times; 192 px</b></div><button type=\"button\" class=\"ds-ticket-download\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 15V3\"/><path d=\"m8 11 4 4 4-4\"/><path d=\"M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2\"/></svg><span>Download PNG</span></button></section>",
+      "css": ".ds-ticket { display: flex; flex-direction: column; gap: var(--s-2, 8px); width: 290px; padding: var(--s-3, 12px) var(--s-5, 20px) var(--s-4, 16px); border-top: 2px dashed var(--line, #6b6860); background: var(--ticket, #ffffff); font-family: var(--font-ui, 'Archivo', sans-serif); } .ds-ticket-head { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 6px; border-bottom: 1px solid var(--line-subtle, #dcd7cc); } .ds-ticket-head span { color: var(--ink, #111317); font-size: var(--fs-sm, 12px); font-weight: 700; } .ds-ticket-output { display: flex; align-items: baseline; justify-content: space-between; padding-top: var(--s-2, 8px); border-top: 1px dashed var(--line-subtle, #dcd7cc); } .ds-ticket-output span { color: var(--ink-2, #3d414a); font-size: var(--fs-sm, 12px); font-weight: 600; } .ds-ticket-output b { color: var(--ink, #111317); font-family: var(--font-mono, 'Martian Mono', monospace); font-size: var(--fs-sm, 12px); font-variant-numeric: tabular-nums; font-weight: 700; } .ds-ticket-download { display: inline-flex; align-items: center; justify-content: center; gap: 7px; width: 100%; height: 40px; padding: 0 14px; border: 0; border-radius: var(--r-md, 8px); background: var(--accent, #1e46e8); color: #ffffff; font-size: var(--fs-base, 13px); font-weight: 700; line-height: 1; cursor: pointer; box-shadow: var(--shadow-cta, 0 8px 20px -8px rgba(30, 70, 232, 0.45)); transition: background-color 140ms ease, transform 90ms ease; } .ds-ticket-download:hover { background: var(--accent-hover, #1737bf); } .ds-ticket-download:active { transform: scale(0.985); } .ds-ticket-download:focus-visible { outline: 2px solid var(--focus-ring, #1e46e8); outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Spot-Ink Proof Studio",
+    "overview": "beexie treats browser-side pixel art conversion like inspecting a calibrated Risograph proof on a press bench. Warm Cotton-Press Ivory (`#f8f6f1`) and crisp white press sheets (`#ffffff`) form the daylight drafting ground, while the paired Pressroom Charcoal (`#12141a`) and dark sheet (`#191c23`) theme supports low-glare color inspection. Electric Cobalt (`#1e46e8` light / `#2d55eb` dark) marks every active commitment, export action, and pure-accent pointer-tracking Spotlight Card glow (`[data-spotlight]`), while Proof Vermilion (`#eb4a2d` light / `#ff5a3c` dark) stays scoped to comparison and live indicators: the split comparison rule, the Landing dither switch track, the active-session pulse dot, and the tail stripe of the geometric `<BeeMark />` emblem.\n\nAcross both the Landing showcase and the Studio workbench, structural separation relies on crisp `1px` hairlines (`#dcd7cc` light / `#2d323e` dark), spacing-grouped Studio sections (`.panel-group`) instead of nested boxes, concentric radii governed by `inner = outer - padding`, and mirrored flowing cubic-Bezier `BackgroundPaths` curves (`Path2D` Canvas 2D). On Landing, 72 symmetric curves sweep smoothly behind a live interactive split proof of the 1024x1024 koi pond specimen (`public/specimen.jpg`), a framed 4-column Pipeline Proof Sheet (`.pipeline-sheet-frame`), and a framed `0.84fr / 1.36fr` Split FAQ Accordion Sheet (`.faq-sheet-frame`). Inside the Studio workbench, `BackgroundPaths` pauses to a calm static frame while a `64px` numbered `01-04` rail frees the center bench for nearest-neighbor previews (`image-rendering: pixelated`) and a pinned dashed-rule Export ticket.",
+    "keyCharacteristics": [
+      "Dual-theme press calibration: Cotton-Press Ivory (`#f8f6f1`) for daylight drafting and Pressroom Charcoal (`#12141a`) for low-glare proofing, passing all 18 WCAG AA contrast checks.",
+      "Spot-ink role discipline: Electric Cobalt owns action, selection, and pure-accent Spotlight Card radial glow; Proof Vermilion marks compare sliders, the dither switch, the session dot, and the bee tail accent.",
+      "Strict mono-only-on-data typography: `Archivo` owns UI labels and headings in sentence case while `Martian Mono` with `tabular-nums` renders only numeric coordinates, grid counts, zoom percentages, hex codes, and `01-04` stage indices.",
+      "Mathematical nested geometry: concentric sheets and segmented controls compute inner corners directly from outer radius minus padding (`14px - 10px = 4px`, `9px - 3px = 6px`).",
+      "Motion restraint and loading clarity: flowing `BackgroundPaths` ribbons and Cobalt Spotlight hover tracking on Landing, static framing in Studio, unified `strokeWidth={1.75}` SVG spinners (`SpinnerIcon`) across specimen decode and pixel processing, and global `0s` transitions under `prefers-reduced-motion: reduce`."
+    ],
+    "rules": [
+      {
+        "name": "The Dual-Ink Economy Rule",
+        "body": "Electric Cobalt (`#1e46e8` light / `#2d55eb` dark) owns interactive commitment (primary CTAs, active stage rail tile, active presets, active segmented views, toggles, focus rings) and pure-accent `[data-spotlight]` card glow; Proof Vermilion (`#eb4a2d` light / `#ff5a3c` dark) stays scoped to inspection markers (compare split rule and handle, Landing dither switch track, `Resume` pulse indicator, and `<BeeMark />` tail stripe) while text-grade `--vermilion-text` (`#c23117` light / `#ff8770` dark) handles readable danger/alert copy.",
+        "section": "colors"
+      },
+      {
+        "name": "The Dual-Theme Contrast Parity Rule",
+        "body": "Light Cotton-Press Ivory and Dark Pressroom Charcoal pair distinct fill, text, and rule tokens (`--accent` `#1e46e8` / `#2d55eb` vs. `--accent-text` `#1e46e8` / `#85aaff`, `--ink-2` `#3d414a` / `#c6cbd6`, `--ink-3` `#575b64` / `#9ea5b5`, `--vermilion-text` `#c23117` / `#ff8770`) so all 18 WCAG AA checks (`>= 4.5:1` text, `>= 3.0:1` UI borders) pass simultaneously.",
+        "section": "colors"
+      },
+      {
+        "name": "The Calm Pressroom Backdrop Rule",
+        "body": "The `BackgroundPaths` canvas animates mirrored cubic-Bezier curves on Landing and pauses to low-opacity static guide lines inside the Studio workbench (and under `prefers-reduced-motion: reduce`), while `[data-spotlight]` cards restrict glow purely to Electric Cobalt on fine-pointer hover so ambient motion never distorts pixel color evaluation.",
+        "section": "colors"
+      },
+      {
+        "name": "The Strict Mono-Only-On-Data Rule",
+        "body": "UI chrome labels, field heads, preset sub-captions, stage names, and ticket headings remain in `Archivo` (`--font-ui`, sentence case), reserving `Martian Mono` (`--font-mono`) strictly for numeric coordinates, grid dimensions, zoom percentages, hex codes, byte sizes, and `01`-`04` stage indices.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Telemetry Rule",
+        "body": "Every `Martian Mono` readout and numeric input enforces `font-variant-numeric: tabular-nums` (`.mono`, `.tnum`) so live slider scrubbing and viewport resizing never cause horizontal jitter.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tight Display Tracking Rule",
+        "body": "`Bricolage Grotesque` headings (`800` weight) use tight negative letter-spacing (`-0.015em` to `-0.032em`) with `text-wrap: balance`, while `Archivo` body text and `Martian Mono` data values stay at normal tracking with zero forced uppercase transforms.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hairline-First Layering Rule",
+        "body": "Structural panes and interior sheet subdivisions (`AppHeader`, `64px` `ToolRail`, `Inspector` `.panel-group` sections, `.pipeline-step` columns, and `.faq-row` accordion items) separate cleanly with `1px` `--line-subtle` hairlines and spacing; ambient `--shadow-frame` lift and pure-Cobalt `[data-spotlight]` glows belong exclusively to top-level matte proof sheets (`.hero-proof-sheet`, `.pipeline-sheet-frame`, `.faq-sheet-frame`, `.footer-cta-card`, `.proof-sheet`, and `.empty-bench`).",
+        "section": "elevation"
+      },
+      {
+        "name": "The Nested Radii Parity Rule",
+        "body": "Nested containers obey `inner radius = outer radius - padding` (`--r-sheet` `14px` minus `--p-sheet` `10px` equals `--r-sheet-inner` `4px`; `--r-seg` `9px` minus `--p-seg` `3px` equals `--r-seg-inner` `6px`), keeping concentric frames optically parallel across every viewport and breakpoint.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do group inspector and landing sections by `--s-5` / `--s-6` spacing and `1px` `--line-subtle` hairlines rather than wrapping nested cards inside cards.",
+      "Do preserve `inner radius = outer radius - padding` (`14px - 10px = 4px` on proof sheets; `9px - 3px = 6px` on segmented tracks and zoom bars).",
+      "Do keep UI field labels in `Archivo` sentence case and restrict `Martian Mono` (`tabular-nums`) strictly to pixel coordinates, dimensions, hex codes, zoom percentages, and `01`-`04` indices.",
+      "Do enforce `image-rendering: pixelated` and `imageSmoothingEnabled = false` on every pixel-art preview and thumbnail.",
+      "Do pause `BackgroundPaths` inside the Studio workbench, respect `prefers-reduced-motion: reduce` and coarse-pointer spotlight disables, and pass all 18 checks in `npm run check:contrast`."
+    ],
+    "donts": [
+      "Don't use Vermilion (`#eb4a2d` / `#ff5a3c`) for primary CTAs, stage rail buttons, or small text; reserve `--vermilion` for inspection markers and use `--vermilion-text` (`#c23117` / `#ff8770`) for alert and error text.",
+      "Don't use `#85aaff` (`--accent-text`) as a dark-theme button fill behind `#ffffff` text; keep `#2d55eb` (`--accent`) as the dark button background and `#85aaff` for text and focus rings.",
+      "Don't reintroduce `+` corner registration ticks, boxed `.ins-card` subcards, uppercase monospace labels, or `04 EXPORT DISPATCH` headers over the streamlined proof sheet and Export ticket.",
+      "Don't link external CDN font stylesheets or icon-font kits; keep `Archivo`, `Bricolage Grotesque`, and `Martian Mono` self-hosted in `src/assets/fonts/` and UI icons as `strokeWidth={1.75}` inline SVGs in `src/components/icons.tsx`."
+    ]
+  }
+}
