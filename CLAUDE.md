@@ -10,7 +10,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 npm run dev              # Vite dev server
 npm run build            # tsc -b && vite build
 npm run typecheck        # tsc -b --noEmit
-npm test                 # vitest run (70 tests, src/**/*.test.ts)
+npm test                 # vitest run (103 tests, src/**/*.test.ts)
 npm run test:e2e         # Playwright smoke test of the full studio flow (e2e/)
 npx vitest run src/lib/colors.test.ts      # single file
 npx vitest run -t "processColors"          # tests matching a name

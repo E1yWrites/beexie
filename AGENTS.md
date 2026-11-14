@@ -4,7 +4,7 @@
 - Scaffolded and implemented: source, manifests, lockfile, docs, tests, and production build all present.
 - Verified commands: `npm install`, `npm run dev`, `npm run build`, `npm run preview`, `npm run typecheck`, `npm test`, `npm run check:contrast`.
 - Real commands now exist: not greenfield. Source of truth is code; if docs and code disagree, trust code and fix the docs.
-- Build size: 8.96 kB gzip CSS, 98.49 kB gzip JS (2026-11-14, Instruction Booklet + motion pass).
+- Build size: 9.39 kB gzip CSS, 107.92 kB gzip JS plus an 11.6 kB pipeline worker (2026-11-14, issues #1 to #8).
 - Design tokens: The Instruction Booklet (docs/09-redesign-spec.md). Light booklet stock `#ffffff` / dark cartridge shell `#1d1e22`, ink `#16161a`, flat spot plates red `#d81e28`, yellow `#ffc81e`, blue `#2449e0`. Square corners, no shadows or gradients. 27/27 WCAG AA pairs via `npm run check:contrast`.
 - Direction: Landing is the booklet (cover with the koi converted live on the red plate, How to play panels, live retro preset cards, safety page, Q and A, back cover). Studio is the booklet opened flat: thumb-index tabs 1 to 4 (open tab floods its stage plate), full-height single-stage inspector, full-width export bar. Signature: ghost-grid fill, stepped row reveal. Motion (docs/10-motion-spec.md): silk WebGL shader on the cover and back cover art plates only; all UI motion is stepped (src/styles/motion.css). Fonts: Dela Gothic One, Zen Kaku Gothic New, DotGothic16 (numerals only). Zero em-dashes. Zero Lanz0s in user copy.
 
@@ -39,7 +39,7 @@
 ## Testing / done
 - Test with real images: every input format (PNG/JPG/WEBP), every resolution, extreme aspect ratios, large files, transparency, quantization, dithering, every export format, responsive breakpoints, and invalid uploads.
 - Done means the full flow works end to end: open → upload → resolution → settings → preview → compare → choose format → configure dimensions → download real pixel art.
-- `npm run typecheck` passes; `npm test` 70/70 pass; `npm run build` succeeds.
+- `npm run typecheck` passes; `npm test` 103/103 pass; `npm run build` succeeds.
 - `npm run test:e2e` passes (Playwright smoke: upload PNG/JPG/WEBP, grid, color, dither, download, real PNG dimensions). Runs in CI.
 - `npm run check:contrast` - WCAG AA contrast verified across both themes (light, dark).
 - `npx impeccable detect src/` → [] (zero anti-patterns).
