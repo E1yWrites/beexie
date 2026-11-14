@@ -72,8 +72,8 @@ export const RETRO_PRESETS: readonly RetroPresetMeta[] = [
   {
     id: '16bit-jrpg',
     name: '16-Bit JRPG',
-    era: 'SNES 32c',
-    description: 'SNES / Chrono-era aesthetic with vibrant 32-color shading and defined contours.',
+    era: '32c',
+    description: 'Cartridge-era RPG look: vivid 32-color shading with soft contours.',
     settings: {
       colorMode: 'reduced',
       reducedColors: 32,
@@ -90,8 +90,8 @@ export const RETRO_PRESETS: readonly RetroPresetMeta[] = [
   {
     id: 'arcade-action',
     name: 'Arcade Action',
-    era: 'CPS-2',
-    description: 'Capcom CPS-2 punchy outlines and dynamic lighting.',
+    era: '32c ink',
+    description: 'Arcade cabinet punch: heavy ink outlines and boosted contrast.',
     settings: {
       colorMode: 'reduced',
       reducedColors: 32,
@@ -109,8 +109,8 @@ export const RETRO_PRESETS: readonly RetroPresetMeta[] = [
   {
     id: '8bit-classic',
     name: '8-Bit Classic',
-    era: 'NES 4c/tile',
-    description: 'NES / Famicom 4-color tile discipline with bold silhouettes.',
+    era: '4c/tile',
+    description: '16-color master palette, four colors per 8x8 tile, bold silhouettes.',
     settings: {
       colorMode: 'custom',
       reducedColors: 16,
@@ -128,9 +128,9 @@ export const RETRO_PRESETS: readonly RetroPresetMeta[] = [
   },
   {
     id: 'gameboy-dmg',
-    name: 'Game Boy DMG',
-    era: 'DMG-01',
-    description: 'Authentic 4-shade olive-green monochrome.',
+    name: 'Pocket Mono',
+    era: '4 shade',
+    description: 'Four shades of olive green on an ordered dither.',
     settings: {
       colorMode: 'custom',
       reducedColors: 4,
@@ -148,8 +148,8 @@ export const RETRO_PRESETS: readonly RetroPresetMeta[] = [
   {
     id: 'cyberpunk-1993',
     name: 'Cyberpunk 1993',
-    era: 'PC-98',
-    description: 'High-contrast isometric PC-98 dithering.',
+    era: '16c',
+    description: 'Sixteen-color screen look: high contrast and ordered dithering.',
     settings: {
       colorMode: 'custom',
       reducedColors: 16,
@@ -173,9 +173,9 @@ export interface PalettePreset {
 }
 
 export const PALETTE_PRESETS: PalettePreset[] = [
-  { id: 'gameboy', name: 'Game Boy', colors: DEFAULT_PALETTE },
+  { id: 'gameboy', name: 'Pocket Mono', colors: DEFAULT_PALETTE },
   { id: 'pico8', name: 'PICO-8', colors: ['#000000', '#1d2b53', '#7e2553', '#008751', '#ab5236', '#5f574f', '#c2c3c7', '#fff1e8'] },
-  { id: 'nes', name: 'NES', colors: ['#000000', '#fcfcfc', '#bcbcbc', '#7c7c7c', '#a80020', '#f83800', '#fca044', '#f8b800', '#00a800', '#58d854', '#0058f8', '#3cbcfc', '#6844fc', '#d800cc'] },
+  { id: 'nes', name: '8-Bit Wide', colors: ['#000000', '#fcfcfc', '#bcbcbc', '#7c7c7c', '#a80020', '#f83800', '#fca044', '#f8b800', '#00a800', '#58d854', '#0058f8', '#3cbcfc', '#6844fc', '#d800cc'] },
   { id: 'sweetie16', name: 'Sweetie 16', colors: ['#1a1c2c', '#5d275d', '#b13e53', '#ef7d57', '#ffcd75', '#a7f070', '#38b764', '#257179', '#29366f', '#3b5dc9', '#41a6f6', '#73eff7', '#f4f4f4', '#94b0c2', '#566c86', '#333c57'] },
   { id: 'cga', name: 'CGA', colors: ['#000000', '#55ffff', '#ff55ff', '#ffffff'] },
   { id: 'sepia', name: 'Sepia', colors: ['#2b1b0e', '#5c3a1e', '#a06a35', '#d9b382', '#f4e3c1'] },

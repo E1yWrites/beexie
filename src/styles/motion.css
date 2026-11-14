@@ -1,0 +1,178 @@
+/* ============================================================
+   Motion (docs/10-motion-spec.md). Two registers:
+   art plates glide (SilkPlate), UI snaps in steps like sprites.
+   Every rule here collapses to instant under prefers-reduced-motion
+   through the reset at the end of base.css.
+   ============================================================ */
+
+/* ---- C5: plate flood. The open tab and the new stage panel print in from the page edge. ---- */
+
+@keyframes plateFlood {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.tab.is-active,
+.inspector-num,
+.stage-panel-enter {
+  animation: plateFlood 160ms steps(4, end) both;
+}
+
+/* ---- C6: palette cascade. Swatches flip in one by one. ---- */
+
+@keyframes swatchIn {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.cover-swatches li,
+.comb-hex {
+  transform-origin: bottom;
+  animation: swatchIn 120ms steps(3, end) both;
+  animation-delay: calc(var(--i, 0) * 22ms);
+}
+
+/* ---- C8: export. A stepped stripe while encoding, then a printed Saved stamp. ---- */
+
+@keyframes encodeStripe {
+  to {
+    background-position: 28px 0;
+  }
+}
+
+.exportbar-download.is-encoding:disabled {
+  background: repeating-linear-gradient(-45deg, var(--blue) 0 10px, var(--ink) 10px 14px);
+  background-size: 28px 28px;
+  color: var(--on-blue);
+  animation: encodeStripe 480ms steps(4) infinite;
+}
+
+@keyframes stamp {
+  0% {
+    opacity: 0;
+    transform: rotate(-6deg) scale(1.5);
+  }
+  12% {
+    opacity: 1;
+    transform: rotate(-6deg) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: rotate(-6deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    transform: rotate(-6deg) scale(1);
+  }
+}
+
+.exportbar-stamp {
+  position: absolute;
+  inset: 4px 10px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  border: var(--stroke) solid var(--ink);
+  background: var(--yellow);
+  color: var(--on-yellow);
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  pointer-events: none;
+  animation: stamp 1400ms steps(3, end) forwards;
+}
+
+/* ---- C9: drop targets. Dashes march while a file hovers. ---- */
+
+@keyframes march {
+  to {
+    background-position: 16px 0, -16px 100%, 0 -16px, 100% 16px;
+  }
+}
+
+.drop-card,
+.cover-art {
+  position: relative;
+}
+
+.drop-card::after,
+.cover-plate.is-drag-over .cover-art::after {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  z-index: 4;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--dash, var(--ink)) 50%, transparent 0) 0 0 / 16px 2px repeat-x,
+    linear-gradient(90deg, var(--dash, var(--ink)) 50%, transparent 0) 0 100% / 16px 2px repeat-x,
+    linear-gradient(0deg, var(--dash, var(--ink)) 50%, transparent 0) 0 0 / 2px 16px repeat-y,
+    linear-gradient(0deg, var(--dash, var(--ink)) 50%, transparent 0) 100% 0 / 2px 16px repeat-y;
+  animation: march 480ms steps(4) infinite;
+}
+
+.cover-plate.is-drag-over .cover-art::after {
+  --dash: #ffffff;
+}
+
+/* ---- C10: theme switch wipes down the page in six steps ---- */
+
+@keyframes themeWipe {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+::view-transition-old(root) {
+  animation: none;
+}
+
+::view-transition-new(root) {
+  animation: themeWipe 360ms steps(6, end) both;
+}
+
+/* ---- C11: the bee flaps two frames when its wordmark is hovered ---- */
+
+@keyframes flapLeft {
+  to {
+    transform: rotate(-22deg);
+  }
+}
+
+@keyframes flapRight {
+  to {
+    transform: rotate(22deg);
+  }
+}
+
+.bee-wing {
+  transform-box: fill-box;
+}
+
+.bee-wing-l {
+  transform-origin: right center;
+}
+
+.bee-wing-r {
+  transform-origin: left center;
+}
+
+.brand:hover .bee-wing-l,
+.colophon-brand:hover .bee-wing-l {
+  animation: flapLeft 180ms steps(1, end) infinite alternate;
+}
+
+.brand:hover .bee-wing-r,
+.colophon-brand:hover .bee-wing-r {
+  animation: flapRight 180ms steps(1, end) infinite alternate;
+}

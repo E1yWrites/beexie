@@ -198,13 +198,13 @@ export const LegalModal: React.FC<LegalModalProps> = ({
               <h3>1. Typography Licenses (Self-Hosted, Zero Tracking)</h3>
               <ul className="legal-list">
                 <li>
-                  <strong>Archivo:</strong> Copyright Omnibus-Type, licensed under the <strong>SIL Open Font License 1.1 (OFL-1.1)</strong>. Bundled locally as <code>.woff2</code> with zero external font-CDN requests.
+                  <strong>Dela Gothic One:</strong> Copyright The Dela Gothic Project Authors, licensed under the <strong>SIL Open Font License 1.1 (OFL-1.1)</strong>. Bundled locally as <code>.woff2</code>.
                 </li>
                 <li>
-                  <strong>Bricolage Grotesque:</strong> Copyright Mathieu Triay, licensed under the <strong>SIL Open Font License 1.1 (OFL-1.1)</strong>. Bundled locally.
+                  <strong>Zen Kaku Gothic New:</strong> Copyright The Zen Project Authors, licensed under the <strong>SIL Open Font License 1.1 (OFL-1.1)</strong>. Bundled locally as <code>.woff2</code>.
                 </li>
                 <li>
-                  <strong>Martian Mono:</strong> Copyright Evil Martians, licensed under the <strong>SIL Open Font License 1.1 (OFL-1.1)</strong>. Bundled locally.
+                  <strong>DotGothic16:</strong> Copyright The DotGothic16 Project Authors, licensed under the <strong>SIL Open Font License 1.1 (OFL-1.1)</strong>. Bundled locally as <code>.woff2</code>.
                 </li>
               </ul>
 
@@ -220,7 +220,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
 
               <h3>3. Source Code, Shaders &amp; Open-Source Dependencies</h3>
               <p>
-                The beexie application source code, pixelation engine (<code>src/lib/*</code>), and flowing <code>BackgroundPaths</code> canvas backdrop are licensed under the <strong>MIT License</strong>. Runtime dependencies (<code>react</code>, <code>react-dom</code>) are distributed under the <strong>MIT License</strong>.
+                The beexie application source code and pixelation engine (<code>src/lib/*</code>) are licensed under the <strong>MIT License</strong>. Runtime dependencies (<code>react</code>, <code>react-dom</code>) are distributed under the <strong>MIT License</strong>.
               </p>
             </div>
           )}

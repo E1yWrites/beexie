@@ -66,7 +66,7 @@ export function PaletteComb({
             const index = rowIndex * perRow + columnIndex;
             const isSelected = selected === index;
             const cell = (
-              <span className="comb-hex" style={{ ['--c' as string]: color }}>
+              <span className="comb-hex" style={{ ['--c' as string]: color, ['--i' as string]: index }}>
                 <i />
               </span>
             );

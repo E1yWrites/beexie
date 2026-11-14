@@ -1,5 +1,6 @@
 import type { ExportSize, GridSize } from '../../types';
 import { SpinnerIcon } from '../icons';
+import { Tick } from '../ui/Tick';
 
 interface StatusBoardProps {
   busy: boolean;
@@ -20,18 +21,18 @@ export function StatusBoard({ busy, hasImage, grid, finalSize, paletteSize = 0 }
         <span>
           Grid{' '}
           <span className="mono tnum status-fact-val">
-            {grid.width} &times; {grid.height}
+            <Tick value={grid.width} /> &times; <Tick value={grid.height} />
           </span>
         </span>
         <span>
           Output{' '}
           <span className="mono tnum status-fact-val">
-            {finalSize.width} &times; {finalSize.height}
+            <Tick value={finalSize.width} /> &times; <Tick value={finalSize.height} />
           </span>
         </span>
         {paletteSize > 0 ? (
           <span>
-            <span className="mono tnum status-fact-val">{paletteSize}</span> {paletteSize === 1 ? 'color' : 'colors'}
+            <span className="mono tnum status-fact-val"><Tick value={paletteSize} /></span> {paletteSize === 1 ? 'color' : 'colors'}
           </span>
         ) : null}
       </span>

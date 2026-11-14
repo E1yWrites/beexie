@@ -23,7 +23,7 @@ export function ThemeToggle({ theme, onToggleTheme }: { theme?: Theme; onToggleT
     document.documentElement.dataset.theme = next;
   };
 
-  const label = activeTheme === 'dark' ? 'Dark Pressroom theme active. Switch to Light Cotton Ivory.' : 'Light Cotton Ivory theme active. Switch to Dark Pressroom.';
+  const label = activeTheme === 'dark' ? 'Dark theme on. Switch to light.' : 'Light theme on. Switch to dark.';
 
   return (
     <button
@@ -31,7 +31,7 @@ export function ThemeToggle({ theme, onToggleTheme }: { theme?: Theme; onToggleT
       className="icon-btn theme-btn"
       onClick={handleClick}
       aria-label={label}
-      title={activeTheme === 'dark' ? 'Switch to Light Cotton Ivory' : 'Switch to Dark Pressroom'}
+      title={activeTheme === 'dark' ? 'Switch to light' : 'Switch to dark'}
     >
       {activeTheme === 'dark' ? <SunIcon size={17} /> : <MoonIcon size={17} />}
     </button>
@@ -70,7 +70,7 @@ export function AppHeader({
 
       {onGoToLanding ? (
         <button type="button" className="ghost-btn btn-overview" onClick={onGoToLanding}>
-          &larr; Overview
+          Overview
         </button>
       ) : null}
 

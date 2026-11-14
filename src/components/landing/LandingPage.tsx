@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import type { Theme } from '../../types';
-import { LandingNav } from './LandingNav';
-import { LandingHero } from './LandingHero';
-import { LandingFeatures } from './LandingFeatures';
 import { LandingFaq } from './LandingFaq';
+import { LandingFeatures } from './LandingFeatures';
 import { LandingFooter } from './LandingFooter';
+import { LandingHero } from './LandingHero';
+import { LandingNav } from './LandingNav';
+import { LandingPresets } from './LandingPresets';
+import { LandingPrivacy } from './LandingPrivacy';
 import { LegalModal, type LegalTab } from './LegalModal';
-import { BackgroundPaths } from '../ui/background-paths';
 
 interface LandingPageProps {
   theme?: Theme;
@@ -28,11 +29,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({
   const [legalTab, setLegalTab] = useState<LegalTab | null>(null);
 
   return (
-    <div className="landing-page-root">
+    <div className="booklet">
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
-      <BackgroundPaths theme={theme} />
       <LandingNav
         theme={theme}
         onToggleTheme={onToggleTheme}
@@ -40,23 +40,15 @@ export const LandingPage: React.FC<LandingPageProps> = ({
         hasActiveProject={hasActiveProject}
         activeFilename={activeFilename}
       />
-      <main id="main-content" className="landing-main-content">
-        <LandingHero
-          onFileSelect={onFileSelect}
-          onLaunchStudio={onLaunchStudio}
-        />
-        <LandingFeatures onLaunchStudio={onLaunchStudio} />
+      <main id="main-content">
+        <LandingHero onFileSelect={onFileSelect} onLaunchStudio={onLaunchStudio} />
+        <LandingFeatures />
+        <LandingPresets />
+        <LandingPrivacy />
         <LandingFaq />
       </main>
-      <LandingFooter
-        onLaunchStudio={onLaunchStudio}
-        onOpenLegal={(tab) => setLegalTab(tab)}
-      />
-      <LegalModal
-        activeTab={legalTab}
-        onSelectTab={(tab) => setLegalTab(tab)}
-        onClose={() => setLegalTab(null)}
-      />
+      <LandingFooter onLaunchStudio={onLaunchStudio} onOpenLegal={setLegalTab} />
+      <LegalModal activeTab={legalTab} onSelectTab={setLegalTab} onClose={() => setLegalTab(null)} />
     </div>
   );
 };

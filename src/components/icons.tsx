@@ -10,16 +10,16 @@ function frame(size: number, className?: string) {
     viewBox: '0 0 24 24',
     fill: 'none',
     stroke: 'currentColor',
-    strokeWidth: 1.75,
-    strokeLinecap: 'round' as const,
-    strokeLinejoin: 'round' as const,
+    strokeWidth: 2,
+    strokeLinecap: 'square' as const,
+    strokeLinejoin: 'miter' as const,
     'aria-hidden': true,
     focusable: false,
     className,
   };
 }
 
-/** Reimagined Spot-Ink geometric ink-stamp bee emblem. */
+/** beexie bee mark: same geometry, booklet line weight, red plate stripe. */
 export function BeeMark({ size = 28, className }: IconProps) {
   const height = Math.round((size * 28) / 32);
   return (
@@ -32,14 +32,14 @@ export function BeeMark({ size = 28, className }: IconProps) {
       focusable="false"
       className={className}
     >
-      <path d="M9 9C5 5 2 8 4 12C6 15 10 13 12 11" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M23 9C27 5 30 8 28 12C26 15 22 13 20 11" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
-      <rect x="12" y="7" width="8" height="16" rx="4" fill="var(--panel)" stroke="currentColor" strokeWidth="1.9" />
-      <line x1="12" y1="12" x2="20" y2="12" stroke="currentColor" strokeWidth="1.9" />
-      <line x1="12" y1="16" x2="20" y2="16" stroke="currentColor" strokeWidth="1.9" />
-      <line x1="13" y1="20" x2="19" y2="20" stroke="var(--vermilion, #eb4a2d)" strokeWidth="1.9" />
-      <line x1="14" y1="7" x2="11" y2="3" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
-      <line x1="18" y1="7" x2="21" y2="3" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+      <path className="bee-wing bee-wing-l" d="M9 9C5 5 2 8 4 12C6 15 10 13 12 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path className="bee-wing bee-wing-r" d="M23 9C27 5 30 8 28 12C26 15 22 13 20 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <rect x="12" y="7" width="8" height="16" rx="4" fill="var(--paper)" stroke="currentColor" strokeWidth="2" />
+      <line x1="12" y1="12" x2="20" y2="12" stroke="currentColor" strokeWidth="2" />
+      <line x1="12" y1="16" x2="20" y2="16" stroke="currentColor" strokeWidth="2" />
+      <line x1="13" y1="20" x2="19" y2="20" stroke="var(--red)" strokeWidth="2" />
+      <line x1="14" y1="7" x2="11" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="square" />
+      <line x1="18" y1="7" x2="21" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="square" />
     </svg>
   );
 }
