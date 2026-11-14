@@ -94,4 +94,9 @@ test('upload every format, change settings, download a real PNG', async ({ page 
   expect(chartSize.width).toBe(empty.width);
   const legendRows = (chartSize.height - empty.height) / 28;
   expect(Number.isInteger(legendRows) && legendRows >= 1).toBe(true);
+
+  // Turning the 2:1 source a quarter turn flips the 32 x 16 grid to 16 x 32.
+  await page.getByRole('button', { name: /^Image,/ }).click();
+  await page.getByRole('button', { name: 'Rotate right' }).click();
+  await expect(page.getByRole('button', { name: /^Grid,/ })).toHaveAccessibleName(/16 × 32/);
 });

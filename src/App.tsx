@@ -345,6 +345,11 @@ export default function App() {
           onOutputAuto={converter.setOutputAuto}
           onPick={pickFile}
           onRemove={converter.clearImage}
+          original={converter.original}
+          transform={converter.transform}
+          onRotate={converter.rotateSource}
+          onCrop={converter.setCrop}
+          onResetTransform={converter.resetTransform}
           onDismissError={converter.dismissError}
           onResetStage={handleResetStage}
           onChart={() => void handleChart()}

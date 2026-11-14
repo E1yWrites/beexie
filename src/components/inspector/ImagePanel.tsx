@@ -1,5 +1,8 @@
+import { useState } from 'react';
 import { formatBytes } from '../../lib/format';
-import type { SourceImage } from '../../types';
+import type { CropRect } from '../../lib/transform';
+import type { SourceImage, SourceTransform } from '../../types';
+import { CropEditor } from './CropEditor';
 import { CloseIcon, ImageIcon, SpinnerIcon, UploadIcon } from '../icons';
 
 interface ImagePanelProps {
@@ -9,9 +12,31 @@ interface ImagePanelProps {
   onPick: () => void;
   onRemove: () => void;
   onDismissError: () => void;
+  original: SourceImage | null;
+  transform: SourceTransform;
+  gridRatio: number | null;
+  onRotate: (direction: 1 | -1) => void;
+  onCrop: (crop: CropRect | null) => void;
+  onResetTransform: () => void;
 }
 
-export function ImagePanel({ source, error, busy, onPick, onRemove, onDismissError }: ImagePanelProps) {
+export function ImagePanel({
+  source,
+  error,
+  busy,
+  onPick,
+  onRemove,
+  onDismissError,
+  original,
+  transform,
+  gridRatio,
+  onRotate,
+  onCrop,
+  onResetTransform,
+}: ImagePanelProps) {
+  const [cropping, setCropping] = useState(false);
+  const turned = transform.rotation !== 0 || transform.crop !== null;
+
   return (
     <div className="panel-body">
       {source ? (
@@ -33,6 +58,46 @@ export function ImagePanel({ source, error, busy, onPick, onRemove, onDismissErr
             <button type="button" className="btn-quiet" onClick={onRemove} disabled={busy}>
               Remove
             </button>
+          </div>
+
+          <div className="panel-group">
+            <div className="field-head">
+              <span className="field-label">Turn and crop</span>
+              {turned && !cropping ? (
+                <button
+                  type="button"
+                  className="text-btn"
+                  onClick={onResetTransform}
+                >
+                  Undo turn and crop
+                </button>
+              ) : null}
+            </div>
+            {cropping && original ? (
+              <CropEditor
+                original={original}
+                transform={transform}
+                gridRatio={gridRatio}
+                onApply={(crop) => {
+                  onCrop(crop);
+                  setCropping(false);
+                }}
+                onCancel={() => setCropping(false)}
+              />
+            ) : (
+              <div className="crop-actions">
+                <button type="button" className="btn-secondary" onClick={() => onRotate(-1)} disabled={busy}>
+                  Rotate left
+                </button>
+                <button type="button" className="btn-secondary" onClick={() => onRotate(1)} disabled={busy}>
+                  Rotate right
+                </button>
+                <button type="button" className="btn-secondary" onClick={() => setCropping(true)} disabled={busy}>
+                  {transform.crop ? 'Edit crop' : 'Crop'}
+                </button>
+              </div>
+            )}
+            <p className="panel-note">Turning and cropping pick which part of the photo becomes pixel art. They never paint pixels.</p>
           </div>
         </>
       ) : (

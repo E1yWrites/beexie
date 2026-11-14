@@ -1,3 +1,4 @@
+import type { CropRect } from '../../lib/transform';
 import { STAGE_LABELS, STAGE_ORDER } from '../../lib/stages';
 import type {
   ConverterSettings,
@@ -7,6 +8,7 @@ import type {
   ProcessedImage,
   SourceImage,
   Stage,
+  SourceTransform,
 } from '../../types';
 import { ColorPanel } from './ColorPanel';
 import { FinishPanel } from './FinishPanel';
@@ -33,6 +35,11 @@ interface InspectorProps {
   onPick: () => void;
   onRemove: () => void;
   onDismissError: () => void;
+  original: SourceImage | null;
+  transform: SourceTransform;
+  onRotate: (direction: 1 | -1) => void;
+  onCrop: (crop: CropRect | null) => void;
+  onResetTransform: () => void;
   onResetStage: () => void;
   onChart: () => void;
 }
@@ -57,6 +64,11 @@ export function Inspector({
   onPick,
   onRemove,
   onDismissError,
+  original,
+  transform,
+  onRotate,
+  onCrop,
+  onResetTransform,
   onResetStage,
   onChart,
 }: InspectorProps) {
@@ -84,6 +96,12 @@ export function Inspector({
               onPick={onPick}
               onRemove={onRemove}
               onDismissError={onDismissError}
+              original={original}
+              transform={transform}
+              gridRatio={settings.resolutionMode === 'custom' ? settings.customGrid.width / settings.customGrid.height : null}
+              onRotate={onRotate}
+              onCrop={onCrop}
+              onResetTransform={onResetTransform}
             />
           ) : null}
 

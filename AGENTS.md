@@ -14,7 +14,7 @@
 - Keep specs in `docs/` (e.g. `docs/01-prd.md`, `docs/02-user-stories.md`, `docs/03-technical-spec.md`, `docs/04-ui-ux.md`, `docs/05-plan.md`, `docs/06-surface-brief.md`, `docs/07-v2-spec.md`, `docs/08-retro-presets-spec.md`).
 
 ## Product invariants
-- It is an image-to-pixel-art converter, **not** a pixel-art editor/drawing app. The user supplies an image; the app transforms it. Exception (docs/07-v2-spec.md): touch-up only (pencil, eraser, picker, undo) on the processed grid; edits are discarded when settings re-process. Multi-file input exports a store-only zip of converted images plus sheet.png.
+- It is an image-to-pixel-art converter, **not** a pixel-art editor/drawing app. The user supplies an image; the app transforms it. Exception (docs/07-v2-spec.md): touch-up only (pencil, eraser, picker, undo) on the processed grid; edits are discarded when settings re-process. Multi-file input exports a store-only zip of converted images plus sheet.png. Exception (docs/11-issue-batch-spec.md): rotate in 90 degree steps and crop are input transforms on the whole source before pixelation (`lib/transform.ts`); they select and turn, never paint. Batch ignores them.
 - All processing is client-side via Canvas APIs. Never upload user images to a server.
 - Pipeline: decode → downsample to the target pixel resolution → nearest-neighbor upscale → render. Set `imageSmoothingEnabled = false` on canvas and use CSS `image-rendering: pixelated` in previews.
 - Pixel resolution must genuinely drive the downsample grid, not act as a decorative CSS filter.

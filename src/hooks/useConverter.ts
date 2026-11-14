@@ -4,6 +4,7 @@ import { paintPixel, pixelAt } from '../lib/edits';
 import { clampInteger, computeAutoOutput, computeGrid, derivedPixelSize, gridFromPixelSize } from '../lib/dimensions';
 import { loadSourceImage, releaseSource } from '../lib/image';
 import { runPipeline } from '../lib/pipeline';
+import { applyTransform, IDENTITY_TRANSFORM, isIdentity, rotate, type CropRect } from '../lib/transform';
 import { validateFile } from '../lib/validation';
 import type {
   ConverterSettings,
@@ -12,13 +13,21 @@ import type {
   GridSize,
   ProcessedImage,
   SourceImage,
+  SourceTransform,
   Stage,
 } from '../types';
 
 export type GridSide = 'width' | 'height';
 
 export interface ConverterController {
+  /** The image the pipeline sees: the decoded original after rotation and crop. */
   source: SourceImage | null;
+  /** The decoded original, before any transform. */
+  original: SourceImage | null;
+  transform: SourceTransform;
+  rotateSource: (direction: 1 | -1) => void;
+  setCrop: (crop: CropRect | null) => void;
+  resetTransform: () => void;
   settings: ConverterSettings;
   grid: GridSize;
   pixelSize: number;
@@ -45,7 +54,11 @@ export interface ConverterController {
 }
 
 export function useConverter(): ConverterController {
-  const [source, setSource] = useState<SourceImage | null>(null);
+  const [original, setOriginal] = useState<SourceImage | null>(null);
+  const [transform, setTransform] = useState<SourceTransform>(IDENTITY_TRANSFORM);
+  const [transformed, setTransformed] = useState<SourceImage | null>(null);
+  // While a new transform encodes, the last one (or the original) stays on the bench instead of a blank frame.
+  const source = original && !isIdentity(transform) ? (transformed ?? original) : original;
   const [settings, setSettings] = useState<ConverterSettings>(DEFAULT_SETTINGS);
   const [processed, setProcessed] = useState<ProcessedImage | null>(null);
   const [busy, setBusy] = useState(false);
@@ -150,7 +163,8 @@ export function useConverter(): ConverterController {
       if (sourceRef.current) releaseSource(sourceRef.current);
       sourceRef.current = next;
       setProcessed(null);
-      setSource(next);
+      setTransform(IDENTITY_TRANSFORM);
+      setOriginal(next);
       setSettings((previous) => ({ ...previous, outputAuto: true }));
       setError(null);
       return next;
@@ -168,7 +182,8 @@ export function useConverter(): ConverterController {
     requestRef.current += 1;
     releaseSource(sourceRef.current);
     sourceRef.current = null;
-    setSource(null);
+    setTransform(IDENTITY_TRANSFORM);
+    setOriginal(null);
     setProcessed(null);
     setError(null);
     setBusy(false);
@@ -359,8 +374,32 @@ export function useConverter(): ConverterController {
   }, []);
 
   useEffect(() => {
-    sourceRef.current = source;
-  }, [source]);
+    sourceRef.current = original;
+  }, [original]);
+
+  // Rotation and crop build a derived source once; every later step (grid, previews, pipeline) reads it unchanged.
+  useEffect(() => {
+    if (!original || isIdentity(transform)) {
+      setTransformed(null);
+      return;
+    }
+    const canvas = applyTransform(original.bitmap, original.width, original.height, transform);
+    let url: string | null = null;
+    let cancelled = false;
+    canvas.toBlob((blob) => {
+      if (cancelled || !blob) return;
+      url = URL.createObjectURL(blob);
+      setTransformed({ ...original, bitmap: canvas, width: canvas.width, height: canvas.height, url });
+    }, 'image/png');
+    return () => {
+      cancelled = true;
+      if (url) URL.revokeObjectURL(url);
+    };
+  }, [original, transform]);
+
+  const rotateSource = useCallback((direction: 1 | -1) => setTransform((t) => rotate(t, direction)), []);
+  const setCrop = useCallback((crop: CropRect | null) => setTransform((t) => ({ ...t, crop })), []);
+  const resetTransform = useCallback(() => setTransform(IDENTITY_TRANSFORM), []);
 
   useEffect(
     () => () => {
@@ -372,6 +411,11 @@ export function useConverter(): ConverterController {
 
   return {
     source,
+    original,
+    transform,
+    rotateSource,
+    setCrop,
+    resetTransform,
     settings,
     grid,
     pixelSize,
