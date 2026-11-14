@@ -35,9 +35,9 @@ Shared rules for every section:
 ## #1 Palette library with import and export
 
 - Built-in palettes in `constants.ts` `PALETTE_PRESETS`: PICO-8 (fix: the current entry has 8 colors, the real palette has 16), DawnBringer 16, DawnBringer 32, Endesga 32, Game Boy (the existing Pocket Mono entry). Existing entries stay.
-- Import: file input accepting `.gpl` (GIMP palette) and `.hex` (one `rrggbb` per line). Parsers in `lib/paletteFiles.ts`: `parseGpl`, `parseHex`, `toGpl`, `toHex`. Invalid lines are skipped; a file with zero valid colors shows an error and changes nothing. Palettes are capped at the existing custom palette maximum.
+- Import: file input accepting `.gpl` (GIMP palette) and `.hex` (one `rrggbb` per line). Parsers in `lib/paletteFiles.ts`: `parseGpl`, `parseHex`, `toGpl`, `toHex`. Invalid lines are skipped; a file with zero valid colors shows an error and changes nothing. Palettes are capped at 64 colors, the custom palette maximum hardcoded in `ColorPanel.tsx` today; that number moves to `constants.ts` as `MAX_CUSTOM_COLORS`. Every built-in fits under it.
 - Export: "Save palette" downloads the current custom palette as `.hex` or `.gpl`.
-- Lospec slug: a text field "Lospec slug" fetches `https://lospec.com/palette-list/<slug>.json`. This is the only network call in the app and sends only the slug, never image data. Decision needed: keep or cut. If cut, users download the `.hex` from Lospec and import it, which already works offline.
+- Lospec slug: a text field "Lospec slug" fetches `https://lospec.com/palette-list/<slug>.json`. Checked 2026-11-14: the endpoint answers with `Access-Control-Allow-Origin: *`, so a browser fetch works. This is the only network call in the app, it runs only when the user presses Fetch, and it sends only the slug, never image data. The safety page rule "Every step... runs on your device" stays true; a line is added: "Fetching a Lospec palette sends only its name to lospec.com." Decision needed: keep or cut. If cut, users download the `.hex` from Lospec and import it, which already works offline.
 - Picking or importing a palette switches color mode to `custom`, like today's presets.
 - AC: parser unit tests for valid, commented, blank-line, malformed and oversized files; round trip `parseGpl(toGpl(p))` equals `p`; output pixels contain only palette colors.
 
@@ -47,6 +47,7 @@ Shared rules for every section:
 - `lib/svg.ts` `processedToSvg(processed): string`, pure. One `<rect>` per horizontal run of same-colored opaque pixels. `viewBox="0 0 gridW gridH"`, `width`/`height` set to the chosen output size, `shape-rendering="crispEdges"`. Transparent pixels emit nothing. With a background color and transparency off, one full-size background rect comes first.
 - Quality control hides for SVG (no lossy encoding). Scale and output size still set the `width`/`height` attributes.
 - Touch-up edits are included, because export reads the edited `processed`.
+- Batch: with SVG selected, the zip holds one `.svg` per image. `sheet.png` stays a PNG, since a raster sheet is what sprite tools import.
 - AC: unit test on a known 4x2 grid gives the exact expected rect list; run merging reduces rect count on a flat row to 1. e2e downloads an SVG and checks its `viewBox`.
 
 ## #2 Maker chart export
@@ -67,7 +68,10 @@ Shared rules for every section:
 
 ## #7 Keyboard shortcuts
 
-- Global keydown listener in `App.tsx`, studio view only, ignored when focus is in an `input`, `textarea`, `select` or `contenteditable`, and when Ctrl, Meta or Alt is held (except the undo binding that exists today).
+- No keyboard shortcuts exist today (checked: the only global keydown listener is the legal modal's Escape).
+- Preview mode (`mode`) and `zoom` are local state in `Workspace.tsx`, while stages and download live in `App.tsx`. The listener goes in `Workspace.tsx`, which already holds view and zoom and receives `onOpen`; download is passed down as a new `onDownload` prop. No state is lifted.
+- Studio view only. Ignored when focus is in an `input`, `textarea`, `select` or `contenteditable`, and when Ctrl, Meta or Alt is held.
+- WCAG 2.1.4: single-character shortcuts get an off switch in the reference dialog ("Single-key shortcuts" toggle, on by default, stored in `localStorage` key `beexie-shortcuts`).
 - Bindings: `1` to `4` stages, `O` Original, `P` Pixel art, `C` Compare, `+` / `=` zoom in, `-` zoom out, `0` fit, `D` download, `?` opens the reference.
 - Reference: a small dialog opened from a "Keys" button in the header and by `?`, listing every binding. Native `<dialog>` with focus trap and Escape to close.
 - Bindings live in one table `lib/shortcuts.ts` so the handler and the dialog read the same source. Pure `matchShortcut(event, focusTag)` is unit tested.
@@ -87,6 +91,7 @@ Shared rules for every section:
 - Export preset: "Save look" downloads `beexie-look.json` `{ "beexie": 1, "settings": { ... } }`. Import preset: file input in the Finish stage.
 - Validation `lib/settingsSchema.ts` `parseSettings(unknown): ConverterSettings`, hand-written, no dependency: each field is checked against its type and allowed values; a bad field falls back to its `DEFAULT_SETTINGS` value; a non-object or wrong `beexie` version falls back to `DEFAULT_SETTINGS` entirely and shows an error toast. Unknown fields are dropped.
 - Not persisted: the image, touch-up edits, crop and rotation (they belong to one image).
+- Copy: the safety page rule "The only thing beexie remembers is your light or dark theme choice." becomes "beexie remembers your theme and your last settings, never your image."
 - AC: unit tests for valid JSON, every field invalid, extra fields, wrong version, and round trip.
 
 ## Out of scope
