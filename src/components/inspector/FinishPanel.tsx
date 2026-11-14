@@ -10,9 +10,19 @@ interface FinishPanelProps {
   onUpdate: (patch: Partial<ConverterSettings>) => void;
   onOutputDimension: (side: 'width' | 'height', value: number) => void;
   onOutputAuto: () => void;
+  chartDisabled: boolean;
+  onChart: () => void;
 }
 
-export function FinishPanel({ settings, finalSize, onUpdate, onOutputDimension, onOutputAuto }: FinishPanelProps) {
+export function FinishPanel({
+  settings,
+  finalSize,
+  onUpdate,
+  onOutputDimension,
+  onOutputAuto,
+  chartDisabled,
+  onChart,
+}: FinishPanelProps) {
   return (
     <div className="panel-body">
       <div className="panel-group">
@@ -92,6 +102,16 @@ export function FinishPanel({ settings, finalSize, onUpdate, onOutputDimension, 
         ) : null}
 
         <p className="panel-note">Format, scale and background are set on the ticket below across every stage.</p>
+      </div>
+
+      <div className="panel-group">
+        <div className="field-head">
+          <span className="field-label">Maker chart</span>
+        </div>
+        <button type="button" className="btn-secondary" disabled={chartDisabled} onClick={onChart}>
+          Download maker chart
+        </button>
+        <p className="panel-note">A printable PNG for beads and cross-stitch: one symbol per color, rulers every 10 cells, and a legend with each color's count.</p>
       </div>
     </div>
   );

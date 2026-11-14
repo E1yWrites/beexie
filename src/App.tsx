@@ -11,7 +11,9 @@ import { useConverter } from './hooks/useConverter';
 import { useTheme } from './hooks/useTheme';
 import { useTool } from './hooks/useTool';
 import { computeExportSize, isExportSizeValid } from './lib/dimensions';
-import { downloadPixelArt } from './lib/export';
+import { drawChart } from './lib/chart';
+import { buildExportFilename, downloadPixelArt, saveBlob } from './lib/export';
+import { canvasToBlob } from './lib/pixelate';
 import { STAGE_LABELS } from './lib/stages';
 import { ticketDisabledReason } from './lib/ticket';
 import { UploadIcon } from './components/icons';
@@ -224,6 +226,20 @@ export default function App() {
     }
   }, [processed, source, finalSize, settings, notify]);
 
+  const handleChart = useCallback(async () => {
+    if (!processed || !source) return;
+    try {
+      const canvas = drawChart(processed);
+      const blob = await canvasToBlob(canvas, 'image/png');
+      const filename = buildExportFilename(source.name, processed.width, processed.height, 'png').replace('-pixel-', '-chart-');
+      canvas.width = 0;
+      saveBlob(blob, filename);
+      notify(`Downloaded ${filename}`, 'success');
+    } catch {
+      notify('The chart could not be drawn. Try a smaller grid.', 'error');
+    }
+  }, [processed, source, notify]);
+
   const handleResetStage = () => {
     converter.resetStage(active);
     if (active === 'image') {
@@ -331,6 +347,7 @@ export default function App() {
           onRemove={converter.clearImage}
           onDismissError={converter.dismissError}
           onResetStage={handleResetStage}
+          onChart={() => void handleChart()}
         />
       </div>
 

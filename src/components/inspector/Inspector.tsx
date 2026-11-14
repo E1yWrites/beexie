@@ -34,6 +34,7 @@ interface InspectorProps {
   onRemove: () => void;
   onDismissError: () => void;
   onResetStage: () => void;
+  onChart: () => void;
 }
 
 export function Inspector({
@@ -57,6 +58,7 @@ export function Inspector({
   onRemove,
   onDismissError,
   onResetStage,
+  onChart,
 }: InspectorProps) {
   return (
     <aside className="inspector" aria-label={`${STAGE_LABELS[active]} controls`}>
@@ -115,6 +117,8 @@ export function Inspector({
               onUpdate={onUpdate}
               onOutputDimension={onOutputDimension}
               onOutputAuto={onOutputAuto}
+              chartDisabled={!processed}
+              onChart={onChart}
             />
           ) : null}
         </div>

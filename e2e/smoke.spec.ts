@@ -1,5 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
 import { readFileSync } from 'node:fs';
+import { chartLayout } from '../src/lib/chart';
 
 type Mime = 'image/png' | 'image/jpeg' | 'image/webp';
 
@@ -79,4 +80,18 @@ test('upload every format, change settings, download a real PNG', async ({ page 
   const svg = readFileSync((await svgDownload.path())!, 'utf8');
   expect(svgDownload.suggestedFilename()).toMatch(/\.svg$/);
   expect(svg).toContain('width="2048" height="1024" viewBox="0 0 32 16" shape-rendering="crispEdges"');
+
+  await page.getByRole('button', { name: /^Finish,/ }).click();
+  const [chartDownload] = await Promise.all([
+    page.waitForEvent('download'),
+    page.getByRole('button', { name: 'Download maker chart' }).click(),
+  ]);
+  expect(chartDownload.suggestedFilename()).toMatch(/-chart-32x16\.png$/);
+  const chart = readFileSync((await chartDownload.path())!);
+  // Width is fixed by the grid; height grows by one legend row per few colors, so check it lands on a row.
+  const empty = chartLayout(32, 16, 0);
+  const chartSize = pngSize(chart);
+  expect(chartSize.width).toBe(empty.width);
+  const legendRows = (chartSize.height - empty.height) / 28;
+  expect(Number.isInteger(legendRows) && legendRows >= 1).toBe(true);
 });
