@@ -6,6 +6,7 @@ import { ToolRail } from './components/shell/ToolRail';
 import { convertBatch } from './lib/batch';
 import { Workspace } from './components/workspace/Workspace';
 import { LandingPage } from './components/landing/LandingPage';
+import { SPECIMEN_SRC } from './components/landing/sprite';
 import { ACCEPT_ATTRIBUTE, MAX_EXPORT_DIMENSION } from './constants';
 import { useConverter } from './hooks/useConverter';
 import { useTheme } from './hooks/useTheme';
@@ -63,7 +64,7 @@ export default function App() {
 
   const handleLoadSample = useCallback(async () => {
     try {
-      const res = await fetch('/specimen.jpg');
+      const res = await fetch(SPECIMEN_SRC);
       const blob = await res.blob();
       const sampleFile = new File([blob], 'koi-pond-specimen.jpg', { type: 'image/jpeg' });
       await handleFile(sampleFile);
