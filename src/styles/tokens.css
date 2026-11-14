@@ -1,46 +1,51 @@
 /* ============================================================
-   beexie: The Instruction Booklet
-   Light = booklet stock. Dark = cartridge shell.
-   Flat spot plates only. Square corners. No shadows, no glows.
+   beexie: The Instruction Booklet, Golden Hour Meadow palette
+   Light = meadow paper. Dark = moss shell. Plates come from the
+   voxel sunset: sun, gold, grass (action), tide.
+   Flat plates only. Square corners. No shadows, no glows.
    Mirror every hex change in scripts/check-contrast.cjs.
    ============================================================ */
 
 :root {
   color-scheme: light;
 
-  /* stock and ink */
-  --paper: #ffffff;
-  --sheet: #f3f3f5;
-  --sheet-2: #e6e6ea;
-  --ink: #16161a;
-  --ink-muted: #5a5a63;
-  --rule: #16161a;
-  --rule-soft: #cfcfd6;
-  --keyline: #16161a; /* black key line around art on plates, both themes */
+  /* stock and ink: meadow paper, moss ink */
+  --paper: #f8fbf4;
+  --sheet: #eef3e6;
+  --sheet-2: #e2eadb;
+  --ink: #1d2a1f;
+  --ink-muted: #4c5c4c;
+  --rule: #1d2a1f;
+  --rule-soft: #cfdac6;
+  --keyline: #1d2a1f; /* key line around art on plates, both themes */
 
-  /* spot plates (fields) and their text-safe variants */
-  --red: #d81e28;
-  --on-red: #ffffff;
-  --red-text: #c4121c;
-  --yellow: #ffc81e;
-  --on-yellow: #16161a;
-  --blue: #2449e0;
-  --on-blue: #ffffff;
-  --blue-text: #2449e0;
-  --plate-ink: #16161a;
-  --on-plate-ink: #ffffff;
+  /* plates, named by role in the sunset scene, with text-safe variants */
+  --sun: #ec6a20;
+  --on-sun: #1d2a1f;
+  --sun-text: #b4470c;
+  --gold: #ffd23f;
+  --on-gold: #1d2a1f;
+  --grass: #2f7a2a; /* action: primary buttons, Download, focus */
+  --on-grass: #ffffff;
+  --grass-text: #2f7a2a;
+  --tide: #2f7f8f;
+  --on-tide: #ffffff;
+  --plate-ink: #1d2a1f;
+  --on-plate-ink: #f8fbf4;
 
-  /* art plates: flat fallback under the silk shader (same in both themes) */
-  --maroon: #7a1424;
+  /* chips on art plates: same in both themes, the scene stays the same scene */
+  --chip: #f8fbf4;
+  --chip-ink: #1d2a1f;
 
   /* states */
-  --success: #13703c;
-  --danger: #c4121c;
-  --focus: #2449e0;
-  --checker-a: #ececef;
-  --checker-b: #f7f7f9;
-  --ghost: #e3e3e8;
-  --scrim: rgba(22, 22, 26, 0.56);
+  --success: #2f7a2a;
+  --danger: #b42318;
+  --on-danger: #ffffff;
+  --focus: #2f7a2a;
+  --checker-a: #e6ecdd;
+  --checker-b: #f2f6ec;
+  --ghost: #dfe7d6;
+  --scrim: rgba(29, 42, 31, 0.56);
 
   /* type */
   --font-display: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
@@ -84,30 +89,34 @@
 [data-theme='dark'] {
   color-scheme: dark;
 
-  --paper: #1d1e22;
-  --sheet: #26272c;
-  --sheet-2: #2f3036;
-  --ink: #f2f2f4;
-  --ink-muted: #a3a3ad;
-  --rule: #8d8e97;
-  --rule-soft: #3a3b42;
+  --paper: #141c16;
+  --sheet: #1d2a1f;
+  --sheet-2: #26342a;
+  --ink: #f1f7ea;
+  --ink-muted: #adbda9;
+  --rule: #8a9c88;
+  --rule-soft: #2f3f31;
+  --keyline: #080d09;
 
-  --red: #d81e28;
-  --on-red: #ffffff;
-  --red-text: #ff6b6b;
-  --yellow: #ffd23f;
-  --on-yellow: #16161a;
-  --blue: #2449e0;
-  --on-blue: #ffffff;
-  --blue-text: #7f9cff;
-  --plate-ink: #f2f2f4;
-  --on-plate-ink: #16161a;
+  --sun: #ff8a3d;
+  --on-sun: #141c16;
+  --sun-text: #ff9d5c;
+  --gold: #ffd23f;
+  --on-gold: #141c16;
+  --grass: #7ccf4f;
+  --on-grass: #141c16;
+  --grass-text: #7ccf4f;
+  --tide: #4fb3c4;
+  --on-tide: #141c16;
+  --plate-ink: #f1f7ea;
+  --on-plate-ink: #141c16;
 
-  --success: #4ade80;
-  --danger: #ff6b6b;
-  --focus: #7f9cff;
-  --checker-a: #2a2b30;
-  --checker-b: #222327;
-  --ghost: #33343b;
-  --scrim: rgba(8, 8, 10, 0.72);
+  --success: #7ccf4f;
+  --danger: #ff8a75;
+  --on-danger: #141c16;
+  --focus: #7ccf4f;
+  --checker-a: #1f2a21;
+  --checker-b: #18211a;
+  --ghost: #26342a;
+  --scrim: rgba(6, 10, 7, 0.72);
 }

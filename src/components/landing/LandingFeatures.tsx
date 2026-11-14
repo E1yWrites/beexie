@@ -78,7 +78,7 @@ const PANELS: Panel[] = [
         </span>
         <span className="dg-mark pixel">b</span>
         <span className="dg-swatches" aria-hidden="true">
-          {['#16161a', '#2449e0', '#3fa7d6', '#457842', '#d81e28', '#f29e38', '#ffc81e', '#f3f3f5'].map((hex) => (
+          {['#1d2a1f', '#2b5f8a', '#2f7f8f', '#4a9c3a', '#8a5a33', '#ec6a20', '#ffd23f', '#f8fbf4'].map((hex) => (
             <i key={hex} style={{ background: hex }} />
           ))}
         </span>

@@ -2,12 +2,9 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { ACCEPT_ATTRIBUTE } from '../../constants';
 import type { ColorOptions } from '../../types';
 import { ArrowRightIcon, UploadIcon } from '../icons';
-import { SilkPlate } from '../ui/SilkPlate';
+import { VoxelPlate } from '../ui/VoxelPlate';
 import { Tick } from '../ui/Tick';
 import { loadSpecimen, SPECIMEN_SRC, Sprite, type SpriteSource, useProcessedSprite } from './sprite';
-
-/** Maroon sheen peak for the cover silk; mirrored in scripts/check-contrast.cjs. */
-const COVER_SILK = '#b3263a';
 
 interface LandingHeroProps {
   onFileSelect: (file: File) => void;
@@ -17,7 +14,7 @@ interface LandingHeroProps {
 const GRID_OPTIONS = [16, 32, 48, 96] as const;
 const COLORS = 16;
 
-/** Booklet cover: the koi printed as a live sprite on the red plate. Drop an image to reprint the cover. */
+/** Booklet cover: the koi printed as a live sprite on the voxel sunset plate. Drop an image to reprint the cover. */
 export const LandingHero: React.FC<LandingHeroProps> = ({ onFileSelect, onLaunchStudio }) => {
   const [source, setSource] = useState<SpriteSource | null>(null);
   const [dropped, setDropped] = useState<{ file: File; url: string } | null>(null);
@@ -94,7 +91,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ onFileSelect, onLaunch
         onDragLeave={() => setDragOver(false)}
         onDrop={onDrop}
       >
-        <SilkPlate color={COVER_SILK} />
+        <VoxelPlate scene="sunset" />
         <div className="cover-art">
           <Sprite
             processed={processed}

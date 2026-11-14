@@ -1,420 +1,150 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-14T10:10:38.086Z",
+  "generatedAt": "2026-11-14T16:48:02.333Z",
   "title": "Design System: beexie",
   "extensions": {
     "colorMeta": {
-      "booklet-stock": {
+      "meadow-paper": {
         "role": "neutral",
-        "displayName": "Booklet Stock",
-        "canonical": "oklch(100% 0 0)",
+        "displayName": "Meadow Paper",
+        "canonical": "oklch(98.4% 0.0097 125.7)",
         "tonalRamp": [
-          "oklch(15% 0 0)",
-          "oklch(26% 0 0)",
-          "oklch(38% 0 0)",
-          "oklch(50% 0 0)",
-          "oklch(62% 0 0)",
-          "oklch(74% 0 0)",
-          "oklch(85% 0 0)",
-          "oklch(95% 0 0)"
+          "oklch(15% 0.0053 125.7)",
+          "oklch(26% 0.0076 125.7)",
+          "oklch(38% 0.0097 125.7)",
+          "oklch(50% 0.0097 125.7)",
+          "oklch(62% 0.0097 125.7)",
+          "oklch(74% 0.0097 125.7)",
+          "oklch(85% 0.0063 125.7)",
+          "oklch(95% 0.0034 125.7)"
         ]
       },
-      "booklet-sheet": {
+      "meadow-sheet": {
         "role": "neutral",
-        "displayName": "Sheet Grey",
-        "canonical": "oklch(96.5% 0.0027 286.3)",
+        "displayName": "Meadow Sheet",
+        "canonical": "oklch(95.7% 0.0180 124.0)",
         "tonalRamp": [
-          "oklch(15% 0.0015 286.3)",
-          "oklch(26% 0.0021 286.3)",
-          "oklch(38% 0.0027 286.3)",
-          "oklch(50% 0.0027 286.3)",
-          "oklch(62% 0.0027 286.3)",
-          "oklch(74% 0.0027 286.3)",
-          "oklch(85% 0.0017 286.3)",
-          "oklch(95% 0.0009 286.3)"
+          "oklch(15% 0.0099 124.0)",
+          "oklch(26% 0.0140 124.0)",
+          "oklch(38% 0.0180 124.0)",
+          "oklch(50% 0.0180 124.0)",
+          "oklch(62% 0.0180 124.0)",
+          "oklch(74% 0.0180 124.0)",
+          "oklch(85% 0.0117 124.0)",
+          "oklch(95% 0.0063 124.0)"
         ]
       },
-      "booklet-trough": {
+      "meadow-trough": {
         "role": "neutral",
-        "displayName": "Trough Grey",
-        "canonical": "oklch(92.6% 0.0054 286.3)",
+        "displayName": "Meadow Trough",
+        "canonical": "oklch(92.7% 0.0217 130.0)",
         "tonalRamp": [
-          "oklch(15% 0.003 286.3)",
-          "oklch(26% 0.0042 286.3)",
-          "oklch(38% 0.0054 286.3)",
-          "oklch(50% 0.0054 286.3)",
-          "oklch(62% 0.0054 286.3)",
-          "oklch(74% 0.0054 286.3)",
-          "oklch(85% 0.0035 286.3)",
-          "oklch(95% 0.0019 286.3)"
+          "oklch(15% 0.0120 130.0)",
+          "oklch(26% 0.0169 130.0)",
+          "oklch(38% 0.0217 130.0)",
+          "oklch(50% 0.0217 130.0)",
+          "oklch(62% 0.0217 130.0)",
+          "oklch(74% 0.0217 130.0)",
+          "oklch(85% 0.0141 130.0)",
+          "oklch(95% 0.0076 130.0)"
         ]
       },
-      "print-ink": {
+      "moss-ink": {
         "role": "neutral",
-        "displayName": "Print Ink",
-        "canonical": "oklch(20.2% 0.0079 285.7)",
+        "displayName": "Moss Ink",
+        "canonical": "oklch(26.9% 0.0270 149.0)",
         "tonalRamp": [
-          "oklch(15% 0.0043 285.7)",
-          "oklch(26% 0.0062 285.7)",
-          "oklch(38% 0.0079 285.7)",
-          "oklch(50% 0.0079 285.7)",
-          "oklch(62% 0.0079 285.7)",
-          "oklch(74% 0.0079 285.7)",
-          "oklch(85% 0.0051 285.7)",
-          "oklch(95% 0.0028 285.7)"
+          "oklch(15% 0.0148 149.0)",
+          "oklch(26% 0.0211 149.0)",
+          "oklch(38% 0.0270 149.0)",
+          "oklch(50% 0.0270 149.0)",
+          "oklch(62% 0.0270 149.0)",
+          "oklch(74% 0.0270 149.0)",
+          "oklch(85% 0.0175 149.0)",
+          "oklch(95% 0.0094 149.0)"
         ]
       },
-      "pencil-grey": {
+      "moss-muted": {
         "role": "neutral",
-        "displayName": "Pencil Grey",
-        "canonical": "oklch(47.1% 0.0144 285.8)",
+        "displayName": "Moss Muted",
+        "canonical": "oklch(45.6% 0.0324 145.0)",
         "tonalRamp": [
-          "oklch(15% 0.0079 285.8)",
-          "oklch(26% 0.0112 285.8)",
-          "oklch(38% 0.0144 285.8)",
-          "oklch(50% 0.0144 285.8)",
-          "oklch(62% 0.0144 285.8)",
-          "oklch(74% 0.0144 285.8)",
-          "oklch(85% 0.0093 285.8)",
-          "oklch(95% 0.005 285.8)"
+          "oklch(15% 0.0178 145.0)",
+          "oklch(26% 0.0253 145.0)",
+          "oklch(38% 0.0324 145.0)",
+          "oklch(50% 0.0324 145.0)",
+          "oklch(62% 0.0324 145.0)",
+          "oklch(74% 0.0324 145.0)",
+          "oklch(85% 0.0210 145.0)",
+          "oklch(95% 0.0113 145.0)"
         ]
       },
       "soft-rule": {
         "role": "neutral",
         "displayName": "Soft Rule",
-        "canonical": "oklch(85.7% 0.0096 286.2)",
+        "canonical": "oklch(87.4% 0.0295 130.8)",
         "tonalRamp": [
-          "oklch(15% 0.0053 286.2)",
-          "oklch(26% 0.0075 286.2)",
-          "oklch(38% 0.0096 286.2)",
-          "oklch(50% 0.0096 286.2)",
-          "oklch(62% 0.0096 286.2)",
-          "oklch(74% 0.0096 286.2)",
-          "oklch(85% 0.0062 286.2)",
-          "oklch(95% 0.0034 286.2)"
+          "oklch(15% 0.0162 130.8)",
+          "oklch(26% 0.0230 130.8)",
+          "oklch(38% 0.0295 130.8)",
+          "oklch(50% 0.0295 130.8)",
+          "oklch(62% 0.0295 130.8)",
+          "oklch(74% 0.0295 130.8)",
+          "oklch(85% 0.0192 130.8)",
+          "oklch(95% 0.0103 130.8)"
         ]
       },
       "keyline": {
         "role": "neutral",
         "displayName": "Keyline",
-        "canonical": "oklch(20.2% 0.0079 285.7)",
+        "canonical": "oklch(26.9% 0.0270 149.0)",
         "tonalRamp": [
-          "oklch(15% 0.0043 285.7)",
-          "oklch(26% 0.0062 285.7)",
-          "oklch(38% 0.0079 285.7)",
-          "oklch(50% 0.0079 285.7)",
-          "oklch(62% 0.0079 285.7)",
-          "oklch(74% 0.0079 285.7)",
-          "oklch(85% 0.0051 285.7)",
-          "oklch(95% 0.0028 285.7)"
+          "oklch(15% 0.0148 149.0)",
+          "oklch(26% 0.0211 149.0)",
+          "oklch(38% 0.0270 149.0)",
+          "oklch(50% 0.0270 149.0)",
+          "oklch(62% 0.0270 149.0)",
+          "oklch(74% 0.0270 149.0)",
+          "oklch(85% 0.0175 149.0)",
+          "oklch(95% 0.0094 149.0)"
         ]
       },
-      "red-plate": {
+      "sun-plate": {
         "role": "secondary",
-        "displayName": "Signal Red Plate",
-        "canonical": "oklch(56.6% 0.2157 25.9)",
+        "displayName": "Sun Plate",
+        "canonical": "oklch(67.4% 0.1792 45.1)",
         "tonalRamp": [
-          "oklch(15% 0.1186 25.9)",
-          "oklch(26% 0.1682 25.9)",
-          "oklch(38% 0.2157 25.9)",
-          "oklch(50% 0.2157 25.9)",
-          "oklch(62% 0.2157 25.9)",
-          "oklch(74% 0.2157 25.9)",
-          "oklch(85% 0.1402 25.9)",
-          "oklch(95% 0.0755 25.9)"
+          "oklch(15% 0.0985 45.1)",
+          "oklch(26% 0.1398 45.1)",
+          "oklch(38% 0.1792 45.1)",
+          "oklch(50% 0.1792 45.1)",
+          "oklch(62% 0.1792 45.1)",
+          "oklch(74% 0.1792 45.1)",
+          "oklch(85% 0.1165 45.1)",
+          "oklch(95% 0.0627 45.1)"
         ]
       },
-      "red-plate-text": {
+      "sun-text": {
         "role": "secondary",
-        "displayName": "Red Plate Text",
-        "canonical": "oklch(52.2% 0.2047 26.7)",
+        "displayName": "Sun Text",
+        "canonical": "oklch(53.8% 0.1547 42.7)",
         "tonalRamp": [
-          "oklch(15% 0.1126 26.7)",
-          "oklch(26% 0.1597 26.7)",
-          "oklch(38% 0.2047 26.7)",
-          "oklch(50% 0.2047 26.7)",
-          "oklch(62% 0.2047 26.7)",
-          "oklch(74% 0.2047 26.7)",
-          "oklch(85% 0.1331 26.7)",
-          "oklch(95% 0.0716 26.7)"
+          "oklch(15% 0.0851 42.7)",
+          "oklch(26% 0.1206 42.7)",
+          "oklch(38% 0.1547 42.7)",
+          "oklch(50% 0.1547 42.7)",
+          "oklch(62% 0.1547 42.7)",
+          "oklch(74% 0.1547 42.7)",
+          "oklch(85% 0.1005 42.7)",
+          "oklch(95% 0.0541 42.7)"
         ]
       },
-      "marigold-plate": {
+      "gold-plate": {
         "role": "secondary",
-        "displayName": "Marigold Plate",
-        "canonical": "oklch(85.8% 0.1703 87.8)",
-        "tonalRamp": [
-          "oklch(15% 0.0937 87.8)",
-          "oklch(26% 0.1329 87.8)",
-          "oklch(38% 0.1703 87.8)",
-          "oklch(50% 0.1703 87.8)",
-          "oklch(62% 0.1703 87.8)",
-          "oklch(74% 0.1703 87.8)",
-          "oklch(85% 0.1107 87.8)",
-          "oklch(95% 0.0596 87.8)"
-        ]
-      },
-      "primary-blue-plate": {
-        "role": "primary",
-        "displayName": "Primary Blue Plate",
-        "canonical": "oklch(48.9% 0.2311 266.2)",
-        "tonalRamp": [
-          "oklch(15% 0.1271 266.2)",
-          "oklch(26% 0.1803 266.2)",
-          "oklch(38% 0.2311 266.2)",
-          "oklch(50% 0.2311 266.2)",
-          "oklch(62% 0.2311 266.2)",
-          "oklch(74% 0.2311 266.2)",
-          "oklch(85% 0.1502 266.2)",
-          "oklch(95% 0.0809 266.2)"
-        ]
-      },
-      "maroon-art-plate": {
-        "role": "tertiary",
-        "displayName": "Maroon Art Plate",
-        "canonical": "oklch(37.9% 0.135 18.9)",
-        "tonalRamp": [
-          "oklch(15% 0.0742 18.9)",
-          "oklch(26% 0.1053 18.9)",
-          "oklch(38% 0.135 18.9)",
-          "oklch(50% 0.135 18.9)",
-          "oklch(62% 0.135 18.9)",
-          "oklch(74% 0.135 18.9)",
-          "oklch(85% 0.0877 18.9)",
-          "oklch(95% 0.0472 18.9)"
-        ]
-      },
-      "cover-silk-sheen": {
-        "role": "tertiary",
-        "displayName": "Cover Silk Sheen",
-        "canonical": "oklch(50.5% 0.1757 19.1)",
-        "tonalRamp": [
-          "oklch(15% 0.0966 19.1)",
-          "oklch(26% 0.137 19.1)",
-          "oklch(38% 0.1757 19.1)",
-          "oklch(50% 0.1757 19.1)",
-          "oklch(62% 0.1757 19.1)",
-          "oklch(74% 0.1757 19.1)",
-          "oklch(85% 0.1142 19.1)",
-          "oklch(95% 0.0615 19.1)"
-        ]
-      },
-      "back-cover-silk-sheen": {
-        "role": "tertiary",
-        "displayName": "Back Cover Silk Sheen",
-        "canonical": "oklch(50.1% 0.2232 266.5)",
-        "tonalRamp": [
-          "oklch(15% 0.1228 266.5)",
-          "oklch(26% 0.1741 266.5)",
-          "oklch(38% 0.2232 266.5)",
-          "oklch(50% 0.2232 266.5)",
-          "oklch(62% 0.2232 266.5)",
-          "oklch(74% 0.2232 266.5)",
-          "oklch(85% 0.1451 266.5)",
-          "oklch(95% 0.0781 266.5)"
-        ]
-      },
-      "print-green": {
-        "role": "tertiary",
-        "displayName": "Print Green",
-        "canonical": "oklch(48.1% 0.1168 152.7)",
-        "tonalRamp": [
-          "oklch(15% 0.0642 152.7)",
-          "oklch(26% 0.0911 152.7)",
-          "oklch(38% 0.1168 152.7)",
-          "oklch(50% 0.1168 152.7)",
-          "oklch(62% 0.1168 152.7)",
-          "oklch(74% 0.1168 152.7)",
-          "oklch(85% 0.0759 152.7)",
-          "oklch(95% 0.0409 152.7)"
-        ]
-      },
-      "checker-light-a": {
-        "role": "neutral",
-        "displayName": "Checker Light A",
-        "canonical": "oklch(94.4% 0.004 286.3)",
-        "tonalRamp": [
-          "oklch(15% 0.0022 286.3)",
-          "oklch(26% 0.0031 286.3)",
-          "oklch(38% 0.004 286.3)",
-          "oklch(50% 0.004 286.3)",
-          "oklch(62% 0.004 286.3)",
-          "oklch(74% 0.004 286.3)",
-          "oklch(85% 0.0026 286.3)",
-          "oklch(95% 0.0014 286.3)"
-        ]
-      },
-      "checker-light-b": {
-        "role": "neutral",
-        "displayName": "Checker Light B",
-        "canonical": "oklch(97.7% 0.0026 286.4)",
-        "tonalRamp": [
-          "oklch(15% 0.0015 286.4)",
-          "oklch(26% 0.0021 286.4)",
-          "oklch(38% 0.0026 286.4)",
-          "oklch(50% 0.0026 286.4)",
-          "oklch(62% 0.0026 286.4)",
-          "oklch(74% 0.0026 286.4)",
-          "oklch(85% 0.0017 286.4)",
-          "oklch(95% 0.0009 286.4)"
-        ]
-      },
-      "ghost-cell": {
-        "role": "neutral",
-        "displayName": "Ghost Cell",
-        "canonical": "oklch(91.7% 0.0067 286.3)",
-        "tonalRamp": [
-          "oklch(15% 0.0037 286.3)",
-          "oklch(26% 0.0052 286.3)",
-          "oklch(38% 0.0067 286.3)",
-          "oklch(50% 0.0067 286.3)",
-          "oklch(62% 0.0067 286.3)",
-          "oklch(74% 0.0067 286.3)",
-          "oklch(85% 0.0044 286.3)",
-          "oklch(95% 0.0024 286.3)"
-        ]
-      },
-      "scrim": {
-        "role": "neutral",
-        "displayName": "Scrim",
-        "canonical": "oklch(20.2% 0.0079 285.7 / 0.56)",
-        "tonalRamp": [
-          "oklch(15% 0.0043 285.7)",
-          "oklch(26% 0.0062 285.7)",
-          "oklch(38% 0.0079 285.7)",
-          "oklch(50% 0.0079 285.7)",
-          "oklch(62% 0.0079 285.7)",
-          "oklch(74% 0.0079 285.7)",
-          "oklch(85% 0.0051 285.7)",
-          "oklch(95% 0.0028 285.7)"
-        ]
-      },
-      "cartridge-shell": {
-        "role": "neutral",
-        "displayName": "Cartridge Shell",
-        "canonical": "oklch(23.6% 0.0078 274.6)",
-        "tonalRamp": [
-          "oklch(15% 0.0043 274.6)",
-          "oklch(26% 0.0061 274.6)",
-          "oklch(38% 0.0078 274.6)",
-          "oklch(50% 0.0078 274.6)",
-          "oklch(62% 0.0078 274.6)",
-          "oklch(74% 0.0078 274.6)",
-          "oklch(85% 0.0051 274.6)",
-          "oklch(95% 0.0027 274.6)"
-        ]
-      },
-      "cartridge-sheet": {
-        "role": "neutral",
-        "displayName": "Cartridge Sheet",
-        "canonical": "oklch(27.4% 0.0093 276.8)",
-        "tonalRamp": [
-          "oklch(15% 0.0051 276.8)",
-          "oklch(26% 0.0073 276.8)",
-          "oklch(38% 0.0093 276.8)",
-          "oklch(50% 0.0093 276.8)",
-          "oklch(62% 0.0093 276.8)",
-          "oklch(74% 0.0093 276.8)",
-          "oklch(85% 0.0061 276.8)",
-          "oklch(95% 0.0033 276.8)"
-        ]
-      },
-      "cartridge-trough": {
-        "role": "neutral",
-        "displayName": "Cartridge Trough",
-        "canonical": "oklch(31.1% 0.0108 278.2)",
-        "tonalRamp": [
-          "oklch(15% 0.0059 278.2)",
-          "oklch(26% 0.0084 278.2)",
-          "oklch(38% 0.0108 278.2)",
-          "oklch(50% 0.0108 278.2)",
-          "oklch(62% 0.0108 278.2)",
-          "oklch(74% 0.0108 278.2)",
-          "oklch(85% 0.007 278.2)",
-          "oklch(95% 0.0038 278.2)"
-        ]
-      },
-      "chalk-ink": {
-        "role": "neutral",
-        "displayName": "Chalk Ink",
-        "canonical": "oklch(96.2% 0.0027 286.3)",
-        "tonalRamp": [
-          "oklch(15% 0.0015 286.3)",
-          "oklch(26% 0.0021 286.3)",
-          "oklch(38% 0.0027 286.3)",
-          "oklch(50% 0.0027 286.3)",
-          "oklch(62% 0.0027 286.3)",
-          "oklch(74% 0.0027 286.3)",
-          "oklch(85% 0.0017 286.3)",
-          "oklch(95% 0.0009 286.3)"
-        ]
-      },
-      "shell-muted-ink": {
-        "role": "neutral",
-        "displayName": "Shell Muted Ink",
-        "canonical": "oklch(71.9% 0.0143 286)",
-        "tonalRamp": [
-          "oklch(15% 0.0079 286)",
-          "oklch(26% 0.0112 286)",
-          "oklch(38% 0.0143 286)",
-          "oklch(50% 0.0143 286)",
-          "oklch(62% 0.0143 286)",
-          "oklch(74% 0.0143 286)",
-          "oklch(85% 0.0093 286)",
-          "oklch(95% 0.005 286)"
-        ]
-      },
-      "shell-rule": {
-        "role": "neutral",
-        "displayName": "Shell Rule",
-        "canonical": "oklch(64.9% 0.0133 280.9)",
-        "tonalRamp": [
-          "oklch(15% 0.0073 280.9)",
-          "oklch(26% 0.0104 280.9)",
-          "oklch(38% 0.0133 280.9)",
-          "oklch(50% 0.0133 280.9)",
-          "oklch(62% 0.0133 280.9)",
-          "oklch(74% 0.0133 280.9)",
-          "oklch(85% 0.0087 280.9)",
-          "oklch(95% 0.0047 280.9)"
-        ]
-      },
-      "shell-soft-rule": {
-        "role": "neutral",
-        "displayName": "Shell Soft Rule",
-        "canonical": "oklch(35.4% 0.0121 279.3)",
-        "tonalRamp": [
-          "oklch(15% 0.0067 279.3)",
-          "oklch(26% 0.0095 279.3)",
-          "oklch(38% 0.0121 279.3)",
-          "oklch(50% 0.0121 279.3)",
-          "oklch(62% 0.0121 279.3)",
-          "oklch(74% 0.0121 279.3)",
-          "oklch(85% 0.0079 279.3)",
-          "oklch(95% 0.0042 279.3)"
-        ]
-      },
-      "red-text-on-shell": {
-        "role": "secondary",
-        "displayName": "Red Text on Shell",
-        "canonical": "oklch(71.2% 0.1812 22.8)",
-        "tonalRamp": [
-          "oklch(15% 0.0997 22.8)",
-          "oklch(26% 0.1414 22.8)",
-          "oklch(38% 0.1812 22.8)",
-          "oklch(50% 0.1812 22.8)",
-          "oklch(62% 0.1812 22.8)",
-          "oklch(74% 0.1812 22.8)",
-          "oklch(85% 0.1178 22.8)",
-          "oklch(95% 0.0634 22.8)"
-        ]
-      },
-      "marigold-plate-on-shell": {
-        "role": "secondary",
-        "displayName": "Marigold Plate on Shell",
+        "displayName": "Gold Plate",
         "canonical": "oklch(87.9% 0.1617 90.9)",
         "tonalRamp": [
-          "oklch(15% 0.089 90.9)",
+          "oklch(15% 0.0890 90.9)",
           "oklch(26% 0.1261 90.9)",
           "oklch(38% 0.1617 90.9)",
           "oklch(50% 0.1617 90.9)",
@@ -424,94 +154,374 @@
           "oklch(95% 0.0566 90.9)"
         ]
       },
-      "blue-text-on-shell": {
+      "grass-plate": {
         "role": "primary",
-        "displayName": "Blue Text on Shell",
-        "canonical": "oklch(71.4% 0.1483 270)",
+        "displayName": "Grass Plate",
+        "canonical": "oklch(51.4% 0.1370 142.3)",
         "tonalRamp": [
-          "oklch(15% 0.0815 270)",
-          "oklch(26% 0.1156 270)",
-          "oklch(38% 0.1483 270)",
-          "oklch(50% 0.1483 270)",
-          "oklch(62% 0.1483 270)",
-          "oklch(74% 0.1483 270)",
-          "oklch(85% 0.0964 270)",
-          "oklch(95% 0.0519 270)"
+          "oklch(15% 0.0753 142.3)",
+          "oklch(26% 0.1069 142.3)",
+          "oklch(38% 0.1370 142.3)",
+          "oklch(50% 0.1370 142.3)",
+          "oklch(62% 0.1370 142.3)",
+          "oklch(74% 0.1370 142.3)",
+          "oklch(85% 0.0890 142.3)",
+          "oklch(95% 0.0479 142.3)"
         ]
       },
-      "green-on-shell": {
-        "role": "tertiary",
-        "displayName": "Green on Shell",
-        "canonical": "oklch(80% 0.1821 151.7)",
+      "tide-plate": {
+        "role": "secondary",
+        "displayName": "Tide Plate",
+        "canonical": "oklch(55.5% 0.0799 213.3)",
         "tonalRamp": [
-          "oklch(15% 0.1001 151.7)",
-          "oklch(26% 0.142 151.7)",
-          "oklch(38% 0.1821 151.7)",
-          "oklch(50% 0.1821 151.7)",
-          "oklch(62% 0.1821 151.7)",
-          "oklch(74% 0.1821 151.7)",
-          "oklch(85% 0.1183 151.7)",
-          "oklch(95% 0.0637 151.7)"
+          "oklch(15% 0.0439 213.3)",
+          "oklch(26% 0.0623 213.3)",
+          "oklch(38% 0.0799 213.3)",
+          "oklch(50% 0.0799 213.3)",
+          "oklch(62% 0.0799 213.3)",
+          "oklch(74% 0.0799 213.3)",
+          "oklch(85% 0.0519 213.3)",
+          "oklch(95% 0.0280 213.3)"
+        ]
+      },
+      "danger": {
+        "role": "tertiary",
+        "displayName": "Danger",
+        "canonical": "oklch(50.0% 0.1821 29.5)",
+        "tonalRamp": [
+          "oklch(15% 0.1001 29.5)",
+          "oklch(26% 0.1420 29.5)",
+          "oklch(38% 0.1821 29.5)",
+          "oklch(50% 0.1821 29.5)",
+          "oklch(62% 0.1821 29.5)",
+          "oklch(74% 0.1821 29.5)",
+          "oklch(85% 0.1183 29.5)",
+          "oklch(95% 0.0637 29.5)"
+        ]
+      },
+      "checker-light-a": {
+        "role": "neutral",
+        "displayName": "Checker Light A",
+        "canonical": "oklch(93.4% 0.0209 124.7)",
+        "tonalRamp": [
+          "oklch(15% 0.0115 124.7)",
+          "oklch(26% 0.0163 124.7)",
+          "oklch(38% 0.0209 124.7)",
+          "oklch(50% 0.0209 124.7)",
+          "oklch(62% 0.0209 124.7)",
+          "oklch(74% 0.0209 124.7)",
+          "oklch(85% 0.0136 124.7)",
+          "oklch(95% 0.0073 124.7)"
+        ]
+      },
+      "checker-light-b": {
+        "role": "neutral",
+        "displayName": "Checker Light B",
+        "canonical": "oklch(96.7% 0.0138 124.6)",
+        "tonalRamp": [
+          "oklch(15% 0.0076 124.6)",
+          "oklch(26% 0.0108 124.6)",
+          "oklch(38% 0.0138 124.6)",
+          "oklch(50% 0.0138 124.6)",
+          "oklch(62% 0.0138 124.6)",
+          "oklch(74% 0.0138 124.6)",
+          "oklch(85% 0.0090 124.6)",
+          "oklch(95% 0.0048 124.6)"
+        ]
+      },
+      "ghost-cell": {
+        "role": "neutral",
+        "displayName": "Ghost Cell",
+        "canonical": "oklch(91.7% 0.0242 127.6)",
+        "tonalRamp": [
+          "oklch(15% 0.0133 127.6)",
+          "oklch(26% 0.0189 127.6)",
+          "oklch(38% 0.0242 127.6)",
+          "oklch(50% 0.0242 127.6)",
+          "oklch(62% 0.0242 127.6)",
+          "oklch(74% 0.0242 127.6)",
+          "oklch(85% 0.0158 127.6)",
+          "oklch(95% 0.0085 127.6)"
+        ]
+      },
+      "scrim": {
+        "role": "neutral",
+        "displayName": "Scrim",
+        "canonical": "rgba(29, 42, 31, 0.56)"
+      },
+      "moss-shell": {
+        "role": "neutral",
+        "displayName": "Moss Shell",
+        "canonical": "oklch(21.6% 0.0166 152.5)",
+        "tonalRamp": [
+          "oklch(15% 0.0091 152.5)",
+          "oklch(26% 0.0129 152.5)",
+          "oklch(38% 0.0166 152.5)",
+          "oklch(50% 0.0166 152.5)",
+          "oklch(62% 0.0166 152.5)",
+          "oklch(74% 0.0166 152.5)",
+          "oklch(85% 0.0108 152.5)",
+          "oklch(95% 0.0058 152.5)"
+        ]
+      },
+      "moss-shell-sheet": {
+        "role": "neutral",
+        "displayName": "Moss Shell Sheet",
+        "canonical": "oklch(26.9% 0.0270 149.0)",
+        "tonalRamp": [
+          "oklch(15% 0.0148 149.0)",
+          "oklch(26% 0.0211 149.0)",
+          "oklch(38% 0.0270 149.0)",
+          "oklch(50% 0.0270 149.0)",
+          "oklch(62% 0.0270 149.0)",
+          "oklch(74% 0.0270 149.0)",
+          "oklch(85% 0.0175 149.0)",
+          "oklch(95% 0.0094 149.0)"
+        ]
+      },
+      "moss-shell-trough": {
+        "role": "neutral",
+        "displayName": "Moss Shell Trough",
+        "canonical": "oklch(30.9% 0.0259 153.6)",
+        "tonalRamp": [
+          "oklch(15% 0.0142 153.6)",
+          "oklch(26% 0.0202 153.6)",
+          "oklch(38% 0.0259 153.6)",
+          "oklch(50% 0.0259 153.6)",
+          "oklch(62% 0.0259 153.6)",
+          "oklch(74% 0.0259 153.6)",
+          "oklch(85% 0.0168 153.6)",
+          "oklch(95% 0.0091 153.6)"
+        ]
+      },
+      "shell-ink": {
+        "role": "neutral",
+        "displayName": "Shell Ink",
+        "canonical": "oklch(96.8% 0.0183 127.1)",
+        "tonalRamp": [
+          "oklch(15% 0.0100 127.1)",
+          "oklch(26% 0.0142 127.1)",
+          "oklch(38% 0.0183 127.1)",
+          "oklch(50% 0.0183 127.1)",
+          "oklch(62% 0.0183 127.1)",
+          "oklch(74% 0.0183 127.1)",
+          "oklch(85% 0.0119 127.1)",
+          "oklch(95% 0.0064 127.1)"
+        ]
+      },
+      "shell-muted-ink": {
+        "role": "neutral",
+        "displayName": "Shell Muted Ink",
+        "canonical": "oklch(78.0% 0.0330 139.4)",
+        "tonalRamp": [
+          "oklch(15% 0.0181 139.4)",
+          "oklch(26% 0.0257 139.4)",
+          "oklch(38% 0.0330 139.4)",
+          "oklch(50% 0.0330 139.4)",
+          "oklch(62% 0.0330 139.4)",
+          "oklch(74% 0.0330 139.4)",
+          "oklch(85% 0.0214 139.4)",
+          "oklch(95% 0.0115 139.4)"
+        ]
+      },
+      "shell-rule": {
+        "role": "neutral",
+        "displayName": "Shell Rule",
+        "canonical": "oklch(67.3% 0.0355 142.4)",
+        "tonalRamp": [
+          "oklch(15% 0.0195 142.4)",
+          "oklch(26% 0.0277 142.4)",
+          "oklch(38% 0.0355 142.4)",
+          "oklch(50% 0.0355 142.4)",
+          "oklch(62% 0.0355 142.4)",
+          "oklch(74% 0.0355 142.4)",
+          "oklch(85% 0.0231 142.4)",
+          "oklch(95% 0.0124 142.4)"
+        ]
+      },
+      "shell-soft-rule": {
+        "role": "neutral",
+        "displayName": "Shell Soft Rule",
+        "canonical": "oklch(34.9% 0.0318 148.2)",
+        "tonalRamp": [
+          "oklch(15% 0.0175 148.2)",
+          "oklch(26% 0.0248 148.2)",
+          "oklch(38% 0.0318 148.2)",
+          "oklch(50% 0.0318 148.2)",
+          "oklch(62% 0.0318 148.2)",
+          "oklch(74% 0.0318 148.2)",
+          "oklch(85% 0.0207 148.2)",
+          "oklch(95% 0.0111 148.2)"
+        ]
+      },
+      "sun-on-shell": {
+        "role": "secondary",
+        "displayName": "Sun on Shell",
+        "canonical": "oklch(75.0% 0.1668 50.5)",
+        "tonalRamp": [
+          "oklch(15% 0.0917 50.5)",
+          "oklch(26% 0.1301 50.5)",
+          "oklch(38% 0.1668 50.5)",
+          "oklch(50% 0.1668 50.5)",
+          "oklch(62% 0.1668 50.5)",
+          "oklch(74% 0.1668 50.5)",
+          "oklch(85% 0.1084 50.5)",
+          "oklch(95% 0.0584 50.5)"
+        ]
+      },
+      "sun-text-on-shell": {
+        "role": "secondary",
+        "displayName": "Sun Text on Shell",
+        "canonical": "oklch(78.4% 0.1421 52.7)",
+        "tonalRamp": [
+          "oklch(15% 0.0781 52.7)",
+          "oklch(26% 0.1108 52.7)",
+          "oklch(38% 0.1421 52.7)",
+          "oklch(50% 0.1421 52.7)",
+          "oklch(62% 0.1421 52.7)",
+          "oklch(74% 0.1421 52.7)",
+          "oklch(85% 0.0923 52.7)",
+          "oklch(95% 0.0497 52.7)"
+        ]
+      },
+      "grass-on-shell": {
+        "role": "primary",
+        "displayName": "Grass on Shell",
+        "canonical": "oklch(77.5% 0.1822 136.2)",
+        "tonalRamp": [
+          "oklch(15% 0.1002 136.2)",
+          "oklch(26% 0.1421 136.2)",
+          "oklch(38% 0.1822 136.2)",
+          "oklch(50% 0.1822 136.2)",
+          "oklch(62% 0.1822 136.2)",
+          "oklch(74% 0.1822 136.2)",
+          "oklch(85% 0.1184 136.2)",
+          "oklch(95% 0.0638 136.2)"
+        ]
+      },
+      "tide-on-shell": {
+        "role": "secondary",
+        "displayName": "Tide on Shell",
+        "canonical": "oklch(71.4% 0.0954 210.3)",
+        "tonalRamp": [
+          "oklch(15% 0.0525 210.3)",
+          "oklch(26% 0.0744 210.3)",
+          "oklch(38% 0.0954 210.3)",
+          "oklch(50% 0.0954 210.3)",
+          "oklch(62% 0.0954 210.3)",
+          "oklch(74% 0.0954 210.3)",
+          "oklch(85% 0.0620 210.3)",
+          "oklch(95% 0.0334 210.3)"
+        ]
+      },
+      "danger-on-shell": {
+        "role": "tertiary",
+        "displayName": "Danger on Shell",
+        "canonical": "oklch(75.7% 0.1461 31.4)",
+        "tonalRamp": [
+          "oklch(15% 0.0803 31.4)",
+          "oklch(26% 0.1139 31.4)",
+          "oklch(38% 0.1461 31.4)",
+          "oklch(50% 0.1461 31.4)",
+          "oklch(62% 0.1461 31.4)",
+          "oklch(74% 0.1461 31.4)",
+          "oklch(85% 0.0949 31.4)",
+          "oklch(95% 0.0511 31.4)"
         ]
       },
       "checker-dark-a": {
         "role": "neutral",
         "displayName": "Checker Dark A",
-        "canonical": "oklch(29% 0.0092 276.8)",
+        "canonical": "oklch(27.1% 0.0225 150.1)",
         "tonalRamp": [
-          "oklch(15% 0.005 276.8)",
-          "oklch(26% 0.0072 276.8)",
-          "oklch(38% 0.0092 276.8)",
-          "oklch(50% 0.0092 276.8)",
-          "oklch(62% 0.0092 276.8)",
-          "oklch(74% 0.0092 276.8)",
-          "oklch(85% 0.006 276.8)",
-          "oklch(95% 0.0032 276.8)"
+          "oklch(15% 0.0124 150.1)",
+          "oklch(26% 0.0175 150.1)",
+          "oklch(38% 0.0225 150.1)",
+          "oklch(50% 0.0225 150.1)",
+          "oklch(62% 0.0225 150.1)",
+          "oklch(74% 0.0225 150.1)",
+          "oklch(85% 0.0146 150.1)",
+          "oklch(95% 0.0079 150.1)"
         ]
       },
       "checker-dark-b": {
         "role": "neutral",
         "displayName": "Checker Dark B",
-        "canonical": "oklch(25.7% 0.0076 274.7)",
+        "canonical": "oklch(23.6% 0.0186 151.5)",
         "tonalRamp": [
-          "oklch(15% 0.0042 274.7)",
-          "oklch(26% 0.0059 274.7)",
-          "oklch(38% 0.0076 274.7)",
-          "oklch(50% 0.0076 274.7)",
-          "oklch(62% 0.0076 274.7)",
-          "oklch(74% 0.0076 274.7)",
-          "oklch(85% 0.005 274.7)",
-          "oklch(95% 0.0027 274.7)"
+          "oklch(15% 0.0102 151.5)",
+          "oklch(26% 0.0145 151.5)",
+          "oklch(38% 0.0186 151.5)",
+          "oklch(50% 0.0186 151.5)",
+          "oklch(62% 0.0186 151.5)",
+          "oklch(74% 0.0186 151.5)",
+          "oklch(85% 0.0121 151.5)",
+          "oklch(95% 0.0065 151.5)"
         ]
       },
       "ghost-cell-on-shell": {
         "role": "neutral",
-        "displayName": "Ghost Cell on Shell",
-        "canonical": "oklch(32.7% 0.0124 279.2)",
+        "displayName": "Ghost Cell On Shell",
+        "canonical": "oklch(30.9% 0.0259 153.6)",
         "tonalRamp": [
-          "oklch(15% 0.0068 279.2)",
-          "oklch(26% 0.0097 279.2)",
-          "oklch(38% 0.0124 279.2)",
-          "oklch(50% 0.0124 279.2)",
-          "oklch(62% 0.0124 279.2)",
-          "oklch(74% 0.0124 279.2)",
-          "oklch(85% 0.0081 279.2)",
-          "oklch(95% 0.0043 279.2)"
+          "oklch(15% 0.0142 153.6)",
+          "oklch(26% 0.0202 153.6)",
+          "oklch(38% 0.0259 153.6)",
+          "oklch(50% 0.0259 153.6)",
+          "oklch(62% 0.0259 153.6)",
+          "oklch(74% 0.0259 153.6)",
+          "oklch(85% 0.0168 153.6)",
+          "oklch(95% 0.0091 153.6)"
         ]
       },
       "scrim-on-shell": {
         "role": "neutral",
-        "displayName": "Scrim on Shell",
-        "canonical": "oklch(13.5% 0.0047 285.8 / 0.72)",
+        "displayName": "Scrim On Shell",
+        "canonical": "rgba(6, 10, 7, 0.72)"
+      },
+      "sunset-sky-top": {
+        "role": "tertiary",
+        "displayName": "Sunset Sky Top",
+        "canonical": "oklch(47.1% 0.0893 246.2)",
         "tonalRamp": [
-          "oklch(15% 0.0026 285.8)",
-          "oklch(26% 0.0036 285.8)",
-          "oklch(38% 0.0047 285.8)",
-          "oklch(50% 0.0047 285.8)",
-          "oklch(62% 0.0047 285.8)",
-          "oklch(74% 0.0047 285.8)",
-          "oklch(85% 0.003 285.8)",
-          "oklch(95% 0.0016 285.8)"
+          "oklch(15% 0.0491 246.2)",
+          "oklch(26% 0.0697 246.2)",
+          "oklch(38% 0.0893 246.2)",
+          "oklch(50% 0.0893 246.2)",
+          "oklch(62% 0.0893 246.2)",
+          "oklch(74% 0.0893 246.2)",
+          "oklch(85% 0.0581 246.2)",
+          "oklch(95% 0.0313 246.2)"
+        ]
+      },
+      "sunset-glow": {
+        "role": "tertiary",
+        "displayName": "Sunset Glow",
+        "canonical": "oklch(78.5% 0.1540 60.7)",
+        "tonalRamp": [
+          "oklch(15% 0.0847 60.7)",
+          "oklch(26% 0.1201 60.7)",
+          "oklch(38% 0.1540 60.7)",
+          "oklch(50% 0.1540 60.7)",
+          "oklch(62% 0.1540 60.7)",
+          "oklch(74% 0.1540 60.7)",
+          "oklch(85% 0.1001 60.7)",
+          "oklch(95% 0.0539 60.7)"
+        ]
+      },
+      "dusk-sky-top": {
+        "role": "tertiary",
+        "displayName": "Dusk Sky Top",
+        "canonical": "oklch(20.0% 0.0350 261.4)",
+        "tonalRamp": [
+          "oklch(15% 0.0193 261.4)",
+          "oklch(26% 0.0273 261.4)",
+          "oklch(38% 0.0350 261.4)",
+          "oklch(50% 0.0350 261.4)",
+          "oklch(62% 0.0350 261.4)",
+          "oklch(74% 0.0350 261.4)",
+          "oklch(85% 0.0228 261.4)",
+          "oklch(95% 0.0123 261.4)"
         ]
       }
     },
@@ -548,14 +558,9 @@
     "shadows": [],
     "motion": [
       {
-        "name": "register-art-silk",
-        "value": "WebGL shader, continuous (requestAnimationFrame), DPR capped at 1.5",
-        "purpose": "Art register. Slow silk folds on the cover and back cover plates only; pauses off screen and in hidden tabs; one still frame under reduced motion; flat plate without WebGL."
-      },
-      {
-        "name": "silk-ready-fade",
-        "value": "900ms cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "Art register. Silk canvas fades in once its first frame is drawn."
+        "name": "voxel-plate-drift",
+        "value": "Canvas 2D, 120 px tall at true pixel scale, setInterval 600ms, IntersectionObserver pause",
+        "purpose": "Art plates move in steps too: one 600ms interval; clouds drift a pixel per tick, the water glint swaps every 900ms, a dusk star blinks every 1.2s. Pauses off screen and in hidden tabs; one still frame under reduced motion."
       },
       {
         "name": "step-fast",
@@ -620,7 +625,7 @@
       {
         "name": "reduced-motion",
         "value": "0.01ms",
-        "purpose": "Every animation and transition collapses to instant; silk holds one frame; ticks and palette cycling skip."
+        "purpose": "Every animation and transition collapses to instant; voxel scenes hold one frame; ticks and palette cycling skip."
       }
     ],
     "breakpoints": [
@@ -668,7 +673,7 @@
       "refersTo": "button-primary",
       "description": "Blue action plate; hover inverts to ink in two steps.",
       "html": "<button type=\"button\" class=\"ds-btn-primary\">Open Studio</button>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 20px; border: 0; border-radius: 0; background: var(--blue, #2449e0); color: var(--on-blue, #ffffff); font-family: var(--font-ui, 'Zen Kaku Gothic New', sans-serif); font-size: 14px; font-weight: 700; cursor: pointer; transition: background-color 120ms steps(2), color 120ms steps(2); } .ds-btn-primary:hover { background: var(--ink, #16161a); color: var(--paper, #ffffff); } .ds-btn-primary:focus-visible { outline: 2px solid var(--focus, #2449e0); outline-offset: 2px; }"
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 20px; border: 0; border-radius: 0; background: var(--grass, #2f7a2a); color: var(--on-grass, #ffffff); font-family: var(--font-ui, 'Zen Kaku Gothic New', sans-serif); font-size: 14px; font-weight: 700; cursor: pointer; transition: background-color 120ms steps(2), color 120ms steps(2); } .ds-btn-primary:hover { background: var(--ink, #1d2a1f); color: var(--paper, #f8fbf4); } .ds-btn-primary:focus-visible { outline: 2px solid var(--focus, #2f7a2a); outline-offset: 2px; }"
     },
     {
       "name": "Cover Button",
@@ -676,7 +681,7 @@
       "refersTo": "button-cover",
       "description": "The 60px ink button on the cover; floods blue on hover.",
       "html": "<button type=\"button\" class=\"ds-btn-cover\">Open Studio <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></button>",
-      "css": ".ds-btn-cover { display: inline-flex; align-items: center; gap: 12px; min-height: 60px; padding: 0 24px; border: 0; border-radius: 0; background: var(--ink, #16161a); color: var(--paper, #ffffff); font-family: var(--font-ui, 'Zen Kaku Gothic New', sans-serif); font-size: 18px; font-weight: 700; cursor: pointer; transition: background-color 120ms steps(2); } .ds-btn-cover:hover { background: var(--blue, #2449e0); color: var(--on-blue, #ffffff); } .ds-btn-cover:focus-visible { outline: 2px solid var(--focus, #2449e0); outline-offset: 2px; }"
+      "css": ".ds-btn-cover { display: inline-flex; align-items: center; gap: 12px; min-height: 60px; padding: 0 24px; border: 0; border-radius: 0; background: var(--ink, #1d2a1f); color: var(--paper, #f8fbf4); font-family: var(--font-ui, 'Zen Kaku Gothic New', sans-serif); font-size: 18px; font-weight: 700; cursor: pointer; transition: background-color 120ms steps(2); } .ds-btn-cover:hover { background: var(--grass, #2f7a2a); color: var(--on-grass, #ffffff); } .ds-btn-cover:focus-visible { outline: 2px solid var(--focus, #2f7a2a); outline-offset: 2px; }"
     },
     {
       "name": "Secondary Button",
@@ -684,7 +689,7 @@
       "refersTo": "button-secondary",
       "description": "Hairline ink rule on paper; inverts to ink on hover.",
       "html": "<button type=\"button\" class=\"ds-btn-secondary\">New project</button>",
-      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; min-height: 36px; padding: 0 12px; border: 1px solid var(--rule, #16161a); border-radius: 0; background: none; color: var(--ink, #16161a); font-family: var(--font-ui, 'Zen Kaku Gothic New', sans-serif); font-size: 13px; font-weight: 700; cursor: pointer; transition: background-color 120ms steps(2), color 120ms steps(2); } .ds-btn-secondary:hover { background: var(--ink, #16161a); color: var(--paper, #ffffff); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--focus, #2449e0); outline-offset: 2px; }"
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; min-height: 36px; padding: 0 12px; border: 1px solid var(--rule, #1d2a1f); border-radius: 0; background: none; color: var(--ink, #1d2a1f); font-family: var(--font-ui, 'Zen Kaku Gothic New', sans-serif); font-size: 13px; font-weight: 700; cursor: pointer; transition: background-color 120ms steps(2), color 120ms steps(2); } .ds-btn-secondary:hover { background: var(--ink, #1d2a1f); color: var(--paper, #f8fbf4); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--focus, #2f7a2a); outline-offset: 2px; }"
     },
     {
       "name": "Segmented Strip",
@@ -692,7 +697,7 @@
       "refersTo": "segmented-option",
       "description": "Printed tab strip; the pressed option inks solid.",
       "html": "<div class=\"ds-seg\" role=\"group\" aria-label=\"Format\"><button type=\"button\" class=\"ds-seg-opt\" aria-pressed=\"true\">PNG</button><button type=\"button\" class=\"ds-seg-opt\" aria-pressed=\"false\">JPG</button><button type=\"button\" class=\"ds-seg-opt\" aria-pressed=\"false\">WEBP</button></div>",
-      "css": ".ds-seg { display: inline-flex; border: 1px solid var(--rule, #16161a); background: var(--paper, #ffffff); } .ds-seg-opt { min-height: 34px; padding: 0 12px; border: 0; border-left: 1px solid var(--rule, #16161a); border-radius: 0; background: transparent; color: var(--ink, #16161a); font-family: var(--font-ui, 'Zen Kaku Gothic New', sans-serif); font-size: 13px; font-weight: 700; cursor: pointer; } .ds-seg-opt:first-child { border-left: 0; } .ds-seg-opt:hover:not([aria-pressed='true']) { background: var(--sheet, #f3f3f5); } .ds-seg-opt[aria-pressed='true'] { background: var(--ink, #16161a); color: var(--paper, #ffffff); } .ds-seg-opt:focus-visible { outline: 2px solid var(--focus, #2449e0); outline-offset: 2px; }"
+      "css": ".ds-seg { display: inline-flex; border: 1px solid var(--rule, #1d2a1f); background: var(--paper, #f8fbf4); } .ds-seg-opt { min-height: 34px; padding: 0 12px; border: 0; border-left: 1px solid var(--rule, #1d2a1f); border-radius: 0; background: transparent; color: var(--ink, #1d2a1f); font-family: var(--font-ui, 'Zen Kaku Gothic New', sans-serif); font-size: 13px; font-weight: 700; cursor: pointer; } .ds-seg-opt:first-child { border-left: 0; } .ds-seg-opt:hover:not([aria-pressed='true']) { background: var(--sheet, #eef3e6); } .ds-seg-opt[aria-pressed='true'] { background: var(--ink, #1d2a1f); color: var(--paper, #f8fbf4); } .ds-seg-opt:focus-visible { outline: 2px solid var(--focus, #2f7a2a); outline-offset: 2px; }"
     },
     {
       "name": "Thumb-Index Tabs",
@@ -700,7 +705,7 @@
       "refersTo": "thumb-tab",
       "description": "Four stage tabs with pixel numerals; the open tab floods its stage plate and overlaps the rule.",
       "html": "<nav class=\"ds-tabs\" aria-label=\"Studio stages\"><button type=\"button\" class=\"ds-tab\"><span class=\"ds-tab-num\">1</span><span class=\"ds-tab-label\">Image</span></button><button type=\"button\" class=\"ds-tab is-active\" aria-current=\"step\"><span class=\"ds-tab-num\">2</span><span class=\"ds-tab-label\">Grid</span></button><button type=\"button\" class=\"ds-tab\"><span class=\"ds-tab-num\">3</span><span class=\"ds-tab-label\">Color</span></button><button type=\"button\" class=\"ds-tab\"><span class=\"ds-tab-num\">4</span><span class=\"ds-tab-label\">Finish</span></button></nav>",
-      "css": ".ds-tabs { display: flex; flex-direction: column; width: 72px; border-right: 2px solid var(--rule, #16161a); background: var(--sheet, #f3f3f5); } .ds-tab { display: grid; justify-items: center; align-content: center; gap: 2px; min-height: 84px; padding: 8px 4px; border: 0; border-bottom: 1px solid var(--rule, #16161a); border-radius: 0; background: transparent; color: var(--ink, #16161a); cursor: pointer; transition: background-color 120ms steps(2), color 120ms steps(2); } .ds-tab:hover:not(.is-active) { background: var(--paper, #ffffff); } .ds-tab-num { font-family: var(--font-pixel, 'DotGothic16', monospace); font-size: 30px; line-height: 1; } .ds-tab-label { font-family: var(--font-ui, 'Zen Kaku Gothic New', sans-serif); font-size: 12px; font-weight: 700; } .ds-tab.is-active { margin-right: -2px; background: var(--yellow, #ffc81e); color: var(--on-yellow, #16161a); animation: ds-flood 160ms steps(4, end) both; } .ds-tab:focus-visible { outline: 2px solid var(--focus, #2449e0); outline-offset: 2px; } @keyframes ds-flood { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } } @media (prefers-reduced-motion: reduce) { .ds-tab.is-active { animation: none; } }"
+      "css": ".ds-tabs { display: flex; flex-direction: column; width: 72px; border-right: 2px solid var(--rule, #1d2a1f); background: var(--sheet, #eef3e6); } .ds-tab { display: grid; justify-items: center; align-content: center; gap: 2px; min-height: 84px; padding: 8px 4px; border: 0; border-bottom: 1px solid var(--rule, #1d2a1f); border-radius: 0; background: transparent; color: var(--ink, #1d2a1f); cursor: pointer; transition: background-color 120ms steps(2), color 120ms steps(2); } .ds-tab:hover:not(.is-active) { background: var(--paper, #f8fbf4); } .ds-tab-num { font-family: var(--font-pixel, 'DotGothic16', monospace); font-size: 30px; line-height: 1; } .ds-tab-label { font-family: var(--font-ui, 'Zen Kaku Gothic New', sans-serif); font-size: 12px; font-weight: 700; } .ds-tab.is-active { margin-right: -2px; background: var(--gold, #ffd23f); color: var(--on-gold, #1d2a1f); animation: ds-flood 160ms steps(4, end) both; } .ds-tab:focus-visible { outline: 2px solid var(--focus, #2f7a2a); outline-offset: 2px; } @keyframes ds-flood { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } } @media (prefers-reduced-motion: reduce) { .ds-tab.is-active { animation: none; } }"
     },
     {
       "name": "Number Field",
@@ -708,7 +713,7 @@
       "refersTo": "input-number",
       "description": "Square ruled field with the value in the pixel face.",
       "html": "<label class=\"ds-num\"><span class=\"ds-num-label\">Width</span><span class=\"ds-num-wrap\"><input type=\"number\" value=\"48\"><span class=\"ds-num-suffix\">px</span></span></label>",
-      "css": ".ds-num { display: grid; gap: 4px; } .ds-num-label { color: var(--ink-muted, #5a5a63); font-family: var(--font-ui, 'Zen Kaku Gothic New', sans-serif); font-size: 12px; font-weight: 700; } .ds-num-wrap { display: flex; align-items: center; min-height: 40px; border: 1px solid var(--rule, #16161a); background: var(--paper, #ffffff); } .ds-num-wrap:focus-within { outline: 2px solid var(--focus, #2449e0); outline-offset: 1px; } .ds-num-wrap input { width: 100%; padding: 0 8px; border: 0; background: transparent; color: var(--ink, #16161a); font-family: var(--font-pixel, 'DotGothic16', monospace); font-size: 16px; outline: none; } .ds-num-suffix { padding-right: 8px; color: var(--ink-muted, #5a5a63); font-size: 12px; }"
+      "css": ".ds-num { display: grid; gap: 4px; } .ds-num-label { color: var(--ink-muted, #4c5c4c); font-family: var(--font-ui, 'Zen Kaku Gothic New', sans-serif); font-size: 12px; font-weight: 700; } .ds-num-wrap { display: flex; align-items: center; min-height: 40px; border: 1px solid var(--rule, #1d2a1f); background: var(--paper, #f8fbf4); } .ds-num-wrap:focus-within { outline: 2px solid var(--focus, #2f7a2a); outline-offset: 1px; } .ds-num-wrap input { width: 100%; padding: 0 8px; border: 0; background: transparent; color: var(--ink, #1d2a1f); font-family: var(--font-pixel, 'DotGothic16', monospace); font-size: 16px; outline: none; } .ds-num-suffix { padding-right: 8px; color: var(--ink-muted, #4c5c4c); font-size: 12px; }"
     },
     {
       "name": "Cartridge Card",
@@ -716,7 +721,7 @@
       "refersTo": "cartridge-card",
       "description": "A retro preset as a whole plate in a 2px rule, its sprite in a 3px key line over a ghost grid.",
       "html": "<div class=\"ds-cart\"><div class=\"ds-cart-label\"><h3 class=\"ds-cart-name\">Pocket Mono</h3><span class=\"ds-cart-meta\">4 colors</span></div><div class=\"ds-cart-sprite\" role=\"img\" aria-label=\"Ghost grid awaiting sprite\"></div></div>",
-      "css": ".ds-cart { display: grid; width: 200px; border: 2px solid var(--rule, #16161a); background: var(--blue, #2449e0); color: var(--on-blue, #ffffff); } .ds-cart-label { display: grid; gap: 2px; min-height: 76px; padding: 12px; } .ds-cart-name { margin: 0; font-family: var(--font-display, 'Dela Gothic One', sans-serif); font-size: 20px; font-weight: 400; line-height: 1.15; } .ds-cart-meta { font-family: var(--font-pixel, 'DotGothic16', monospace); font-size: 13px; } .ds-cart-sprite { aspect-ratio: 1; margin: 0 12px 12px; border: 3px solid var(--keyline, #16161a); background-color: var(--paper, #ffffff); background-image: linear-gradient(var(--ghost, #e3e3e8) 1px, transparent 1px), linear-gradient(90deg, var(--ghost, #e3e3e8) 1px, transparent 1px); background-size: 12px 12px; }"
+      "css": ".ds-cart { display: grid; width: 200px; border: 2px solid var(--rule, #1d2a1f); background: var(--grass, #2f7a2a); color: var(--on-grass, #ffffff); } .ds-cart-label { display: grid; gap: 2px; min-height: 76px; padding: 12px; } .ds-cart-name { margin: 0; font-family: var(--font-display, 'Dela Gothic One', sans-serif); font-size: 20px; font-weight: 400; line-height: 1.15; } .ds-cart-meta { font-family: var(--font-pixel, 'DotGothic16', monospace); font-size: 13px; } .ds-cart-sprite { aspect-ratio: 1; margin: 0 12px 12px; border: 3px solid var(--keyline, #1d2a1f); background-color: var(--paper, #f8fbf4); background-image: linear-gradient(var(--ghost, #dfe7d6) 1px, transparent 1px), linear-gradient(90deg, var(--ghost, #dfe7d6) 1px, transparent 1px); background-size: 12px 12px; }"
     },
     {
       "name": "Export Bar",
@@ -724,71 +729,44 @@
       "refersTo": "export-bar",
       "description": "Full-width bar under the bench: labeled groups, fixed-slot Output, blue Download.",
       "html": "<div class=\"ds-exportbar\"><span class=\"ds-exportbar-title\">Export</span><span class=\"ds-exportbar-label\">Scale</span><span class=\"ds-exportbar-out\">768 x 768</span><button type=\"button\" class=\"ds-exportbar-dl\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><path d=\"M12 4v11M7 10l5 5 5-5M4 20h16\"/></svg> Download PNG</button></div>",
-      "css": ".ds-exportbar { display: flex; align-items: center; gap: 20px; min-height: 64px; padding: 8px 16px; border-top: 2px solid var(--rule, #16161a); background: var(--sheet, #f3f3f5); color: var(--ink, #16161a); font-family: var(--font-ui, 'Zen Kaku Gothic New', sans-serif); } .ds-exportbar-title { font-family: var(--font-display, 'Dela Gothic One', sans-serif); font-size: 16px; } .ds-exportbar-label { color: var(--ink-muted, #5a5a63); font-size: 12px; font-weight: 700; } .ds-exportbar-out { min-width: 13ch; margin-left: auto; font-family: var(--font-pixel, 'DotGothic16', monospace); font-size: 16px; text-align: right; } .ds-exportbar-dl { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 20px; border: 0; border-radius: 0; background: var(--blue, #2449e0); color: var(--on-blue, #ffffff); font: inherit; font-weight: 700; cursor: pointer; transition: background-color 120ms steps(2); } .ds-exportbar-dl:hover { background: var(--ink, #16161a); color: var(--paper, #ffffff); } .ds-exportbar-dl:focus-visible { outline: 2px solid var(--focus, #2449e0); outline-offset: 2px; }"
+      "css": ".ds-exportbar { display: flex; align-items: center; gap: 20px; min-height: 64px; padding: 8px 16px; border-top: 2px solid var(--rule, #1d2a1f); background: var(--sheet, #eef3e6); color: var(--ink, #1d2a1f); font-family: var(--font-ui, 'Zen Kaku Gothic New', sans-serif); } .ds-exportbar-title { font-family: var(--font-display, 'Dela Gothic One', sans-serif); font-size: 16px; } .ds-exportbar-label { color: var(--ink-muted, #4c5c4c); font-size: 12px; font-weight: 700; } .ds-exportbar-out { min-width: 13ch; margin-left: auto; font-family: var(--font-pixel, 'DotGothic16', monospace); font-size: 16px; text-align: right; } .ds-exportbar-dl { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 20px; border: 0; border-radius: 0; background: var(--grass, #2f7a2a); color: var(--on-grass, #ffffff); font: inherit; font-weight: 700; cursor: pointer; transition: background-color 120ms steps(2); } .ds-exportbar-dl:hover { background: var(--ink, #1d2a1f); color: var(--paper, #f8fbf4); } .ds-exportbar-dl:focus-visible { outline: 2px solid var(--focus, #2f7a2a); outline-offset: 2px; }"
     }
   ],
   "narrative": {
     "northStar": "The Instruction Booklet",
-    "overview": "beexie is the booklet from the game box. The landing is its cover and spreads: a cover plate with a live sprite, numbered \"how to play\" panels with leader-line callouts on diagrams of real controls, cartridge-label preset cards, a safety page, a Q and A, and a back cover. The Studio is the same booklet opened flat on the desk: the image is the page, the controls are its labeled diagram, and an export bar runs along the bottom edge. Light theme is glossy booklet stock (white paper, black ink); dark theme is the cartridge shell (charcoal plastic) carrying the same plates as label art.\n\nEverything is printed, not lit. Color arrives as flat spot plates (red, marigold, blue, ink) that own whole regions: a tab, a panel head, a card, a page. Edges are square, rules are black, and the sprite is the specimen: rendered by the real pipeline at a true integer scale inside a 3px black key line. Empty space is never blank; it is a ghost cell grid waiting to be filled. Readouts sit in fixed slots in a fixed-width pixel face, so numbers change without anything reflowing.\n\nMotion has two registers and nothing between them. The two large art plates (the maroon cover and the blue back cover) carry a slow WebGL silk that glides continuously. Every UI change snaps in `steps()` like a sprite: tabs flood in, swatches flip, readouts tick, the ghost grid fills row by row. Under `prefers-reduced-motion` the silk holds one still frame and every stepped change is instant.",
+    "overview": "beexie is the booklet from the game box. The landing is its cover and spreads: a cover plate with a live sprite, numbered \"how to play\" panels with leader-line callouts on diagrams of real controls, cartridge-label preset cards, a safety page, a Q and A, and a back cover. The Studio is the same booklet opened flat on the desk: the image is the page, the controls are its labeled diagram, and an export bar runs along the bottom edge. Light theme is meadow paper (a faint green-white stock, moss ink); dark theme is the moss shell carrying the same plates as label art. The palette is lifted from one blocky sunset: sun orange, gold, grass green, and tide teal over moss.\n\nEverything is printed, not lit. Color arrives as flat plates (sun, gold, grass, tide) that own whole regions: a tab, a panel head, a card, a page. Edges are square, rules are moss ink, and the sprite is the specimen: rendered by the real pipeline at a true integer scale inside a 3px moss key line. Empty space is never blank; it is a ghost cell grid waiting to be filled. Readouts sit in fixed slots in a fixed-width pixel face, so numbers change without anything reflowing.\n\nMotion has one register. The two large art plates are voxel scenes drawn on a 120 px tall canvas at true pixel scale: a blocky sunset on the cover and the same world after dusk on the back cover. Their clouds drift a pixel at a time, the water glint swaps frames, and stars blink one by one. Every UI change snaps in `steps()` like a sprite too: tabs flood in, swatches flip, readouts tick, the ghost grid fills row by row. Under `prefers-reduced-motion` the scenes hold one still frame and every stepped change is instant.",
     "keyCharacteristics": [
-      "Booklet stock (`#ffffff`) and cartridge shell (`#1d1e22`) themes sharing identical red, blue, and near-identical marigold plates; all 27 contrast pairs in `npm run check:contrast` pass WCAG AA.",
+      "Meadow paper (`#f8fbf4`) and moss shell (`#141c16`) themes; plates keep their hue across themes and lift in the shell; all 45 contrast pairs in `npm run check:contrast` pass WCAG AA.",
       "Flat spot plates and hard-stop fills only; no blended gradients, no shadows, no blur, no rounded corners.",
       "Heavy Japanese-style gothic display (Dela Gothic One) over a clean gothic UI face (Zen Kaku Gothic New), with DotGothic16 reserved for numerals, readouts, and sprite captions.",
       "Sprites printed by the real pipeline at `floor(available / cells) * cells`, so every art pixel is the same size, always `image-rendering: pixelated`.",
-      "Two motion registers: art plates glide, UI steps."
+      "One motion register: art plates and UI both move in steps."
     ],
     "rules": [
-      {
-        "name": "The Stage Plate Rule",
-        "body": "In the Studio, the stage in use owns one plate (Image red, Grid marigold, Color blue, Finish ink) and only the stage furniture takes it: the open thumb tab, the inspector numeral, the active grid preset, and the Pixel proof tag. Every other color on screen is ink, paper, or a fixed-role plate.",
-        "section": "colors"
-      },
-      {
-        "name": "The Fixed Roles Rule",
-        "body": "In UI, outside the stage plate, each plate means one thing: blue is the action, red is the compare rule and errors, marigold is attention (on, busy, selected, saved). Only label art may use plates freely: the landing cover, How to play heads, cartridge cards, the safety page, and the back cover.",
-        "section": "colors"
-      },
-      {
-        "name": "The Text-Grade Rule",
-        "body": "Plates are fields; text on paper uses the text-grade variant (`red-plate-text`, `red-text-on-shell`, `blue-text-on-shell`). Never set red or blue plate values as small text on the dark shell.",
-        "section": "colors"
-      },
-      {
-        "name": "The Pixel Face Rule",
-        "body": "DotGothic16 prints numbers, readouts, codes, lettered callout marks, and short captions, including numeric controls (grid size chips, preset counts, zoom percent). It never sets body copy, headings, or worded labels.",
-        "section": "typography"
-      },
-      {
-        "name": "The Fixed Slot Rule",
-        "body": "Every changing number sits in a slot of fixed width (`min-width: 8ch` on rim readouts, `13ch` on the export Output, 64px on zoom percent) in the fixed-width pixel face, so values tick without moving their neighbors.",
-        "section": "typography"
-      },
-      {
-        "name": "The Plain Weight Rule",
-        "body": "Display type is used at weight 400 only (Dela Gothic One has one weight); emphasis in UI copy is Zen Kaku Gothic New 700. No uppercase transforms, no wide tracking.",
-        "section": "typography"
-      },
-      {
-        "name": "The Printed Depth Rule",
-        "body": "If something needs to read as on top, give it a plate, a heavier rule, or an overlap. Never a shadow.",
-        "section": "elevation"
-      }
+      "**The Stage Plate Rule.** In the Studio, the stage in use owns one plate (Image sun, Grid gold, Color grass, Finish tide) and only the stage furniture takes it: the open thumb tab, the inspector numeral, the active grid preset, and the Pixel proof tag. Every other color on screen is ink, paper, or a fixed-role plate.",
+      "**The Fixed Roles Rule.** In UI, outside the stage plate, each plate means one thing: grass is the action, sun is the compare rule, gold is attention (on, busy, selected, saved), danger is errors. Only label art may use plates freely: the landing cover, How to play heads, cartridge cards, the safety page, and the back cover.",
+      "**The Text-Grade Rule.** Plates are fields; text on paper uses the text-grade variant (`sun-text`, `sun-text-on-shell`). Sun orange and gold never set small text on paper.",
+      "**The One Sunset Rule.** Every plate color appears in the voxel scene. A new color earns its place by existing in that sunset first.",
+      "**The Pixel Face Rule.** DotGothic16 prints numbers, readouts, codes, lettered callout marks, and short captions, including numeric controls (grid size chips, preset counts, zoom percent). It never sets body copy, headings, or worded labels.",
+      "**The Fixed Slot Rule.** Every changing number sits in a slot of fixed width (`min-width: 8ch` on rim readouts, `13ch` on the export Output, 64px on zoom percent) in the fixed-width pixel face, so values tick without moving their neighbors.",
+      "**The Plain Weight Rule.** Display type is used at weight 400 only (Dela Gothic One has one weight); emphasis in UI copy is Zen Kaku Gothic New 700. No uppercase transforms, no wide tracking.",
+      "**The Printed Depth Rule.** If something needs to read as on top, give it a plate, a heavier rule, or an overlap. Never a shadow."
     ],
     "dos": [
-      "**Do** give the stage in use its plate (Image red, Grid marigold, Color blue, Finish ink) on its tab, numeral, active preset, and Pixel tag, and keep everything else ink and paper.",
-      "**Do** keep blue for actions, red for the compare rule and errors, and marigold for on, busy, selected, and saved states.",
+      "**Do** give the stage in use its plate (Image sun, Grid gold, Color grass, Finish tide) on its tab, numeral, active preset, and Pixel tag, and keep everything else ink and paper.",
+      "**Do** keep grass for actions, sun for the compare rule, gold for on, busy, selected, and saved states, and danger for errors.",
       "**Do** draw with hard-stop fills: ghost grids, the checker, slider fill, and stripes are hard-edged `linear-gradient` stops, never blends.",
       "**Do** separate regions with a 2px ink rule and subdivide with a 1px rule; mark what is in front with a plate or an overlap.",
-      "**Do** render every sprite and preview at a true integer scale with `image-rendering: pixelated`, inside a black key line.",
+      "**Do** render every sprite and preview at a true integer scale with `image-rendering: pixelated`, inside a moss key line.",
       "**Do** put changing numbers in the pixel face inside fixed-width slots, and roll them in steps.",
       "**Do** animate UI in discrete steps (`steps()` in CSS, fixed-interval frames in script), and route every animation through the reduced-motion reset.",
-      "**Do** keep silk on the two landing art plates, with a flat fallback color and white text above 4.5:1 against the brightest sheen; add any new plate pair to `scripts/check-contrast.cjs`."
+      "**Do** keep the voxel scenes on the two landing art plates, set text on them as chips or as large display type checked against every sky band, and add any new plate pair to `scripts/check-contrast.cjs`."
     ],
     "donts": [
       "**Don't** use `box-shadow`, blur, glows, or blended gradients on any UI element.",
       "**Don't** round a corner; the bee mark and line icons are the only curves.",
       "**Don't** flood more than one stage plate at a time in the Studio, or put plate color on a control that is neither active stage furniture nor a fixed-role element.",
-      "**Don't** put silk, or any eased glide, on controls, tabs, panels, readouts, or the Studio.",
+      "**Don't** use eased glides anywhere, art plates included; and don't draw scene art from another game's textures, blocks, names, or logos.",
       "**Don't** set body copy, headings, or worded labels in DotGothic16, and don't uppercase or letter-space labels.",
       "**Don't** fake pixel art with CSS filters or smoothing; every sprite on the page is real pipeline output.",
       "**Don't** print real console names, logos, seals, or trade dress on cards, labels, or copy."

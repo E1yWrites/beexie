@@ -1,6 +1,6 @@
 # 10: Motion spec: silk cover and animation pass
 
-Status: **approved by the user on 2026-11-14 ("Yes, build it").**
+Status: **approved by the user on 2026-11-14 ("Yes, build it").** The silk register is retired by `docs/12-golden-hour-meadow-spec.md` (2026-11-15): the art plates are voxel scenes and move in steps like the rest of the page.
 
 User decisions (2026-11-14):
 - Silk rule: "Yes, art plates only". Silk on the cover and back cover art plates; all UI stays flat and stepped.

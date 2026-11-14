@@ -90,8 +90,8 @@
   padding: 0 var(--s-5);
   border: 0;
   border-radius: 0;
-  background: var(--blue);
-  color: var(--on-blue);
+  background: var(--grass);
+  color: var(--on-grass);
   font-weight: 700;
   white-space: nowrap;
 }
@@ -153,18 +153,18 @@
   place-items: center;
   width: 24px;
   height: 24px;
-  background: var(--yellow);
-  color: var(--on-yellow);
+  background: var(--gold);
+  color: var(--on-gold);
 }
 
 .toast-success .toast-icon {
-  background: var(--blue);
-  color: var(--on-blue);
+  background: var(--grass);
+  color: var(--on-grass);
 }
 
 .toast-error .toast-icon {
-  background: var(--red);
-  color: var(--on-red);
+  background: var(--danger);
+  color: var(--on-danger);
 }
 
 .toast-message {

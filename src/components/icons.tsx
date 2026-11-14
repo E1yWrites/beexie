@@ -37,7 +37,7 @@ export function BeeMark({ size = 28, className }: IconProps) {
       <rect x="12" y="7" width="8" height="16" rx="4" fill="var(--paper)" stroke="currentColor" strokeWidth="2" />
       <line x1="12" y1="12" x2="20" y2="12" stroke="currentColor" strokeWidth="2" />
       <line x1="12" y1="16" x2="20" y2="16" stroke="currentColor" strokeWidth="2" />
-      <line x1="13" y1="20" x2="19" y2="20" stroke="var(--red)" strokeWidth="2" />
+      <line x1="13" y1="20" x2="19" y2="20" stroke="var(--sun)" strokeWidth="2" />
       <line x1="14" y1="7" x2="11" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="square" />
       <line x1="18" y1="7" x2="21" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="square" />
     </svg>

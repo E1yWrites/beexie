@@ -63,7 +63,7 @@ export function Workspace({
   onShortcutsHelp,
 }: WorkspaceProps) {
   const [tool, setTool] = useState<EditTool>('off');
-  const [color, setColor] = useState('#d81e28');
+  const [color, setColor] = useState('#ec6a20');
   const [mode, setMode] = useState<PreviewMode>('pixel');
   const [zoom, setZoom] = useState(100);
   const [autoFit, setAutoFit] = useState(true);

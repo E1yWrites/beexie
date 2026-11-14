@@ -4,8 +4,8 @@
    ============================================================ */
 
 .app {
-  --plate: var(--blue);
-  --on-plate: var(--on-blue);
+  --plate: var(--grass);
+  --on-plate: var(--on-grass);
 
   display: grid;
   /* explicit column: an auto track would grow to the export bar min-content on phones */
@@ -18,23 +18,23 @@
 }
 
 .app[data-stage='image'] {
-  --plate: var(--red);
-  --on-plate: var(--on-red);
+  --plate: var(--sun);
+  --on-plate: var(--on-sun);
 }
 
 .app[data-stage='grid'] {
-  --plate: var(--yellow);
-  --on-plate: var(--on-yellow);
+  --plate: var(--gold);
+  --on-plate: var(--on-gold);
 }
 
 .app[data-stage='color'] {
-  --plate: var(--blue);
-  --on-plate: var(--on-blue);
+  --plate: var(--grass);
+  --on-plate: var(--on-grass);
 }
 
 .app[data-stage='finish'] {
-  --plate: var(--plate-ink);
-  --on-plate: var(--on-plate-ink);
+  --plate: var(--tide);
+  --on-plate: var(--on-tide);
 }
 
 /* ---- label band ---- */
@@ -177,7 +177,7 @@
 }
 
 .keys-dialog::backdrop {
-  background: rgb(22 22 26 / 0.6);
+  background: var(--scrim);
 }
 
 .keys-dialog[open] {

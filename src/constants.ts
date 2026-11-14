@@ -212,3 +212,69 @@ export const DEFAULT_SETTINGS: ConverterSettings = {
   quality: 0.92,
   retroPreset: null,
 };
+
+/** Voxel art plate colors (docs/12-golden-hour-meadow-spec.md). Same in both themes: the scene is the scene. */
+export interface VoxelScene {
+  sky: readonly string[];
+  /** Sun at sunset, moon at dusk. */
+  orb: string;
+  orbCore: string;
+  glow: string | null;
+  stars: string | null;
+  cloud: string;
+  cloudLit: string;
+  far: string;
+  near: string;
+  water: string;
+  glint: string;
+  grass: string;
+  grassLit: string;
+  dirt: string;
+  dirtDark: string;
+  trunk: string;
+  leaf: string;
+  leafLit: string;
+}
+
+export const VOXEL_SCENES: Record<'sunset' | 'dusk', VoxelScene> = {
+  sunset: {
+    sky: ['#2b5f8a', '#4a86a8', '#7fb3bf', '#f6c76b', '#ff9f43', '#ff7a2f'],
+    orb: '#ffd23f',
+    orbCore: '#fff2b0',
+    glow: '#ff9f43',
+    stars: null,
+    cloud: '#fbe3c0',
+    cloudLit: '#ffffff',
+    far: '#5b7f8f',
+    near: '#3d6b5a',
+    water: '#2f7f8f',
+    glint: '#ffd23f',
+    grass: '#4a9c3a',
+    grassLit: '#7ccf4f',
+    dirt: '#8a5a33',
+    dirtDark: '#6b4226',
+    trunk: '#6b4226',
+    leaf: '#2f7a35',
+    leafLit: '#58a845',
+  },
+  dusk: {
+    sky: ['#0d1626', '#13233a', '#1d3550', '#2b5f8a', '#3d6b7a'],
+    orb: '#fbe3c0',
+    orbCore: '#fff6dc',
+    glow: null,
+    stars: '#fff2b0',
+    cloud: '#2b4a63',
+    cloudLit: '#4a86a8',
+    far: '#1d3550',
+    near: '#16283a',
+    water: '#163a4a',
+    glint: '#fbe3c0',
+    grass: '#2f6b2f',
+    grassLit: '#4a9c3a',
+    dirt: '#5a3b22',
+    dirtDark: '#43301c',
+    trunk: '#43301c',
+    leaf: '#1f4f2a',
+    leafLit: '#2f7a35',
+  },
+};

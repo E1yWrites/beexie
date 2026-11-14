@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRightIcon, BeeMark } from '../icons';
-import { SilkPlate } from '../ui/SilkPlate';
+import { VoxelPlate } from '../ui/VoxelPlate';
 import type { LegalTab } from './LegalModal';
 
 interface LandingFooterProps {
@@ -12,7 +12,7 @@ interface LandingFooterProps {
 export const LandingFooter: React.FC<LandingFooterProps> = ({ onLaunchStudio, onOpenLegal }) => (
   <footer className="backcover">
     <div className="backcover-plate">
-      <SilkPlate color="#2a4fe0" />
+      <VoxelPlate scene="dusk" />
       <h2 className="backcover-title">Your turn.</h2>
       <button type="button" className="cover-cta cover-cta-inverse" onClick={onLaunchStudio}>
         Open Studio
