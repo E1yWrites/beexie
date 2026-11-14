@@ -40,6 +40,7 @@
 - Test with real images: every input format (PNG/JPG/WEBP), every resolution, extreme aspect ratios, large files, transparency, quantization, dithering, every export format, responsive breakpoints, and invalid uploads.
 - Done means the full flow works end to end: open → upload → resolution → settings → preview → compare → choose format → configure dimensions → download real pixel art.
 - `npm run typecheck` passes; `npm test` 70/70 pass; `npm run build` succeeds.
+- `npm run test:e2e` passes (Playwright smoke: upload PNG/JPG/WEBP, grid, color, dither, download, real PNG dimensions). Runs in CI.
 - `npm run check:contrast` - WCAG AA contrast verified across both themes (light, dark).
 - `npx impeccable detect src/` → [] (zero anti-patterns).
 - Impeccable live session completed: boot → poll → handle steer → exit → cleanup; no detected slops.

@@ -42,3 +42,5 @@ tsconfig.tsbuildinfo
 .opencode/
 blender_mcp_addon.py
 .impeccable/live/sessions/
+test-results/
+playwright-report/
