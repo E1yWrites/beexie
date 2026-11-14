@@ -3,7 +3,7 @@ import { computeAutoOutput, computeExportSize, computeGrid } from './dimensions'
 import { buildExportFilename, encodeExport } from './export';
 import { loadSourceImage, releaseSource } from './image';
 import { canvasToBlob, renderProcessedToCanvas } from './pixelate';
-import { runPipeline } from './pipeline';
+import { processImage } from './pipelineClient';
 import type { ConverterSettings } from '../types';
 
 const CRC_TABLE = Array.from({ length: 256 }, (_, n) => {
@@ -93,7 +93,7 @@ export async function convertBatch(
       const source = await loadSourceImage(file);
       try {
         const grid = computeGrid(source, settings);
-        const processed = runPipeline(source, grid, settings);
+        const processed = await processImage(source, grid, settings);
         const size = computeExportSize(computeAutoOutput(grid), settings.scale);
         const blob = await encodeExport(processed, size, settings.format, settings.quality, settings.backgroundColor, settings.transparentBackground);
         // The sheet stays a PNG raster whatever the per-image format.

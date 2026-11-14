@@ -17,6 +17,19 @@ export function getContext2d(canvas: HTMLCanvasElement): CanvasRenderingContext2
   return context;
 }
 
+type ScratchCanvas = HTMLCanvasElement | OffscreenCanvas;
+type ScratchContext = CanvasRenderingContext2D | OffscreenCanvasRenderingContext2D;
+
+/** The raster step runs on the main thread or in the pipeline worker, where only OffscreenCanvas exists. */
+function scratch(width: number, height: number): { canvas: ScratchCanvas; context: ScratchContext } {
+  const w = Math.max(1, Math.round(width));
+  const h = Math.max(1, Math.round(height));
+  const canvas: ScratchCanvas = typeof document === 'undefined' ? new OffscreenCanvas(w, h) : createCanvas(w, h);
+  const context = canvas.getContext('2d', { willReadFrequently: true }) as ScratchContext | null;
+  if (!context) throw new Error('Canvas 2D is not available in this browser.');
+  return { canvas, context };
+}
+
 /**
  * Progressive halving keeps downscales close to area-averaged even when the
  * browser's single-step smoothing aliases badly (large photo → tiny grid).
@@ -37,8 +50,7 @@ function downsampleSource(
     const nextHeight = Math.max(targetHeight, Math.floor(height / 2));
     if (nextWidth >= width && nextHeight >= height) break;
 
-    const step = createCanvas(nextWidth, nextHeight);
-    const context = getContext2d(step);
+    const { canvas: step, context } = scratch(nextWidth, nextHeight);
     context.imageSmoothingEnabled = true;
     context.imageSmoothingQuality = 'high';
     context.drawImage(current, 0, 0, nextWidth, nextHeight);
@@ -66,8 +78,7 @@ export function rasterizeToGrid(
     const reduced = downsampleSource(source, sourceWidth, sourceHeight, width * SAMPLES_PER_CELL, height * SAMPLES_PER_CELL);
     const readWidth = reduced.width;
     const readHeight = reduced.height;
-    const sample = createCanvas(readWidth, readHeight);
-    const sampleContext = getContext2d(sample);
+    const { context: sampleContext } = scratch(readWidth, readHeight);
     if (backgroundColor) {
       sampleContext.fillStyle = backgroundColor;
       sampleContext.fillRect(0, 0, readWidth, readHeight);
@@ -77,8 +88,7 @@ export function rasterizeToGrid(
     return sampleCells({ width: pixels.width, height: pixels.height, data: pixels.data }, width, height, sampling);
   }
 
-  const canvas = createCanvas(width, height);
-  const context = getContext2d(canvas);
+  const { context } = scratch(width, height);
 
   context.clearRect(0, 0, width, height);
   if (backgroundColor) {

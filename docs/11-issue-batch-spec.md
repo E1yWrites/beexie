@@ -84,6 +84,10 @@ Shared rules for every section:
 - `useConverter` keeps the 60 ms debounce. Cancel: every request carries an id; stale responses are dropped, matching the current cancel flag.
 - Batch mode uses the same worker sequentially.
 - Measure before and after on a 4096 px source with Floyd-Steinberg at 256 grid: main-thread blocking time (Long Tasks) and wall time, recorded in this doc. AC: no main-thread long task over 50 ms during reprocessing; output bytes identical to the main-thread path for the e2e fixtures.
+- Measured 2026-11-14, production build, headless Chromium 141, 4096 x 4096 PNG, Palette mode, Floyd-Steinberg, switching between the 128 and 256 presets four times:
+  - Before (main thread): one long task per reprocess of 169 to 210 ms; wall time 260 to 322 ms.
+  - After (worker): zero long tasks; wall time 281 to 344 ms.
+  - Byte check: worker and main-thread output identical for PNG, JPG and WEBP fixtures across grayscale, reduced plus Floyd, custom plus mode sampling, and original plus median plus a retro preset.
 
 ## #4 Remember settings and share presets as JSON
 

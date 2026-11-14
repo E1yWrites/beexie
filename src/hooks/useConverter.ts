@@ -3,7 +3,7 @@ import { DEFAULT_SETTINGS, MAX_GRID, MAX_OUTPUT_DIMENSION } from '../constants';
 import { paintPixel, pixelAt } from '../lib/edits';
 import { clampInteger, computeAutoOutput, computeGrid, derivedPixelSize, gridFromPixelSize } from '../lib/dimensions';
 import { loadSourceImage, releaseSource } from '../lib/image';
-import { runPipeline } from '../lib/pipeline';
+import { processImage } from '../lib/pipelineClient';
 import { applyTransform, IDENTITY_TRANSFORM, isIdentity, rotate, type CropRect } from '../lib/transform';
 import { validateFile } from '../lib/validation';
 import type {
@@ -105,9 +105,10 @@ export function useConverter(): ConverterController {
     let cancelled = false;
     setBusy(true);
 
-    const timer = window.setTimeout(() => {
+    // Debounced, then run in the pipeline worker; the cancel flag drops results from superseded settings.
+    const timer = window.setTimeout(async () => {
       try {
-        const result = runPipeline(source, grid, settings);
+        const result = await processImage(source, grid, settings);
         if (!cancelled) {
           historyRef.current = [];
           setUndoDepth(0);
