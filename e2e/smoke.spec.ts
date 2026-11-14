@@ -45,14 +45,17 @@ test('upload every format, change settings, download a real PNG', async ({ page 
 
   await page.getByRole('button', { name: /^Grid/ }).click();
   await page.getByRole('group', { name: 'Pixel resolution presets' }).getByRole('button', { name: /^32/ }).click();
+  await expect(page.getByRole('group', { name: 'Pixel resolution presets' }).getByRole('button', { name: /^32/ })).toHaveAttribute('aria-pressed', 'true');
 
   await page.getByRole('button', { name: /^Color/ }).click();
   await page.getByRole('group', { name: 'Color mode' }).getByRole('button', { name: 'Gray' }).click();
+  await expect(page.getByRole('group', { name: 'Color mode' }).getByRole('button', { name: 'Gray' })).toHaveAttribute('aria-pressed', 'true');
   // The native checkbox is visually hidden behind the styled track, so click the label like a user does.
   await page.getByText('Dither', { exact: true }).click();
   await expect(page.getByRole('checkbox', { name: /^Dither/ })).toBeChecked();
 
   await page.getByRole('group', { name: 'Export scale multiplier' }).getByRole('button', { name: '4x' }).click();
+  await expect(page.getByRole('group', { name: 'Export scale multiplier' }).getByRole('button', { name: '4x' })).toHaveAttribute('aria-pressed', 'true');
 
   const output = page.locator('.exportbar-out b');
   await expect(output).toHaveAttribute('aria-label', /^\d+ × \d+ px$/);
@@ -65,7 +68,6 @@ test('upload every format, change settings, download a real PNG', async ({ page 
   const size = pngSize(readFileSync((await download.path())!));
 
   expect(size).toEqual({ width: Number(w), height: Number(h) });
-  // 32 cells on the long side, 4x scale, 2:1 source.
-  expect(size.width % 4).toBe(0);
-  expect(size.width / size.height).toBeCloseTo(2, 1);
+  // 120 x 60 source at the 32 preset is a 32 x 16 grid; auto output 512 x 256; 4x scale.
+  expect(size).toEqual({ width: 2048, height: 1024 });
 });
