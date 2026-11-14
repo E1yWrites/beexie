@@ -21,7 +21,7 @@ No linter is configured. Vitest runs in the `node` environment, so only pure log
 
 ## Process rules
 
-- Spec-driven: new features need specs in `docs/` approved by the user before implementation (see AGENTS.md). `docs/07-v2-spec.md` (touch-up tools, batch zip) and `docs/08-retro-presets-spec.md` (retro presets) are the latest scope additions.
+- Spec-driven: new features need specs in `docs/` approved by the user before implementation (see AGENTS.md). `docs/07-v2-spec.md` (touch-up tools, batch zip) and `docs/08-retro-presets-spec.md` (retro presets) are the latest scope additions; `docs/09-redesign-spec.md` defines the current visual world.
 - Copy rules: no em-dashes anywhere in the codebase; user-facing brand is "beexie", never "Lanz0s".
 - `scripts/check-contrast.cjs` hardcodes token hex values copied from `src/styles/tokens.css`. Change a color token, update both.
 - `DESIGN.md` / `PRODUCT.md` and `.impeccable/` hold the design system and are maintained via the impeccable skill.
@@ -34,7 +34,7 @@ React 19 + TypeScript strict + Vite, zero runtime deps beyond React. Hand-writte
 
 **State.** `hooks/useConverter.ts` is the single source of truth: `source`, `settings: ConverterSettings`, derived `grid` and `pixelSize`, `processed`, touch-up undo history. Every pixel-affecting setting is in the processing effect's dependency list, debounced 60 ms with a cancel flag; export-only settings (format, scale, quality, output size) and `gridOverlay` do not trigger reprocessing. Adding a new pixel-affecting setting means adding it to that dependency list, to `resetStage`, and to the duplicated `processColors` options in `lib/batch.ts`. `loadFile` uses a request counter to drop stale decodes and calls `releaseSource` on replace.
 
-**Stages.** The studio UI is four stages `image | grid | color | finish` (`lib/stages.ts`, `hooks/useTool.ts`), rendered as the `ToolRail` and the matching `components/inspector/*Panel.tsx`. `ExportTicket` is always visible; `lib/ticket.ts` computes why download is disabled.
+**Stages.** The studio UI is four stages `image | grid | color | finish` (`lib/stages.ts`, `hooks/useTool.ts`), rendered as the `ToolRail` thumb tabs and the matching `components/inspector/*Panel.tsx`. `ExportTicket` is the full-width export bar under the bench, always visible; `lib/ticket.ts` computes why download is disabled.
 
 **Pipeline** (all client-side, keep it that way):
 1. `lib/validation.ts` + `lib/image.ts`: type/size check, decode to bitmap, cap source at `MAX_SOURCE_DIMENSION`.

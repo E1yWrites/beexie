@@ -1,12 +1,12 @@
 # AGENTS.md
 
-## Repo state (verified 2026-11-10)
+## Repo state (verified 2026-11-14)
 - Scaffolded and implemented: source, manifests, lockfile, docs, tests, and production build all present.
 - Verified commands: `npm install`, `npm run dev`, `npm run build`, `npm run preview`, `npm run typecheck`, `npm test`, `npm run check:contrast`.
 - Real commands now exist: not greenfield. Source of truth is code; if docs and code disagree, trust code and fix the docs.
-- Build size: 10.10 kB gzip CSS, 93.13 kB gzip JS.
-- Design tokens: Spot-Ink Proof Studio Dual-Theme system (Cotton-Press Ivory `#f8f6f1` / Pressroom Charcoal `#12141a`, Electric Cobalt `#1e46e8` / `#2d55eb`, Vermilion `#eb4a2d` / `#ff5a3c`, 18/18 WCAG AA verified across Light and Dark themes).
-- Direction: beexie Spot-Ink Proof Studio. Mirrored flowing cubic-Bezier `BackgroundPaths` (`Path2D` Canvas 2D, live on Landing and static calm lines in Studio) paired with pure-Cobalt pointer-tracking Spotlight Card border/surface glow (`useSpotlightCards`, `[data-spotlight]`), self-hosted `Bricolage Grotesque` / `Archivo` / `Martian Mono` typography (mono reserved strictly for tabular numeric data and hex swatches), unified `strokeWidth=1.75` custom SVG icon set including geometric `<BeeMark />`, asymmetric Landing hero (`0.84fr / 1.36fr`) with live `Compare | Pixel art | Original` specimen workbench (`public/specimen.jpg`), framed 4-column hairline Pipeline Proof Sheet (`LandingFeatures.tsx`) and `0.84fr / 1.36fr` Split FAQ Accordion Sheet (`LandingFaq.tsx`) with bottom CTA sheet & focus-trapped `LegalModal`, and full Studio workbench with `64px` `01-04` edge stage rail, spacing-grouped `.panel-group` inspector, mathematical `inner = outer - padding` sheet/segmented geometry, explicit loading feedback states, and dashed-rule Export ticket. Full tablet/mobile responsiveness (`< 1180px`, `< 760px`, `< 480px`). Zero em-dashes across codebase. Zero Lanz0s in user copy.
+- Build size: 8.96 kB gzip CSS, 98.49 kB gzip JS (2026-11-14, Instruction Booklet + motion pass).
+- Design tokens: The Instruction Booklet (docs/09-redesign-spec.md). Light booklet stock `#ffffff` / dark cartridge shell `#1d1e22`, ink `#16161a`, flat spot plates red `#d81e28`, yellow `#ffc81e`, blue `#2449e0`. Square corners, no shadows or gradients. 27/27 WCAG AA pairs via `npm run check:contrast`.
+- Direction: Landing is the booklet (cover with the koi converted live on the red plate, How to play panels, live retro preset cards, safety page, Q and A, back cover). Studio is the booklet opened flat: thumb-index tabs 1 to 4 (open tab floods its stage plate), full-height single-stage inspector, full-width export bar. Signature: ghost-grid fill, stepped row reveal. Motion (docs/10-motion-spec.md): silk WebGL shader on the cover and back cover art plates only; all UI motion is stepped (src/styles/motion.css). Fonts: Dela Gothic One, Zen Kaku Gothic New, DotGothic16 (numerals only). Zero em-dashes. Zero Lanz0s in user copy.
 
 ## Hard gate: spec before code
 - Development is Spec-Driven. Produce, in order: PRD → user stories + acceptance criteria → technical spec → UI/UX spec → implementation plan.
@@ -25,7 +25,7 @@
 ## Required feature surface
 - Upload: PNG/JPG/WEBP; drag-drop, click-to-browse, paste; type validation with visible errors; original preview; replace; reset.
 - Sizing: resolution presets 8/16/32/64/128/256 + custom; pixel-size slider; custom width/height with maintain-aspect toggle.
-- Color: original, reduced palette, monochrome, grayscale, custom palette; color quantization; dithering; deterministic hardware-era retro style presets (`16-Bit JRPG`, `Arcade Action`, `8-Bit Classic`, `Game Boy DMG`, `Cyberpunk 1993`).
+- Color: original, reduced palette, monochrome, grayscale, custom palette; color quantization; dithering; deterministic hardware-era retro style presets (`16-Bit JRPG`, `Arcade Action`, `8-Bit Classic`, `Pocket Mono`, `Cyberpunk 1993`).
 - Effects: pixel grid overlay, background color, optional transparent background.
 - Preview: original vs converted, before/after, zoom, fit-to-screen, checkerboard behind transparency, live updates on setting change.
 - Export: PNG/JPG/WEBP; output width/height; 1x/2x/4x/8x scale; background color for formats without alpha; quality for JPEG/WEBP; clear download button.

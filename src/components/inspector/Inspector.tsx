@@ -1,4 +1,4 @@
-import { STAGE_LABELS } from '../../lib/stages';
+import { STAGE_LABELS, STAGE_ORDER } from '../../lib/stages';
 import type {
   ConverterSettings,
   ExportSize,
@@ -9,7 +9,6 @@ import type {
   Stage,
 } from '../../types';
 import { ColorPanel } from './ColorPanel';
-import { ExportTicket } from './ExportTicket';
 import { FinishPanel } from './FinishPanel';
 import { GridPanel } from './GridPanel';
 import { ImagePanel } from './ImagePanel';
@@ -24,8 +23,6 @@ interface InspectorProps {
   finalSize: ExportSize;
   error: string | null;
   busy: boolean;
-  downloading: boolean;
-  disabledReason: string | null;
   onUpdate: (patch: Partial<ConverterSettings>) => void;
   onPreset: (preset: GridPreset) => void;
   onPixelSize: (size: number) => void;
@@ -37,7 +34,6 @@ interface InspectorProps {
   onRemove: () => void;
   onDismissError: () => void;
   onResetStage: () => void;
-  onDownload: () => void;
 }
 
 export function Inspector({
@@ -50,8 +46,6 @@ export function Inspector({
   finalSize,
   error,
   busy,
-  downloading,
-  disabledReason,
   onUpdate,
   onPreset,
   onPixelSize,
@@ -63,12 +57,14 @@ export function Inspector({
   onRemove,
   onDismissError,
   onResetStage,
-  onDownload,
 }: InspectorProps) {
   return (
     <aside className="inspector" aria-label={`${STAGE_LABELS[active]} controls`}>
       <div className="inspector-head">
-        <h2>{STAGE_LABELS[active]}</h2>
+        <h2>
+          <span className="inspector-num pixel" aria-hidden="true">{STAGE_ORDER.indexOf(active) + 1}</span>
+          {STAGE_LABELS[active]}
+        </h2>
         {active !== 'image' ? (
           <button type="button" className="text-btn" onClick={onResetStage} disabled={!source}>
             Reset {STAGE_LABELS[active]}
@@ -122,16 +118,6 @@ export function Inspector({
           ) : null}
         </div>
       </div>
-
-      <ExportTicket
-        settings={settings}
-        finalSize={finalSize}
-        processed={processed}
-        downloading={downloading}
-        disabledReason={disabledReason}
-        onUpdate={onUpdate}
-        onDownload={onDownload}
-      />
     </aside>
   );
 }

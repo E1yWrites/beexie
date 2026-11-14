@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font",
+        "value": "dela gothic one",
+        "createdAt": "2026-11-14T09:19:49.595Z",
+        "reason": "user approved docs/09-redesign-spec.md type section; DESIGN.md is regenerated at finish"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "zen kaku gothic new",
+        "createdAt": "2026-11-14T09:19:49.841Z",
+        "reason": "user approved docs/09-redesign-spec.md type section; DESIGN.md is regenerated at finish"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "dotgothic16",
+        "createdAt": "2026-11-14T09:19:50.105Z",
+        "reason": "user approved docs/09-redesign-spec.md type section; DESIGN.md is regenerated at finish"
+      }
+    ]
+  }
+}

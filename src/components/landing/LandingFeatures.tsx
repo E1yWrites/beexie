@@ -1,86 +1,164 @@
 import React from 'react';
+import { GRID_PRESETS } from '../../constants';
 
-export const LandingFeatures: React.FC<{ onLaunchStudio?: () => void }> = () => {
-  return (
-    <section className="landing-features-section" id="features" aria-labelledby="features-heading">
-      <div className="pipeline-sheet-frame" data-spotlight="">
-        <div className="sheet-header-band">
-          <h2 className="section-title" id="features-heading">
-            Four deterministic press stages
-          </h2>
-          <p className="section-desc">
-            Area-averaged downsampling and Median-Cut quantization executed strictly in browser memory.
-          </p>
-        </div>
+interface Callout {
+  label: string;
+  text: string;
+}
 
-        <ol className="pipeline-sheet">
-          <li className="pipeline-step">
-            <span className="step-num mono tnum">01</span>
-            <h3 className="step-title">Private Local Memory</h3>
-            <p className="step-desc">
-              Decode <strong className="text-em">PNG, JPG, and WEBP</strong> files straight onto an HTML5 Canvas with{' '}
-              <strong className="text-em">zero uploads</strong>.
-            </p>
-            <div className="step-spec-strip" aria-hidden="true">
-              <span className="step-spec-key">PNG &middot; JPG &middot; WEBP</span>
-              <span className="step-spec-val">
-                <span className="mono tnum">30</span> MB max
-              </span>
-            </div>
-          </li>
+interface Panel {
+  stage: 'image' | 'grid' | 'color' | 'finish';
+  title: string;
+  lead: string;
+  diagram: React.ReactNode;
+  callouts: Callout[];
+}
 
-          <li className="pipeline-step">
-            <span className="step-num mono tnum">02</span>
-            <h3 className="step-title">Exact Box Averaging</h3>
-            <p className="step-desc">
-              Mathematical downsampling onto <strong className="text-em">8 to 256 px</strong> integer grids with aspect lock or custom sizing.
-            </p>
-            <div className="step-scale-bar mono tnum" aria-hidden="true">
-              <span>8&times;8</span>
-              <span>16&times;16</span>
-              <span className="is-hot">48&times;48</span>
-              <span>256&times;256</span>
-            </div>
-          </li>
-
-          <li className="pipeline-step">
-            <span className="step-num mono tnum">03</span>
-            <h3 className="step-title">Median-Cut &amp; Dither</h3>
-            <p className="step-desc">
-              Extract <strong className="text-em">2 to 64</strong> adaptive swatches, 1-bit monochrome, or custom palettes with serpentine diffusion.
-            </p>
-            <div className="step-ink-ribbon" aria-hidden="true">
-              <span style={{ backgroundColor: '#111317' }} />
-              <span style={{ backgroundColor: '#1e46e8' }} />
-              <span style={{ backgroundColor: '#2aa3c7' }} />
-              <span style={{ backgroundColor: '#457842' }} />
-              <span style={{ backgroundColor: '#eb4a2d' }} />
-              <span style={{ backgroundColor: '#f29e38' }} />
-              <span style={{ backgroundColor: '#df649c' }} />
-              <span style={{ backgroundColor: '#f8f5ee' }} />
-            </div>
-          </li>
-
-          <li className="pipeline-step">
-            <span className="step-num mono tnum">04</span>
-            <h3 className="step-title">Nearest-Neighbor Export</h3>
-            <p className="step-desc">
-              Download crisp bitmaps with <strong className="text-em">optional alpha transparency</strong> scaled without smoothing blur.
-            </p>
-            <div className="step-export-strip" aria-hidden="true">
-              <span className="step-scale-bar mono tnum">
-                <span>1&times;</span>
-                <span className="is-hot">2&times;</span>
-                <span>4&times;</span>
-                <span>8&times;</span>
-              </span>
-              <span className="step-spec-val">
-                <span className="mono tnum">16,384</span> px
-              </span>
-            </div>
-          </li>
-        </ol>
+/* Diagrams are drawn replicas of the Studio's real controls, lettered for the legend. */
+const PANELS: Panel[] = [
+  {
+    stage: 'image',
+    title: 'Load a picture',
+    lead: 'Any photo, render, or sketch works as the source.',
+    diagram: (
+      <div className="dg dg-drop">
+        <span className="dg-mark pixel">a</span>
+        <span className="dg-drop-box">Drop an image on the page</span>
+        <span className="dg-mark pixel">b</span>
+        <span className="dg-chip-row">
+          <span className="dg-chip">PNG</span>
+          <span className="dg-chip">JPG</span>
+          <span className="dg-chip">WEBP</span>
+        </span>
       </div>
+    ),
+    callouts: [
+      { label: 'a', text: 'Drop it, browse for it, or paste it. Drop several to get a zip.' },
+      { label: 'b', text: 'PNG, JPG, or WEBP up to 30 MB, decoded right here.' },
+    ],
+  },
+  {
+    stage: 'grid',
+    title: 'Pick the grid',
+    lead: 'The grid is the real resolution, not a blur filter.',
+    diagram: (
+      <div className="dg dg-grid">
+        <span className="dg-mark pixel">a</span>
+        <span className="dg-presets">
+          {GRID_PRESETS.map((size) => (
+            <span key={size} className={`dg-preset pixel${size === 32 ? ' is-on' : ''}`}>
+              {size}
+            </span>
+          ))}
+        </span>
+        <span className="dg-mark pixel">b</span>
+        <span className="dg-dims pixel">
+          <span>48</span>x<span>27</span>
+        </span>
+      </div>
+    ),
+    callouts: [
+      { label: 'a', text: 'Presets from 8 to 256 cells across.' },
+      { label: 'b', text: 'Or type exact width and height, aspect locked or free.' },
+    ],
+  },
+  {
+    stage: 'color',
+    title: 'Set the colors',
+    lead: 'Fewer colors is where pixel art gets its look.',
+    diagram: (
+      <div className="dg dg-color">
+        <span className="dg-mark pixel">a</span>
+        <span className="dg-seg">
+          <span>Orig</span>
+          <span className="is-on">Palette</span>
+          <span>Gray</span>
+          <span>Mono</span>
+          <span>Custom</span>
+        </span>
+        <span className="dg-mark pixel">b</span>
+        <span className="dg-swatches" aria-hidden="true">
+          {['#16161a', '#2449e0', '#3fa7d6', '#457842', '#d81e28', '#f29e38', '#ffc81e', '#f3f3f5'].map((hex) => (
+            <i key={hex} style={{ background: hex }} />
+          ))}
+        </span>
+        <span className="dg-mark pixel">c</span>
+        <span className="dg-switch">
+          <i />
+          Dither
+        </span>
+      </div>
+    ),
+    callouts: [
+      { label: 'a', text: 'Keep the originals, extract a palette, go gray, go 1-bit, or bring your own.' },
+      { label: 'b', text: 'Median cut picks 2 to 64 colors from the image itself.' },
+      { label: 'c', text: 'Floyd-Steinberg or Bayer dithering, plus five retro presets.' },
+    ],
+  },
+  {
+    stage: 'finish',
+    title: 'Export the file',
+    lead: 'What you see in the preview is exactly what you download.',
+    diagram: (
+      <div className="dg dg-finish">
+        <span className="dg-mark pixel">a</span>
+        <span className="dg-seg">
+          <span className="is-on">PNG</span>
+          <span>JPG</span>
+          <span>WEBP</span>
+        </span>
+        <span className="dg-mark pixel">b</span>
+        <span className="dg-seg pixel">
+          <span>1x</span>
+          <span>2x</span>
+          <span className="is-on">4x</span>
+          <span>8x</span>
+        </span>
+        <span className="dg-mark pixel">c</span>
+        <span className="dg-download">Download PNG</span>
+      </div>
+    ),
+    callouts: [
+      { label: 'a', text: 'PNG keeps transparency; JPG and WEBP get a fill color and quality.' },
+      { label: 'b', text: 'Scale 1x to 8x with nearest neighbor, up to 16,384 px a side.' },
+      { label: 'c', text: 'A real encoded file. Touch up single pixels first if you like.' },
+    ],
+  },
+];
+
+/** "How to play": one numbered panel per Studio stage. */
+export const LandingFeatures: React.FC = () => {
+  return (
+    <section className="howto" id="how-to-play" aria-labelledby="howto-title">
+      <h2 className="spread-title" id="howto-title">
+        How to play
+      </h2>
+      <ol className="howto-panels">
+        {PANELS.map((panel, index) => (
+          <li key={panel.stage} className={`howto-panel howto-${panel.stage}`}>
+            <div className="howto-head">
+              <span className="howto-num pixel" aria-hidden="true">
+                {index + 1}
+              </span>
+              <h3 className="howto-title">{panel.title}</h3>
+            </div>
+            <p className="howto-lead">{panel.lead}</p>
+            <div className="howto-diagram" aria-hidden="true">
+              {panel.diagram}
+            </div>
+            <ul className="howto-legend">
+              {panel.callouts.map((callout) => (
+                <li key={callout.label}>
+                  <span className="dg-mark pixel" aria-hidden="true">
+                    {callout.label}
+                  </span>
+                  <span>{callout.text}</span>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ol>
     </section>
   );
 };

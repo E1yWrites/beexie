@@ -1,102 +1,104 @@
 /* ============================================================
-   Shell: app frame, slim header band, 64px numbered stage rail
+   Studio shell: label band, thumb-index tabs, bench grid
+   The open tab floods its stage plate; nothing else takes color.
    ============================================================ */
 
 .app {
-  position: relative;
-  isolation: isolate;
-  display: flex;
-  flex-direction: column;
+  --plate: var(--blue);
+  --on-plate: var(--on-blue);
+
+  display: grid;
+  /* explicit column: an auto track would grow to the export bar min-content on phones */
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: var(--header-h) minmax(0, 1fr) auto;
+  height: 100vh;
   height: 100dvh;
-  min-height: 0;
-  background: transparent;
+  overflow: hidden;
+  background: var(--paper);
 }
 
+.app[data-stage='image'] {
+  --plate: var(--red);
+  --on-plate: var(--on-red);
+}
+
+.app[data-stage='grid'] {
+  --plate: var(--yellow);
+  --on-plate: var(--on-yellow);
+}
+
+.app[data-stage='color'] {
+  --plate: var(--blue);
+  --on-plate: var(--on-blue);
+}
+
+.app[data-stage='finish'] {
+  --plate: var(--plate-ink);
+  --on-plate: var(--on-plate-ink);
+}
+
+/* ---- label band ---- */
+
 .app-header {
-  position: relative;
-  z-index: 20;
-  flex: 0 0 auto;
   display: flex;
   align-items: center;
-  gap: var(--s-3);
-  height: var(--header-h);
-  padding: 0 var(--s-5);
-  background: var(--panel);
-  border-bottom: 1px solid var(--line-subtle);
-  color: var(--ink);
+  gap: var(--s-4);
+  min-width: 0;
+  padding: 0 var(--s-4);
+  border-bottom: var(--stroke) solid var(--rule);
+  background: var(--paper);
 }
 
 .brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: var(--s-2);
-  flex: 0 0 auto;
-  user-select: none;
-}
-
-.brand .brand-bee-svg {
-  transform: translateY(1px);
+  color: var(--ink);
 }
 
 .brand-clickable {
   cursor: pointer;
-  border-radius: var(--r-sm);
-  transition: opacity 140ms ease;
 }
 
-.brand-clickable:hover {
-  opacity: 0.82;
+.brand-clickable:hover .wordmark {
+  text-decoration: underline;
+  text-decoration-thickness: var(--stroke);
+  text-underline-offset: 4px;
 }
 
-.brand-clickable:focus-visible {
-  outline: 2px solid var(--focus-ring);
-  outline-offset: 2px;
-}
-
-.wordmark {
+.wordmark,
+.brand-wordmark {
   font-family: var(--font-display);
-  font-size: var(--fs-wordmark);
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-size: var(--fs-lg);
   line-height: 1;
-  color: var(--ink);
+  letter-spacing: -0.01em;
 }
 
 .btn-overview {
-  font-size: var(--fs-sm);
-  font-weight: 600;
-  height: 32px;
-  padding: 0 var(--s-3);
+  min-height: 32px;
 }
 
 .project {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: var(--s-2);
   min-width: 0;
-  padding: 3px var(--s-3) 3px var(--s-1);
-  border: 1px solid var(--line-subtle);
-  border-radius: var(--r-sm);
-  background: var(--panel);
+  padding-left: var(--s-4);
+  border-left: var(--hair) solid var(--rule-soft);
 }
 
 .project-thumb {
-  flex: 0 0 auto;
-  width: 22px;
-  height: 22px;
-  border: 1px solid var(--line-subtle);
-  border-radius: 3px;
+  width: 24px;
+  height: 24px;
+  border: var(--hair) solid var(--rule);
   object-fit: cover;
-  image-rendering: pixelated;
 }
 
 .project-name {
-  max-width: 200px;
   overflow: hidden;
-  color: var(--ink);
-  font-family: var(--font-ui);
+  max-width: 280px;
   font-size: var(--fs-sm);
-  font-weight: 600;
+  font-weight: 700;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -108,83 +110,56 @@
   margin-left: auto;
 }
 
-/* ---- 64px numbered edge rail ---- */
+/* ---- bench: tabs | workspace | inspector ---- */
 
 .bench {
-  position: relative;
-  z-index: 1;
   display: grid;
-  grid-template-columns: var(--rail-w) minmax(0, 1fr) var(--inspector-w);
-  flex: 1 1 auto;
+  grid-template-columns: var(--tabs-w) minmax(0, 1fr) var(--inspector-w);
   min-height: 0;
-  overflow: hidden;
 }
 
-.rail {
+/* ---- thumb-index tabs ---- */
+
+.tabs {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: var(--s-3) var(--s-2);
-  background: var(--panel);
-  border-right: 1px solid var(--line-subtle);
-  overflow-y: auto;
+  border-right: var(--stroke) solid var(--rule);
+  background: var(--sheet);
 }
 
-.rail-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--s-2);
-  width: 100%;
-}
-
-.tool {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 3px;
-  width: 48px;
-  padding: 9px var(--s-1);
-  border: 1px solid transparent;
-  border-radius: var(--r-md);
-  color: var(--ink-2);
-  text-align: center;
-  transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease, transform 90ms ease;
-}
-
-.tool:hover:not(.is-active) {
-  background: var(--panel-2);
-  border-color: var(--line-subtle);
+.tab {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 2px;
+  min-height: 84px;
+  padding: var(--s-2) var(--s-1);
+  border: 0;
+  border-bottom: var(--hair) solid var(--rule);
+  border-radius: 0;
+  background: transparent;
   color: var(--ink);
+  transition: background-color var(--step-fast) steps(2), color var(--step-fast) steps(2);
 }
 
-.tool:active {
-  transform: scale(0.97);
+.tab:hover:not(.is-active) {
+  background: var(--paper);
 }
 
-.tool.is-active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #ffffff;
-}
-
-.tool.is-active .tool-num {
-  opacity: 1;
-}
-
-.tool-num {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  opacity: 0.85;
+.tab-num {
+  font-size: 30px;
   line-height: 1;
 }
 
-.tool-label {
-  font-family: var(--font-ui);
+.tab-label {
   font-size: var(--fs-xs);
   font-weight: 700;
-  line-height: 1.15;
+}
+
+/* the open tab sticks out past the rule into the page, flooded with its plate */
+.tab.is-active {
+  margin-right: calc(var(--stroke) * -1);
+  background: var(--plate);
+  color: var(--on-plate);
 }

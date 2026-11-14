@@ -11,56 +11,37 @@ interface LandingNavProps {
   activeFilename?: string;
 }
 
+/** Label band across the top of the cover. */
 export const LandingNav: React.FC<LandingNavProps> = ({
   theme,
   onToggleTheme,
   onLaunchStudio,
   hasActiveProject,
   activeFilename,
-}) => {
-  return (
-    <header className="landing-nav" role="banner">
-      <div className="landing-nav-inner">
-        <a href="#top" className="landing-brand" aria-label="beexie home">
-          <BeeMark size={26} className="brand-bee-svg" />
-          <span className="brand-wordmark">beexie</span>
-        </a>
+}) => (
+  <header className="band">
+    <a href="#top" className="brand" aria-label="beexie, back to top">
+      <BeeMark size={28} />
+      <span className="brand-wordmark">beexie</span>
+    </a>
 
-        <nav className="landing-nav-links" aria-label="Primary navigation">
-          <a href="#demo" className="nav-link">
-            Workbench
-          </a>
-          <a href="#features" className="nav-link">
-            Pipeline
-          </a>
-          <a href="#faq" className="nav-link">
-            FAQ
-          </a>
-        </nav>
+    <nav className="band-links" aria-label="Sections">
+      <a href="#how-to-play">How to play</a>
+      <a href="#presets">Presets</a>
+      <a href="#faq">FAQ</a>
+    </nav>
 
-        <div className="landing-nav-actions">
-          {hasActiveProject ? (
-            <button
-              type="button"
-              className="btn-return-project"
-              onClick={onLaunchStudio}
-              title={`Return to active session: ${activeFilename}`}
-            >
-              <span className="pulse-dot" aria-hidden="true" />
-              <span>Resume</span>
-            </button>
-          ) : null}
-          <ThemeToggle theme={theme} onToggleTheme={onToggleTheme} />
-          <button
-            type="button"
-            className="btn-launch-atelier"
-            onClick={onLaunchStudio}
-          >
-            <span>Open Studio</span>
-            <ArrowRightIcon size={14} />
-          </button>
-        </div>
-      </div>
-    </header>
-  );
-};
+    <div className="band-actions">
+      <ThemeToggle theme={theme} onToggleTheme={onToggleTheme} />
+      <button
+        type="button"
+        className="btn-primary band-cta"
+        onClick={onLaunchStudio}
+        title={hasActiveProject ? `Resume ${activeFilename}` : undefined}
+      >
+        {hasActiveProject ? 'Resume' : 'Open Studio'}
+        <ArrowRightIcon size={16} />
+      </button>
+    </div>
+  </header>
+);

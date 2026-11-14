@@ -1,178 +1,186 @@
 /* ============================================================
-   Export Dispatch Ticket : dashed-rule section at inspector foot
+   Export bar (full width under the bench) and toasts
    ============================================================ */
 
-.ticket {
-  position: relative;
-  flex: 0 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-2);
-  padding: var(--s-3) var(--s-5) var(--s-4);
-  border-top: 2px dashed var(--line);
-  background: var(--ticket);
-}
-
-.ticket-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--s-2);
-  padding-bottom: 6px;
-  border-bottom: 1px solid var(--line-subtle);
-}
-
-.ticket-head span {
-  color: var(--ink);
-  font-family: var(--font-ui);
-  font-size: var(--fs-sm);
-  font-weight: 700;
-}
-
-.ticket-row {
+.exportbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--s-2);
+  gap: var(--s-5);
+  min-height: var(--exportbar-h);
+  padding: var(--s-2) var(--s-4);
+  border-top: var(--stroke) solid var(--rule);
+  background: var(--sheet);
 }
 
-.ticket-label {
-  flex: 0 0 64px;
-  color: var(--ink-2);
-  font-size: var(--fs-sm);
-  font-weight: 600;
+.exportbar-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: 400;
 }
 
-.ticket .color-field {
-  padding-left: 0;
+.exportbar-more {
+  min-width: 0;
 }
 
-.ticket-output {
+/* the fold only exists on phones; wider bars always show the options */
+.exportbar-summary {
+  display: none;
+}
+
+.exportbar-controls {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-4);
+  min-width: 0;
+}
+
+.exportbar-group {
+  display: flex;
+  align-items: center;
   gap: var(--s-2);
-  padding-top: var(--s-2);
-  border-top: 1px dashed var(--line-subtle);
 }
 
-.ticket-output span {
-  color: var(--ink-2);
-  font-family: var(--font-ui);
-  font-size: var(--fs-sm);
-  font-weight: 600;
-}
-
-.ticket-output b {
-  color: var(--ink);
-  font-family: var(--font-mono);
-  font-size: var(--fs-sm);
-  font-variant-numeric: tabular-nums;
+.exportbar-label {
+  color: var(--ink-muted);
+  font-size: var(--fs-xs);
   font-weight: 700;
 }
 
-.ticket-output b.is-danger {
+.exportbar .segmented-option {
+  min-height: 32px;
+  padding: 0 var(--s-2);
+}
+
+.exportbar .color-field {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+.exportbar .color-input-wrap {
+  min-height: 34px;
+}
+
+.exportbar-out {
+  display: grid;
+  margin-left: auto;
+  text-align: right;
+}
+
+.exportbar-out b {
+  min-width: 13ch;
+  font-size: var(--fs-md);
+  font-weight: 400;
+}
+
+.exportbar-out b.is-danger {
   color: var(--danger);
 }
 
-.ticket-download {
+.exportbar-action {
+  position: relative;
+}
+
+.exportbar-download {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 7px;
-  width: 100%;
-  height: 40px;
-  padding: 0 14px;
-  border-radius: var(--r-md);
-  background: var(--accent);
-  color: #ffffff;
-  font-size: var(--fs-base);
+  gap: var(--s-2);
+  min-height: 44px;
+  padding: 0 var(--s-5);
+  border: 0;
+  border-radius: 0;
+  background: var(--blue);
+  color: var(--on-blue);
   font-weight: 700;
-  line-height: 1;
-  box-shadow: var(--shadow-cta);
-  transition: background-color 140ms ease, transform 90ms ease;
+  white-space: nowrap;
 }
 
-.ticket-download:hover:not(:disabled) {
-  background: var(--accent-hover);
+.exportbar-download:hover:not(:disabled) {
+  background: var(--ink);
+  color: var(--paper);
 }
 
-.ticket-download:active:not(:disabled) {
-  transform: scale(0.985);
+.exportbar-download:disabled {
+  background: var(--sheet-2);
+  color: var(--ink-muted);
 }
 
-.ticket-download:disabled {
-  background: var(--panel-2);
-  color: var(--ink-3);
-  border: 1px solid var(--line-subtle);
-  box-shadow: none;
-}
-
-.ticket-reason {
-  color: var(--ink-3);
+.exportbar-reason {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + var(--s-2));
+  width: max-content;
+  max-width: 280px;
+  padding: var(--s-1) var(--s-2);
+  background: var(--ink);
+  color: var(--paper);
   font-size: var(--fs-xs);
-  line-height: 1.45;
 }
 
-/* ---- toast ---- */
+/* ---- toast: a printed slip ---- */
+
+@keyframes toastIn {
+  from {
+    transform: translate(-50%, 8px);
+  }
+  to {
+    transform: translate(-50%, 0);
+  }
+}
 
 .toast {
   position: fixed;
-  top: 62px;
-  left: calc(var(--rail-w) + (100vw - var(--rail-w) - var(--inspector-w)) / 2);
+  bottom: calc(var(--exportbar-h) + 56px);
+  left: 50%;
   z-index: 70;
   display: flex;
   align-items: center;
-  gap: 9px;
-  max-width: min(460px, calc(100vw - var(--rail-w) - var(--inspector-w) - 36px));
-  padding: 8px 10px 8px 12px;
-  border: 1px solid var(--line);
-  border-radius: var(--r-pill);
-  background: var(--deep);
-  color: var(--wax);
-  box-shadow: var(--shadow-toast);
+  gap: var(--s-3);
+  max-width: min(560px, calc(100vw - 32px));
+  padding: var(--s-2) var(--s-2) var(--s-2) var(--s-3);
+  border: var(--stroke) solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
   font-size: var(--fs-sm);
+  font-weight: 700;
   transform: translateX(-50%);
-  animation: toastIn 180ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: toastIn var(--step-fast) steps(2) both;
 }
 
 .toast-icon {
   display: grid;
   place-items: center;
-  flex: 0 0 auto;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #ffffff;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  line-height: 1;
+  width: 24px;
+  height: 24px;
+  background: var(--yellow);
+  color: var(--on-yellow);
+}
+
+.toast-success .toast-icon {
+  background: var(--blue);
+  color: var(--on-blue);
 }
 
 .toast-error .toast-icon {
-  background: #c23117;
-  color: #ffffff;
+  background: var(--red);
+  color: var(--on-red);
 }
 
 .toast-message {
+  flex: 1;
   min-width: 0;
-  overflow-wrap: anywhere;
 }
 
 .toast-close {
   display: grid;
   place-items: center;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  color: var(--wax);
-  opacity: 0.85;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  background: none;
 }
 
 .toast-close:hover {
-  background: rgba(255, 255, 255, 0.14);
-  opacity: 1;
+  background: var(--sheet);
 }

@@ -1,67 +1,58 @@
 /* ============================================================
-   beexie : Spot-Ink Proof Studio design system tokens
-   Dual-theme system: Cotton-Press Ivory (light) & Pressroom Charcoal (dark)
+   beexie: The Instruction Booklet
+   Light = booklet stock. Dark = cartridge shell.
+   Flat spot plates only. Square corners. No shadows, no glows.
+   Mirror every hex change in scripts/check-contrast.cjs.
    ============================================================ */
 
 :root {
-  /* colour : light (Cotton-Press Ivory) */
-  --paper: #f8f6f1;
-  --panel: #ffffff;
-  --panel-2: #f1eee7;
-  --panel-3: #e5e0d5;
-  --line: #6b6860;
-  --line-subtle: #dcd7cc;
-  --line-strong: #15171c;
-  --ink: #111317;
-  --ink-2: #3d414a;
-  --ink-3: #575b64;
+  color-scheme: light;
 
-  /* primary & secondary spot-ink accents */
-  --accent: #1e46e8;
-  --accent-text: #1e46e8;
-  --accent-hover: #1737bf;
-  --accent-soft: rgba(30, 70, 232, 0.1);
-  --vermilion: #eb4a2d;
-  --vermilion-text: #c23117;
-  --vermilion-soft: rgba(235, 74, 45, 0.1);
-  --path-ink: #1e2330;
-  --accent-rgb: 30 70 232;
+  /* stock and ink */
+  --paper: #ffffff;
+  --sheet: #f3f3f5;
+  --sheet-2: #e6e6ea;
+  --ink: #16161a;
+  --ink-muted: #5a5a63;
+  --rule: #16161a;
+  --rule-soft: #cfcfd6;
+  --keyline: #16161a; /* black key line around art on plates, both themes */
 
-  /* semantic aliases */
-  --pollen: var(--accent);
-  --pollen-deep: var(--accent-hover);
-  --honey: var(--accent);
-  --honey-text: var(--accent-text);
-  --deep: #111317;
-  --wax: #f8f6f1;
-  --green: #147a43;
-  --cyan: #0369a1;
-  --amber: #a15206;
-  --danger: #c23117;
-  --danger-soft: rgba(194, 49, 23, 0.08);
-  --ticket: #ffffff;
-  --checker-a: #eae6dc;
-  --checker-b: #f7f4ec;
-  --focus-ring: #1e46e8;
-  --shadow-frame: 0 12px 28px -16px rgba(17, 19, 23, 0.18);
-  --shadow-cta: 0 8px 20px -8px rgba(30, 70, 232, 0.45);
-  --shadow-toast: 0 10px 24px -10px rgba(17, 19, 23, 0.25);
-  --scrim: rgba(17, 19, 23, 0.48);
+  /* spot plates (fields) and their text-safe variants */
+  --red: #d81e28;
+  --on-red: #ffffff;
+  --red-text: #c4121c;
+  --yellow: #ffc81e;
+  --on-yellow: #16161a;
+  --blue: #2449e0;
+  --on-blue: #ffffff;
+  --blue-text: #2449e0;
+  --plate-ink: #16161a;
+  --on-plate-ink: #ffffff;
 
-  /* typography */
-  --font-ui: 'Archivo', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Bricolage Grotesque', 'Archivo', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'Martian Mono', ui-monospace, 'SFMono-Regular', 'Cascadia Code', Consolas, monospace;
+  /* art plates: flat fallback under the silk shader (same in both themes) */
+  --maroon: #7a1424;
 
-  --fs-xs: 11px;
-  --fs-sm: 12px;
-  --fs-base: 13px;
-  --fs-md: 14px;
-  --fs-lg: 17px;
-  --fs-xl: 22px;
-  --fs-headline: 24px;
-  --fs-title: 17px;
-  --fs-wordmark: 22px;
+  /* states */
+  --success: #13703c;
+  --danger: #c4121c;
+  --focus: #2449e0;
+  --checker-a: #ececef;
+  --checker-b: #f7f7f9;
+  --ghost: #e3e3e8;
+  --scrim: rgba(22, 22, 26, 0.56);
+
+  /* type */
+  --font-display: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
+  --font-ui: 'Zen Kaku Gothic New', ui-sans-serif, system-ui, sans-serif;
+  --font-pixel: 'DotGothic16', ui-monospace, monospace;
+
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-base: 14px;
+  --fs-md: 16px;
+  --fs-lg: 20px;
+  --fs-xl: 28px;
 
   /* spacing (4px scale) */
   --s-1: 4px;
@@ -71,66 +62,52 @@
   --s-5: 20px;
   --s-6: 24px;
   --s-7: 32px;
-  --s-8: 40px;
+  --s-8: 48px;
+  --s-9: 72px;
 
-  /* geometry: inner radius = outer radius - padding */
-  --p-sheet: 10px;
-  --r-sheet: 14px;
-  --r-sheet-inner: calc(var(--r-sheet) - var(--p-sheet));
+  /* line weights */
+  --hair: 1px;
+  --stroke: 2px;
 
-  --p-seg: 3px;
-  --r-seg: 9px;
-  --r-seg-inner: calc(var(--r-seg) - var(--p-seg));
+  /* studio layout */
+  --header-h: 52px;
+  --tabs-w: 72px;
+  --inspector-w: 400px;
+  --exportbar-h: 64px;
+  --stagebar-h: 52px;
 
-  --r-tag: 4px;
-  --r-sm: 6px;
-  --r-md: 8px;
-  --r-lg: 12px;
-  --r-pill: 999px;
-
-  /* layout */
-  --header-h: 54px;
-  --rail-w: 64px;
-  --inspector-w: 360px;
-  --stagebar-h: 48px;
+  /* stepped motion: things snap like sprites, never glide */
+  --step-fast: 120ms;
+  --step-fill: 420ms;
 }
 
 [data-theme='dark'] {
-  /* colour : dark (Pressroom Charcoal) */
-  --paper: #12141a;
-  --panel: #191c23;
-  --panel-2: #222630;
-  --panel-3: #2b303d;
-  --line: #8c92a0;
-  --line-subtle: #2d323e;
-  --line-strong: #c6cbd6;
-  --ink: #f5f6f8;
-  --ink-2: #c6cbd6;
-  --ink-3: #9ea5b5;
+  color-scheme: dark;
 
-  --accent: #2d55eb;
-  --accent-text: #85aaff;
-  --accent-hover: #3b63f6;
-  --accent-soft: rgba(45, 85, 235, 0.18);
-  --vermilion: #ff5a3c;
-  --vermilion-text: #ff8770;
-  --vermilion-soft: rgba(255, 90, 60, 0.16);
-  --path-ink: #d4d9e6;
-  --accent-rgb: 96 139 255;
+  --paper: #1d1e22;
+  --sheet: #26272c;
+  --sheet-2: #2f3036;
+  --ink: #f2f2f4;
+  --ink-muted: #a3a3ad;
+  --rule: #8d8e97;
+  --rule-soft: #3a3b42;
 
-  --deep: #0b0d11;
-  --wax: #f5f6f8;
-  --green: #34d399;
-  --cyan: #38bdf8;
-  --amber: #fbbf24;
-  --danger: #ff8770;
-  --danger-soft: rgba(255, 135, 112, 0.14);
-  --ticket: #191c23;
-  --checker-a: #20242d;
-  --checker-b: #181b22;
-  --focus-ring: #85aaff;
-  --shadow-frame: 0 14px 32px -12px rgba(0, 0, 0, 0.72);
-  --shadow-cta: 0 8px 20px -8px rgba(45, 85, 235, 0.55);
-  --shadow-toast: 0 12px 26px -8px rgba(0, 0, 0, 0.85);
-  --scrim: rgba(7, 9, 13, 0.72);
+  --red: #d81e28;
+  --on-red: #ffffff;
+  --red-text: #ff6b6b;
+  --yellow: #ffd23f;
+  --on-yellow: #16161a;
+  --blue: #2449e0;
+  --on-blue: #ffffff;
+  --blue-text: #7f9cff;
+  --plate-ink: #f2f2f4;
+  --on-plate-ink: #16161a;
+
+  --success: #4ade80;
+  --danger: #ff6b6b;
+  --focus: #7f9cff;
+  --checker-a: #2a2b30;
+  --checker-b: #222327;
+  --ghost: #33343b;
+  --scrim: rgba(8, 8, 10, 0.72);
 }

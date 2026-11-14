@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { compareFromPointer, compareStep, compareValueText, type CompareKey } from '../../lib/compare';
 import { renderProcessedPreview } from '../../lib/pixelate';
 import type { ConverterSettings, GridSize, PreviewMode, ProcessedImage, SourceImage } from '../../types';
@@ -115,6 +115,15 @@ export function ProofFrame({
 
   const comparing = mode === 'compare';
 
+  // Ghost grid fill: each finished processing pass reveals the art row by row.
+  // Touch-up strokes never set busy, so painting does not replay it.
+  const [fillKey, setFillKey] = useState(0);
+  const wasBusy = useRef(busy);
+  useEffect(() => {
+    if (wasBusy.current && !busy) setFillKey((key) => key + 1);
+    wasBusy.current = busy;
+  }, [busy]);
+
   return (
     <div
       ref={frameRef}
@@ -201,6 +210,20 @@ export function ProofFrame({
             <span>||</span>
           </span>
         </div>
+      ) : null}
+
+      {fillKey > 0 && mode === 'pixel' ? (
+        <span
+          key={fillKey}
+          className="scanfill ghost-grid"
+          aria-hidden="true"
+          style={
+            {
+              '--rows': Math.max(4, Math.min(grid.height, 32)),
+              '--cell': `${Math.max(4, displayWidth / Math.max(1, grid.width))}px`,
+            } as CSSProperties
+          }
+        />
       ) : null}
 
       {busy && mode !== 'original' ? (
