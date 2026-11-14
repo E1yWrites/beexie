@@ -65,6 +65,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
     try {
       window.localStorage.removeItem('beexie-theme');
       window.localStorage.removeItem('lanzos-pixel-theme');
+      window.localStorage.removeItem('beexie-shortcuts');
     } catch {
       // Ignore storage access errors in restricted modes
     }

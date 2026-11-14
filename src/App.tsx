@@ -16,6 +16,8 @@ import { buildExportFilename, downloadPixelArt, saveBlob } from './lib/export';
 import { canvasToBlob } from './lib/pixelate';
 import { STAGE_LABELS } from './lib/stages';
 import { ticketDisabledReason } from './lib/ticket';
+import { readShortcutsEnabled, writeShortcutsEnabled } from './lib/shortcuts';
+import { ShortcutsDialog } from './components/shell/ShortcutsDialog';
 import { UploadIcon } from './components/icons';
 import { ExportTicket } from './components/inspector/ExportTicket';
 
@@ -28,6 +30,8 @@ export default function App() {
   const [downloading, setDownloading] = useState(false);
   const [savedAt, setSavedAt] = useState(0);
   const [dragging, setDragging] = useState(false);
+  const [keysOpen, setKeysOpen] = useState(false);
+  const [shortcutsEnabled, setShortcutsEnabled] = useState(readShortcutsEnabled);
   const dragDepth = useRef(0);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -294,6 +298,7 @@ export default function App() {
         onToggleTheme={toggleTheme}
         onNewProject={handleNewProject}
         onGoToLanding={() => setView('landing')}
+        onShowKeys={() => setKeysOpen(true)}
       />
 
       <div className="bench">
@@ -324,6 +329,9 @@ export default function App() {
           onOpen={open}
           onPick={pickFile}
           onLoadSample={() => void handleLoadSample()}
+          shortcutsEnabled={shortcutsEnabled}
+          onDownload={() => void handleDownload()}
+          onShortcutsHelp={() => setKeysOpen(true)}
         />
 
         <Inspector
@@ -355,6 +363,16 @@ export default function App() {
           onChart={() => void handleChart()}
         />
       </div>
+
+      <ShortcutsDialog
+        open={keysOpen}
+        enabled={shortcutsEnabled}
+        onEnabled={(enabled) => {
+          setShortcutsEnabled(enabled);
+          writeShortcutsEnabled(enabled);
+        }}
+        onClose={() => setKeysOpen(false)}
+      />
 
       <ExportTicket
         settings={settings}

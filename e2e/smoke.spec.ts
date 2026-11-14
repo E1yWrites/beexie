@@ -99,4 +99,17 @@ test('upload every format, change settings, download a real PNG', async ({ page 
   await page.getByRole('button', { name: /^Image,/ }).click();
   await page.getByRole('button', { name: 'Rotate right' }).click();
   await expect(page.getByRole('button', { name: /^Grid,/ })).toHaveAccessibleName(/16 × 32/);
+
+  // Keyboard shortcuts: 2 opens Grid, keys typed into a field are left alone, ? opens the reference.
+  await page.locator('body').click({ position: { x: 1, y: 1 } });
+  await page.keyboard.press('2');
+  await expect(page.getByRole('button', { name: /^Grid,/ })).toHaveAttribute('aria-current', 'step');
+  await page.getByRole('spinbutton', { name: 'Width' }).first().focus();
+  await page.keyboard.press('3');
+  await expect(page.getByRole('button', { name: /^Grid,/ })).toHaveAttribute('aria-current', 'step');
+  await page.locator('body').click({ position: { x: 1, y: 1 } });
+  await page.keyboard.press('Shift+?');
+  await expect(page.getByRole('dialog', { name: 'Keyboard shortcuts' })).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(page.getByRole('dialog', { name: 'Keyboard shortcuts' })).toBeHidden();
 });
